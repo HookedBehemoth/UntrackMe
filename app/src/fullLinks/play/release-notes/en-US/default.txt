@@ -1,2 +1,1 @@
-- Add amp.gs shortener
-- Some new translations
+- Add Android 11 support
