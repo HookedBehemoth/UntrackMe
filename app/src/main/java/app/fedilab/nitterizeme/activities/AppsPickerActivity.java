@@ -91,6 +91,7 @@ public class AppsPickerActivity extends Activity {
             delegate.setType("text/plain");
         }
         List<ResolveInfo> activities;
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             activities = getPackageManager().queryIntentActivities(
                     delegate, PackageManager.MATCH_ALL);
