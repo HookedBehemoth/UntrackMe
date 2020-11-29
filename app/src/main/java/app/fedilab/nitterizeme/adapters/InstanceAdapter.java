@@ -44,8 +44,8 @@ import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_HOST;
 
 public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<Instance> instances;
-    private InstanceAdapter instanceAdapter;
+    private final List<Instance> instances;
+    private final InstanceAdapter instanceAdapter;
 
     public InstanceAdapter(List<Instance> instances) {
         this.instances = instances;

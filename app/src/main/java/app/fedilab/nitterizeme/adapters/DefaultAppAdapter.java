@@ -39,7 +39,7 @@ import app.fedilab.nitterizeme.sqlite.Sqlite;
 
 public class DefaultAppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<DefaultApp> defaultApps;
+    private final List<DefaultApp> defaultApps;
 
     public DefaultAppAdapter(List<DefaultApp> packageNames) {
         this.defaultApps = packageNames;

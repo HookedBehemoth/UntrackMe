@@ -77,7 +77,7 @@ public class SearchInstanceVM extends AndroidViewModel {
         thread.start();
     }
 
-    private List<Instance> getInstancesFromFedilabApp(){
+    private List<Instance> getInstancesFromFedilabApp() {
         HttpsURLConnection httpsURLConnection;
         ArrayList<Instance> instances = new ArrayList<>();
         try {
@@ -145,7 +145,7 @@ public class SearchInstanceVM extends AndroidViewModel {
     }
 
 
-    private List<Instance> getInstancesFromBibliogramArt(){
+    private List<Instance> getInstancesFromBibliogramArt() {
         HttpsURLConnection httpsURLConnection;
         ArrayList<Instance> instances = new ArrayList<>();
         try {

@@ -40,7 +40,7 @@ public class AppInfoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private static final int LAYOUT_TITLE = 0;
     private static final int LAYOUT_INFO = 1;
-    private List<AppInfo> appInfos;
+    private final List<AppInfo> appInfos;
 
     public AppInfoAdapter(List<AppInfo> appInfos) {
         this.appInfos = appInfos;

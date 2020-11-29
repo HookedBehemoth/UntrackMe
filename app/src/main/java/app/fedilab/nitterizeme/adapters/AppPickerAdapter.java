@@ -32,7 +32,7 @@ import app.fedilab.nitterizeme.entities.AppPicker;
 
 public class AppPickerAdapter extends BaseAdapter {
 
-    private List<AppPicker> appPickers;
+    private final List<AppPicker> appPickers;
 
     public AppPickerAdapter(List<AppPicker> appPickers) {
         this.appPickers = appPickers;

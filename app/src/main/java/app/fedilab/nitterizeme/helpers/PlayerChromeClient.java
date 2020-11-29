@@ -31,16 +31,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PlayerChromeClient extends WebChromeClient implements MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener {
 
+    private final WebView webView;
+    private final View activityNonVideoView;
+    private final ViewGroup activityVideoView;
+    private final Activity activity;
     private FrameLayout videoViewContainer;
     private CustomViewCallback videoViewCallback;
-
     private ToggledFullscreenCallback toggledFullscreenCallback;
-
-    private WebView webView;
-    private View activityNonVideoView;
-    private ViewGroup activityVideoView;
     private boolean isVideoFullscreen;
-    private Activity activity;
 
 
     public PlayerChromeClient(Activity activity, WebView webView, FrameLayout activityNonVideoView, ViewGroup activityVideoView) {

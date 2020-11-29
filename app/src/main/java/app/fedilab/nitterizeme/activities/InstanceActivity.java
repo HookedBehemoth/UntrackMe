@@ -43,7 +43,7 @@ import app.fedilab.nitterizeme.viewmodels.SearchInstanceVM;
 
 public class InstanceActivity extends AppCompatActivity {
 
-    private static String list_for_instances = "https://framagit.org/tom79/fedilab_app/-/blob/master/content/untrackme_instances/payload_2.json";
+    private static final String list_for_instances = "https://framagit.org/tom79/fedilab_app/-/blob/master/content/untrackme_instances/payload_2.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,37 +82,37 @@ public class InstanceActivity extends AppCompatActivity {
             for (Instance instance : result) {
                 if (instance.getType() == Instance.instanceType.INVIDIOUS) {
                     invidiousInstances.add(instance);
-                    if(invidiousHost != null && invidiousHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
+                    if (invidiousHost != null && invidiousHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
                         customInvidiousInstance = false;
                     }
                 } else if (instance.getType() == Instance.instanceType.NITTER) {
                     nitterInstances.add(instance);
-                    if(nitterHost != null && nitterHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
+                    if (nitterHost != null && nitterHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
                         customNitterInstance = false;
                     }
                 } else if (instance.getType() == Instance.instanceType.BIBLIOGRAM) {
                     bibliogramInstances.add(instance);
-                    if(bibliogramHost != null && bibliogramHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
+                    if (bibliogramHost != null && bibliogramHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
                         customBibliogramInstance = false;
                     }
                 }
             }
             //Check if custom instances are also added
-            if(customInvidiousInstance) {
+            if (customInvidiousInstance) {
                 Instance instance = new Instance();
                 instance.setChecked(true);
                 instance.setDomain(invidiousHost);
                 instance.setLocale("--");
                 invidiousInstances.add(0, instance);
             }
-            if(customNitterInstance) {
+            if (customNitterInstance) {
                 Instance instance = new Instance();
                 instance.setChecked(true);
                 instance.setDomain(nitterHost);
                 instance.setLocale("--");
                 nitterInstances.add(0, instance);
             }
-            if(customBibliogramInstance) {
+            if (customBibliogramInstance) {
                 Instance instance = new Instance();
                 instance.setChecked(true);
                 instance.setDomain(bibliogramHost);

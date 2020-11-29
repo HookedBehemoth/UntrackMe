@@ -25,8 +25,8 @@ import app.fedilab.nitterizeme.helpers.Utils;
 
 public class DefaultAppDAO {
 
+    private final SQLiteDatabase db;
     public Context context;
-    private SQLiteDatabase db;
 
 
     public DefaultAppDAO(Context context, SQLiteDatabase db) {
