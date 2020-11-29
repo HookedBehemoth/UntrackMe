@@ -55,121 +55,121 @@
     <string name="use_built_in_player">内部プレイヤーを使用</string>
     <string name="share">共有</string>
     <string name="download">ダウンロード</string>
-    <string name="share_with">共有相手</string>
+    <string name="share_with">次でシェア</string>
     <string name="check_apps">アプリを検出</string>
     <string name="select_instances">インスタンスを選択</string>
-    <string name="continue_with">Continue with…</string>
-    <string name="just_once">Just once</string>
-    <string name="always">Always</string>
-    <string name="default_app_indication">%1$s has been set as a default app.\nYou can remove this behavior from the app settings.</string>
-    <string name="indication_error_title">There is something wrong with the configuration of the app. Please, follow these indications to fix that issue.</string>
-    <string name="open_configure">1 - Tap on the \"CONFIGURE\" button above.</string>
-    <string name="supported_url_indication_1">2 - You are now in app settings from your device. Tap on \"Set as default\".</string>
-    <string name="display_indications_1_description">Screenshot showing app settings for the app. You have to Tap on \"Set as default\"</string>
-    <string name="supported_url_indication_2">2 - Then tap on \"Go to supported URLs\".</string>
-    <string name="display_indications_2_description">Screenshot showing app settings for the app. You have to Tap on \"Go to supported URLs\"</string>
-    <string name="supported_url_indication_3">3 - In suggestions make sure to pickup \"Always ask\"</string>
-    <string name="display_indications_3_description">Screenshot showing app settings to define the behavior for opening URLs</string>
-    <string name="default_apps">Default apps</string>
-    <string name="remove_from_default_app">Remove from default apps</string>
-    <string name="delete">Delete</string>
-    <string name="cancel">Cancel</string>
-    <string name="delete_app_from_default">Delete %1$s from default apps?</string>
-    <string name="copy_done">Copied</string>
-    <string name="no_apps_set_as_default">No apps set as default!</string>
-    <string name="custom_settings_for_invidious">Custom settings for Invidious</string>
-    <string name="invidious_settings">Invidious settings</string>
-    <string name="invidious_dark_mode_title">Theme</string>
-    <string name="invidious_dark_mode_indication">Configure default theme without setting cookies</string>
-    <string name="invidious_thin_mode_title">Thin mode</string>
-    <string name="invidious_thin_mode_indication">Load HTML, CSS, JS and video elements (disables images)</string>
-    <string name="invidious_language_mode_indication">Available locales</string>
-    <string name="invidious_language_mode_title">UI Language</string>
-    <string name="pref_invidious_head1">Site-wide parameters</string>
-    <string name="pref_invidious_head2">Player parameters</string>
-    <string name="invidious_annotations_mode_title">Annotations</string>
-    <string name="invidious_annotations_mode_indication">Show legacy annotations, provided by the Internet Archive</string>
-    <string name="invidious_autoplay_mode_indication">Automatically play video on load</string>
-    <string name="invidious_autoplay_mode_title">Autoplay</string>
-    <string name="invidious_continue_mode_title">Continue</string>
-    <string name="invidious_continue_mode_indication">When video is done, automatically go to the next related video (similar to YouTube’s Autoplay feature)</string>
-    <string name="invidious_listen_mode_title">Listen</string>
-    <string name="invidious_listen_mode_indication">Play only audio portion of video</string>
-    <string name="invidious_local_mode_title">Local</string>
-    <string name="invidious_local_mode_indication">Proxy video streams</string>
-    <string name="invidious_subtitles_mode_title">Subtitles</string>
-    <string name="invidious_subtitles_mode_indication">List of ISO 639–1 language codes</string>
-    <string name="invidious_quality_mode_title">Quality</string>
-    <string name="invidious_quality_mode_indication">Default player quality</string>
-    <string name="invidious_loop_mode_title">Loop</string>
-    <string name="invidious_volume_mode_title">Volume</string>
-    <string name="invidious_volume_mode_indication">Default player volume, can be any whole number between 0 and 100</string>
-    <string name="invidious_loop_mode_indication">Loop player by default</string>
-    <string name="invidious_volume_mode_value">Volume value</string>
-    <string name="invidious_volume_mode_value_indication">Override the volume with this value</string>
-    <string name="pref_invidious_head3">Player Style</string>
-    <string name="invidious_player_style_mode_title">Appearance</string>
-    <string name="invidious_player_style_mode_indication">Invidious, the default one. YouTube, using a centered play button and always visible video control bar</string>
-    <string name="help">Help</string>
-    <string name="invidious_help_title">Setting options</string>
-    <string name="invidious_help_ignore"><b>Ignore:</b> This is the default action for all¹ parameters. This means UntrackMe will not do anything about the parameter</string>
-    <string name="invidious_help_remove"><b>Remove:</b> UntrackMe will remove the parameter from URL, if it exists</string>
-    <string name="invidious_help_other">If you select other values for a parameter, they will be added to the URL. If the parameter already exists, its value will be changed to your choice</string>
-    <string name="invidious_help_explanations">[1] \'local\' parameter is set to \'true\' by default for better privacy</string>
+    <string name="continue_with">次で続ける</string>
+    <string name="just_once">1回のみ</string>
+    <string name="always">常時</string>
+    <string name="default_app_indication">%1$s は既定のアプリとして設定されています。\nこの動作はアプリの設定から解除できます。</string>
+    <string name="indication_error_title">アプリの設定に問題があります。次の手順で問題を解決してください。</string>
+    <string name="open_configure">1 - 上の「設定」ボタンをタップします。</string>
+    <string name="supported_url_indication_1">2 - デバイスのアプリ設定の「デフォルトで開く」をタップしてください。</string>
+    <string name="display_indications_1_description">アプリ設定のスクリーンショット。「デフォルトで開く」をタップする必要があります</string>
+    <string name="supported_url_indication_2">2 - 次に「対応リンクを開く」をタップします。</string>
+    <string name="display_indications_2_description">アプリ設定のスクリーンショット。「対応リンクを開く」をタップする必要があります</string>
+    <string name="supported_url_indication_3">3 - 「その都度確認」を選択してください</string>
+    <string name="display_indications_3_description">対応リンクを開く動作を定義するアプリの設定を表示するスクリーンショット</string>
+    <string name="default_apps">既定のアプリ</string>
+    <string name="remove_from_default_app">既定のアプリの設定を消去</string>
+    <string name="delete">削除</string>
+    <string name="cancel">キャンセル</string>
+    <string name="delete_app_from_default">既定のアプリから %1$s を削除しますか？</string>
+    <string name="copy_done">コピーしました</string>
+    <string name="no_apps_set_as_default">既定に設定されているアプリはありません！</string>
+    <string name="custom_settings_for_invidious">Invidiousのカスタム設定</string>
+    <string name="invidious_settings">Invidiousの設定</string>
+    <string name="invidious_dark_mode_title">テーマ</string>
+    <string name="invidious_dark_mode_indication">Cookieを設定せずにデフォルトのテーマを設定します</string>
+    <string name="invidious_thin_mode_title">最小モード</string>
+    <string name="invidious_thin_mode_indication">HTML、CSS、JS、ビデオ要素を読み込む (画像を無効にします)</string>
+    <string name="invidious_language_mode_indication">利用可能なロケール</string>
+    <string name="invidious_language_mode_title">UIの言語</string>
+    <string name="pref_invidious_head1">サイト全体のパラメーター</string>
+    <string name="pref_invidious_head2">プレイヤーのパラメーター</string>
+    <string name="invidious_annotations_mode_title">アノテーション</string>
+    <string name="invidious_annotations_mode_indication">Internet Archiveによって提供されたレガシーアノテーションを表示する</string>
+    <string name="invidious_autoplay_mode_indication">ロード時に自動的にビデオを再生する</string>
+    <string name="invidious_autoplay_mode_title">自動再生</string>
+    <string name="invidious_continue_mode_title">連続再生</string>
+    <string name="invidious_continue_mode_indication">動画の再生が終わると、自動的に次の関連ビデオに移動します(YouTubeの自動再生機能に類似)</string>
+    <string name="invidious_listen_mode_title">音声を聴く</string>
+    <string name="invidious_listen_mode_indication">動画の音声部分だけを再生</string>
+    <string name="invidious_local_mode_title">ローカル</string>
+    <string name="invidious_local_mode_indication">動画をプロクシに通す</string>
+    <string name="invidious_subtitles_mode_title">字幕</string>
+    <string name="invidious_subtitles_mode_indication">ISO 639–1言語コード一覧</string>
+    <string name="invidious_quality_mode_title">ビデオ品質</string>
+    <string name="invidious_quality_mode_indication">既定のビデオ品質</string>
+    <string name="invidious_loop_mode_title">ループ</string>
+    <string name="invidious_volume_mode_title">音量</string>
+    <string name="invidious_volume_mode_indication">既定のプレーヤーの音量は、0から100の間で設定できます。</string>
+    <string name="invidious_loop_mode_indication">デフォルトでループ再生</string>
+    <string name="invidious_volume_mode_value">音量</string>
+    <string name="invidious_volume_mode_value_indication">この値で音量を上書きします</string>
+    <string name="pref_invidious_head3">プレイヤースタイル</string>
+    <string name="invidious_player_style_mode_title">外観</string>
+    <string name="invidious_player_style_mode_indication">Invidiousは、デフォルトの表示です。YouTubeは、中央に再生ボタンが表示され、ビデオコントロールバーが常に表示されます。</string>
+    <string name="help">ヘルプ</string>
+    <string name="invidious_help_title">設定オプション</string>
+    <string name="invidious_help_ignore"><b>無視:</b> これは全てのパラメータのデフォルト動作です。UntrackMeはこのパラメータについて何もしません。</string>
+    <string name="invidious_help_remove"><b>削除:</b> UntrackMeはURLからパラメータを削除します。</string>
+    <string name="invidious_help_other">パラメータに他の値を選択すると、それらはURLに追加されます。 パラメータがすでに存在する場合、その値は選択したものに変更されます。</string>
+    <string name="invidious_help_explanations">[1] プライバシー保護のため、デフォルトでは \'local\' パラメータは \'true\' に設定されています</string>
     <string-array name="invidious_theme">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Dark theme</item>
-        <item>Light theme</item>
+        <item>無視</item>
+        <item>削除</item>
+        <item>ダークテーマ</item>
+        <item>ライトテーマ</item>
     </string-array>
     <string-array name="invidious_enable">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Enabled</item>
-        <item>Disabled</item>
+        <item>無視</item>
+        <item>削除</item>
+        <item>有効</item>
+        <item>無効</item>
     </string-array>
     <string-array name="invidious_language">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Arabic</item>
-        <item>German</item>
-        <item>Greek</item>
-        <item>English</item>
-        <item>Esperanto</item>
-        <item>Spanish</item>
-        <item>Basque</item>
-        <item>French</item>
-        <item>Icelandic</item>
-        <item>Italian</item>
-        <item>Norwegian Bokmål</item>
-        <item>Dutch</item>
-        <item>Polish</item>
-        <item>Russian</item>
-        <item>Ukrainian</item>
-        <item>Chinese</item>
+        <item>無視</item>
+        <item>削除</item>
+        <item>アラビア語</item>
+        <item>ドイツ語</item>
+        <item>ギリシャ語</item>
+        <item>英語</item>
+        <item>エスペラント語</item>
+        <item>スペイン語</item>
+        <item>バスク語</item>
+        <item>フランス語</item>
+        <item>アイスランド語</item>
+        <item>イタリア語</item>
+        <item>ノルウェー・ブークモール語</item>
+        <item>オランダ語</item>
+        <item>ポーランド語</item>
+        <item>ロシア語</item>
+        <item>ウクライナ語</item>
+        <item>中国語</item>
     </string-array>
     <string-array name="invidious_annotations">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Show annotations</item>
-        <item>Hide annotations</item>
+        <item>無視</item>
+        <item>削除</item>
+        <item>アノテーションを表示</item>
+        <item>アノテーションを非表示</item>
     </string-array>
     <string-array name="invidious_quality">
-        <item>Ignore</item>
-        <item>Remove</item>
+        <item>無視</item>
+        <item>削除</item>
         <item>DASH</item>
         <item>720p</item>
         <item>480p</item>
     </string-array>
     <string-array name="invidious_volume">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Custom</item>
+        <item>無視</item>
+        <item>削除</item>
+        <item>カスタム</item>
     </string-array>
     <string-array name="invidious_player_style">
-        <item>Ignore</item>
-        <item>Remove</item>
+        <item>無視</item>
+        <item>削除</item>
         <item>Invidious</item>
-        <item>Youtube</item>
+        <item>YouTube</item>
     </string-array>
 </resources>

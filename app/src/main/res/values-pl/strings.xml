@@ -85,7 +85,7 @@
     <string name="invidious_thin_mode_indication">Wczytaj elementy HTML, CSS, JS i wideo (wyłącza obrazy)</string>
     <string name="invidious_language_mode_indication">Dostępne ustawienia regionalne</string>
     <string name="invidious_language_mode_title">Język interfejsu</string>
-    <string name="pref_invidious_head1">Site-wide parameters</string>
+    <string name="pref_invidious_head1">Globalne parametry</string>
     <string name="pref_invidious_head2">Parametry gracza</string>
     <string name="invidious_annotations_mode_title">Adnotacje</string>
     <string name="invidious_annotations_mode_indication">Pokaż dotychczasowe adnotacje dostarczone przez archiwum internetowe</string>
@@ -96,79 +96,79 @@
     <string name="invidious_listen_mode_title">Odsłuchaj</string>
     <string name="invidious_listen_mode_indication">Odtwarzaj tylko część dźwięku wideo</string>
     <string name="invidious_local_mode_title">Lokalnie</string>
-    <string name="invidious_local_mode_indication">Proxy video streams</string>
-    <string name="invidious_subtitles_mode_title">Subtitles</string>
-    <string name="invidious_subtitles_mode_indication">List of ISO 639–1 language codes</string>
-    <string name="invidious_quality_mode_title">Quality</string>
-    <string name="invidious_quality_mode_indication">Default player quality</string>
-    <string name="invidious_loop_mode_title">Loop</string>
-    <string name="invidious_volume_mode_title">Volume</string>
-    <string name="invidious_volume_mode_indication">Default player volume, can be any whole number between 0 and 100</string>
-    <string name="invidious_loop_mode_indication">Loop player by default</string>
-    <string name="invidious_volume_mode_value">Volume value</string>
-    <string name="invidious_volume_mode_value_indication">Override the volume with this value</string>
-    <string name="pref_invidious_head3">Player Style</string>
-    <string name="invidious_player_style_mode_title">Appearance</string>
-    <string name="invidious_player_style_mode_indication">Invidious, the default one. YouTube, using a centered play button and always visible video control bar</string>
-    <string name="help">Help</string>
-    <string name="invidious_help_title">Setting options</string>
-    <string name="invidious_help_ignore"><b>Ignore:</b> This is the default action for all¹ parameters. This means UntrackMe will not do anything about the parameter</string>
-    <string name="invidious_help_remove"><b>Remove:</b> UntrackMe will remove the parameter from URL, if it exists</string>
-    <string name="invidious_help_other">If you select other values for a parameter, they will be added to the URL. If the parameter already exists, its value will be changed to your choice</string>
-    <string name="invidious_help_explanations">[1] \'local\' parameter is set to \'true\' by default for better privacy</string>
+    <string name="invidious_local_mode_indication">Strumienie wideo przez proxy</string>
+    <string name="invidious_subtitles_mode_title">Napisy</string>
+    <string name="invidious_subtitles_mode_indication">Wykaz kodów językowych ISO 639–1</string>
+    <string name="invidious_quality_mode_title">Jakość</string>
+    <string name="invidious_quality_mode_indication">Domyślna jakość odtwarzacza</string>
+    <string name="invidious_loop_mode_title">Powtarzaj</string>
+    <string name="invidious_volume_mode_title">Głośność</string>
+    <string name="invidious_volume_mode_indication">Domyślna głośność odtwarzacza, może być dowolną liczbą całkowita od 0 do 100</string>
+    <string name="invidious_loop_mode_indication">Domyślnie zapętlaj odtwarzanie</string>
+    <string name="invidious_volume_mode_value">Wartość głośności</string>
+    <string name="invidious_volume_mode_value_indication">Zastąp głośność tą wartością</string>
+    <string name="pref_invidious_head3">Styl Odtwarzacza</string>
+    <string name="invidious_player_style_mode_title">Wygląd</string>
+    <string name="invidious_player_style_mode_indication">Invidious, domyślny. YouTube, za pomocą wyśrodkowanego przycisku odtwarzania i zawsze widoczny pasek sterowania wideo</string>
+    <string name="help">Pomoc</string>
+    <string name="invidious_help_title">Ustaw opcje</string>
+    <string name="invidious_help_ignore"><b>Ignoruj:</b> To jest domyślna akcja dla wszystkich¹ parametrów. Oznacza to, że UntrackMe nie zrobi nic z parametrami</string>
+    <string name="invidious_help_remove"><b>Usuń:</b> UntrackMe usunie parametr z adresu URL, jeśli istnieje</string>
+    <string name="invidious_help_other">Jeśli wybierzesz inne wartości dla parametru, zostaną one dodane do adresu URL. Jeśli parametr już istnieje, jego wartość zostanie zmieniona na Twój wybór</string>
+    <string name="invidious_help_explanations">[1] Parametr \'local\' jest domyślnie ustawiony na \'true\' dla lepszej ochrony prywatności</string>
     <string-array name="invidious_theme">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Dark theme</item>
-        <item>Light theme</item>
+        <item>Ignoruj</item>
+        <item>Usuń</item>
+        <item>Ciemny motyw</item>
+        <item>Jasny motyw</item>
     </string-array>
     <string-array name="invidious_enable">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Enabled</item>
-        <item>Disabled</item>
+        <item>Ignoruj</item>
+        <item>Usuń</item>
+        <item>Aktywne</item>
+        <item>Wyłączone</item>
     </string-array>
     <string-array name="invidious_language">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Arabic</item>
-        <item>German</item>
-        <item>Greek</item>
-        <item>English</item>
-        <item>Esperanto</item>
-        <item>Spanish</item>
-        <item>Basque</item>
-        <item>French</item>
-        <item>Icelandic</item>
-        <item>Italian</item>
-        <item>Norwegian Bokmål</item>
-        <item>Dutch</item>
-        <item>Polish</item>
-        <item>Russian</item>
-        <item>Ukrainian</item>
-        <item>Chinese</item>
+        <item>Ignoruj</item>
+        <item>Usuń</item>
+        <item>arabski</item>
+        <item>niemiecki</item>
+        <item>grecki</item>
+        <item>angielski</item>
+        <item>esperanto</item>
+        <item>hiszpański</item>
+        <item>baskijski</item>
+        <item>francuski</item>
+        <item>islandzki</item>
+        <item>włoski</item>
+        <item>norweski Bokmål</item>
+        <item>holenderski</item>
+        <item>polski</item>
+        <item>rosyjski</item>
+        <item>ukraiński</item>
+        <item>chiński</item>
     </string-array>
     <string-array name="invidious_annotations">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Show annotations</item>
-        <item>Hide annotations</item>
+        <item>Ignoruj</item>
+        <item>Usuń</item>
+        <item>Pokaż adnotacje</item>
+        <item>Ukryj adnotacje</item>
     </string-array>
     <string-array name="invidious_quality">
-        <item>Ignore</item>
-        <item>Remove</item>
+        <item>Ignoruj</item>
+        <item>Usuń</item>
         <item>DASH</item>
         <item>720p</item>
         <item>480p</item>
     </string-array>
     <string-array name="invidious_volume">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Custom</item>
+        <item>Ignoruj</item>
+        <item>Usuń</item>
+        <item>Niestandardowe</item>
     </string-array>
     <string-array name="invidious_player_style">
-        <item>Ignore</item>
-        <item>Remove</item>
+        <item>Ignoruj</item>
+        <item>Usuń</item>
         <item>Invidious</item>
         <item>Youtube</item>
     </string-array>

@@ -28,7 +28,7 @@
     <string name="redirect_twitter_to_nitter">Reindirizza Twitter a Nitter</string>
     <string name="redirect_instagram_to_bibliogram">Reindirizza Instagram a Bibliogram</string>
     <string name="custom_bibliogram">Istanza Bibliogram personalizzata</string>
-    <string name="redirect_gm_to_geo_uri">Reindirizza Google Map a Geo URI</string>
+    <string name="redirect_gm_to_geo_uri">Reindirizza Google Maps a Geo URI</string>
     <string name="configure">Configura</string>
     <string name="display_supported_links">Mostra link supportati</string>
     <string name="use_geo_uri">Usa geo URI</string>
