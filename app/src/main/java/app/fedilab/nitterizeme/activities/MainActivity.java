@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String APP_PREFS = "app_prefs";
     public static final String SET_NITTER_HOST = "set_nitter_host";
     public static final String SET_INVIDIOUS_HOST = "set_invidious_host";
+    public static final String SET_TEDDIT_HOST = "set_teddit_host";
     public static final String SET_OSM_HOST = "set_osm_host";
     public static final String SET_BIBLIOGRAM_HOST = "set_bibliogram_host";
     @SuppressWarnings({"unused", "RedundantSuppression"})
@@ -61,11 +62,13 @@ public class MainActivity extends AppCompatActivity {
     public static String DEFAULT_NITTER_HOST = "nitter.net";
     public static String DEFAULT_INVIDIOUS_HOST = "invidious.snopyta.org";
     public static String SET_INVIDIOUS_ENABLED = "set_invidious_enabled";
+    public static String SET_TEDDIT_ENABLED = "set_teddit_enabled";
     public static String SET_NITTER_ENABLED = "set_nitter_enabled";
     public static String SET_OSM_ENABLED = "set_osm_enabled";
     public static String DEFAULT_OSM_HOST = "www.openstreetmap.org";
     public static String SET_BIBLIOGRAM_ENABLED = "set_bibliogram_enabled";
     public static String DEFAULT_BIBLIOGRAM_HOST = "bibliogram.art";
+    public static String DEFAULT_TEDDIT_HOST = "teddit.net";
     public static String SET_GEO_URIS = "set_geo_uris";
     public static String SET_EMBEDDED_PLAYER = "set_embedded_player";
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
@@ -82,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
     private String nitterHost;
     private String invidiousHost;
     private String bibliogramHost;
+    private String tedditHost;
     private String osmHost;
 
     @Override
@@ -98,36 +102,42 @@ public class MainActivity extends AppCompatActivity {
         TextView current_instance_nitter = findViewById(R.id.current_instance_nitter);
         TextView current_instance_invidious = findViewById(R.id.current_instance_invidious);
         TextView current_instance_bibliogram = findViewById(R.id.current_instance_bibliogram);
+        TextView current_instance_teddit = findViewById(R.id.current_instance_teddit);
         TextView current_instance_osm = findViewById(R.id.current_instance_osm);
 
 
         TextInputEditText nitter_instance = findViewById(R.id.nitter_instance);
         TextInputEditText invidious_instance = findViewById(R.id.invidious_instance);
         TextInputEditText bibliogram_instance = findViewById(R.id.bibliogram_instance);
+        TextInputEditText teddit_instance = findViewById(R.id.teddit_instance);
         TextInputEditText osm_instance = findViewById(R.id.osm_instance);
 
 
         Group invidious_current_group = findViewById(R.id.group_current_invidious);
         Group nitter_current_group = findViewById(R.id.group_current_nitter);
         Group bibliogram_current_group = findViewById(R.id.group_current_bibliogram);
+        Group teddit_current_group = findViewById(R.id.group_current_teddit);
         Group osm_current_group = findViewById(R.id.group_current_osm);
 
 
         Group invidious_custom_group = findViewById(R.id.group_custom_invidious);
         Group nitter_custom_group = findViewById(R.id.group_custom_nitter);
         Group bibliogram_custom_group = findViewById(R.id.group_custom_bibliogram);
+        Group teddit_custom_group = findViewById(R.id.group_custom_teddit);
         Group osm_custom_group = findViewById(R.id.group_custom_osm);
 
 
         SwitchCompat enable_nitter = findViewById(R.id.enable_nitter);
         SwitchCompat enable_invidious = findViewById(R.id.enable_invidious);
         SwitchCompat enable_bibliogram = findViewById(R.id.enable_bibliogram);
+        SwitchCompat enable_teddit = findViewById(R.id.enable_teddit);
         SwitchCompat enable_osm = findViewById(R.id.enable_osm);
 
 
         ImageButton expand_instance_nitter = findViewById(R.id.button_expand_instance_nitter);
         ImageButton expand_instance_invidious = findViewById(R.id.button_expand_instance_invidious);
         ImageButton expand_instance_bibliogram = findViewById(R.id.button_expand_instance_bibliogram);
+        ImageButton expand_instance_teddit = findViewById(R.id.button_expand_instance_teddit);
         ImageButton expand_instance_osm = findViewById(R.id.button_expand_instance_osm);
 
 
@@ -135,16 +145,19 @@ public class MainActivity extends AppCompatActivity {
         boolean invidious_enabled = sharedpreferences.getBoolean(SET_INVIDIOUS_ENABLED, true);
         boolean osm_enabled = sharedpreferences.getBoolean(SET_OSM_ENABLED, true);
         boolean bibliogram_enabled = sharedpreferences.getBoolean(SET_BIBLIOGRAM_ENABLED, true);
+        boolean teddit_enabled = sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
         boolean geouri_enabled = sharedpreferences.getBoolean(SET_GEO_URIS, false);
         boolean embedded_player = sharedpreferences.getBoolean(SET_EMBEDDED_PLAYER, false);
 
         enable_nitter.setChecked(nitter_enabled);
         enable_invidious.setChecked(invidious_enabled);
         enable_bibliogram.setChecked(bibliogram_enabled);
+        enable_teddit.setChecked(teddit_enabled);
         enable_osm.setChecked(osm_enabled);
         ImageButton save_instance_nitter = findViewById(R.id.button_save_instance_nitter);
         ImageButton save_instance_invidious = findViewById(R.id.button_save_instance_invidious);
         ImageButton save_instance_bibliogram = findViewById(R.id.button_save_instance_bibliogram);
+        ImageButton save_instance_teddit = findViewById(R.id.button_save_instance_teddit);
         ImageButton save_instance_osm = findViewById(R.id.button_save_instance_osm);
 
         CheckBox enable_geo_uris = findViewById(R.id.enable_geo_uris);
@@ -154,11 +167,13 @@ public class MainActivity extends AppCompatActivity {
         nitterHost = sharedpreferences.getString(SET_NITTER_HOST, null);
         invidiousHost = sharedpreferences.getString(SET_INVIDIOUS_HOST, null);
         bibliogramHost = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, null);
+        tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
         osmHost = sharedpreferences.getString(SET_OSM_HOST, null);
 
         invidious_current_group.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
         nitter_current_group.setVisibility(nitter_enabled ? View.VISIBLE : View.GONE);
         bibliogram_current_group.setVisibility(bibliogram_enabled ? View.VISIBLE : View.GONE);
+        teddit_current_group.setVisibility(bibliogram_enabled ? View.VISIBLE : View.GONE);
         osm_current_group.setVisibility((osm_enabled && geouri_enabled) ? View.VISIBLE : View.GONE);
         enable_geo_uris.setVisibility(osm_enabled ? View.VISIBLE : View.GONE);
         enable_embed_player.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
@@ -187,6 +202,14 @@ public class MainActivity extends AppCompatActivity {
             bibliogram_current_group.setVisibility(isChecked ? View.VISIBLE : View.GONE);
             bibliogram_custom_group.setVisibility(View.GONE);
             expand_instance_bibliogram.setRotation(0);
+        });
+        enable_teddit.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean(SET_TEDDIT_ENABLED, isChecked);
+            editor.apply();
+            teddit_current_group.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            teddit_custom_group.setVisibility(View.GONE);
+            expand_instance_teddit.setRotation(0);
         });
         enable_osm.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -257,6 +280,22 @@ public class MainActivity extends AppCompatActivity {
                 bibliogram_instance.setText("");
             }
         });
+        expand_instance_teddit.setOnClickListener(v -> {
+            boolean custom_instance_visibility = teddit_custom_group.getVisibility() == View.VISIBLE;
+            if (custom_instance_visibility) {
+                expand_instance_teddit.setRotation(0f);
+                teddit_custom_group.setVisibility(View.GONE);
+            } else {
+                expand_instance_teddit.setRotation(180f);
+                teddit_custom_group.setVisibility(View.VISIBLE);
+            }
+
+            if (tedditHost != null) {
+                teddit_instance.setText(tedditHost);
+            } else {
+                teddit_instance.setText("");
+            }
+        });
         expand_instance_osm.setOnClickListener(v -> {
             boolean custom_instance_visibility = osm_custom_group.getVisibility() == View.VISIBLE;
             if (custom_instance_visibility) {
@@ -292,6 +331,12 @@ public class MainActivity extends AppCompatActivity {
             current_instance_bibliogram.setText(bibliogramHost);
         } else {
             current_instance_bibliogram.setText(DEFAULT_BIBLIOGRAM_HOST);
+        }
+        if (tedditHost != null) {
+            teddit_instance.setText(tedditHost);
+            current_instance_teddit.setText(tedditHost);
+        } else {
+            current_instance_teddit.setText(DEFAULT_TEDDIT_HOST);
         }
         if (osmHost != null) {
             osm_instance.setText(osmHost);
@@ -343,6 +388,18 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 editor.putString(SET_BIBLIOGRAM_HOST, null);
                 current_instance_bibliogram.setText(DEFAULT_BIBLIOGRAM_HOST);
+            }
+            editor.apply();
+        });
+        save_instance_teddit.setOnClickListener(v -> {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            if (teddit_instance.getText() != null && teddit_instance.getText().toString().trim().length() > 0) {
+                String custom_instance = teddit_instance.getText().toString().toLowerCase().trim();
+                editor.putString(SET_TEDDIT_HOST, custom_instance);
+                current_instance_teddit.setText(custom_instance);
+            } else {
+                editor.putString(SET_TEDDIT_HOST, null);
+                current_instance_teddit.setText(DEFAULT_TEDDIT_HOST);
             }
             editor.apply();
         });
@@ -430,6 +487,15 @@ public class MainActivity extends AppCompatActivity {
                                 current_instance_bibliogram.setText(DEFAULT_BIBLIOGRAM_HOST);
                             expand_instance_bibliogram.setRotation(0f);
                             break;
+                        case SET_TEDDIT_HOST:
+                            tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
+                            teddit_custom_group.setVisibility(View.GONE);
+                            if (tedditHost != null && tedditHost.trim().length() > 0)
+                                current_instance_teddit.setText(tedditHost);
+                            else
+                                current_instance_teddit.setText(DEFAULT_TEDDIT_HOST);
+                            expand_instance_teddit.setRotation(0f);
+                            break;
                         case SET_OSM_HOST:
                             osmHost = sharedpreferences.getString(SET_OSM_HOST, null);
                             osm_custom_group.setVisibility(View.GONE);
@@ -441,7 +507,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                     }
 
-                    if (key.equals(SET_NITTER_HOST) || key.equals(SET_INVIDIOUS_HOST) || key.equals(SET_BIBLIOGRAM_HOST) || key.equals(SET_OSM_HOST)) {
+                    if (key.equals(SET_NITTER_HOST) || key.equals(SET_INVIDIOUS_HOST) || key.equals(SET_BIBLIOGRAM_HOST) || key.equals(SET_TEDDIT_HOST) || key.equals(SET_OSM_HOST)) {
                         View parentLayout = findViewById(android.R.id.content);
                         Snackbar.make(parentLayout, R.string.instances_saved, Snackbar.LENGTH_LONG).show();
                     }
@@ -501,15 +567,18 @@ public class MainActivity extends AppCompatActivity {
         TextInputEditText nitter_instance = findViewById(R.id.nitter_instance);
         TextInputEditText invidious_instance = findViewById(R.id.invidious_instance);
         TextInputEditText bibliogram_instance = findViewById(R.id.bibliogram_instance);
+        TextInputEditText teddit_instance = findViewById(R.id.teddit_instance);
 
         TextView current_instance_nitter = findViewById(R.id.current_instance_nitter);
         TextView current_instance_invidious = findViewById(R.id.current_instance_invidious);
         TextView current_instance_bibliogram = findViewById(R.id.current_instance_bibliogram);
+        TextView current_instance_teddit = findViewById(R.id.current_instance_teddit);
 
         SharedPreferences sharedpreferences = getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
         String nitterHost = sharedpreferences.getString(SET_NITTER_HOST, null);
         String invidiousHost = sharedpreferences.getString(SET_INVIDIOUS_HOST, null);
         String bibliogramHost = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, null);
+        String tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
         if (nitterHost != null) {
             nitter_instance.setText(nitterHost);
             current_instance_nitter.setText(nitterHost);
@@ -521,6 +590,10 @@ public class MainActivity extends AppCompatActivity {
         if (bibliogramHost != null) {
             bibliogram_instance.setText(bibliogramHost);
             current_instance_bibliogram.setText(bibliogramHost);
+        }
+        if (tedditHost != null) {
+            teddit_instance.setText(tedditHost);
+            current_instance_teddit.setText(tedditHost);
         }
         ConstraintLayout display_indications = findViewById(R.id.display_indications);
         if (BuildConfig.fullLinks) {

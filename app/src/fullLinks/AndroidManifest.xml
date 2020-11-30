@@ -80,6 +80,13 @@
                 <data android:host="youtube-nocookie.com" />
 
 
+                <!-- REDDIT URLs  -->
+                <data android:host="www.reddit.com" />
+                <data android:host="reddit.com" />
+                <data android:host="i.reddit.com" />
+                <data android:host="i.redd.it" />
+                <data android:host="preview.redd.it" />
+
                 <!-- INVIDIOUS INSTANCES -->
                 <data android:host="invidious.snopyta.org" />
                 <data android:host="invidiou.sh" />
@@ -149,6 +156,13 @@
                 <data android:host="youtu.be" />
                 <data android:host="youtube-nocookie.com" />
 
+
+                <!-- REDDIT URLs  -->
+                <data android:host="www.reddit.com" />
+                <data android:host="reddit.com" />
+                <data android:host="i.reddit.com" />
+                <data android:host="i.redd.it" />
+                <data android:host="preview.redd.it" />
 
                 <data android:host="*" />
 

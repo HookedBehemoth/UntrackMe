@@ -29,6 +29,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 import app.fedilab.nitterizeme.BuildConfig;
@@ -60,6 +61,15 @@ public class CheckAppActivity extends AppCompatActivity {
             "youtu.be",
             "youtube-nocookie.com"
     };
+
+    public static String[] reddit_domains = {
+            "www.reddit.com",
+            "reddit.com",
+            "i.reddit.com",
+            "i.redd.it",
+            "preview.redd.it"
+    };
+
     public static String[] shortener_domains = {
             "t.co",
             "nyti.ms",
@@ -129,6 +139,10 @@ public class CheckAppActivity extends AppCompatActivity {
             i++;
         }
         for (String host : youtube_domains) {
+            domains[i] = host;
+            i++;
+        }
+        for (String host : reddit_domains) {
             domains[i] = host;
             i++;
         }
@@ -209,33 +223,36 @@ public class CheckAppActivity extends AppCompatActivity {
 
     private ArrayList<AppInfo> getAppInfo() {
         ArrayList<AppInfo> appInfos = new ArrayList<>();
-        int j = 0;
         for (String domain : domains) {
-            if (j == 0) {
+            if (Arrays.asList(twitter_domains).contains(domain)) {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle("Twitter");
                 appInfos.add(appInfo);
-            } else if (j == twitter_domains.length) {
+            } else if (Arrays.asList(youtube_domains).contains(domain)) {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle("YouTube");
                 appInfos.add(appInfo);
-            } else if (j == twitter_domains.length + youtube_domains.length) {
+            } else if (Arrays.asList(instagram_domains).contains(domain)) {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle("Instagram");
                 appInfos.add(appInfo);
-            } else if (j == twitter_domains.length + youtube_domains.length + instagram_domains.length) {
+            } else if (Arrays.asList(reddit_domains).contains(domain)) {
+                AppInfo appInfo = new AppInfo();
+                appInfo.setTitle("Reddit");
+                appInfos.add(appInfo);
+            } else if (Arrays.asList(shortener_domains).contains(domain)) {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle(getString(R.string.shortener_services));
                 appInfos.add(appInfo);
-            } else if (j == twitter_domains.length + youtube_domains.length + instagram_domains.length + shortener_domains.length) {
+            } else if (Arrays.asList(invidious_instances).contains(domain)) {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle(getString(R.string.invidious_instances));
                 appInfos.add(appInfo);
-            } else if (j == twitter_domains.length + youtube_domains.length + instagram_domains.length + shortener_domains.length + invidious_instances.length) {
+            } else if (Arrays.asList(nitter_instances).contains(domain)) {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle(getString(R.string.nitter_instances));
                 appInfos.add(appInfo);
-            } else if (j == twitter_domains.length + youtube_domains.length + instagram_domains.length + shortener_domains.length + invidious_instances.length + nitter_instances.length) {
+            } else if (Arrays.asList(bibliogram_instances).contains(domain)) {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle(getString(R.string.bibliogram_instances));
                 appInfos.add(appInfo);
@@ -244,7 +261,6 @@ public class CheckAppActivity extends AppCompatActivity {
             appInfo.setDomain(domain);
             appInfo.setApplicationInfo(getDefaultApp("https://" + domain + "/"));
             appInfos.add(appInfo);
-            j++;
         }
         return appInfos;
     }

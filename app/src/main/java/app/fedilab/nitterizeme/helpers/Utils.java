@@ -76,6 +76,7 @@ import static app.fedilab.nitterizeme.activities.CheckAppActivity.instagram_doma
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.invidious_instances;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.nitter_instances;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.outlook_safe_domain;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.reddit_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.shortener_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.twitter_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.youtube_domains;
@@ -83,6 +84,7 @@ import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_ENA
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_EMBEDDED_PLAYER;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED;
 
 public class Utils {
 
@@ -91,6 +93,7 @@ public class Utils {
     public static final String INTENT_ACTION = "intent_action";
     public static final String LAST_USED_APP_PACKAGE = "last_used_app_package";
     public static final Pattern youtubePattern = Pattern.compile("(www\\.|m\\.)?(youtube\\.com|youtu\\.be|youtube-nocookie\\.com)/(((?!([\"'<])).)*)");
+    public static final Pattern redditPattern = Pattern.compile("(www\\.|m\\.)?(reddit\\.com|preview\\.redd\\.it)/(((?!([\"'<])).)*)");
     public static final Pattern nitterPattern = Pattern.compile("(mobile\\.|www\\.)?twitter.com([\\w-/]+)");
     public static final Pattern bibliogramPostPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(/p/[\\w-/]+)");
 
@@ -100,7 +103,7 @@ public class Utils {
     public static final String RECEIVE_STREAMING_URL = "receive_streaming_url";
     public static final Pattern outlookRedirect = Pattern.compile("(.*)safelinks\\.protection\\.outlook\\.com/?[?]?((?!url).)*url=([^&]+)");
     private static final Pattern extractPlace = Pattern.compile("/maps/place/(((?!/data).)*)");
-    private static final Pattern googleRedirect = Pattern.compile("https?://(www\\.)?google(\\.\\w{2,})?(\\.\\w{2,})/url\\?q=(.*)");
+    private static final Pattern googleRedirect = Pattern.compile("https?://(www\\.)?google(\\.\\w{2,})?(\\.\\w{2,})/url\\?(q=|q%3D)(.*)");
     private static final String[] G_TRACKING = {
             "sourceid",
             "aqs",
@@ -366,6 +369,30 @@ public class Utils {
                         newUrl = scheme + invidiousHost + "/" + youtubeId;
                     }
                     newUrl = replaceInvidiousParams(context, newUrl);
+                }
+                return newUrl;
+            } else {
+                return url;
+            }
+        } else if (Arrays.asList(reddit_domains).contains(host)) { //Reddit URL
+            boolean teddit_enabled = sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
+            if (teddit_enabled) {
+                String tedditHost = sharedpreferences.getString(SET_TEDDIT_ENABLED, MainActivity.DEFAULT_TEDDIT_HOST);
+                assert tedditHost != null;
+                tedditHost = tedditHost.toLowerCase();
+                if (tedditHost.startsWith("http")) {
+                    scheme = "";
+                }
+                Matcher matcher = redditPattern.matcher(url);
+                while (matcher.find()) {
+                    String redditPath = matcher.group(3);
+                    if (Objects.requireNonNull(matcher.group(2)).compareTo("preview.redd.it") == 0 ||
+                            Objects.requireNonNull(matcher.group(2)).compareTo("i.redd.it") == 0
+                    ) {
+                        newUrl = scheme + tedditHost + "/pics/w:null_" + redditPath.split("\\?")[0];
+                    } else {
+                        newUrl = scheme + tedditHost + "/" + redditPath;
+                    }
                 }
                 return newUrl;
             } else {
@@ -663,7 +690,11 @@ public class Utils {
             try {
                 Matcher matcher = googleRedirect.matcher(url);
                 if (matcher.find()) {
-                    url = matcher.group(4);
+                    url = matcher.group(5);
+                }
+                matcher = googleRedirect.matcher(url);
+                if (matcher.find()) {
+                    url = matcher.group(5);
                 }
                 URL redirectURL = new URL(url);
                 String host = redirectURL.getHost();
@@ -883,7 +914,7 @@ public class Utils {
      * @param extraText String text when sharing content
      * @param scheme    String scheme of the URL
      */
-    public static void manageShortenedShare(Context context, String url, String extraText, String scheme) {
+    public static void manageShortenedShare(Context context, String url, String extraText, final String scheme) {
         ArrayList<String> notShortnedURLDialog = new ArrayList<>();
         Thread thread = new Thread() {
             @Override
@@ -903,6 +934,7 @@ public class Utils {
                 boolean nitter_enabled = sharedpreferences.getBoolean(SET_NITTER_ENABLED, true);
                 boolean invidious_enabled = sharedpreferences.getBoolean(SET_INVIDIOUS_ENABLED, true);
                 boolean osm_enabled = sharedpreferences.getBoolean(MainActivity.SET_OSM_ENABLED, true);
+                boolean teddit_enabled = sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
                 if (nitter_enabled && Arrays.asList(twitter_domains).contains(host)) {
                     Matcher matcher = nitterPattern.matcher(notShortnedURLDialog.get(notShortnedURLDialog.size() - 1));
                     String newUrlFinal = notShortnedURLDialog.get(notShortnedURLDialog.size() - 1);
@@ -933,6 +965,28 @@ public class Utils {
                             newUrlFinal = scheme + invidiousHost + "/" + youtubeId;
                         }
                         newUrlFinal = replaceInvidiousParams(context, newUrlFinal);
+                    }
+                    String newExtraText = extraText.replaceAll(Pattern.quote(url), Matcher.quoteReplacement(newUrlFinal));
+                    Intent sendIntent = new Intent();
+                    sendIntent.setAction(Intent.ACTION_SEND);
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, newExtraText);
+                    sendIntent.setType("text/plain");
+                    forwardToBrowser(context, sendIntent);
+                } else if (teddit_enabled && Arrays.asList(reddit_domains).contains(host)) {
+                    Matcher matcher = redditPattern.matcher(url);
+                    String newUrlFinal = notShortnedURLDialog.get(notShortnedURLDialog.size() - 1);
+                    while (matcher.find()) {
+                        String redditPath = matcher.group(3);
+                        String tedditHost = sharedpreferences.getString(MainActivity.SET_TEDDIT_HOST, MainActivity.DEFAULT_TEDDIT_HOST);
+                        assert tedditHost != null;
+                        tedditHost = tedditHost.toLowerCase();
+                        if (Objects.requireNonNull(matcher.group(2)).compareTo("preview.redd.it") == 0 ||
+                                Objects.requireNonNull(matcher.group(2)).compareTo("i.redd.it") == 0
+                        ) {
+                            newUrlFinal = scheme + tedditHost + "/pics/w:null_" + redditPath.split("\\?")[0];
+                        } else {
+                            newUrlFinal = scheme + tedditHost + "/" + redditPath;
+                        }
                     }
                     String newExtraText = extraText.replaceAll(Pattern.quote(url), Matcher.quoteReplacement(newUrlFinal));
                     Intent sendIntent = new Intent();
@@ -1069,7 +1123,7 @@ public class Utils {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        return Arrays.asList(twitter_domains).contains(host) || Arrays.asList(nitter_instances).contains(host)
+        return Arrays.asList(twitter_domains).contains(host) || Arrays.asList(nitter_instances).contains(host) || Arrays.asList(reddit_domains).contains(host)
                 || Arrays.asList(instagram_domains).contains(host) || Arrays.asList(bibliogram_instances).contains(host)
                 || url.contains("/maps/place") || url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain))
                 || Arrays.asList(youtube_domains).contains(host) || Arrays.asList(invidious_instances).contains(host);
@@ -1094,6 +1148,8 @@ public class Utils {
             return sharedpreferences.getBoolean(MainActivity.SET_OSM_ENABLED, true);
         } else if (Arrays.asList(youtube_domains).contains(host) || Arrays.asList(invidious_instances).contains(host)) {
             return sharedpreferences.getBoolean(SET_INVIDIOUS_ENABLED, true);
+        } else if (Arrays.asList(reddit_domains).contains(host)) {
+            return sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
         } else
             return url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain));
     }

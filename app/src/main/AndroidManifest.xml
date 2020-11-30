@@ -75,6 +75,13 @@
                 <data android:host="youtube-nocookie.com" />
 
 
+                <!-- REDDIT URLs  -->
+                <data android:host="www.reddit.com" />
+                <data android:host="reddit.com" />
+                <data android:host="i.reddit.com" />
+                <data android:host="i.redd.it" />
+                <data android:host="preview.redd.it" />
+
                 <data android:pathPattern=".*" />
                 <data android:scheme="https" />
                 <data android:scheme="http" />
@@ -117,6 +124,13 @@
                 <data android:host="youtu.be" />
                 <data android:host="youtube-nocookie.com" />
 
+
+                <!-- REDDIT URLs  -->
+                <data android:host="www.reddit.com" />
+                <data android:host="reddit.com" />
+                <data android:host="i.reddit.com" />
+                <data android:host="i.redd.it" />
+                <data android:host="preview.redd.it" />
 
                 <data android:mimeType="text/plain" />
             </intent-filter>

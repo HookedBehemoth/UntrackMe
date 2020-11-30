@@ -348,7 +348,7 @@
             style="@style/containerCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/osm_container"
+            app:layout_constraintBottom_toTopOf="@id/teddit_container"
             app:layout_constraintTop_toBottomOf="@id/invidious_container">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -486,12 +486,154 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/teddit_container"
+            style="@style/containerCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/osm_container"
+            app:layout_constraintTop_toBottomOf="@id/bibliogram_container">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guide_teddit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="40dp" />
+
+                <View
+                    android:id="@+id/top_part_bg_teddit"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/topBar"
+                    app:layout_constraintBottom_toBottomOf="@id/guide_teddit"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/teddit_indications"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/redirect_reddit_to_teddit"
+                    app:layout_constraintBottom_toBottomOf="@id/guide_teddit"
+                    app:layout_constraintEnd_toStartOf="@id/enable_teddit"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/enable_teddit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintBottom_toBottomOf="@id/guide_teddit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/button_expand_instance_teddit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@null"
+                    android:contentDescription="@string/expand_instance_details"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_expand_more"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/guide_teddit" />
+
+                <TextView
+                    android:id="@+id/label_instance_teddit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="@dimen/label_instance_margin_start"
+                    android:layout_marginLeft="@dimen/label_instance_margin_start"
+                    android:gravity="center_vertical"
+                    android:text="@string/instance_label"
+                    app:layout_constraintStart_toEndOf="@id/button_expand_instance_teddit"
+                    app:layout_constraintTop_toTopOf="@id/guide_teddit" />
+
+                <TextView
+                    android:id="@+id/current_instance_teddit"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center_vertical"
+                    android:textColor="#fff"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/label_instance_teddit"
+                    app:layout_constraintTop_toTopOf="@id/guide_teddit" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier_teddit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="label_instance_teddit,current_instance_teddit,button_expand_instance_teddit" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/teddit_instance_container"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/button_save_instance_teddit"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barrier_teddit">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/teddit_instance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/custom_teddit"
+                        android:inputType="textUri"
+                        android:maxLines="1"
+                        android:textSize="@dimen/custom_instance_input_text_size" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/button_save_instance_teddit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:background="@null"
+                    android:contentDescription="@string/save"
+                    android:src="@drawable/ic_save"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/barrier_teddit" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_current_teddit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="label_instance_teddit,current_instance_teddit,button_expand_instance_teddit" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_custom_teddit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="teddit_instance_container,button_save_instance_teddit" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/osm_container"
             style="@style/containerCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/buttons_container"
-            app:layout_constraintTop_toBottomOf="@id/bibliogram_container">
+            app:layout_constraintTop_toBottomOf="@id/teddit_container">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -643,6 +785,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/buttons_container"
