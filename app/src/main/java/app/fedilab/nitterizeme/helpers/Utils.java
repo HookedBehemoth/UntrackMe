@@ -85,6 +85,7 @@ import static app.fedilab.nitterizeme.activities.MainActivity.SET_EMBEDDED_PLAYE
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
 
 public class Utils {
 
@@ -93,7 +94,7 @@ public class Utils {
     public static final String INTENT_ACTION = "intent_action";
     public static final String LAST_USED_APP_PACKAGE = "last_used_app_package";
     public static final Pattern youtubePattern = Pattern.compile("(www\\.|m\\.)?(youtube\\.com|youtu\\.be|youtube-nocookie\\.com)/(((?!([\"'<])).)*)");
-    public static final Pattern redditPattern = Pattern.compile("(www\\.|m\\.)?(reddit\\.com|preview\\.redd\\.it)/(((?!([\"'<])).)*)");
+    public static final Pattern redditPattern = Pattern.compile("(www\\.|m\\.)?(reddit\\.com|preview\\.redd\\.it|i\\.redd\\.it)/(((?!([\"'<])).)*)");
     public static final Pattern nitterPattern = Pattern.compile("(mobile\\.|www\\.)?twitter.com([\\w-/]+)");
     public static final Pattern bibliogramPostPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(/p/[\\w-/]+)");
 
@@ -377,7 +378,7 @@ public class Utils {
         } else if (Arrays.asList(reddit_domains).contains(host)) { //Reddit URL
             boolean teddit_enabled = sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
             if (teddit_enabled) {
-                String tedditHost = sharedpreferences.getString(SET_TEDDIT_ENABLED, MainActivity.DEFAULT_TEDDIT_HOST);
+                String tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, MainActivity.DEFAULT_TEDDIT_HOST);
                 assert tedditHost != null;
                 tedditHost = tedditHost.toLowerCase();
                 if (tedditHost.startsWith("http")) {
@@ -389,7 +390,7 @@ public class Utils {
                     if (Objects.requireNonNull(matcher.group(2)).compareTo("preview.redd.it") == 0 ||
                             Objects.requireNonNull(matcher.group(2)).compareTo("i.redd.it") == 0
                     ) {
-                        newUrl = scheme + tedditHost + "/pics/w:null_" + redditPath.split("\\?")[0];
+                        newUrl = scheme + tedditHost + "/pics/w:null_" + (redditPath != null ? redditPath.split("\\?|%26")[0] : "null");
                     } else {
                         newUrl = scheme + tedditHost + "/" + redditPath;
                     }

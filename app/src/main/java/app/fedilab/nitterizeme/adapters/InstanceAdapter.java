@@ -21,10 +21,6 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,6 +30,7 @@ import java.util.List;
 import java.util.Locale;
 
 import app.fedilab.nitterizeme.R;
+import app.fedilab.nitterizeme.databinding.DrawerInstanceBinding;
 import app.fedilab.nitterizeme.entities.Instance;
 import app.fedilab.nitterizeme.helpers.Utils;
 
@@ -62,9 +59,8 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
-        Context context = parent.getContext();
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-        return new ViewHolder(layoutInflater.inflate(R.layout.drawer_instance, parent, false));
+        DrawerInstanceBinding itemBinding = DrawerInstanceBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        return new ViewHolder(itemBinding);
     }
 
     @Override
@@ -77,34 +73,34 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         //Reset checked instances by type when tipping
 
 
-        holder.checkbox_instance.setText(instance.getDomain());
+        holder.binding.checkboxInstance.setText(instance.getDomain());
         if (instance.getLatency() == -1) {
-            holder.latency.setVisibility(View.GONE);
-            holder.progress.setVisibility(View.GONE);
+            holder.binding.latency.setVisibility(View.GONE);
+            holder.binding.progress.setVisibility(View.GONE);
         } else if (instance.getLatency() == 0) {
-            holder.latency.setVisibility(View.GONE);
-            holder.progress.setVisibility(View.VISIBLE);
+            holder.binding.latency.setVisibility(View.GONE);
+            holder.binding.progress.setVisibility(View.VISIBLE);
         } else if (instance.getLatency() == -2) {
-            holder.latency.setText(R.string.error);
-            holder.latency.setVisibility(View.GONE);
-            holder.progress.setVisibility(View.VISIBLE);
+            holder.binding.latency.setText(R.string.error);
+            holder.binding.latency.setVisibility(View.GONE);
+            holder.binding.progress.setVisibility(View.VISIBLE);
         } else {
-            holder.latency.setText(String.format(Locale.getDefault(), "%d ms", instance.getLatency()));
-            holder.latency.setVisibility(View.VISIBLE);
-            holder.progress.setVisibility(View.GONE);
+            holder.binding.latency.setText(String.format(Locale.getDefault(), "%d ms", instance.getLatency()));
+            holder.binding.latency.setVisibility(View.VISIBLE);
+            holder.binding.progress.setVisibility(View.GONE);
         }
 
-        holder.locale.setText(instance.getLocale());
+        holder.binding.locale.setText(instance.getLocale());
         if (instance.isCloudflare()) {
-            holder.useCloudflare.setVisibility(View.VISIBLE);
-            holder.useCloudflare.setOnClickListener(v -> Toast.makeText(context, R.string.cloudflare, Toast.LENGTH_SHORT).show());
+            holder.binding.useCloudflare.setVisibility(View.VISIBLE);
+            holder.binding.useCloudflare.setOnClickListener(v -> Toast.makeText(context, R.string.cloudflare, Toast.LENGTH_SHORT).show());
         } else {
-            holder.useCloudflare.setVisibility(View.GONE);
+            holder.binding.useCloudflare.setVisibility(View.GONE);
         }
 
-        holder.checkbox_instance.setChecked(instance.isChecked());
+        holder.binding.checkboxInstance.setChecked(instance.isChecked());
 
-        holder.checkbox_instance.setOnClickListener(v -> {
+        holder.binding.checkboxInstance.setOnClickListener(v -> {
 
             boolean isChecked = !instance.isChecked();
             for (Instance _ins : instances) {
@@ -138,6 +134,7 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     editor.apply();
                     break;
             }
+
             instanceAdapter.notifyItemRangeChanged(0, instances.size());
         });
 
@@ -176,18 +173,11 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        RadioButton checkbox_instance;
-        TextView latency, locale;
-        ProgressBar progress;
-        ImageView useCloudflare;
+        DrawerInstanceBinding binding;
 
-        ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            checkbox_instance = itemView.findViewById(R.id.checkbox_instance);
-            latency = itemView.findViewById(R.id.latency);
-            progress = itemView.findViewById(R.id.progress);
-            locale = itemView.findViewById(R.id.locale);
-            useCloudflare = itemView.findViewById(R.id.use_cloudflare);
+        ViewHolder(@NonNull DrawerInstanceBinding itemView) {
+            super(itemView.getRoot());
+            binding = itemView;
         }
     }
 

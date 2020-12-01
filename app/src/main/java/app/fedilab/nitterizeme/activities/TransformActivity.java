@@ -77,7 +77,7 @@ public class TransformActivity extends Activity {
                     Intent delegate = new Intent(Intent.ACTION_VIEW);
                     String transformedURL = transformUrl(TransformActivity.this, url);
                     if (transformedURL != null) {
-                        delegate.setData(Uri.parse(transformUrl(TransformActivity.this, url)));
+                        delegate.setData(Uri.parse(transformedURL));
                         delegate.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         if (BuildConfig.fullLinks) {
                             forwardToBrowser(TransformActivity.this, delegate);

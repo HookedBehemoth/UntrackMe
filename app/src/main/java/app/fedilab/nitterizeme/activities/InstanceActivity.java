@@ -110,6 +110,9 @@ public class InstanceActivity extends AppCompatActivity {
                 instance.setLocale("--");
                 bibliogramInstances.add(0, instance);
             }
+            binding.instanceContainer.setVisibility(View.VISIBLE);
+            binding.loader.setVisibility(View.GONE);
+
 
             final LinearLayoutManager iLayoutManager = new LinearLayoutManager(this);
             InstanceAdapter invidiousAdapter = new InstanceAdapter(invidiousInstances);
@@ -136,6 +139,7 @@ public class InstanceActivity extends AppCompatActivity {
                     }
             );
 
+
             binding.instanceInfo.setOnClickListener(v -> {
                 AlertDialog.Builder instanceInfo = new AlertDialog.Builder(this);
                 instanceInfo.setTitle(R.string.about_instances_title);
@@ -151,8 +155,6 @@ public class InstanceActivity extends AppCompatActivity {
             binding.close.setOnClickListener(v -> finish());
 
 
-            binding.instanceContainer.setVisibility(View.VISIBLE);
-            binding.loader.setVisibility(View.GONE);
         });
     }
 

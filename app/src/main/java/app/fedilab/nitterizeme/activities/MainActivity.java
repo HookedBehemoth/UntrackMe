@@ -30,9 +30,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import com.google.android.material.snackbar.Snackbar;
-
 
 import java.util.List;
 import java.util.Objects;
