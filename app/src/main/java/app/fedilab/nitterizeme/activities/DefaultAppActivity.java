@@ -20,16 +20,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 import app.fedilab.nitterizeme.R;
 import app.fedilab.nitterizeme.adapters.DefaultAppAdapter;
+import app.fedilab.nitterizeme.databinding.ActivityDefaultAppBinding;
 import app.fedilab.nitterizeme.entities.DefaultApp;
 import app.fedilab.nitterizeme.helpers.Utils;
 import app.fedilab.nitterizeme.sqlite.DefaultAppDAO;
@@ -42,7 +41,9 @@ public class DefaultAppActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_default_app);
+        ActivityDefaultAppBinding binding = ActivityDefaultAppBinding.inflate(getLayoutInflater());
+        View viewRoot = binding.getRoot();
+        setContentView(viewRoot);
 
 
         setTitle(R.string.default_apps);
@@ -51,18 +52,16 @@ public class DefaultAppActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        RecyclerView list_apps = findViewById(R.id.list_apps);
         final LinearLayoutManager mLayoutManager;
         mLayoutManager = new LinearLayoutManager(DefaultAppActivity.this);
-        list_apps.setLayoutManager(mLayoutManager);
-        list_apps.setNestedScrollingEnabled(false);
+        binding.listApps.setLayoutManager(mLayoutManager);
+        binding.listApps.setNestedScrollingEnabled(false);
 
         ArrayList<DefaultApp> appInfos = getAppInfo();
         DefaultAppAdapter defaultAppAdapter = new DefaultAppAdapter(appInfos);
-        list_apps.setAdapter(defaultAppAdapter);
+        binding.listApps.setAdapter(defaultAppAdapter);
         if (appInfos.size() == 0) {
-            TextView no_apps = findViewById(R.id.no_apps);
-            no_apps.setVisibility(View.VISIBLE);
+            binding.noApps.setVisibility(View.VISIBLE);
         }
     }
 
@@ -73,7 +72,9 @@ public class DefaultAppActivity extends AppCompatActivity {
             finish();
             return true;
         }
+
         return super.onOptionsItemSelected(item);
+
     }
 
 

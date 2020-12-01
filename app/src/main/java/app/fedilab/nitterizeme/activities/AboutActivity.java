@@ -23,29 +23,30 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.UnderlineSpan;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
+import android.view.View;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import app.fedilab.nitterizeme.BuildConfig;
 import app.fedilab.nitterizeme.R;
+import app.fedilab.nitterizeme.databinding.ActivityAboutBinding;
 
 
 public class AboutActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        ActivityAboutBinding binding = ActivityAboutBinding.inflate(getLayoutInflater());
+        View viewRoot = binding.getRoot();
+        setContentView(viewRoot);
 
-        TextView about_version = findViewById(R.id.about_version);
         try {
             PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
             String version = pInfo.versionName;
-            about_version.setText(getResources().getString(R.string.about_vesrion, version));
+            binding.aboutVersion.setText(getResources().getString(R.string.about_vesrion, version));
         } catch (PackageManager.NameNotFoundException ignored) {
         }
 
@@ -55,77 +56,70 @@ public class AboutActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
         //Developer click for Mastodon account
-        TextView developer_mastodon = findViewById(R.id.developer_mastodon);
-        SpannableString content = new SpannableString(developer_mastodon.getText().toString());
+
+        SpannableString content = new SpannableString(binding.developerMastodon.getText().toString());
         content.setSpan(new ForegroundColorSpan(ContextCompat.getColor(AboutActivity.this, R.color.colorAccent)), 0, content.length(), 0);
-        developer_mastodon.setText(content);
-        developer_mastodon.setOnClickListener(v -> {
+        binding.developerMastodon.setText(content);
+        binding.developerMastodon.setOnClickListener(v -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://toot.fedilab.app/@UntrackMe"));
             startActivity(browserIntent);
         });
 
         //App Name:
-        TextView app_name = findViewById(R.id.app_name);
+
         if (BuildConfig.fullLinks) {
-            app_name.setText(R.string.app_name);
+            binding.appName.setText(R.string.app_name);
         } else {
-            app_name.setText(R.string.app_name_lite);
+            binding.appName.setText(R.string.app_name_lite);
         }
 
         //Developer Github
-        TextView github = findViewById(R.id.github);
-        content = new SpannableString(github.getText().toString());
+        content = new SpannableString(binding.github.getText().toString());
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        github.setText(content);
-        github.setOnClickListener(v -> {
+        binding.github.setText(content);
+        binding.github.setOnClickListener(v -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/stom79"));
             startActivity(browserIntent);
         });
 
         //Developer Framagit
-        TextView framagit = findViewById(R.id.framagit);
-        content = new SpannableString(framagit.getText().toString());
+        content = new SpannableString(binding.framagit.getText().toString());
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        framagit.setText(content);
-        framagit.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://framagit.org/tom79"));
+        binding.framagit.setText(content);
+        binding.framagit.setOnClickListener(v -> {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://frafinmagit.org/tom79"));
             startActivity(browserIntent);
         });
 
         //Developer Codeberg
-        TextView codeberg = findViewById(R.id.codeberg);
-        content = new SpannableString(codeberg.getText().toString());
+        content = new SpannableString(binding.codeberg.getText().toString());
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        codeberg.setText(content);
-        codeberg.setOnClickListener(v -> {
+        binding.codeberg.setText(content);
+        binding.codeberg.setOnClickListener(v -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://codeberg.org/tom79"));
             startActivity(browserIntent);
         });
 
         //Developer donation
-        Button donatePaypal = findViewById(R.id.donate_paypal);
-        donatePaypal.setOnClickListener(v -> {
+        binding.donatePaypal.setOnClickListener(v -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.paypal.me/Mastalab"));
             startActivity(browserIntent);
         });
-        Button donateLiberapay = findViewById(R.id.donate_liberapay);
-        donateLiberapay.setOnClickListener(v -> {
+        binding.donateLiberapay.setOnClickListener(v -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://liberapay.com/tom79"));
             startActivity(browserIntent);
         });
 
-        Button how_to = findViewById(R.id.how_to);
-        how_to.setOnClickListener(v -> {
+        binding.howTo.setOnClickListener(v -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://fedilab.app/wiki/untrackme/"));
             startActivity(browserIntent);
         });
 
-        TextView license = findViewById(R.id.license);
-        content = new SpannableString(license.getText().toString());
+        content = new SpannableString(binding.license.getText().toString());
         content.setSpan(new ForegroundColorSpan(ContextCompat.getColor(AboutActivity.this, R.color.colorAccent)), 0, content.length(), 0);
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        license.setText(content);
-        license.setOnClickListener(v -> {
+        binding.license.setText(content);
+        binding.license.setOnClickListener(v -> {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.gnu.org/licenses/quick-guide-gplv3.fr.html"));
             startActivity(browserIntent);
         });

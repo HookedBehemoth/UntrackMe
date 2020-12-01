@@ -26,19 +26,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import app.fedilab.nitterizeme.R;
 import app.fedilab.nitterizeme.adapters.AppPickerAdapter;
+import app.fedilab.nitterizeme.databinding.ActivityPickupAppBinding;
 import app.fedilab.nitterizeme.entities.AppPicker;
 import app.fedilab.nitterizeme.helpers.Utils;
 import app.fedilab.nitterizeme.sqlite.DefaultAppDAO;
@@ -62,7 +57,9 @@ public class AppsPickerActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pickup_app);
+        ActivityPickupAppBinding binding = ActivityPickupAppBinding.inflate(getLayoutInflater());
+        View viewRoot = binding.getRoot();
+        setContentView(viewRoot);
         if (getIntent() == null) {
             finish();
         }
@@ -102,8 +99,8 @@ public class AppsPickerActivity extends Activity {
 
 
         SQLiteDatabase db = Sqlite.getInstance(getApplicationContext(), Sqlite.DB_NAME, null, Sqlite.DB_VERSION).open();
-        View blank = findViewById(R.id.blank);
-        blank.setOnClickListener(v -> finish());
+
+        binding.blank.setOnClickListener(v -> finish());
         String thisPackageName = getApplicationContext().getPackageName();
         ArrayList<String> packages = new ArrayList<>();
         List<AppPicker> appPickers = new ArrayList<>();
@@ -132,8 +129,8 @@ public class AppsPickerActivity extends Activity {
             }
         }
         String defaultApp = new DefaultAppDAO(AppsPickerActivity.this, db).getDefault(packages);
-        TextView urlText = findViewById(R.id.url);
-        urlText.setText(url);
+
+        binding.url.setText(url);
 
         if (defaultApp != null) {
             Intent intent = new Intent(action, Uri.parse(url));
@@ -142,13 +139,11 @@ public class AppsPickerActivity extends Activity {
             finish();
             return;
         } else {
-            ConstraintLayout app_container = findViewById(R.id.app_container);
-            app_container.setVisibility(View.VISIBLE);
-            GridView gridView = findViewById(R.id.app_list);
+            binding.appContainer.setVisibility(View.VISIBLE);
             AppPickerAdapter appPickerAdapter = new AppPickerAdapter(appPickers);
-            gridView.setAdapter(appPickerAdapter);
-            gridView.setNumColumns(3);
-            gridView.setOnItemClickListener((parent, view1, position, id) -> {
+            binding.appList.setAdapter(appPickerAdapter);
+            binding.appList.setNumColumns(3);
+            binding.appList.setOnItemClickListener((parent, view1, position, id) -> {
                 if (!appPickers.get(position).isSelected()) {
                     for (AppPicker ap : appPickers) {
                         ap.setSelected(false);
@@ -178,10 +173,7 @@ public class AppsPickerActivity extends Activity {
             });
 
 
-            Button always = findViewById(R.id.always);
-            Button once = findViewById(R.id.once);
-
-            always.setOnClickListener(v -> {
+            binding.always.setOnClickListener(v -> {
 
                 boolean isPresent = new DefaultAppDAO(AppsPickerActivity.this, db).isPresent(appToUse);
                 long val = -1;
@@ -210,7 +202,7 @@ public class AppsPickerActivity extends Activity {
                 finish();
             });
 
-            once.setOnClickListener(v -> {
+            binding.once.setOnClickListener(v -> {
                 if (action.compareTo(Intent.ACTION_VIEW) == 0) {
                     Intent intent = new Intent(action, Uri.parse(url));
                     intent.setPackage(appToUse);
@@ -229,8 +221,7 @@ public class AppsPickerActivity extends Activity {
             });
         }
 
-        ImageView copyLink = findViewById(R.id.copy_link);
-        copyLink.setOnClickListener(v -> {
+        binding.copyLink.setOnClickListener(v -> {
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData clipData = ClipData.newPlainText("", url);
             assert clipboard != null;

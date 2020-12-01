@@ -15,6 +15,10 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
+    buildFeatures {
+        viewBinding = true
+    }
+
     productFlavors {
         fullLinks {
             applicationId "app.fedilab.nitterizeme"

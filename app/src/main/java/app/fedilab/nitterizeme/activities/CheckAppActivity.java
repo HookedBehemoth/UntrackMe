@@ -23,10 +23,10 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,6 +35,7 @@ import java.util.Objects;
 import app.fedilab.nitterizeme.BuildConfig;
 import app.fedilab.nitterizeme.R;
 import app.fedilab.nitterizeme.adapters.AppInfoAdapter;
+import app.fedilab.nitterizeme.databinding.ActivityCheckAppBinding;
 import app.fedilab.nitterizeme.entities.AppInfo;
 
 
@@ -114,13 +115,16 @@ public class CheckAppActivity extends AppCompatActivity {
 
     public static String outlook_safe_domain = "safelinks.protection.outlook.com";
 
-    private RecyclerView list_apps;
     private String[] domains;
+    private ActivityCheckAppBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_app);
+        binding = ActivityCheckAppBinding.inflate(getLayoutInflater());
+        View viewRoot = binding.getRoot();
+        setContentView(viewRoot);
 
 
         setTitle(R.string.check_apps);
@@ -168,26 +172,23 @@ public class CheckAppActivity extends AppCompatActivity {
                 i++;
             }
         }
-        list_apps = findViewById(R.id.list_apps);
 
         final LinearLayoutManager mLayoutManager;
         mLayoutManager = new LinearLayoutManager(CheckAppActivity.this);
-        list_apps.setLayoutManager(mLayoutManager);
-        list_apps.setNestedScrollingEnabled(false);
+        binding.listApps.setLayoutManager(mLayoutManager);
+        binding.listApps.setNestedScrollingEnabled(false);
     }
 
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (list_apps != null) {
-            int position = ((LinearLayoutManager) Objects.requireNonNull(list_apps.getLayoutManager()))
-                    .findFirstVisibleItemPosition();
-            ArrayList<AppInfo> appInfos = getAppInfo();
-            AppInfoAdapter appInfoAdapter = new AppInfoAdapter(appInfos);
-            list_apps.setAdapter(appInfoAdapter);
-            list_apps.scrollToPosition(position);
-        }
+        int position = ((LinearLayoutManager) Objects.requireNonNull(binding.listApps.getLayoutManager()))
+                .findFirstVisibleItemPosition();
+        ArrayList<AppInfo> appInfos = getAppInfo();
+        AppInfoAdapter appInfoAdapter = new AppInfoAdapter(appInfos);
+        binding.listApps.setAdapter(appInfoAdapter);
+        binding.listApps.scrollToPosition(position);
     }
 
     @Override

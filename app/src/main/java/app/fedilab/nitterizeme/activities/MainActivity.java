@@ -27,25 +27,20 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.Group;
+
 
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputEditText;
+
 
 import java.util.List;
 import java.util.Objects;
 
 import app.fedilab.nitterizeme.BuildConfig;
 import app.fedilab.nitterizeme.R;
+import app.fedilab.nitterizeme.databinding.ActivityMainBinding;
+import app.fedilab.nitterizeme.databinding.ContentMainBinding;
 
 import static app.fedilab.nitterizeme.helpers.Utils.KILL_ACTIVITY;
 
@@ -87,58 +82,20 @@ public class MainActivity extends AppCompatActivity {
     private String bibliogramHost;
     private String tedditHost;
     private String osmHost;
+    private ContentMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        app.fedilab.nitterizeme.databinding.ActivityMainBinding bindingTop = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ContentMainBinding.inflate(getLayoutInflater());
+        View viewRoot = binding.getRoot();
+        setContentView(viewRoot);
+        setSupportActionBar(bindingTop.toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         SharedPreferences sharedpreferences = getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
-
-        TextView current_instance_nitter = findViewById(R.id.current_instance_nitter);
-        TextView current_instance_invidious = findViewById(R.id.current_instance_invidious);
-        TextView current_instance_bibliogram = findViewById(R.id.current_instance_bibliogram);
-        TextView current_instance_teddit = findViewById(R.id.current_instance_teddit);
-        TextView current_instance_osm = findViewById(R.id.current_instance_osm);
-
-
-        TextInputEditText nitter_instance = findViewById(R.id.nitter_instance);
-        TextInputEditText invidious_instance = findViewById(R.id.invidious_instance);
-        TextInputEditText bibliogram_instance = findViewById(R.id.bibliogram_instance);
-        TextInputEditText teddit_instance = findViewById(R.id.teddit_instance);
-        TextInputEditText osm_instance = findViewById(R.id.osm_instance);
-
-
-        Group invidious_current_group = findViewById(R.id.group_current_invidious);
-        Group nitter_current_group = findViewById(R.id.group_current_nitter);
-        Group bibliogram_current_group = findViewById(R.id.group_current_bibliogram);
-        Group teddit_current_group = findViewById(R.id.group_current_teddit);
-        Group osm_current_group = findViewById(R.id.group_current_osm);
-
-
-        Group invidious_custom_group = findViewById(R.id.group_custom_invidious);
-        Group nitter_custom_group = findViewById(R.id.group_custom_nitter);
-        Group bibliogram_custom_group = findViewById(R.id.group_custom_bibliogram);
-        Group teddit_custom_group = findViewById(R.id.group_custom_teddit);
-        Group osm_custom_group = findViewById(R.id.group_custom_osm);
-
-
-        SwitchCompat enable_nitter = findViewById(R.id.enable_nitter);
-        SwitchCompat enable_invidious = findViewById(R.id.enable_invidious);
-        SwitchCompat enable_bibliogram = findViewById(R.id.enable_bibliogram);
-        SwitchCompat enable_teddit = findViewById(R.id.enable_teddit);
-        SwitchCompat enable_osm = findViewById(R.id.enable_osm);
-
-
-        ImageButton expand_instance_nitter = findViewById(R.id.button_expand_instance_nitter);
-        ImageButton expand_instance_invidious = findViewById(R.id.button_expand_instance_invidious);
-        ImageButton expand_instance_bibliogram = findViewById(R.id.button_expand_instance_bibliogram);
-        ImageButton expand_instance_teddit = findViewById(R.id.button_expand_instance_teddit);
-        ImageButton expand_instance_osm = findViewById(R.id.button_expand_instance_osm);
 
 
         boolean nitter_enabled = sharedpreferences.getBoolean(SET_NITTER_ENABLED, true);
@@ -149,19 +106,11 @@ public class MainActivity extends AppCompatActivity {
         boolean geouri_enabled = sharedpreferences.getBoolean(SET_GEO_URIS, false);
         boolean embedded_player = sharedpreferences.getBoolean(SET_EMBEDDED_PLAYER, false);
 
-        enable_nitter.setChecked(nitter_enabled);
-        enable_invidious.setChecked(invidious_enabled);
-        enable_bibliogram.setChecked(bibliogram_enabled);
-        enable_teddit.setChecked(teddit_enabled);
-        enable_osm.setChecked(osm_enabled);
-        ImageButton save_instance_nitter = findViewById(R.id.button_save_instance_nitter);
-        ImageButton save_instance_invidious = findViewById(R.id.button_save_instance_invidious);
-        ImageButton save_instance_bibliogram = findViewById(R.id.button_save_instance_bibliogram);
-        ImageButton save_instance_teddit = findViewById(R.id.button_save_instance_teddit);
-        ImageButton save_instance_osm = findViewById(R.id.button_save_instance_osm);
-
-        CheckBox enable_geo_uris = findViewById(R.id.enable_geo_uris);
-        CheckBox enable_embed_player = findViewById(R.id.enable_embed_player);
+        binding.enableNitter.setChecked(nitter_enabled);
+        binding.enableInvidious.setChecked(invidious_enabled);
+        binding.enableBibliogram.setChecked(bibliogram_enabled);
+        binding.enableTeddit.setChecked(teddit_enabled);
+        binding.enableOsm.setChecked(osm_enabled);
 
 
         nitterHost = sharedpreferences.getString(SET_NITTER_HOST, null);
@@ -170,288 +119,284 @@ public class MainActivity extends AppCompatActivity {
         tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
         osmHost = sharedpreferences.getString(SET_OSM_HOST, null);
 
-        invidious_current_group.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
-        nitter_current_group.setVisibility(nitter_enabled ? View.VISIBLE : View.GONE);
-        bibliogram_current_group.setVisibility(bibliogram_enabled ? View.VISIBLE : View.GONE);
-        teddit_current_group.setVisibility(bibliogram_enabled ? View.VISIBLE : View.GONE);
-        osm_current_group.setVisibility((osm_enabled && geouri_enabled) ? View.VISIBLE : View.GONE);
-        enable_geo_uris.setVisibility(osm_enabled ? View.VISIBLE : View.GONE);
-        enable_embed_player.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
+        binding.groupCurrentInvidious.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
+        binding.groupCurrentNitter.setVisibility(nitter_enabled ? View.VISIBLE : View.GONE);
+        binding.groupCurrentBibliogram.setVisibility(bibliogram_enabled ? View.VISIBLE : View.GONE);
+        binding.groupCurrentTeddit.setVisibility(bibliogram_enabled ? View.VISIBLE : View.GONE);
+        binding.groupCurrentOsm.setVisibility((osm_enabled && geouri_enabled) ? View.VISIBLE : View.GONE);
+        binding.enableGeoUris.setVisibility(osm_enabled ? View.VISIBLE : View.GONE);
+        binding.enableEmbedPlayer.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
 
-        enable_invidious.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        binding.enableInvidious.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putBoolean(SET_INVIDIOUS_ENABLED, isChecked);
             editor.apply();
-            invidious_current_group.setVisibility(isChecked ? View.VISIBLE : View.GONE);
-            invidious_custom_group.setVisibility(View.GONE);
-            enable_embed_player.setVisibility(isChecked ? View.VISIBLE : View.GONE);
-            expand_instance_invidious.setRotation(0);
+            binding.groupCurrentInvidious.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            binding.groupCustomInvidious.setVisibility(View.GONE);
+            binding.enableEmbedPlayer.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            binding.buttonExpandInstanceInvidious.setRotation(0);
         });
-        enable_nitter.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        binding.enableNitter.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putBoolean(SET_NITTER_ENABLED, isChecked);
             editor.apply();
-            nitter_current_group.setVisibility(isChecked ? View.VISIBLE : View.GONE);
-            nitter_custom_group.setVisibility(View.GONE);
-            expand_instance_nitter.setRotation(0);
+            binding.groupCurrentNitter.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            binding.groupCustomNitter.setVisibility(View.GONE);
+            binding.buttonExpandInstanceNitter.setRotation(0);
         });
-        enable_bibliogram.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        binding.enableBibliogram.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putBoolean(SET_BIBLIOGRAM_ENABLED, isChecked);
             editor.apply();
-            bibliogram_current_group.setVisibility(isChecked ? View.VISIBLE : View.GONE);
-            bibliogram_custom_group.setVisibility(View.GONE);
-            expand_instance_bibliogram.setRotation(0);
+            binding.groupCurrentBibliogram.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            binding.groupCustomBibliogram.setVisibility(View.GONE);
+            binding.buttonExpandInstanceBibliogram.setRotation(0);
         });
-        enable_teddit.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        binding.enableTeddit.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putBoolean(SET_TEDDIT_ENABLED, isChecked);
             editor.apply();
-            teddit_current_group.setVisibility(isChecked ? View.VISIBLE : View.GONE);
-            teddit_custom_group.setVisibility(View.GONE);
-            expand_instance_teddit.setRotation(0);
+            binding.groupCurrentTeddit.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            binding.groupCustomTeddit.setVisibility(View.GONE);
+            binding.buttonExpandInstanceTeddit.setRotation(0);
         });
-        enable_osm.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        binding.enableOsm.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putBoolean(SET_OSM_ENABLED, isChecked);
             editor.apply();
-            osm_custom_group.setVisibility(View.GONE);
-            enable_geo_uris.setVisibility(isChecked ? View.VISIBLE : View.GONE);
-            expand_instance_osm.setRotation(0);
+            binding.groupCustomOsm.setVisibility(View.GONE);
+            binding.enableGeoUris.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            binding.buttonExpandInstanceOsm.setRotation(0);
             boolean geo = sharedpreferences.getBoolean(SET_GEO_URIS, false);
             if (isChecked) {
                 if (geo) {
-                    osm_current_group.setVisibility(View.GONE);
-                    osm_custom_group.setVisibility(View.GONE);
+                    binding.groupCurrentOsm.setVisibility(View.GONE);
+                    binding.groupCustomOsm.setVisibility(View.GONE);
                 } else {
-                    osm_current_group.setVisibility(View.VISIBLE);
+                    binding.groupCurrentOsm.setVisibility(View.VISIBLE);
                 }
             } else {
-                osm_current_group.setVisibility(View.GONE);
+                binding.groupCurrentOsm.setVisibility(View.GONE);
             }
         });
 
 
-        expand_instance_nitter.setOnClickListener(v -> {
-            boolean custom_instance_visibility = nitter_custom_group.getVisibility() == View.VISIBLE;
+        binding.buttonExpandInstanceNitter.setOnClickListener(v -> {
+            boolean custom_instance_visibility = binding.groupCustomNitter.getVisibility() == View.VISIBLE;
             if (custom_instance_visibility) {
-                expand_instance_nitter.setRotation(0f);
-                nitter_custom_group.setVisibility(View.GONE);
+                binding.buttonExpandInstanceNitter.setRotation(0f);
+                binding.groupCustomNitter.setVisibility(View.GONE);
             } else {
-                expand_instance_nitter.setRotation(180f);
-                nitter_custom_group.setVisibility(View.VISIBLE);
+                binding.buttonExpandInstanceNitter.setRotation(180f);
+                binding.groupCustomNitter.setVisibility(View.VISIBLE);
             }
 
             if (nitterHost != null) {
-                nitter_instance.setText(nitterHost);
+                binding.nitterInstance.setText(nitterHost);
             } else {
-                nitter_instance.setText("");
+                binding.nitterInstance.setText("");
             }
         });
-        expand_instance_invidious.setOnClickListener(v -> {
-            boolean custom_instance_visibility = invidious_custom_group.getVisibility() == View.VISIBLE;
+        binding.buttonExpandInstanceInvidious.setOnClickListener(v -> {
+            boolean custom_instance_visibility = binding.groupCustomInvidious.getVisibility() == View.VISIBLE;
             if (custom_instance_visibility) {
-                expand_instance_invidious.setRotation(0f);
-                invidious_custom_group.setVisibility(View.GONE);
+                binding.buttonExpandInstanceInvidious.setRotation(0f);
+                binding.groupCustomInvidious.setVisibility(View.GONE);
             } else {
-                expand_instance_invidious.setRotation(180f);
-                invidious_custom_group.setVisibility(View.VISIBLE);
+                binding.buttonExpandInstanceInvidious.setRotation(180f);
+                binding.groupCustomInvidious.setVisibility(View.VISIBLE);
             }
 
             if (invidiousHost != null) {
-                invidious_instance.setText(invidiousHost);
+                binding.invidiousInstance.setText(invidiousHost);
             } else {
-                invidious_instance.setText("");
+                binding.invidiousInstance.setText("");
             }
         });
-        expand_instance_bibliogram.setOnClickListener(v -> {
-            boolean custom_instance_visibility = bibliogram_custom_group.getVisibility() == View.VISIBLE;
+        binding.buttonExpandInstanceBibliogram.setOnClickListener(v -> {
+            boolean custom_instance_visibility = binding.groupCustomBibliogram.getVisibility() == View.VISIBLE;
             if (custom_instance_visibility) {
-                expand_instance_bibliogram.setRotation(0f);
-                bibliogram_custom_group.setVisibility(View.GONE);
+                binding.buttonExpandInstanceBibliogram.setRotation(0f);
+                binding.groupCustomBibliogram.setVisibility(View.GONE);
             } else {
-                expand_instance_bibliogram.setRotation(180f);
-                bibliogram_custom_group.setVisibility(View.VISIBLE);
+                binding.buttonExpandInstanceBibliogram.setRotation(180f);
+                binding.groupCustomBibliogram.setVisibility(View.VISIBLE);
             }
 
             if (bibliogramHost != null) {
-                bibliogram_instance.setText(bibliogramHost);
+                binding.bibliogramInstance.setText(bibliogramHost);
             } else {
-                bibliogram_instance.setText("");
+                binding.bibliogramInstance.setText("");
             }
         });
-        expand_instance_teddit.setOnClickListener(v -> {
-            boolean custom_instance_visibility = teddit_custom_group.getVisibility() == View.VISIBLE;
+        binding.buttonExpandInstanceTeddit.setOnClickListener(v -> {
+            boolean custom_instance_visibility = binding.groupCustomTeddit.getVisibility() == View.VISIBLE;
             if (custom_instance_visibility) {
-                expand_instance_teddit.setRotation(0f);
-                teddit_custom_group.setVisibility(View.GONE);
+                binding.buttonExpandInstanceTeddit.setRotation(0f);
+                binding.groupCustomTeddit.setVisibility(View.GONE);
             } else {
-                expand_instance_teddit.setRotation(180f);
-                teddit_custom_group.setVisibility(View.VISIBLE);
+                binding.buttonExpandInstanceTeddit.setRotation(180f);
+                binding.groupCustomTeddit.setVisibility(View.VISIBLE);
             }
 
             if (tedditHost != null) {
-                teddit_instance.setText(tedditHost);
+                binding.tedditInstance.setText(tedditHost);
             } else {
-                teddit_instance.setText("");
+                binding.tedditInstance.setText("");
             }
         });
-        expand_instance_osm.setOnClickListener(v -> {
-            boolean custom_instance_visibility = osm_custom_group.getVisibility() == View.VISIBLE;
+        binding.buttonExpandInstanceOsm.setOnClickListener(v -> {
+            boolean custom_instance_visibility = binding.groupCustomOsm.getVisibility() == View.VISIBLE;
             if (custom_instance_visibility) {
-                expand_instance_osm.setRotation(0f);
-                osm_custom_group.setVisibility(View.GONE);
+                binding.buttonExpandInstanceOsm.setRotation(0f);
+                binding.groupCustomOsm.setVisibility(View.GONE);
             } else {
-                expand_instance_osm.setRotation(180f);
-                osm_custom_group.setVisibility(View.VISIBLE);
+                binding.buttonExpandInstanceOsm.setRotation(180f);
+                binding.groupCustomOsm.setVisibility(View.VISIBLE);
             }
 
             if (osmHost != null) {
-                osm_instance.setText(osmHost);
+                binding.osmInstance.setText(osmHost);
             } else {
-                osm_instance.setText("");
+                binding.osmInstance.setText("");
             }
         });
 
 
         if (nitterHost != null) {
-            nitter_instance.setText(nitterHost);
-            current_instance_nitter.setText(nitterHost);
+            binding.nitterInstance.setText(nitterHost);
+            binding.currentInstanceNitter.setText(nitterHost);
         } else {
-            current_instance_nitter.setText(DEFAULT_NITTER_HOST);
+            binding.currentInstanceNitter.setText(DEFAULT_NITTER_HOST);
         }
         if (invidiousHost != null) {
-            invidious_instance.setText(invidiousHost);
-            current_instance_invidious.setText(invidiousHost);
+            binding.invidiousInstance.setText(invidiousHost);
+            binding.currentInstanceInvidious.setText(invidiousHost);
         } else {
-            current_instance_invidious.setText(DEFAULT_INVIDIOUS_HOST);
+            binding.currentInstanceInvidious.setText(DEFAULT_INVIDIOUS_HOST);
         }
         if (bibliogramHost != null) {
-            bibliogram_instance.setText(bibliogramHost);
-            current_instance_bibliogram.setText(bibliogramHost);
+            binding.bibliogramInstance.setText(bibliogramHost);
+            binding.currentInstanceBibliogram.setText(bibliogramHost);
         } else {
-            current_instance_bibliogram.setText(DEFAULT_BIBLIOGRAM_HOST);
+            binding.currentInstanceBibliogram.setText(DEFAULT_BIBLIOGRAM_HOST);
         }
         if (tedditHost != null) {
-            teddit_instance.setText(tedditHost);
-            current_instance_teddit.setText(tedditHost);
+            binding.tedditInstance.setText(tedditHost);
+            binding.currentInstanceTeddit.setText(tedditHost);
         } else {
-            current_instance_teddit.setText(DEFAULT_TEDDIT_HOST);
+            binding.currentInstanceTeddit.setText(DEFAULT_TEDDIT_HOST);
         }
         if (osmHost != null) {
-            osm_instance.setText(osmHost);
-            current_instance_osm.setText(osmHost);
+            binding.osmInstance.setText(osmHost);
+            binding.currentInstanceOsm.setText(osmHost);
         } else {
-            current_instance_osm.setText(DEFAULT_OSM_HOST);
+            binding.currentInstanceOsm.setText(DEFAULT_OSM_HOST);
         }
-        enable_geo_uris.setChecked(geouri_enabled);
+        binding.enableGeoUris.setChecked(geouri_enabled);
         if (geouri_enabled) {
-            osm_current_group.setVisibility(View.GONE);
-            osm_custom_group.setVisibility(View.GONE);
+            binding.groupCurrentOsm.setVisibility(View.GONE);
+            binding.groupCustomOsm.setVisibility(View.GONE);
         } else if (osm_enabled) {
-            osm_current_group.setVisibility(View.VISIBLE);
+            binding.groupCurrentOsm.setVisibility(View.VISIBLE);
         } else {
-            osm_custom_group.setVisibility(View.GONE);
+            binding.groupCustomOsm.setVisibility(View.GONE);
         }
 
-        enable_embed_player.setChecked(embedded_player);
-        save_instance_nitter.setOnClickListener(v -> {
+        binding.enableEmbedPlayer.setChecked(embedded_player);
+        binding.buttonSaveInstanceNitter.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
-            if (nitter_instance.getText() != null && nitter_instance.getText().toString().trim().length() > 0) {
-                String custom_instance = nitter_instance.getText().toString().toLowerCase().trim();
+            if (binding.nitterInstance.getText() != null && binding.nitterInstance.getText().toString().trim().length() > 0) {
+                String custom_instance = binding.nitterInstance.getText().toString().toLowerCase().trim();
                 editor.putString(SET_NITTER_HOST, custom_instance);
-                current_instance_nitter.setText(custom_instance);
+                binding.currentInstanceNitter.setText(custom_instance);
             } else {
                 editor.putString(SET_NITTER_HOST, null);
-                current_instance_nitter.setText(DEFAULT_NITTER_HOST);
+                binding.currentInstanceNitter.setText(DEFAULT_NITTER_HOST);
             }
             editor.apply();
         });
-        save_instance_invidious.setOnClickListener(v -> {
+        binding.buttonSaveInstanceInvidious.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
-            if (invidious_instance.getText() != null && invidious_instance.getText().toString().trim().length() > 0) {
-                String custom_instance = invidious_instance.getText().toString().toLowerCase().trim();
+            if (binding.invidiousInstance.getText() != null && binding.invidiousInstance.getText().toString().trim().length() > 0) {
+                String custom_instance = binding.invidiousInstance.getText().toString().toLowerCase().trim();
                 editor.putString(SET_INVIDIOUS_HOST, custom_instance);
-                current_instance_invidious.setText(custom_instance);
+                binding.currentInstanceInvidious.setText(custom_instance);
             } else {
                 editor.putString(SET_INVIDIOUS_HOST, null);
-                current_instance_invidious.setText(DEFAULT_INVIDIOUS_HOST);
+                binding.currentInstanceInvidious.setText(DEFAULT_INVIDIOUS_HOST);
             }
             editor.apply();
         });
-        save_instance_bibliogram.setOnClickListener(v -> {
+        binding.buttonSaveInstanceBibliogram.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
-            if (bibliogram_instance.getText() != null && bibliogram_instance.getText().toString().trim().length() > 0) {
-                String custom_instance = bibliogram_instance.getText().toString().toLowerCase().trim();
+            if (binding.bibliogramInstance.getText() != null && binding.bibliogramInstance.getText().toString().trim().length() > 0) {
+                String custom_instance = binding.bibliogramInstance.getText().toString().toLowerCase().trim();
                 editor.putString(SET_BIBLIOGRAM_HOST, custom_instance);
-                current_instance_bibliogram.setText(custom_instance);
+                binding.currentInstanceBibliogram.setText(custom_instance);
             } else {
                 editor.putString(SET_BIBLIOGRAM_HOST, null);
-                current_instance_bibliogram.setText(DEFAULT_BIBLIOGRAM_HOST);
+                binding.currentInstanceBibliogram.setText(DEFAULT_BIBLIOGRAM_HOST);
             }
             editor.apply();
         });
-        save_instance_teddit.setOnClickListener(v -> {
+        binding.buttonSaveInstanceTeddit.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
-            if (teddit_instance.getText() != null && teddit_instance.getText().toString().trim().length() > 0) {
-                String custom_instance = teddit_instance.getText().toString().toLowerCase().trim();
+            if (binding.tedditInstance.getText() != null && binding.tedditInstance.getText().toString().trim().length() > 0) {
+                String custom_instance = binding.tedditInstance.getText().toString().toLowerCase().trim();
                 editor.putString(SET_TEDDIT_HOST, custom_instance);
-                current_instance_teddit.setText(custom_instance);
+                binding.currentInstanceTeddit.setText(custom_instance);
             } else {
                 editor.putString(SET_TEDDIT_HOST, null);
-                current_instance_teddit.setText(DEFAULT_TEDDIT_HOST);
+                binding.currentInstanceTeddit.setText(DEFAULT_TEDDIT_HOST);
             }
             editor.apply();
         });
-        save_instance_osm.setOnClickListener(v -> {
+        binding.buttonSaveInstanceOsm.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
-            if (osm_instance.getText() != null && osm_instance.getText().toString().trim().length() > 0) {
-                String custom_instance = osm_instance.getText().toString().toLowerCase().trim();
+            if (binding.osmInstance.getText() != null && binding.osmInstance.getText().toString().trim().length() > 0) {
+                String custom_instance = binding.osmInstance.getText().toString().toLowerCase().trim();
                 editor.putString(SET_OSM_HOST, custom_instance);
             } else {
                 editor.putString(SET_OSM_HOST, null);
-                current_instance_osm.setText(DEFAULT_OSM_HOST);
+                binding.currentInstanceOsm.setText(DEFAULT_OSM_HOST);
             }
             editor.apply();
         });
 
-        Button configure = findViewById(R.id.configure);
-        configure.setOnClickListener(v -> {
+        binding.configure.setOnClickListener(v -> {
             Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
             Uri uri = Uri.fromParts("package", getApplicationInfo().packageName, null);
             intent.setData(uri);
             startActivity(intent);
         });
 
-        ImageButton buttonExpand = findViewById(R.id.button_expand);
-        buttonExpand.setOnClickListener(v -> {
+        binding.buttonExpand.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, CheckAppActivity.class);
             startActivity(intent);
         });
 
-        ImageButton buttonPing = findViewById(R.id.instances);
-        buttonPing.setOnClickListener(v -> {
+        binding.instances.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, InstanceActivity.class);
             startActivity(intent);
         });
 
 
-        enable_geo_uris.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        binding.enableGeoUris.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putBoolean(SET_GEO_URIS, isChecked);
             editor.apply();
-            TextView osm_indications = findViewById(R.id.osm_indications);
             if (isChecked) {
-                expand_instance_osm.setRotation(0f);
-                osm_current_group.setVisibility(View.GONE);
-                osm_custom_group.setVisibility(View.GONE);
-                osm_indications.setText(R.string.redirect_gm_to_geo_uri);
+                binding.buttonExpandInstanceOsm.setRotation(0f);
+                binding.groupCurrentOsm.setVisibility(View.GONE);
+                binding.groupCustomOsm.setVisibility(View.GONE);
+                binding.osmIndications.setText(R.string.redirect_gm_to_geo_uri);
             } else {
-                osm_current_group.setVisibility(View.VISIBLE);
-                osm_indications.setText(R.string.redirect_gm_to_osm);
+                binding.groupCurrentOsm.setVisibility(View.VISIBLE);
+                binding.osmIndications.setText(R.string.redirect_gm_to_osm);
             }
         });
-        enable_embed_player.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        binding.enableEmbedPlayer.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
             editor.putBoolean(SET_EMBEDDED_PLAYER, isChecked);
             editor.apply();
@@ -462,48 +407,48 @@ public class MainActivity extends AppCompatActivity {
                     switch (key) {
                         case SET_NITTER_HOST:
                             nitterHost = sharedpreferences.getString(SET_NITTER_HOST, null);
-                            nitter_custom_group.setVisibility(View.GONE);
+                            binding.groupCustomNitter.setVisibility(View.GONE);
                             if (nitterHost != null && nitterHost.trim().length() > 0)
-                                current_instance_nitter.setText(nitterHost);
+                                binding.currentInstanceNitter.setText(nitterHost);
                             else
-                                current_instance_nitter.setText(DEFAULT_NITTER_HOST);
-                            expand_instance_nitter.setRotation(0f);
+                                binding.currentInstanceNitter.setText(DEFAULT_NITTER_HOST);
+                            binding.buttonExpandInstanceNitter.setRotation(0f);
                             break;
                         case SET_INVIDIOUS_HOST:
                             invidiousHost = sharedpreferences.getString(SET_INVIDIOUS_HOST, null);
-                            invidious_custom_group.setVisibility(View.GONE);
+                            binding.groupCustomInvidious.setVisibility(View.GONE);
                             if (invidiousHost != null && invidiousHost.trim().length() > 0)
-                                current_instance_invidious.setText(invidiousHost);
+                                binding.currentInstanceInvidious.setText(invidiousHost);
                             else
-                                current_instance_invidious.setText(DEFAULT_INVIDIOUS_HOST);
-                            expand_instance_invidious.setRotation(0f);
+                                binding.currentInstanceInvidious.setText(DEFAULT_INVIDIOUS_HOST);
+                            binding.buttonExpandInstanceInvidious.setRotation(0f);
                             break;
                         case SET_BIBLIOGRAM_HOST:
                             bibliogramHost = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, null);
-                            bibliogram_custom_group.setVisibility(View.GONE);
+                            binding.groupCustomBibliogram.setVisibility(View.GONE);
                             if (bibliogramHost != null && bibliogramHost.trim().length() > 0)
-                                current_instance_bibliogram.setText(bibliogramHost);
+                                binding.currentInstanceBibliogram.setText(bibliogramHost);
                             else
-                                current_instance_bibliogram.setText(DEFAULT_BIBLIOGRAM_HOST);
-                            expand_instance_bibliogram.setRotation(0f);
+                                binding.currentInstanceBibliogram.setText(DEFAULT_BIBLIOGRAM_HOST);
+                            binding.buttonExpandInstanceBibliogram.setRotation(0f);
                             break;
                         case SET_TEDDIT_HOST:
                             tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
-                            teddit_custom_group.setVisibility(View.GONE);
+                            binding.groupCustomTeddit.setVisibility(View.GONE);
                             if (tedditHost != null && tedditHost.trim().length() > 0)
-                                current_instance_teddit.setText(tedditHost);
+                                binding.currentInstanceTeddit.setText(tedditHost);
                             else
-                                current_instance_teddit.setText(DEFAULT_TEDDIT_HOST);
-                            expand_instance_teddit.setRotation(0f);
+                                binding.currentInstanceTeddit.setText(DEFAULT_TEDDIT_HOST);
+                            binding.buttonExpandInstanceTeddit.setRotation(0f);
                             break;
                         case SET_OSM_HOST:
                             osmHost = sharedpreferences.getString(SET_OSM_HOST, null);
-                            osm_custom_group.setVisibility(View.GONE);
+                            binding.groupCustomOsm.setVisibility(View.GONE);
                             if (osmHost != null && osmHost.trim().length() > 0)
-                                current_instance_osm.setText(osmHost);
+                                binding.currentInstanceOsm.setText(osmHost);
                             else
-                                current_instance_osm.setText(DEFAULT_OSM_HOST);
-                            expand_instance_osm.setRotation(0f);
+                                binding.currentInstanceOsm.setText(DEFAULT_OSM_HOST);
+                            binding.buttonExpandInstanceOsm.setRotation(0f);
                             break;
                     }
 
@@ -516,8 +461,7 @@ public class MainActivity extends AppCompatActivity {
         );
 
         //Invidious custom settings
-        ImageButton invidious_settings = findViewById(R.id.invidious_settings);
-        invidious_settings.setOnClickListener(v -> {
+        binding.invidiousSettings.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, InvidiousSettingsActivity.class);
             startActivity(intent);
         });
@@ -564,15 +508,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        TextInputEditText nitter_instance = findViewById(R.id.nitter_instance);
-        TextInputEditText invidious_instance = findViewById(R.id.invidious_instance);
-        TextInputEditText bibliogram_instance = findViewById(R.id.bibliogram_instance);
-        TextInputEditText teddit_instance = findViewById(R.id.teddit_instance);
-
-        TextView current_instance_nitter = findViewById(R.id.current_instance_nitter);
-        TextView current_instance_invidious = findViewById(R.id.current_instance_invidious);
-        TextView current_instance_bibliogram = findViewById(R.id.current_instance_bibliogram);
-        TextView current_instance_teddit = findViewById(R.id.current_instance_teddit);
 
         SharedPreferences sharedpreferences = getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
         String nitterHost = sharedpreferences.getString(SET_NITTER_HOST, null);
@@ -580,32 +515,31 @@ public class MainActivity extends AppCompatActivity {
         String bibliogramHost = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, null);
         String tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
         if (nitterHost != null) {
-            nitter_instance.setText(nitterHost);
-            current_instance_nitter.setText(nitterHost);
+            binding.nitterInstance.setText(nitterHost);
+            binding.currentInstanceNitter.setText(nitterHost);
         }
         if (invidiousHost != null) {
-            invidious_instance.setText(invidiousHost);
-            current_instance_invidious.setText(invidiousHost);
+            binding.invidiousInstance.setText(invidiousHost);
+            binding.currentInstanceInvidious.setText(invidiousHost);
         }
         if (bibliogramHost != null) {
-            bibliogram_instance.setText(bibliogramHost);
-            current_instance_bibliogram.setText(bibliogramHost);
+            binding.bibliogramInstance.setText(bibliogramHost);
+            binding.currentInstanceBibliogram.setText(bibliogramHost);
         }
         if (tedditHost != null) {
-            teddit_instance.setText(tedditHost);
-            current_instance_teddit.setText(tedditHost);
+            binding.tedditInstance.setText(tedditHost);
+            binding.currentInstanceTeddit.setText(tedditHost);
         }
-        ConstraintLayout display_indications = findViewById(R.id.display_indications);
         if (BuildConfig.fullLinks) {
             List<ResolveInfo> resolveInfos = getPackageManager().queryIntentActivities(new Intent(Intent.ACTION_VIEW, Uri.parse("https://fedilab.app")), PackageManager.MATCH_DEFAULT_ONLY);
             String thisPackageName = getApplicationContext().getPackageName();
             if (resolveInfos.size() == 1 && resolveInfos.get(0).activityInfo.packageName.compareTo(thisPackageName) == 0) {
-                display_indications.setVisibility(View.VISIBLE);
+                binding.displayIndications.setVisibility(View.VISIBLE);
             } else {
-                display_indications.setVisibility(View.GONE);
+                binding.displayIndications.setVisibility(View.GONE);
             }
         } else {
-            display_indications.setVisibility(View.GONE);
+            binding.displayIndications.setVisibility(View.GONE);
         }
     }
 }

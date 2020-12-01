@@ -19,17 +19,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -37,6 +33,7 @@ import java.util.ArrayList;
 
 import app.fedilab.nitterizeme.R;
 import app.fedilab.nitterizeme.adapters.InstanceAdapter;
+import app.fedilab.nitterizeme.databinding.ActivityPopupInstanceBinding;
 import app.fedilab.nitterizeme.entities.Instance;
 import app.fedilab.nitterizeme.viewmodels.SearchInstanceVM;
 
@@ -44,23 +41,18 @@ import app.fedilab.nitterizeme.viewmodels.SearchInstanceVM;
 public class InstanceActivity extends AppCompatActivity {
 
     private static final String list_for_instances = "https://framagit.org/tom79/fedilab_app/-/blob/master/content/untrackme_instances/payload_2.json";
+    private ActivityPopupInstanceBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popup_instance);
+        binding = ActivityPopupInstanceBinding.inflate(getLayoutInflater());
+        View viewRoot = binding.getRoot();
+        setContentView(viewRoot);
         setTitle(R.string.select_instances);
 
         SearchInstanceVM viewModel = new ViewModelProvider(this).get(SearchInstanceVM.class);
         viewModel.getInstances().observe(this, result -> {
-            LinearLayout instance_container = findViewById(R.id.instance_container);
-            RelativeLayout loader = findViewById(R.id.loader);
-            RecyclerView invidious_instances = findViewById(R.id.invidious_instances);
-            RecyclerView nitter_instances = findViewById(R.id.nitter_instances);
-            RecyclerView bibliogram_instances = findViewById(R.id.bibliogram_instances);
-            Button latency_test = findViewById(R.id.latency_test);
-            ImageButton instance_info = findViewById(R.id.instance_info);
-            Button close = findViewById(R.id.close);
             if (result == null) {
                 View parentLayout = findViewById(android.R.id.content);
                 Snackbar.make(parentLayout, R.string.error_message_internet, Snackbar.LENGTH_LONG).setAction(R.string.close, v -> finish()).show();
@@ -78,7 +70,6 @@ public class InstanceActivity extends AppCompatActivity {
             boolean customInvidiousInstance = true;
             boolean customNitterInstance = true;
             boolean customBibliogramInstance = true;
-
             for (Instance instance : result) {
                 if (instance.getType() == Instance.instanceType.INVIDIOUS) {
                     invidiousInstances.add(instance);
@@ -122,30 +113,30 @@ public class InstanceActivity extends AppCompatActivity {
 
             final LinearLayoutManager iLayoutManager = new LinearLayoutManager(this);
             InstanceAdapter invidiousAdapter = new InstanceAdapter(invidiousInstances);
-            invidious_instances.setAdapter(invidiousAdapter);
-            invidious_instances.setLayoutManager(iLayoutManager);
-            invidious_instances.setNestedScrollingEnabled(false);
+            binding.invidiousInstances.setAdapter(invidiousAdapter);
+            binding.invidiousInstances.setLayoutManager(iLayoutManager);
+            binding.invidiousInstances.setNestedScrollingEnabled(false);
 
             final LinearLayoutManager nLayoutManager = new LinearLayoutManager(this);
             InstanceAdapter nitterAdapter = new InstanceAdapter(nitterInstances);
-            nitter_instances.setAdapter(nitterAdapter);
-            nitter_instances.setLayoutManager(nLayoutManager);
-            nitter_instances.setNestedScrollingEnabled(false);
+            binding.nitterInstances.setAdapter(nitterAdapter);
+            binding.nitterInstances.setLayoutManager(nLayoutManager);
+            binding.nitterInstances.setNestedScrollingEnabled(false);
 
             final LinearLayoutManager bLayoutManager = new LinearLayoutManager(this);
             InstanceAdapter bibliogramAdapter = new InstanceAdapter(bibliogramInstances);
-            bibliogram_instances.setAdapter(bibliogramAdapter);
-            bibliogram_instances.setLayoutManager(bLayoutManager);
-            bibliogram_instances.setNestedScrollingEnabled(false);
-            latency_test.setOnClickListener(
-                    v -> {
+            binding.bibliogramInstances.setAdapter(bibliogramAdapter);
+            binding.bibliogramInstances.setLayoutManager(bLayoutManager);
+            binding.bibliogramInstances.setNestedScrollingEnabled(false);
+
+            binding.latencyTest.setOnClickListener(v -> {
                         invidiousAdapter.evalLatency();
                         nitterAdapter.evalLatency();
                         bibliogramAdapter.evalLatency();
                     }
             );
 
-            instance_info.setOnClickListener(v -> {
+            binding.instanceInfo.setOnClickListener(v -> {
                 AlertDialog.Builder instanceInfo = new AlertDialog.Builder(this);
                 instanceInfo.setTitle(R.string.about_instances_title);
                 View view = getLayoutInflater().inflate(R.layout.popup_instance_info, new LinearLayout(getApplicationContext()), false);
@@ -157,11 +148,11 @@ public class InstanceActivity extends AppCompatActivity {
                 alertDialog.show();
             });
 
-            close.setOnClickListener(v -> finish());
+            binding.close.setOnClickListener(v -> finish());
 
 
-            instance_container.setVisibility(View.VISIBLE);
-            loader.setVisibility(View.GONE);
+            binding.instanceContainer.setVisibility(View.VISIBLE);
+            binding.loader.setVisibility(View.GONE);
         });
     }
 
