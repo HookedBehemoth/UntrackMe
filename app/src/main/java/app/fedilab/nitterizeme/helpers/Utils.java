@@ -673,6 +673,21 @@ public class Utils {
         return timeDifference;
     }
 
+
+    /**
+     * Remove unwanted redirects from Google - recursive removal
+     *
+     * @param url String initial url
+     * @return String url without Google redirects
+     */
+    private static String removeGoogleRedirects(String url) {
+        Matcher matcher = googleRedirect.matcher(url);
+        if (matcher.find()) {
+            return remove_tracking_param(matcher.group(5));
+        }
+        return url;
+    }
+
     /**
      * Clean URLs from utm parameters
      *
@@ -689,14 +704,7 @@ public class Utils {
                 url = url.replaceAll("#" + utm + "=" + urlRegex, "");
             }
             try {
-                Matcher matcher = googleRedirect.matcher(url);
-                if (matcher.find()) {
-                    url = matcher.group(5);
-                }
-                matcher = googleRedirect.matcher(url);
-                if (matcher.find()) {
-                    url = matcher.group(5);
-                }
+                url = removeGoogleRedirects(url);
                 URL redirectURL = new URL(url);
                 String host = redirectURL.getHost();
                 if (host != null) {
@@ -984,7 +992,7 @@ public class Utils {
                         if (Objects.requireNonNull(matcher.group(2)).compareTo("preview.redd.it") == 0 ||
                                 Objects.requireNonNull(matcher.group(2)).compareTo("i.redd.it") == 0
                         ) {
-                            newUrlFinal = scheme + tedditHost + "/pics/w:null_" + redditPath.split("\\?")[0];
+                            newUrlFinal = scheme + tedditHost + "/pics/w:null_" + (redditPath != null ? redditPath.split("\\?|%26")[0] : "null");
                         } else {
                             newUrlFinal = scheme + tedditHost + "/" + redditPath;
                         }

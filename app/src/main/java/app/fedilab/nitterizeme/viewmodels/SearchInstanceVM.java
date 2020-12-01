@@ -42,9 +42,11 @@ import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
 import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_BIBLIOGRAM_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_INVIDIOUS_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_NITTER_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_TEDDIT_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
 
 public class SearchInstanceVM extends AndroidViewModel {
     private MutableLiveData<List<Instance>> instancesMLD;
@@ -100,12 +102,14 @@ public class SearchInstanceVM extends AndroidViewModel {
             SharedPreferences sharedpreferences = getApplication().getApplicationContext().getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
             String defaultInvidious = sharedpreferences.getString(SET_INVIDIOUS_HOST, DEFAULT_INVIDIOUS_HOST);
             String defaultNitter = sharedpreferences.getString(SET_NITTER_HOST, DEFAULT_NITTER_HOST);
+            String defaultTeddit = sharedpreferences.getString(SET_TEDDIT_HOST, DEFAULT_TEDDIT_HOST);
 
             if (response != null) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArrayInvidious = jsonObject.getJSONArray("invidious");
                     JSONArray jsonArrayNitter = jsonObject.getJSONArray("nitter");
+                    JSONArray jsonArrayTeddit = jsonObject.getJSONArray("teddit");
                     for (int i = 0; i < jsonArrayInvidious.length(); i++) {
                         Instance instance = new Instance();
                         String domain = jsonArrayInvidious.getJSONObject(i).getString("domain");
@@ -130,6 +134,20 @@ public class SearchInstanceVM extends AndroidViewModel {
                         instance.setLocale(locale);
                         instance.setType(Instance.instanceType.NITTER);
                         if (defaultNitter != null && domain.compareTo(defaultNitter) == 0) {
+                            instance.setChecked(true);
+                        }
+                        instances.add(instance);
+                    }
+                    for (int i = 0; i < jsonArrayTeddit.length(); i++) {
+                        Instance instance = new Instance();
+                        String domain = jsonArrayTeddit.getJSONObject(i).getString("domain");
+                        boolean cloudFlare = jsonArrayTeddit.getJSONObject(i).getBoolean("cloudflare");
+                        String locale = jsonArrayTeddit.getJSONObject(i).getString("locale");
+                        instance.setDomain(domain);
+                        instance.setCloudflare(cloudFlare);
+                        instance.setLocale(locale);
+                        instance.setType(Instance.instanceType.TEDDIT);
+                        if (defaultTeddit != null && domain.compareTo(defaultTeddit) == 0) {
                             instance.setChecked(true);
                         }
                         instances.add(instance);

@@ -74,6 +74,7 @@ public class Instance {
     public enum instanceType {
         INVIDIOUS,
         NITTER,
-        BIBLIOGRAM
+        BIBLIOGRAM,
+        TEDDIT
     }
 }

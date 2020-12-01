@@ -63,13 +63,16 @@ public class InstanceActivity extends AppCompatActivity {
             String invidiousHost = sharedpreferences.getString(MainActivity.SET_INVIDIOUS_HOST, MainActivity.DEFAULT_INVIDIOUS_HOST);
             String nitterHost = sharedpreferences.getString(MainActivity.SET_NITTER_HOST, MainActivity.DEFAULT_NITTER_HOST);
             String bibliogramHost = sharedpreferences.getString(MainActivity.SET_BIBLIOGRAM_HOST, MainActivity.DEFAULT_BIBLIOGRAM_HOST);
+            String tedditHost = sharedpreferences.getString(MainActivity.SET_TEDDIT_HOST, MainActivity.DEFAULT_TEDDIT_HOST);
 
             ArrayList<Instance> invidiousInstances = new ArrayList<>();
             ArrayList<Instance> nitterInstances = new ArrayList<>();
             ArrayList<Instance> bibliogramInstances = new ArrayList<>();
+            ArrayList<Instance> tedditInstances = new ArrayList<>();
             boolean customInvidiousInstance = true;
             boolean customNitterInstance = true;
             boolean customBibliogramInstance = true;
+            boolean customTedditInstance = true;
             for (Instance instance : result) {
                 if (instance.getType() == Instance.instanceType.INVIDIOUS) {
                     invidiousInstances.add(instance);
@@ -85,6 +88,11 @@ public class InstanceActivity extends AppCompatActivity {
                     bibliogramInstances.add(instance);
                     if (bibliogramHost != null && bibliogramHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
                         customBibliogramInstance = false;
+                    }
+                } else if (instance.getType() == Instance.instanceType.TEDDIT) {
+                    tedditInstances.add(instance);
+                    if (tedditHost != null && tedditHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
+                        customTedditInstance = false;
                     }
                 }
             }
@@ -110,6 +118,13 @@ public class InstanceActivity extends AppCompatActivity {
                 instance.setLocale("--");
                 bibliogramInstances.add(0, instance);
             }
+            if (customTedditInstance) {
+                Instance instance = new Instance();
+                instance.setChecked(true);
+                instance.setDomain(tedditHost);
+                instance.setLocale("--");
+                tedditInstances.add(0, instance);
+            }
             binding.instanceContainer.setVisibility(View.VISIBLE);
             binding.loader.setVisibility(View.GONE);
 
@@ -131,6 +146,14 @@ public class InstanceActivity extends AppCompatActivity {
             binding.bibliogramInstances.setAdapter(bibliogramAdapter);
             binding.bibliogramInstances.setLayoutManager(bLayoutManager);
             binding.bibliogramInstances.setNestedScrollingEnabled(false);
+
+
+            final LinearLayoutManager tLayoutManager = new LinearLayoutManager(this);
+            InstanceAdapter tedditAdapter = new InstanceAdapter(tedditInstances);
+            binding.tedditInstances.setAdapter(tedditAdapter);
+            binding.tedditInstances.setLayoutManager(tLayoutManager);
+            binding.tedditInstances.setNestedScrollingEnabled(false);
+
 
             binding.latencyTest.setOnClickListener(v -> {
                         invidiousAdapter.evalLatency();
