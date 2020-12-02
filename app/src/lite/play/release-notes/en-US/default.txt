@@ -1,1 +1,1 @@
-- Add Android 11 support
+- Add Teddit support
