@@ -1,16 +1,16 @@
-UntrackMe once set by default to open Twitter, YouTube and Instagram links will transform them into Nitter, Invidious and Bibliogram links and delegate the action to another app.
+آن‌ترک‌می زمانی که به عنوان برنامهٔ پیش‌فرض برای باز کردن پیوندهای توییتر، یوتیوب و اینستاگرام استفاده شود، آنها را به پیوندهای نیتر، اینویدیوس و بیبلیوگرام تبدیل می‌کند و باز کردنشان را به برنامهٔ دیگری می‌سپارد.
 
-It also supports Google Maps links to transform them into OpenStreetMap links or Geo URI.
+این برنامه از تبدیل پیوندهای گوگل‌مپ به اوپن‌استریت‌مپ یا یوآرآی جغرافیایی نیز پشتیبانی می‌کند.
 
-The app will detect shortened URLs and will display the full URL before visiting the site.
+این برنامه نشانی‌های کوتاه‌شده را شناسایی می‌کند و صورت کاملشان را پیش از بازدید سایت نمایش می‌دهد.
 
-**Lite version:
+**نسخهٔ سبک:
 
-- When sharing a Twitter, YouTube or Google Maps link just pick up UntrackMe to transform it before sharing it with another app.
+- وقتی دارید پیوندی از توییتر، یوتیوب، یا گوگل‌مپ را به اشتراک می‌گذارید، کافی است آن‌ترک‌می را انتخاب کنید تا آن پیوندها را پیش از به‌اشتراک‌گذاشتن با برنامهٔ دیگری برایتان تبدیل کند.
 
-**Full version:
+نسخهٔ کامل:
 
-- Contains all features of the lite version and it also handle all links to remove tracking parameters. It uses its own app picker that display URLs before visiting them.
+- تمام ویژگی‌های نسخهٔ سبک را دارد و افزون بر آن، به همهٔ پیوندها برای حذف پارامترهای ردگیری رسیدگی می‌کند. It uses its own app picker that display URLs before visiting them.
 
 
 What is Nitter:
