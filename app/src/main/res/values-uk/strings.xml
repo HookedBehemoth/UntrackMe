@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">Redirect YouTube to Invidious</string>
     <string name="redirect_twitter_to_nitter">Redirect Twitter to Nitter</string>
     <string name="redirect_instagram_to_bibliogram">Redirect Instagram to Bibliogram</string>
+    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
     <string name="custom_bibliogram">Custom Bibliogram instance</string>
+    <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">Redirect Google Map to Geo URI</string>
     <string name="configure">Configure</string>
     <string name="display_supported_links">Display supported links</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Invidious instances</string>
     <string name="nitter_instances">Nitter instances</string>
     <string name="bibliogram_instances">Bibliogram instances</string>
+    <string name="teddit_instances">Teddit instances</string>
     <string name="latency">Latency</string>
     <string name="error_message_internet">Check your Internet connection</string>
     <string name="instance_label">Instance:</string>

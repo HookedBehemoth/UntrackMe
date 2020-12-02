@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">Omdirigere YouTube til Uheldige,</string>
     <string name="redirect_twitter_to_nitter">Omdirigere Twitter-til Nitter</string>
     <string name="redirect_instagram_to_bibliogram">Omdirigere Instagram til at Bibliogram</string>
+    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
     <string name="custom_bibliogram">Brugerdefineret Bibliogram eksempel</string>
+    <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">Google Redirect Kort at Geo-URI</string>
     <string name="configure">Konfigurer</string>
     <string name="display_supported_links">Visning understøttes links</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Uheldige tilfælde</string>
     <string name="nitter_instances">Nitter instances</string>
     <string name="bibliogram_instances">Bibliogram tilfælde</string>
+    <string name="teddit_instances">Teddit instances</string>
     <string name="latency">Ventetid</string>
     <string name="error_message_internet">Tjek din Internetforbindelse</string>
     <string name="instance_label">Instans:</string>

@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">Uudelleenohjaa YouTube Invidiousiin</string>
     <string name="redirect_twitter_to_nitter">Uudelleenohjaa Twitter Nitteriin</string>
     <string name="redirect_instagram_to_bibliogram">Uudelleenohjaa Instagram Bibliogrammiin</string>
+    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
     <string name="custom_bibliogram">Mukautettu Bibliogram instanssi</string>
+    <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">Uudelleenohjaa Google Maps Geo URI:ihin</string>
     <string name="configure">Konfiguroi</string>
     <string name="display_supported_links">Näytä tuetut linkit</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Invidious instanssit</string>
     <string name="nitter_instances">Nitter instanssit</string>
     <string name="bibliogram_instances">Bibliogram instanssit</string>
+    <string name="teddit_instances">Teddit instances</string>
     <string name="latency">Latenssi</string>
     <string name="error_message_internet">Tarkista internetyhteytesi</string>
     <string name="instance_label">Instanssi:</string>

@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">ಯೂಟ್ಯೂಬನ್ನು ಇನ್ವಿಡಿಯೋಸ್ ಗೆ ರವಾನಿಸು</string>
     <string name="redirect_twitter_to_nitter">ಟ್ವಿಟ್ಟರ್ ಅನ್ನು ನಿಟ್ಟರ್ ಗೆ ರವಾನಿಸು</string>
     <string name="redirect_instagram_to_bibliogram">ಇನ್ಸ್ಟಾಗ್ರಾಂ ಅನ್ನು ಬಿಬ್ಲಿಯೊಗ್ರಾಂ ಗೆ ರವಾನಿಸು</string>
+    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
     <string name="custom_bibliogram">ಬೇರೆ ಬಿಬ್ಲಿಯೋಗ್ರಾಂ ನಿದರ್ಶನ</string>
+    <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">ಗೂಗಲ್ ನಕ್ಷೆಯನ್ನು ಭೂ ಸಂಪನ್ಮೂಲ ಗುರುತಿಗೆ (Geo URI) ರವಾನಿಸು</string>
     <string name="configure">ಜೋಡಿಸು</string>
     <string name="display_supported_links">ಬೆಂಬಲಿತ ಲಿಂಕ್‌ಗಳ ಪ್ರದರ್ಶನ</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">ಇನ್ವಿಡಿಯೋಸ್ ನಿದರ್ಶನಗಳು</string>
     <string name="nitter_instances">ನಿಟ್ಟರ್ ನಿದರ್ಶನಗಳು</string>
     <string name="bibliogram_instances">ಬಿಬ್ಲಿಯೊಗ್ರಾಂ ನಿದರ್ಶನಗಳು</string>
+    <string name="teddit_instances">Teddit instances</string>
     <string name="latency">ವಿಳಂಬ</string>
     <string name="error_message_internet">Check your Internet connection</string>
     <string name="instance_label">Instance:</string>

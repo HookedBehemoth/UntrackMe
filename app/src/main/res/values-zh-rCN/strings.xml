@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">重定向YouTube到Invidious</string>
     <string name="redirect_twitter_to_nitter">重定向Twitter到Nitter</string>
     <string name="redirect_instagram_to_bibliogram">重定向Instagram到Bibliogram</string>
+    <string name="redirect_reddit_to_teddit">重定向 Reddit 到 Teddit</string>
     <string name="custom_bibliogram">自定义Bibliogram实例</string>
+    <string name="custom_teddit">自定义 Teddit 实例</string>
     <string name="redirect_gm_to_geo_uri">重定向谷歌地图到 Geo URI</string>
     <string name="configure">配置</string>
     <string name="display_supported_links">显示支持的链接</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Invidious实例</string>
     <string name="nitter_instances">Nitter实例</string>
     <string name="bibliogram_instances">Bibliogram实例</string>
+    <string name="teddit_instances">Teddit 实例</string>
     <string name="latency">网络延迟</string>
     <string name="error_message_internet">检查您的互联网连接</string>
     <string name="instance_label">实例:</string>

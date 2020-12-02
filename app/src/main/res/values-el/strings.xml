@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">Ανακατεύθυνση Youtube σε Invidious</string>
     <string name="redirect_twitter_to_nitter">Ανακατεύθυνση Twitter σε Nitter</string>
     <string name="redirect_instagram_to_bibliogram">Ανακατεύθυνση Instagram σε Bibliogram</string>
+    <string name="redirect_reddit_to_teddit">Ανακατεύθυνση Reddit σε Teddit</string>
     <string name="custom_bibliogram">Προσαρμοσμένος κόμβος Bibliogram</string>
+    <string name="custom_teddit">Προσαρμοσμένος κόμβος Teddit</string>
     <string name="redirect_gm_to_geo_uri">Ανακατεύθυνση Google Map σε Geo URI</string>
     <string name="configure">Ρύθμιση</string>
     <string name="display_supported_links">Εμφάνιση υποστηριζόμενων συνδέσμων</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Κόμβοι Invidious</string>
     <string name="nitter_instances">Κόμβοι Nitter</string>
     <string name="bibliogram_instances">Κόμβοι Bibliogram</string>
+    <string name="teddit_instances">Κόμβοι Teddit</string>
     <string name="latency">Καθυστέρηση</string>
     <string name="error_message_internet">Ελέγξτε τη σύνδεσή σας στο Internet</string>
     <string name="instance_label">Κόμβος:</string>
@@ -85,8 +88,8 @@
     <string name="invidious_thin_mode_indication">Φόρτωση στοιχείων HTML, CSS, JS και video (απενεργοποιεί τις εικόνες)</string>
     <string name="invidious_language_mode_indication">Διαθέσιμες γλώσσες</string>
     <string name="invidious_language_mode_title">Γλώσσα Διεπαφής</string>
-    <string name="pref_invidious_head1">Site-wide parameters</string>
-    <string name="pref_invidious_head2">Player parameters</string>
+    <string name="pref_invidious_head1">Παράμετροι ιστότοπου</string>
+    <string name="pref_invidious_head2">Παράμετροι αναπαραγωγέα</string>
     <string name="invidious_annotations_mode_title">Σχολιασμοί</string>
     <string name="invidious_annotations_mode_indication">Show legacy annotations, provided by the Internet Archive</string>
     <string name="invidious_autoplay_mode_indication">Automatically play video on load</string>
@@ -94,9 +97,9 @@
     <string name="invidious_continue_mode_title">Συνέχεια</string>
     <string name="invidious_continue_mode_indication">When video is done, automatically go to the next related video (similar to YouTube’s Autoplay feature)</string>
     <string name="invidious_listen_mode_title">Ακρόαση</string>
-    <string name="invidious_listen_mode_indication">Play only audio portion of video</string>
+    <string name="invidious_listen_mode_indication">Αναπαραγωγή μόνο ήχου από το βίντεο</string>
     <string name="invidious_local_mode_title">Τοπικά</string>
-    <string name="invidious_local_mode_indication">Proxy video streams</string>
+    <string name="invidious_local_mode_indication">Ενεργοποίηση μεσολάβησης ροών βίντεο</string>
     <string name="invidious_subtitles_mode_title">Υπότιτλοι</string>
     <string name="invidious_subtitles_mode_indication">Λίστα ISO 639-1 κωδικών γλώσσας</string>
     <string name="invidious_quality_mode_title">Ποιότητα</string>
@@ -104,9 +107,9 @@
     <string name="invidious_loop_mode_title">Επανάληψη</string>
     <string name="invidious_volume_mode_title">Ένταση ήχου</string>
     <string name="invidious_volume_mode_indication">Default player volume, can be any whole number between 0 and 100</string>
-    <string name="invidious_loop_mode_indication">Loop player by default</string>
+    <string name="invidious_loop_mode_indication">Ενεργοποίηση επανάληψης από προεπιλογή</string>
     <string name="invidious_volume_mode_value">Τιμή έντασης ήχου</string>
-    <string name="invidious_volume_mode_value_indication">Override the volume with this value</string>
+    <string name="invidious_volume_mode_value_indication">Αντικατάσταση έντασης με αυτήν την τιμή</string>
     <string name="pref_invidious_head3">Τύπος Αναπαραγωγέα</string>
     <string name="invidious_player_style_mode_title">Εμφάνιση</string>
     <string name="invidious_player_style_mode_indication">Invidious, the default one. YouTube, using a centered play button and always visible video control bar</string>

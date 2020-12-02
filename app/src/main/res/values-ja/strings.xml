@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">YouTubeをInvidiousにリダイレクトする</string>
     <string name="redirect_twitter_to_nitter">TwitterをNitterにリダイレクトする</string>
     <string name="redirect_instagram_to_bibliogram">InstagramをBibliogramにリダイレクトする</string>
+    <string name="redirect_reddit_to_teddit">RedditをTedditにリダイレクトする</string>
     <string name="custom_bibliogram">カスタムBibliogramインスタンス</string>
+    <string name="custom_teddit">カスタムTedditインスタンス</string>
     <string name="redirect_gm_to_geo_uri">Google マップをGeo URIにリダイレクトする</string>
     <string name="configure">設定</string>
     <string name="display_supported_links">サポートされているリンクを表示する</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Invidiousインスタンス</string>
     <string name="nitter_instances">Nitterインスタンス</string>
     <string name="bibliogram_instances">Bibliogramインスタンス</string>
+    <string name="teddit_instances">Tedditインスタンス</string>
     <string name="latency">レイテンシ</string>
     <string name="error_message_internet">インターネット接続を確認してください</string>
     <string name="instance_label">インスタンス:</string>

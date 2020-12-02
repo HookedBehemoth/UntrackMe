@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">Перенаправлять YouTube на Invidious</string>
     <string name="redirect_twitter_to_nitter">Перенаправлять Twitter на Nitter</string>
     <string name="redirect_instagram_to_bibliogram">Перенаправлять Instagram на Bibliogram</string>
+    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
     <string name="custom_bibliogram">Пользовательский сервер Bibliogram</string>
+    <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">Перенаправлять Google Карты на Geo URI</string>
     <string name="configure">Настроить</string>
     <string name="display_supported_links">Показать поддерживаемые ссылки</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Сервера Invidious</string>
     <string name="nitter_instances">Сервера Nitter</string>
     <string name="bibliogram_instances">Сервера Bibliogram</string>
+    <string name="teddit_instances">Teddit instances</string>
     <string name="latency">Задержка</string>
     <string name="error_message_internet">Проверьте подключение к Интернету</string>
     <string name="instance_label">Сервер:</string>

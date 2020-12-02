@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">Omdirigera YouTube till Ovidious</string>
     <string name="redirect_twitter_to_nitter">Omdirigera Twitter till Nitter</string>
     <string name="redirect_instagram_to_bibliogram">Omdirigera Twitter till Nitter</string>
+    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
     <string name="custom_bibliogram">Anpassad Bibliogram instans</string>
+    <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">Omdirigera Google Map till Geo URI</string>
     <string name="configure">Konfigurera</string>
     <string name="display_supported_links">Visa länkar som stöds</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Olivliga instanser</string>
     <string name="nitter_instances">Nitter instances</string>
     <string name="bibliogram_instances">Bibliogram instanser</string>
+    <string name="teddit_instances">Teddit instances</string>
     <string name="latency">Latens</string>
     <string name="error_message_internet">Kontrollera din internetanslutning</string>
     <string name="instance_label">Instans:</string>
