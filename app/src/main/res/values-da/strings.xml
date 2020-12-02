@@ -63,7 +63,7 @@
     <string name="select_instances">Vælg tilfælde</string>
     <string name="continue_with">Continue with…</string>
     <string name="just_once">Just once</string>
-    <string name="always">Always</string>
+    <string name="always">Altid</string>
     <string name="default_app_indication">%1$s has been set as a default app.\nYou can remove this behavior from the app settings.</string>
     <string name="indication_error_title">There is something wrong with the configuration of the app. Please, follow these indications to fix that issue.</string>
     <string name="open_configure">1 - Tap on the \"CONFIGURE\" button above.</string>
@@ -75,14 +75,14 @@
     <string name="display_indications_3_description">Screenshot showing app settings to define the behavior for opening URLs</string>
     <string name="default_apps">Default apps</string>
     <string name="remove_from_default_app">Remove from default apps</string>
-    <string name="delete">Delete</string>
-    <string name="cancel">Cancel</string>
+    <string name="delete">Slet</string>
+    <string name="cancel">Annullér</string>
     <string name="delete_app_from_default">Delete %1$s from default apps?</string>
     <string name="copy_done">Copied</string>
     <string name="no_apps_set_as_default">No apps set as default!</string>
     <string name="custom_settings_for_invidious">Custom settings for Invidious</string>
     <string name="invidious_settings">Invidious settings</string>
-    <string name="invidious_dark_mode_title">Theme</string>
+    <string name="invidious_dark_mode_title">Tema</string>
     <string name="invidious_dark_mode_indication">Configure default theme without setting cookies</string>
     <string name="invidious_thin_mode_title">Thin mode</string>
     <string name="invidious_thin_mode_indication">Load HTML, CSS, JS and video elements (disables images)</string>
@@ -98,7 +98,7 @@
     <string name="invidious_continue_mode_indication">When video is done, automatically go to the next related video (similar to YouTube’s Autoplay feature)</string>
     <string name="invidious_listen_mode_title">Listen</string>
     <string name="invidious_listen_mode_indication">Play only audio portion of video</string>
-    <string name="invidious_local_mode_title">Local</string>
+    <string name="invidious_local_mode_title">Lokalt</string>
     <string name="invidious_local_mode_indication">Proxy video streams</string>
     <string name="invidious_subtitles_mode_title">Subtitles</string>
     <string name="invidious_subtitles_mode_indication">List of ISO 639–1 language codes</string>
@@ -121,19 +121,19 @@
     <string name="invidious_help_explanations">[1] \'local\' parameter is set to \'true\' by default for better privacy</string>
     <string-array name="invidious_theme">
         <item>Ignore</item>
-        <item>Remove</item>
+        <item>Fjern</item>
         <item>Dark theme</item>
         <item>Light theme</item>
     </string-array>
     <string-array name="invidious_enable">
         <item>Ignore</item>
-        <item>Remove</item>
+        <item>Fjern</item>
         <item>Enabled</item>
-        <item>Disabled</item>
+        <item>Deaktiveret</item>
     </string-array>
     <string-array name="invidious_language">
         <item>Ignore</item>
-        <item>Remove</item>
+        <item>Fjern</item>
         <item>Arabic</item>
         <item>German</item>
         <item>Greek</item>
@@ -153,25 +153,25 @@
     </string-array>
     <string-array name="invidious_annotations">
         <item>Ignore</item>
-        <item>Remove</item>
+        <item>Fjern</item>
         <item>Show annotations</item>
         <item>Hide annotations</item>
     </string-array>
     <string-array name="invidious_quality">
         <item>Ignore</item>
-        <item>Remove</item>
+        <item>Fjern</item>
         <item>DASH</item>
         <item>720p</item>
         <item>480p</item>
     </string-array>
     <string-array name="invidious_volume">
         <item>Ignore</item>
-        <item>Remove</item>
+        <item>Fjern</item>
         <item>Custom</item>
     </string-array>
     <string-array name="invidious_player_style">
         <item>Ignore</item>
-        <item>Remove</item>
+        <item>Fjern</item>
         <item>Invidious</item>
         <item>Youtube</item>
     </string-array>

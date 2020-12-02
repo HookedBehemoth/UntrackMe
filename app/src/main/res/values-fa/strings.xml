@@ -77,20 +77,20 @@
     <string name="remove_from_default_app">از برنامه‌های پیش‌فرض حذف کن</string>
     <string name="delete">حذف</string>
     <string name="cancel">لغو</string>
-    <string name="delete_app_from_default">Delete %1$s from default apps?</string>
-    <string name="copy_done">Copied</string>
-    <string name="no_apps_set_as_default">No apps set as default!</string>
-    <string name="custom_settings_for_invidious">Custom settings for Invidious</string>
-    <string name="invidious_settings">Invidious settings</string>
-    <string name="invidious_dark_mode_title">Theme</string>
+    <string name="delete_app_from_default">%1$s از برنامه‌های پیش‌فرض حذف شود؟</string>
+    <string name="copy_done">کپی شد</string>
+    <string name="no_apps_set_as_default">هیچ برنامه‌ای به عنوان پیش‌فرض انتخاب نشده!</string>
+    <string name="custom_settings_for_invidious">تنظیمات سفارشی برای اینویدیوس</string>
+    <string name="invidious_settings">تنظیمات اینویدیوس</string>
+    <string name="invidious_dark_mode_title">تم‌ها</string>
     <string name="invidious_dark_mode_indication">Configure default theme without setting cookies</string>
     <string name="invidious_thin_mode_title">Thin mode</string>
     <string name="invidious_thin_mode_indication">Load HTML, CSS, JS and video elements (disables images)</string>
-    <string name="invidious_language_mode_indication">Available locales</string>
-    <string name="invidious_language_mode_title">UI Language</string>
+    <string name="invidious_language_mode_indication">مکان‌های موجود</string>
+    <string name="invidious_language_mode_title">زبان رابط کاربری</string>
     <string name="pref_invidious_head1">Site-wide parameters</string>
-    <string name="pref_invidious_head2">Player parameters</string>
-    <string name="invidious_annotations_mode_title">Annotations</string>
+    <string name="pref_invidious_head2">پارامترهای پخش‌کننده</string>
+    <string name="invidious_annotations_mode_title">حواشی</string>
     <string name="invidious_annotations_mode_indication">Show legacy annotations, provided by the Internet Archive</string>
     <string name="invidious_autoplay_mode_indication">Automatically play video on load</string>
     <string name="invidious_autoplay_mode_title">Autoplay</string>
@@ -102,76 +102,76 @@
     <string name="invidious_local_mode_indication">Proxy video streams</string>
     <string name="invidious_subtitles_mode_title">Subtitles</string>
     <string name="invidious_subtitles_mode_indication">List of ISO 639–1 language codes</string>
-    <string name="invidious_quality_mode_title">Quality</string>
-    <string name="invidious_quality_mode_indication">Default player quality</string>
+    <string name="invidious_quality_mode_title">کيفيت</string>
+    <string name="invidious_quality_mode_indication">کیفیت پیش‌فرض پخش‌کننده</string>
     <string name="invidious_loop_mode_title">Loop</string>
-    <string name="invidious_volume_mode_title">Volume</string>
+    <string name="invidious_volume_mode_title">ولوم</string>
     <string name="invidious_volume_mode_indication">Default player volume, can be any whole number between 0 and 100</string>
     <string name="invidious_loop_mode_indication">Loop player by default</string>
-    <string name="invidious_volume_mode_value">Volume value</string>
+    <string name="invidious_volume_mode_value">مقدار ولوم</string>
     <string name="invidious_volume_mode_value_indication">Override the volume with this value</string>
-    <string name="pref_invidious_head3">Player Style</string>
+    <string name="pref_invidious_head3">مدل پخش‌کننده</string>
     <string name="invidious_player_style_mode_title">Appearance</string>
     <string name="invidious_player_style_mode_indication">Invidious, the default one. YouTube, using a centered play button and always visible video control bar</string>
-    <string name="help">Help</string>
-    <string name="invidious_help_title">Setting options</string>
+    <string name="help">راهنما</string>
+    <string name="invidious_help_title">گزینه‌های تنظیمات</string>
     <string name="invidious_help_ignore"><b>Ignore:</b> This is the default action for all¹ parameters. This means UntrackMe will not do anything about the parameter</string>
     <string name="invidious_help_remove"><b>Remove:</b> UntrackMe will remove the parameter from URL, if it exists</string>
     <string name="invidious_help_other">If you select other values for a parameter, they will be added to the URL. If the parameter already exists, its value will be changed to your choice</string>
     <string name="invidious_help_explanations">[1] \'local\' parameter is set to \'true\' by default for better privacy</string>
     <string-array name="invidious_theme">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Dark theme</item>
-        <item>Light theme</item>
+        <item>نادیده گرفتن</item>
+        <item>حذف</item>
+        <item>تم تاریک</item>
+        <item>تم روشن</item>
     </string-array>
     <string-array name="invidious_enable">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Enabled</item>
-        <item>Disabled</item>
+        <item>نادیده گرفتن</item>
+        <item>حذف</item>
+        <item>فعال</item>
+        <item>غیر فعال</item>
     </string-array>
     <string-array name="invidious_language">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Arabic</item>
-        <item>German</item>
-        <item>Greek</item>
-        <item>English</item>
-        <item>Esperanto</item>
-        <item>Spanish</item>
+        <item>نادیده گرفتن</item>
+        <item>حذف</item>
+        <item>عربی</item>
+        <item>آلمانی</item>
+        <item>یونانی</item>
+        <item>انگلیسی</item>
+        <item>اسپرانتو</item>
+        <item>اسپانیایی</item>
         <item>Basque</item>
-        <item>French</item>
-        <item>Icelandic</item>
-        <item>Italian</item>
+        <item>فرانسوی</item>
+        <item>ایسلندی</item>
+        <item>ایتالیایی</item>
         <item>Norwegian Bokmål</item>
-        <item>Dutch</item>
-        <item>Polish</item>
-        <item>Russian</item>
-        <item>Ukrainian</item>
-        <item>Chinese</item>
+        <item>هلندی</item>
+        <item>لهستانی</item>
+        <item>روسی</item>
+        <item>اوکراینی</item>
+        <item>چینی</item>
     </string-array>
     <string-array name="invidious_annotations">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Show annotations</item>
-        <item>Hide annotations</item>
+        <item>نادیده گرفتن</item>
+        <item>حذف</item>
+        <item>نشان دادن حواشی</item>
+        <item>پنهان کردن حواشی</item>
     </string-array>
     <string-array name="invidious_quality">
-        <item>Ignore</item>
-        <item>Remove</item>
+        <item>نادیده گرفتن</item>
+        <item>حذف</item>
         <item>DASH</item>
         <item>720p</item>
         <item>480p</item>
     </string-array>
     <string-array name="invidious_volume">
-        <item>Ignore</item>
-        <item>Remove</item>
+        <item>نادیده گرفتن</item>
+        <item>حذف</item>
         <item>Custom</item>
     </string-array>
     <string-array name="invidious_player_style">
-        <item>Ignore</item>
-        <item>Remove</item>
+        <item>نادیده گرفتن</item>
+        <item>حذف</item>
         <item>Invidious</item>
         <item>Youtube</item>
     </string-array>
