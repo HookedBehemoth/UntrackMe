@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">يقوم بتحويل Youtube إلى Invidious</string>
     <string name="redirect_twitter_to_nitter">يقوم بتحويل تويتر إلى Nitter</string>
     <string name="redirect_instagram_to_bibliogram">يقوم بتحويل أنستغرام إلى Bibliogram</string>
+    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
     <string name="custom_bibliogram">مثيل خادم Bibliogram مخصَّص</string>
+    <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">إعادة توجيه خريطة غوغل إلى Geo URI</string>
     <string name="configure">ضبط</string>
     <string name="display_supported_links">اظهر الروابط المدعومة</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">مثيلات خوادم Invidious</string>
     <string name="nitter_instances">مثيلات خوادم Nitter</string>
     <string name="bibliogram_instances">مثيلات خوادم Bibliogram</string>
+    <string name="teddit_instances">Teddit instances</string>
     <string name="latency">وقت الإستجابة</string>
     <string name="error_message_internet">تحقق من اتصالك بالإنترنت</string>
     <string name="instance_label">مثيل الخادم:</string>

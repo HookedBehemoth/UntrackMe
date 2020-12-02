@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">Přesměrujte YouTube na Invidious</string>
     <string name="redirect_twitter_to_nitter">Přesměrovat Twitter na Nitter</string>
     <string name="redirect_instagram_to_bibliogram">Přesměrovat Instagram na Bibliogram</string>
+    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
     <string name="custom_bibliogram">Vlastní Bibliogram instance</string>
+    <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">Přesměrovat Google mapu na Geo URI</string>
     <string name="configure">Konfigurovat</string>
     <string name="display_supported_links">Zobrazit podporované odkazy</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Invidious instancí</string>
     <string name="nitter_instances">Instance Nitter</string>
     <string name="bibliogram_instances">Bibliogram instancí</string>
+    <string name="teddit_instances">Teddit instances</string>
     <string name="latency">Latence</string>
     <string name="error_message_internet">Zkontrolujte připojení k Internetu</string>
     <string name="instance_label">Instance:</string>

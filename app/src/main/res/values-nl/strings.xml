@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">YouTube omleiden naar Invidious</string>
     <string name="redirect_twitter_to_nitter">Twitter omleiden naar Nitter</string>
     <string name="redirect_instagram_to_bibliogram">Instagram omleiden naar Bibliogram</string>
+    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
     <string name="custom_bibliogram">Aangepaste Bibliogram-exemplaar</string>
+    <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">Google Map omleiden naar Geo URI</string>
     <string name="configure">Configureren</string>
     <string name="display_supported_links">Toon ondersteunde links</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Ongewenste gevallen</string>
     <string name="nitter_instances">Nitter instanties</string>
     <string name="bibliogram_instances">Bibliografische voorbeelden</string>
+    <string name="teddit_instances">Teddit instances</string>
     <string name="latency">Latentie</string>
     <string name="error_message_internet">Controleer uw internetverbinding</string>
     <string name="instance_label">Instantie:</string>

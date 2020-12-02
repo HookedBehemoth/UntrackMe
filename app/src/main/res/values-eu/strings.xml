@@ -27,7 +27,9 @@
     <string name="redirect_youtube_to_invidious">Birbideratu YouTube Invidious-era</string>
     <string name="redirect_twitter_to_nitter">Birbideratu Twitter Nitter-era</string>
     <string name="redirect_instagram_to_bibliogram">Birbideratu Instagram Bibliogram-era</string>
+    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
     <string name="custom_bibliogram">Hautatu Bibliogram instatzia</string>
+    <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">Berbideratu Google Map Geo URI-ra</string>
     <string name="configure">Konfiguratu</string>
     <string name="display_supported_links">Erakutsi onartutako estekak</string>
@@ -44,6 +46,7 @@
     <string name="invidious_instances">Invidious instantziak</string>
     <string name="nitter_instances">Nitter instantziak</string>
     <string name="bibliogram_instances">Bibliogram instantziak</string>
+    <string name="teddit_instances">Teddit instances</string>
     <string name="latency">Latentzia</string>
     <string name="error_message_internet">Egiaztatu zure internet konexioa</string>
     <string name="instance_label">Instantzia:</string>
