@@ -8,29 +8,29 @@ files:
         zh-CN: zh-rCN
         pt-PT: pt-rPT
         pt-BR: pt-rBR
-  - source: /app/src/fullLinks/play/listings/en-US/full-description.txt
-    translation: /app/src/fullLinks/play/listings/%two_letters_code%/%original_file_name%
+  - source: /app/src/fullLinks/fastlane/metadata/android/en-US/full_description.txt
+    translation: /app/src/fullLinks/fastlane/metadata/android/%two_letters_code%/%original_file_name%
     #update_option: update_without_changes
     languages_mapping:
       two_letters_code:
         zh-TW: zh-rTW
         zh-CN: zh-rCN
-  - source: /app/src/fullLinks/play/listings/en-US/full-description.txt
-    translation: /app/src/lite/play/listings/%two_letters_code%/%original_file_name%
+  - source: /app/src/fullLinks/fastlane/metadata/android/en-US/full_description.txt
+    translation: /app/src/lite/fastlane/metadata/android/%two_letters_code%/%original_file_name%
     #update_option: update_without_changes
     languages_mapping:
       two_letters_code:
         zh-TW: zh-rTW
         zh-CN: zh-rCN
-  - source: /app/src/fullLinks/play/listings/en-US/short-description.txt
-    translation: /app/src/fullLinks/play/listings/%two_letters_code%/%original_file_name%
+  - source: /app/src/fullLinks/fastlane/metadata/android/en-US/short_description.txt
+    translation: /app/src/fullLinks/fastlane/metadata/android/%two_letters_code%/%original_file_name%
     #update_option: update_without_changes
     languages_mapping:
       two_letters_code:
         zh-TW: zh-rTW
         zh-CN: zh-rCN
-  - source: /app/src/fullLinks/play/listings/en-US/short-description.txt
-    translation: /app/src/lite/play/listings/%two_letters_code%/%original_file_name%
+  - source: /app/src/fullLinks/fastlane/metadata/android/en-US/short_description.txt
+    translation: /app/src/lite/fastlane/metadata/android/%two_letters_code%/%original_file_name%
     #update_option: update_without_changes
     languages_mapping:
       two_letters_code:
