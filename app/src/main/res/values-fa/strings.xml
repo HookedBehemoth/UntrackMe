@@ -2,149 +2,149 @@
 <resources>
     <!-- Some local values -->
     <string name="action_settings">تنظیمات</string>
-    <string name="action_about">دربارهٔ برنامه</string>
+    <string name="action_about">درباره</string>
     <string name="developer">توسعه‌دهنده</string>
-    <string name="donations">Donations</string>
-    <string name="about_the_app">دربارهٔ برنامه</string>
-    <string name="source_code">کد منبع</string>
-    <string name="issue_tracker">پی‌گیرندهٔ مشکل‌ها</string>
+    <string name="donations">اعانه</string>
+    <string name="about_the_app">دربارهٔ کاره</string>
+    <string name="source_code">کد مبدأ</string>
+    <string name="issue_tracker">ردیاب مشکل</string>
     <string name="license">پروانه</string>
-    <string name="about_vesrion">عرضهٔ %1$s</string>
+    <string name="about_vesrion">ارائه %1$s</string>
     <string name="custom_nitter">نمونهٔ سفارشی نیتر</string>
     <string name="save">ذخیره</string>
     <string name="close">بستن</string>
-    <string name="instances_saved">نمونه‌های سفارشی ذخیره شد!</string>
-    <string name="custom_invidious">نمونهٔ سفارشی اینویدیوس</string>
-    <string name="no_apps">برنامهٔ پیش‌فرضی انتخاب نشده</string>
-    <string name="Donate">اهدا کنید</string>
+    <string name="instances_saved">نمونه‌های سفارشی ذخیره شدند!</string>
+    <string name="custom_invidious">نمونهٔ سفارشی این‌ویدیوس</string>
+    <string name="no_apps">بدون برنامهٔ پیش‌گزیده</string>
+    <string name="Donate">اعانه</string>
     <string name="warning">هشدار</string>
     <string name="error">خطا</string>
     <string name="valid">معتبر</string>
-    <string name="icon_of_the_app">نقشک برنامه</string>
-    <string name="open_with">باز کردن با</string>
-    <string name="redirect_gm_to_osm">هدایت گوگل‌مپ به اوپن‌استریت‌مپ</string>
-    <string name="custom_osm">میزبان سفارشی اُ.اس.اِم</string>
-    <string name="redirect_youtube_to_invidious">هدایت یوتیوب به اینویدیوس</string>
+    <string name="icon_of_the_app">نقشک کاره</string>
+    <string name="open_with">گشودن با</string>
+    <string name="redirect_gm_to_osm">هدایت نقشهٔ گوگل به اوپن‌استریت‌مپ</string>
+    <string name="custom_osm">نام میزبان سفارشی اوپن‌استریت‌مپ</string>
+    <string name="redirect_youtube_to_invidious">هدایت یوتوب به این‌ویدیوس</string>
     <string name="redirect_twitter_to_nitter">هدایت توییتر به نیتر</string>
-    <string name="redirect_instagram_to_bibliogram">هدایت اینستاگرام به بیبلیوگرام</string>
+    <string name="redirect_instagram_to_bibliogram">هدایت اینستاگرم به بیبلیوگرم</string>
     <string name="redirect_reddit_to_teddit">هدایت ردیت به تدیت</string>
-    <string name="custom_bibliogram">نمونهٔ سفارشی بیبلیوگرام</string>
+    <string name="custom_bibliogram">نمونهٔ سفارشی بیبلیوگرم</string>
     <string name="custom_teddit">نمونهٔ سفارشی تدیت</string>
-    <string name="redirect_gm_to_geo_uri">هدایت گوگل‌مپ به یوآرآی جغرافیایی</string>
+    <string name="redirect_gm_to_geo_uri">هدایت نقشهٔ گوگل به نشانی جغرافیایی</string>
     <string name="configure">پیکربندی</string>
-    <string name="display_supported_links">پیوندهای پشتیبانی‌شده را نشان بده</string>
-    <string name="use_geo_uri">یوآرآی جغرافیایی را استفاده کن</string>
+    <string name="display_supported_links">نمایش پیوندهای پشتیبانی‌شده</string>
+    <string name="use_geo_uri">استفاده از نشانی جغرافیایی</string>
     <string name="how_to">راهنما</string>
-    <string name="shortened_detected">نشانی کوتاه‌شده</string>
-    <string name="shortener_services">سرویس‌های کوتاه‌کنندهٔ نشانی</string>
-    <string name="open">باز کن</string>
+    <string name="shortened_detected">نشانی کوتاه</string>
+    <string name="shortener_services">خدمات کوتاه‌کننده</string>
+    <string name="open">گشودن</string>
     <string name="dismiss">رد کردن</string>
-    <string name="resolving_shortened">در حال باز کردن نشانی کوتاه‌شده، لطفاً صبر کنید…</string>
-    <string name="try_to_redirect">%1$s \n\n شما را به \n\n<b>%2$s</b> هدایت می‌کند</string>
-    <string name="try_to_redirect_again">سپس شما را به \n\n<b>%1$s</b> هدایت می‌کند</string>
-    <string name="the_app_failed_shortened">برنامه نتوانست نشانی کامل را پیدا کند</string>
-    <string name="invidious_instances">نمونه‌های اینویدیوس</string>
+    <string name="resolving_shortened">باز کردن نشانی کوتاه، لطفاً شکیبایی کنید…</string>
+    <string name="try_to_redirect">%1$s \n\n به \n\n<b>%2$s</b> هدایتتان می‌کند</string>
+    <string name="try_to_redirect_again">سپس به \n\n<b>%1$s</b> هدایتتان خواهد کرد</string>
+    <string name="the_app_failed_shortened">کاره نتوانست نشانی کامل را به دست آورد</string>
+    <string name="invidious_instances">نمونه‌های این‌ویدیوس</string>
     <string name="nitter_instances">نمونه‌های نیتر</string>
-    <string name="bibliogram_instances">نمونه‌های بیبلیوگرام</string>
+    <string name="bibliogram_instances">نمونه‌های بیبلیوگرم</string>
     <string name="teddit_instances">نمونه‌های تدیت</string>
     <string name="latency">تأخیر</string>
-    <string name="error_message_internet">اتصال اینترنت خود را بررسی کنید</string>
+    <string name="error_message_internet">اتصال اینترنتیتان را بررسی کنید</string>
     <string name="instance_label">نمونه:</string>
-    <string name="expand_instance_details">جزئیات اطلاعات نمونه را باز کن</string>
-    <string name="cloudflare">این نمونه از کلاودفلر استفاده می‌کند</string>
-    <string name="instance_info">اطلاعات دربارهٔ نمونه‌های فهرست‌شده</string>
-    <string name="about_instances">فهرست نمونه‌ها از \n\n <a href="%1$s">%2$s</a>\n\n می‌آید. شما می‌توانید با افزودن و کاستن نمونه‌ها در آن مشارکت کنید.</string>
+    <string name="expand_instance_details">گسترش جزییات نمونه</string>
+    <string name="cloudflare">این نمونه از کلودفلر استفاده می‌کند</string>
+    <string name="instance_info">اطلاعات نمونه‌های فهرست‌شده</string>
+    <string name="about_instances">فهرست نمونه‌ها از \n\n <a href="%1$s">%2$s</a>\n\n می‌آید. می‌توانید با افزودن یا برداشتن نمونه‌ها در آن مشارکت کنید.</string>
     <string name="about_instances_title">دربارهٔ نمونه‌ها</string>
-    <string name="use_built_in_player">از پخش‌کنندهٔ تعبیه‌شده در برنامه استفاده کن</string>
-    <string name="share">به‌اشتراک‌گذاری</string>
+    <string name="use_built_in_player">استفاده از پخش‌کنندهٔ داخلی</string>
+    <string name="share">هم‌رسانی</string>
     <string name="download">بارگیری</string>
     <string name="share_with">هم‌رسانی با</string>
-    <string name="check_apps">بررسی برنامه‌ها</string>
-    <string name="select_instances">نمونه‌ها را انتخاب کنید</string>
-    <string name="continue_with">با…ادامه بده</string>
+    <string name="check_apps">بررسی کاره‌ها</string>
+    <string name="select_instances">گزینش نمونه‌ها</string>
+    <string name="continue_with">ادامه دادن با…</string>
     <string name="just_once">همین یک بار</string>
     <string name="always">همیشه</string>
-    <string name="default_app_indication">%1$s به عنوان برنامهٔ پیش‌فرض انتخاب شده. \n شما می‌توانید از قسمت تنظیمات آن را تغییر بدهید.</string>
-    <string name="indication_error_title">مشکلی در پیکربندی برنامه وجود دارد. برای درست کردنش لطفاً سرنخ‌ها را دنبال کنید.</string>
-    <string name="open_configure">دکمهٔ «پیکربندی» در قسمت بالا را بزنید.</string>
+    <string name="default_app_indication">%1$s به عنوان برنامهٔ پیش‌فرض انتخاب شده. \n شما می‌توانید از قسمت تنظیمات برنامه آن را تغییر بدهید.</string>
+    <string name="indication_error_title">مشکلی در پیکربندی برنامه وجود دارد. برای درست کردنش لطفاً این سرنخ‌ها را دنبال کنید.</string>
+    <string name="open_configure">دکمهٔ «پیکربندی» را در قسمت بالا بزنید.</string>
     <string name="supported_url_indication_1">اکنون در قسمت تنظیمات دستگاهتان هستید. روی «تنظیم به عنوان پیش‌فرض» بزنید.</string>
-    <string name="display_indications_1_description">Screenshot showing app settings for the app. You have to Tap on \"Set as default\"</string>
-    <string name="supported_url_indication_2">2 - Then tap on \"Go to supported URLs\".</string>
-    <string name="display_indications_2_description">Screenshot showing app settings for the app. You have to Tap on \"Go to supported URLs\"</string>
-    <string name="supported_url_indication_3">3 - In suggestions make sure to pickup \"Always ask\"</string>
-    <string name="display_indications_3_description">Screenshot showing app settings to define the behavior for opening URLs</string>
+    <string name="display_indications_1_description">این اسکرین‌شات بخش تنظیمات برنامه‌ها را نشان می‌دهد. باید روی «تنظیم به عنوان پیش‌فرض» بزنید</string>
+    <string name="supported_url_indication_2">سپس روی «برو به نشانی‌های پشتیبانی‌شده» بزنید.</string>
+    <string name="display_indications_2_description">این اسکرین‌شات بخش تنظیمات برنامه‌ها را نشان می‌دهد. باید روی «برو به نشانی‌های پشتیبانی‌شده» بزنید</string>
+    <string name="supported_url_indication_3">در بخش پیشنهادها، حواستان باشد که گزینهٔ «همیشه بپرس» را انتخاب کنید</string>
+    <string name="display_indications_3_description">این اسکرین‌شات تنظیمات مربوط به نحوهٔ باز کردن نشانی‌ها را در برنامه نشان می‌دهد</string>
     <string name="default_apps">برنامه‌های پیش‌فرض</string>
     <string name="remove_from_default_app">از برنامه‌های پیش‌فرض حذف کن</string>
-    <string name="delete">حذف</string>
-    <string name="cancel">لغو</string>
+    <string name="delete">پاک کردن</string>
+    <string name="cancel">لغو کردن</string>
     <string name="delete_app_from_default">%1$s از برنامه‌های پیش‌فرض حذف شود؟</string>
     <string name="copy_done">کپی شد</string>
     <string name="no_apps_set_as_default">هیچ برنامه‌ای به عنوان پیش‌فرض انتخاب نشده!</string>
     <string name="custom_settings_for_invidious">تنظیمات سفارشی برای اینویدیوس</string>
     <string name="invidious_settings">تنظیمات اینویدیوس</string>
-    <string name="invidious_dark_mode_title">تم‌ها</string>
-    <string name="invidious_dark_mode_indication">Configure default theme without setting cookies</string>
-    <string name="invidious_thin_mode_title">Thin mode</string>
-    <string name="invidious_thin_mode_indication">Load HTML, CSS, JS and video elements (disables images)</string>
-    <string name="invidious_language_mode_indication">مکان‌های موجود</string>
+    <string name="invidious_dark_mode_title">تِم</string>
+    <string name="invidious_dark_mode_indication">پیکربندی تم پیش‌فرض بدون تنظیم کوکی‌ها</string>
+    <string name="invidious_thin_mode_title">حالت Thin</string>
+    <string name="invidious_thin_mode_indication">عناصر HTML، CSS، JS و ویدئو را بار کن (تصاویر را غیرفعال می‌کند)</string>
+    <string name="invidious_language_mode_indication">زبان‌های موجود</string>
     <string name="invidious_language_mode_title">زبان رابط کاربری</string>
-    <string name="pref_invidious_head1">Site-wide parameters</string>
+    <string name="pref_invidious_head1">پارامترهای حاکم بر سرتاسر سایت</string>
     <string name="pref_invidious_head2">پارامترهای پخش‌کننده</string>
-    <string name="invidious_annotations_mode_title">حواشی</string>
-    <string name="invidious_annotations_mode_indication">Show legacy annotations, provided by the Internet Archive</string>
-    <string name="invidious_autoplay_mode_indication">Automatically play video on load</string>
-    <string name="invidious_autoplay_mode_title">Autoplay</string>
-    <string name="invidious_continue_mode_title">Continue</string>
-    <string name="invidious_continue_mode_indication">When video is done, automatically go to the next related video (similar to YouTube’s Autoplay feature)</string>
-    <string name="invidious_listen_mode_title">Listen</string>
-    <string name="invidious_listen_mode_indication">Play only audio portion of video</string>
-    <string name="invidious_local_mode_title">Local</string>
-    <string name="invidious_local_mode_indication">Proxy video streams</string>
-    <string name="invidious_subtitles_mode_title">Subtitles</string>
-    <string name="invidious_subtitles_mode_indication">List of ISO 639–1 language codes</string>
+    <string name="invidious_annotations_mode_title">حاشیه‌ها</string>
+    <string name="invidious_annotations_mode_indication">نشان دادن حاشیه‌های قدیمی، که Internet Archive فراهم کرده</string>
+    <string name="invidious_autoplay_mode_indication">ویدئو را پس از بار شدن به صورت خودکار پخش کن</string>
+    <string name="invidious_autoplay_mode_title">پخش خودکار</string>
+    <string name="invidious_continue_mode_title">ادامه دادن</string>
+    <string name="invidious_continue_mode_indication">وقتی که پخش این ویدئو تمام شد، به صورت خودکار سراغ ویدئوی مرتبط بعدی برو (مشابه ویژگی پخش خودکار یوتیوب)</string>
+    <string name="invidious_listen_mode_title">شنیدن</string>
+    <string name="invidious_listen_mode_indication">تنها بخش صوتی ویدئو را پخش کن</string>
+    <string name="invidious_local_mode_title">محلی</string>
+    <string name="invidious_local_mode_indication">ویدئو استریم‌ها را از پروکسی رد کن</string>
+    <string name="invidious_subtitles_mode_title">زیرنویس‌ها</string>
+    <string name="invidious_subtitles_mode_indication">فهرست کدهای زبانی ISO 639–1</string>
     <string name="invidious_quality_mode_title">کيفيت</string>
     <string name="invidious_quality_mode_indication">کیفیت پیش‌فرض پخش‌کننده</string>
-    <string name="invidious_loop_mode_title">Loop</string>
+    <string name="invidious_loop_mode_title">تکرار</string>
     <string name="invidious_volume_mode_title">ولوم</string>
-    <string name="invidious_volume_mode_indication">Default player volume, can be any whole number between 0 and 100</string>
-    <string name="invidious_loop_mode_indication">Loop player by default</string>
+    <string name="invidious_volume_mode_indication">ولوم پیش‌فرض پخش‌کننده، هر عدد صحیحی بین ۰ تا ۱۰۰ می‌تواند باشد</string>
+    <string name="invidious_loop_mode_indication">تکرار پخش‌کننده به صورت پیش‌فرض</string>
     <string name="invidious_volume_mode_value">مقدار ولوم</string>
-    <string name="invidious_volume_mode_value_indication">Override the volume with this value</string>
+    <string name="invidious_volume_mode_value_indication">ولوم را با این مقدار جایگزین کن</string>
     <string name="pref_invidious_head3">مدل پخش‌کننده</string>
-    <string name="invidious_player_style_mode_title">Appearance</string>
-    <string name="invidious_player_style_mode_indication">Invidious, the default one. YouTube, using a centered play button and always visible video control bar</string>
+    <string name="invidious_player_style_mode_title">ظاهر</string>
+    <string name="invidious_player_style_mode_indication">اینویدیوس مدل پیش‌فرض است. مدل یوتیوب یک دکمهٔ پخش در مرکز و یک نوار کنترل دارد که همیشه مرئی است</string>
     <string name="help">راهنما</string>
     <string name="invidious_help_title">گزینه‌های تنظیمات</string>
-    <string name="invidious_help_ignore"><b>Ignore:</b> This is the default action for all¹ parameters. This means UntrackMe will not do anything about the parameter</string>
-    <string name="invidious_help_remove"><b>Remove:</b> UntrackMe will remove the parameter from URL, if it exists</string>
-    <string name="invidious_help_other">If you select other values for a parameter, they will be added to the URL. If the parameter already exists, its value will be changed to your choice</string>
-    <string name="invidious_help_explanations">[1] \'local\' parameter is set to \'true\' by default for better privacy</string>
+    <string name="invidious_help_ignore"><b>نادیده گرفتن:</b> این عمل پیش‌فرض برای همهٔ (۱) پارامترها است. یعنی آن‌ترک‌می در مورد آن پارامتر کاری نمی‌کند</string>
+    <string name="invidious_help_remove"><b>حذف:</b> آن‌ترک‌می آن پارامتر را، اگر وجود داشته باشد، از نشانی حذف می‌کند</string>
+    <string name="invidious_help_other">اگر شما مقداری برای یک پارامتر تعیین کنید، آن پارامتر به نشانی افزوده می‌شود. اگر آن پارامتر از قبل وجود داشته باشد، مقدارش به آنچه شما انتخاب کرده‌اید، تغییر می‌کند</string>
+    <string name="invidious_help_explanations">[1] پارامتر «محلی» برای حفظ بهتر حریم خصوصی به صورت پیش‌فرض روی «صحیح» تنظیم شده است</string>
     <string-array name="invidious_theme">
-        <item>نادیده گرفتن</item>
-        <item>حذف</item>
+        <item>نادیده بگیر</item>
+        <item>حذف کن</item>
         <item>تم تاریک</item>
         <item>تم روشن</item>
     </string-array>
     <string-array name="invidious_enable">
-        <item>نادیده گرفتن</item>
-        <item>حذف</item>
+        <item>نادیده بگیر</item>
+        <item>حذف کن</item>
         <item>فعال</item>
         <item>غیر فعال</item>
     </string-array>
     <string-array name="invidious_language">
-        <item>نادیده گرفتن</item>
-        <item>حذف</item>
+        <item>نادیده بگیر</item>
+        <item>حذف کن</item>
         <item>عربی</item>
         <item>آلمانی</item>
         <item>یونانی</item>
         <item>انگلیسی</item>
         <item>اسپرانتو</item>
         <item>اسپانیایی</item>
-        <item>Basque</item>
+        <item>باسکی</item>
         <item>فرانسوی</item>
         <item>ایسلندی</item>
         <item>ایتالیایی</item>
-        <item>Norwegian Bokmål</item>
+        <item>نروژی بوکمل</item>
         <item>هلندی</item>
         <item>لهستانی</item>
         <item>روسی</item>
@@ -153,26 +153,26 @@
     </string-array>
     <string-array name="invidious_annotations">
         <item>نادیده گرفتن</item>
-        <item>حذف</item>
-        <item>نشان دادن حواشی</item>
-        <item>پنهان کردن حواشی</item>
+        <item>حذف کردن</item>
+        <item>حاشیه‌ها را نشان بده</item>
+        <item>حاشیه‌ها را پنهان کن</item>
     </string-array>
     <string-array name="invidious_quality">
-        <item>نادیده گرفتن</item>
-        <item>حذف</item>
+        <item>نادیده بگیر</item>
+        <item>حذف کن</item>
         <item>DASH</item>
-        <item>720p</item>
-        <item>480p</item>
+        <item>۷۲۰پ</item>
+        <item>۴۸۰پ</item>
     </string-array>
     <string-array name="invidious_volume">
-        <item>نادیده گرفتن</item>
-        <item>حذف</item>
-        <item>Custom</item>
+        <item>نادیده بگیر</item>
+        <item>حذف کن</item>
+        <item>سفارشی</item>
     </string-array>
     <string-array name="invidious_player_style">
-        <item>نادیده گرفتن</item>
-        <item>حذف</item>
-        <item>Invidious</item>
-        <item>Youtube</item>
+        <item>نادیده بگیر</item>
+        <item>حذف کن</item>
+        <item>اینویدیوس</item>
+        <item>یوتیوب</item>
     </string-array>
 </resources>
