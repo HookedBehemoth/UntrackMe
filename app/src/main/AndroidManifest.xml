@@ -44,6 +44,12 @@
                 <data android:host="t.co" />
                 <data android:host="nyti.ms" />
                 <data android:host="bit.ly" />
+                <data android:host="aspedrom.com" />
+                <data android:host="is.gd" />
+                <data android:host="fb.me" />
+                <data android:host="rb.gy" />
+                <data android:host="cutt.ly" />
+                <data android:host="bit.do" />
                 <data android:host="amp.gs" />
                 <data android:host="tinyurl.com" />
                 <data android:host="goo.gl" />
@@ -96,6 +102,12 @@
                 <data android:host="t.co" />
                 <data android:host="nyti.ms" />
                 <data android:host="bit.ly" />
+                <data android:host="is.gd" />
+                <data android:host="fb.me" />
+                <data android:host="rb.gy" />
+                <data android:host="cutt.ly" />
+                <data android:host="bit.do" />
+                <data android:host="aspedrom.com" />
                 <data android:host="amp.gs" />
                 <data android:host="tinyurl.com" />
                 <data android:host="goo.gl" />

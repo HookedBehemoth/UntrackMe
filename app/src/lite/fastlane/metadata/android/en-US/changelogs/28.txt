@@ -1,4 +1,3 @@
 Added:
-
-
-Fixed:
+- More shortener support: is.gd, fb.me, cutt.ly, bit.do, rb.gy
+- New localizations
