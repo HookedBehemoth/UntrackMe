@@ -1,1 +1,1 @@
-Trasforma i links di Youtube, Twitter e Instagram nel loro front-end alternativo, gratuito, open-source e focalizzato sulla privacy.
+Trasforma i collegamenti di Youtube, Twitter e Instagram nel loro front-end alternativo, libero e focalizzato sulla riservatezza.
