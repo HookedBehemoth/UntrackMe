@@ -19,7 +19,7 @@
     <string name="Donate">Lahjoita</string>
     <string name="warning">Varoitus</string>
     <string name="error">Virhe</string>
-    <string name="valid">Valid</string>
+    <string name="valid">Kelvollinen</string>
     <string name="icon_of_the_app">Sovelluksen kuvake</string>
     <string name="open_with">Open with</string>
     <string name="redirect_gm_to_osm">Uudelleenohjaa Google Maps OpenStreetMapiin</string>
@@ -27,9 +27,9 @@
     <string name="redirect_youtube_to_invidious">Uudelleenohjaa YouTube Invidiousiin</string>
     <string name="redirect_twitter_to_nitter">Uudelleenohjaa Twitter Nitteriin</string>
     <string name="redirect_instagram_to_bibliogram">Uudelleenohjaa Instagram Bibliogrammiin</string>
-    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
+    <string name="redirect_reddit_to_teddit">Uudelleenohjaa Reddit Tedditiin</string>
     <string name="custom_bibliogram">Mukautettu Bibliogram instanssi</string>
-    <string name="custom_teddit">Custom Teddit instance</string>
+    <string name="custom_teddit">Mukautettu Teddit instanssi</string>
     <string name="redirect_gm_to_geo_uri">Uudelleenohjaa Google Maps Geo URI:ihin</string>
     <string name="configure">Konfiguroi</string>
     <string name="display_supported_links">Näytä tuetut linkit</string>
@@ -46,7 +46,7 @@
     <string name="invidious_instances">Invidious instanssit</string>
     <string name="nitter_instances">Nitter instanssit</string>
     <string name="bibliogram_instances">Bibliogram instanssit</string>
-    <string name="teddit_instances">Teddit instances</string>
+    <string name="teddit_instances">Teddit instanssit</string>
     <string name="latency">Latenssi</string>
     <string name="error_message_internet">Tarkista internetyhteytesi</string>
     <string name="instance_label">Instanssi:</string>
@@ -92,24 +92,24 @@
     <string name="pref_invidious_head2">Toistimen parametrit</string>
     <string name="invidious_annotations_mode_title">Annotations</string>
     <string name="invidious_annotations_mode_indication">Show legacy annotations, provided by the Internet Archive</string>
-    <string name="invidious_autoplay_mode_indication">Automatically play video on load</string>
-    <string name="invidious_autoplay_mode_title">Autoplay</string>
-    <string name="invidious_continue_mode_title">Jatka</string>
+    <string name="invidious_autoplay_mode_indication">Toista video automaattisesti ladattaessa</string>
+    <string name="invidious_autoplay_mode_title">Automaattinen toisto</string>
+    <string name="invidious_continue_mode_title">Jatkuva toisto</string>
     <string name="invidious_continue_mode_indication">When video is done, automatically go to the next related video (similar to YouTube’s Autoplay feature)</string>
-    <string name="invidious_listen_mode_title">Listen</string>
-    <string name="invidious_listen_mode_indication">Play only audio portion of video</string>
+    <string name="invidious_listen_mode_title">Kuuntele</string>
+    <string name="invidious_listen_mode_indication">Toista vain ääni videosta</string>
     <string name="invidious_local_mode_title">Local</string>
     <string name="invidious_local_mode_indication">Proxy video streams</string>
-    <string name="invidious_subtitles_mode_title">Subtitles</string>
-    <string name="invidious_subtitles_mode_indication">List of ISO 639–1 language codes</string>
-    <string name="invidious_quality_mode_title">Quality</string>
+    <string name="invidious_subtitles_mode_title">Tekstitys</string>
+    <string name="invidious_subtitles_mode_indication">Luettelo ISO 639–1 -standardin kielikoodeista</string>
+    <string name="invidious_quality_mode_title">Laatu</string>
     <string name="invidious_quality_mode_indication">Toistimen oletuslaatu</string>
-    <string name="invidious_loop_mode_title">Loop</string>
-    <string name="invidious_volume_mode_title">Volume</string>
-    <string name="invidious_volume_mode_indication">Default player volume, can be any whole number between 0 and 100</string>
+    <string name="invidious_loop_mode_title">Jatkuva toisto</string>
+    <string name="invidious_volume_mode_title">Äänenvoimakkuus</string>
+    <string name="invidious_volume_mode_indication">Toistimen oletusäänenvoimakkuus voi olla mikä tahansa kokonaisluku 0 ja 100 väliltä</string>
     <string name="invidious_loop_mode_indication">Loop player by default</string>
-    <string name="invidious_volume_mode_value">Volume value</string>
-    <string name="invidious_volume_mode_value_indication">Override the volume with this value</string>
+    <string name="invidious_volume_mode_value">Äänenvoimakkuuden arvo</string>
+    <string name="invidious_volume_mode_value_indication">Ohita äänenvoimakkuus tällä arvolla</string>
     <string name="pref_invidious_head3">Toistimen tyyli</string>
     <string name="invidious_player_style_mode_title">Appearance</string>
     <string name="invidious_player_style_mode_indication">Invidious, the default one. YouTube, using a centered play button and always visible video control bar</string>
@@ -134,9 +134,9 @@
     <string-array name="invidious_language">
         <item>Ohita</item>
         <item>Poista</item>
-        <item>Arabic</item>
-        <item>German</item>
-        <item>Greek</item>
+        <item>arabia</item>
+        <item>saksa</item>
+        <item>kreikka</item>
         <item>English</item>
         <item>Esperanto</item>
         <item>Spanish</item>
