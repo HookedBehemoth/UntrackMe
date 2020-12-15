@@ -33,7 +33,7 @@
     <string name="redirect_gm_to_geo_uri">Uudelleenohjaa Google Maps Geo URI:ihin</string>
     <string name="configure">Konfiguroi</string>
     <string name="display_supported_links">Näytä tuetut linkit</string>
-    <string name="use_geo_uri">Käytä geo URI</string>
+    <string name="use_geo_uri">Käytä geo URI:itä</string>
     <string name="how_to">Miten</string>
     <string name="shortened_detected">Lyhennetty URL</string>
     <string name="shortener_services">URL-lyhentäjät</string>
@@ -41,7 +41,7 @@
     <string name="dismiss">Hylkää</string>
     <string name="resolving_shortened">Selvitetään lyhennettyä URL-osoitetta, ole hyvä ja odota…</string>
     <string name="try_to_redirect">%1$s \n\nuudelleenohjaa sinut kohteeseen:\n\n<b>%2$s</b></string>
-    <string name="try_to_redirect_again">Then it will redirect you to\n\n<b>%1$s</b></string>
+    <string name="try_to_redirect_again">Sitten se ohjaa sinut kohteeseen:\n\n<b>%1$s</b></string>
     <string name="the_app_failed_shortened">Sovellus ei onnistunut hakemaan koko URL-osoitetta</string>
     <string name="invidious_instances">Invidious instanssit</string>
     <string name="nitter_instances">Nitter instanssit</string>
@@ -64,38 +64,38 @@
     <string name="continue_with">Jatka sovelluksella…</string>
     <string name="just_once">Vain kerran</string>
     <string name="always">Aina</string>
-    <string name="default_app_indication">%1$s has been set as a default app.\nYou can remove this behavior from the app settings.</string>
-    <string name="indication_error_title">There is something wrong with the configuration of the app. Please, follow these indications to fix that issue.</string>
-    <string name="open_configure">1 - Tap on the \"CONFIGURE\" button above.</string>
-    <string name="supported_url_indication_1">2 - You are now in app settings from your device. Tap on \"Set as default\".</string>
-    <string name="display_indications_1_description">Screenshot showing app settings for the app. You have to Tap on \"Set as default\"</string>
-    <string name="supported_url_indication_2">2 - Then tap on \"Go to supported URLs\".</string>
-    <string name="display_indications_2_description">Screenshot showing app settings for the app. You have to Tap on \"Go to supported URLs\"</string>
-    <string name="supported_url_indication_3">3 - In suggestions make sure to pickup \"Always ask\"</string>
-    <string name="display_indications_3_description">Screenshot showing app settings to define the behavior for opening URLs</string>
+    <string name="default_app_indication">%1$s on asetettu oletussovellukseksi.\nVoit poistaa tämän toiminnon sovelluksen asetuksista.</string>
+    <string name="indication_error_title">Sovelluksen konfiguraatiossa on jotain vikaa. Ole hyvä ja seuraa näitä ohjeita korjataksesi ongelman.</string>
+    <string name="open_configure">1 - Napauta yllä olevaa \"KONFIGUROI\"-painiketta.</string>
+    <string name="supported_url_indication_1">2 - Olet nyt laitteesi sovellusasetuksissa. Napauta \"Avaa oletuksena\".</string>
+    <string name="display_indications_1_description">Kuvakaappaus, joka näyttää sovelluksen asetukset. Sinun täytyy napauttaa \"Avaa oletuksena\"</string>
+    <string name="supported_url_indication_2">2 - Napauta sitten \"Avaa tuetut linkit\".</string>
+    <string name="display_indications_2_description">Kuvakaappaus, joka näyttää sovelluksen asetukset. Sinun täytyy napauttaa \"Avaa tuetut linkit\"</string>
+    <string name="supported_url_indication_3">3 - Varmista ehdotuksista, että valitset \"Kysy aina\"</string>
+    <string name="display_indications_3_description">Kuvakaappaus, joka näyttää sovelluksen asetukset määrittääksesi käyttäytymisen URL-osoitteiden avaamiseksi</string>
     <string name="default_apps">Oletussovellukset</string>
-    <string name="remove_from_default_app">Remove from default apps</string>
+    <string name="remove_from_default_app">Poista oletussovelluksista</string>
     <string name="delete">Poista</string>
     <string name="cancel">Peruuta</string>
-    <string name="delete_app_from_default">Delete %1$s from default apps?</string>
+    <string name="delete_app_from_default">Poista %1$s oletussovelluksista?</string>
     <string name="copy_done">Kopioitu</string>
-    <string name="no_apps_set_as_default">No apps set as default!</string>
-    <string name="custom_settings_for_invidious">Custom settings for Invidious</string>
+    <string name="no_apps_set_as_default">Sovelluksia ei ole asetettu oletuksiksi!</string>
+    <string name="custom_settings_for_invidious">Mukautetut asetukset Invidious:ille</string>
     <string name="invidious_settings">Invidioussin asetukset</string>
     <string name="invidious_dark_mode_title">Teema</string>
     <string name="invidious_dark_mode_indication">Määritä oletusteema asettamatta evästeitä</string>
-    <string name="invidious_thin_mode_title">Thin mode</string>
-    <string name="invidious_thin_mode_indication">Load HTML, CSS, JS and video elements (disables images)</string>
+    <string name="invidious_thin_mode_title">Ohut tila</string>
+    <string name="invidious_thin_mode_indication">Lataa HTML-, CSS-, JS- ja videoelementit (poistaa kuvat käytöstä)</string>
     <string name="invidious_language_mode_indication">Käytettävissä olevat kielet</string>
     <string name="invidious_language_mode_title">Ulkoasun kieli</string>
     <string name="pref_invidious_head1">Sivuston laajuiset parametrit</string>
     <string name="pref_invidious_head2">Toistimen parametrit</string>
-    <string name="invidious_annotations_mode_title">Annotations</string>
-    <string name="invidious_annotations_mode_indication">Show legacy annotations, provided by the Internet Archive</string>
+    <string name="invidious_annotations_mode_title">Huomautukset</string>
+    <string name="invidious_annotations_mode_indication">Näytä vanhat huomautukset, jotka on toimitettu Internet Archivesta</string>
     <string name="invidious_autoplay_mode_indication">Toista video automaattisesti ladattaessa</string>
     <string name="invidious_autoplay_mode_title">Automaattinen toisto</string>
-    <string name="invidious_continue_mode_title">Jatkuva toisto</string>
-    <string name="invidious_continue_mode_indication">When video is done, automatically go to the next related video (similar to YouTube’s Autoplay feature)</string>
+    <string name="invidious_continue_mode_title">Jatka</string>
+    <string name="invidious_continue_mode_indication">Kun video on valmis, siirry automaattisesti seuraavaan aiheeseen liittyvään videoon (samanlainen kuin YouTuben Automaattinen toisto ominaisuus)</string>
     <string name="invidious_listen_mode_title">Kuuntele</string>
     <string name="invidious_listen_mode_indication">Toista vain ääni videosta</string>
     <string name="invidious_local_mode_title">Local</string>
@@ -107,17 +107,17 @@
     <string name="invidious_loop_mode_title">Jatkuva toisto</string>
     <string name="invidious_volume_mode_title">Äänenvoimakkuus</string>
     <string name="invidious_volume_mode_indication">Toistimen oletusäänenvoimakkuus voi olla mikä tahansa kokonaisluku 0 ja 100 väliltä</string>
-    <string name="invidious_loop_mode_indication">Loop player by default</string>
+    <string name="invidious_loop_mode_indication">Toista video jatkuvasti uudelleen</string>
     <string name="invidious_volume_mode_value">Äänenvoimakkuuden arvo</string>
     <string name="invidious_volume_mode_value_indication">Ohita äänenvoimakkuus tällä arvolla</string>
     <string name="pref_invidious_head3">Toistimen tyyli</string>
-    <string name="invidious_player_style_mode_title">Appearance</string>
-    <string name="invidious_player_style_mode_indication">Invidious, the default one. YouTube, using a centered play button and always visible video control bar</string>
-    <string name="help">Help</string>
-    <string name="invidious_help_title">Setting options</string>
-    <string name="invidious_help_ignore"><b>Ignore:</b> This is the default action for all¹ parameters. This means UntrackMe will not do anything about the parameter</string>
-    <string name="invidious_help_remove"><b>Remove:</b> UntrackMe will remove the parameter from URL, if it exists</string>
-    <string name="invidious_help_other">If you select other values for a parameter, they will be added to the URL. If the parameter already exists, its value will be changed to your choice</string>
+    <string name="invidious_player_style_mode_title">Ulkoasu</string>
+    <string name="invidious_player_style_mode_indication">Invidious on oletus. YouTuben tyyli käyttää keskitettyä toistopainiketta ja aina näkyvissä olevaa videon ohjauspalkkia</string>
+    <string name="help">Ohje</string>
+    <string name="invidious_help_title">Asetukset</string>
+    <string name="invidious_help_ignore"><b>Ohita:</b> Tämä on oletus toiminto kaikille¹ parametreille. Tämä tarkoittaa, että UntrackMe ei tee mitään parametrille</string>
+    <string name="invidious_help_remove"><b>Poista:</b> UntrackMe poistaa parametrin URL-osoitteesta, jos se on olemassa</string>
+    <string name="invidious_help_other">Jos valitset parametrille muita arvoja, ne lisätään URL-osoitteeseen. Jos parametri on jo olemassa, sen arvo muutetaan valintasi mukaan</string>
     <string name="invidious_help_explanations">[1] \'local\' parameter is set to \'true\' by default for better privacy</string>
     <string-array name="invidious_theme">
         <item>Ohita</item>
@@ -128,8 +128,8 @@
     <string-array name="invidious_enable">
         <item>Ohita</item>
         <item>Poista</item>
-        <item>Enabled</item>
-        <item>Disabled</item>
+        <item>Käytössä</item>
+        <item>Ei käytössä</item>
     </string-array>
     <string-array name="invidious_language">
         <item>Ohita</item>
@@ -154,8 +154,8 @@
     <string-array name="invidious_annotations">
         <item>Ohita</item>
         <item>Poista</item>
-        <item>Show annotations</item>
-        <item>Hide annotations</item>
+        <item>Näytä huomautukset</item>
+        <item>Piilota huomautukset</item>
     </string-array>
     <string-array name="invidious_quality">
         <item>Ohita</item>
@@ -167,7 +167,7 @@
     <string-array name="invidious_volume">
         <item>Ohita</item>
         <item>Poista</item>
-        <item>Custom</item>
+        <item>Mukautettu</item>
     </string-array>
     <string-array name="invidious_player_style">
         <item>Ohita</item>
