@@ -1,1 +1,1 @@
-Transform Youtube, Twitter & Instagram links to their free and open source alternative front-end focused on privacy.
+پیوندهای یوتیوب، توییتر و اینستاگرام را به رابط‌های کاربری جایگزنی تغییر دهید که هم آزاد و متن‌باز هستند و حریم شخصی در ان‌ها محوریت دارد.
