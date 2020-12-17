@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Some local values -->
-    <string name="action_settings">সেটিংস</string>
+    <string name="action_settings">বিন্যাস</string>
     <string name="action_about">সম্পর্কে</string>
-    <string name="developer">ডেভেলপার</string>
-    <string name="donations">দান করো</string>
-    <string name="about_the_app">অ্যাপ সম্পর্কে</string>
-    <string name="source_code">সোর্স কোড</string>
-    <string name="issue_tracker">ইস্যু অনুসরণকারী</string>
-    <string name="license">লাইসেন্স</string>
-    <string name="about_vesrion">সংস্করণ: %1$s</string>
+    <string name="developer">Developer</string>
+    <string name="donations">Donations</string>
+    <string name="about_the_app">About the app</string>
+    <string name="source_code">Source code</string>
+    <string name="issue_tracker">Issue tracker</string>
+    <string name="license">License</string>
+    <string name="about_vesrion">রিলিজ %1$s</string>
     <string name="custom_nitter">Custom Nitter instance</string>
-    <string name="save">সংরক্ষণ করো</string>
+    <string name="save">সংরক্ষণ</string>
     <string name="close">বন্ধ</string>
     <string name="instances_saved">Custom instances have been saved!</string>
     <string name="custom_invidious">Custom Invidious instance</string>
     <string name="no_apps">No applications by default</string>
-    <string name="Donate">দান করো</string>
+    <string name="Donate">Donate</string>
     <string name="warning">সতর্কতা</string>
-    <string name="error">ত্রুটি</string>
-    <string name="valid">শুদ্ধ</string>
+    <string name="error">Error</string>
+    <string name="valid">Valid</string>
     <string name="icon_of_the_app">Icon of the app</string>
-    <string name="open_with">খুলতে ব্যবহার করো</string>
+    <string name="open_with">দিয়ে খুলুন</string>
     <string name="redirect_gm_to_osm">Redirect Google Map to OpenStreetMap</string>
     <string name="custom_osm">Custom OSM hostname</string>
     <string name="redirect_youtube_to_invidious">Redirect YouTube to Invidious</string>
@@ -31,14 +31,14 @@
     <string name="custom_bibliogram">Custom Bibliogram instance</string>
     <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">Redirect Google Map to Geo URI</string>
-    <string name="configure">মান নির্ধারণ করো</string>
+    <string name="configure">Configure</string>
     <string name="display_supported_links">Display supported links</string>
     <string name="use_geo_uri">Use geo URI</string>
-    <string name="how_to">কীভাবে করতে হয়</string>
+    <string name="how_to">How-to</string>
     <string name="shortened_detected">Shortened URL</string>
     <string name="shortener_services">Shortener services</string>
-    <string name="open">খোলা</string>
-    <string name="dismiss">বাতিল করো</string>
+    <string name="open">Open</string>
+    <string name="dismiss">Dismiss</string>
     <string name="resolving_shortened">Resolving shortened URL, please wait…</string>
     <string name="try_to_redirect">%1$s \n\nwill redirect you to\n\n<b>%2$s</b></string>
     <string name="try_to_redirect_again">Then it will redirect you to\n\n<b>%1$s</b></string>
@@ -47,23 +47,23 @@
     <string name="nitter_instances">Nitter instances</string>
     <string name="bibliogram_instances">Bibliogram instances</string>
     <string name="teddit_instances">Teddit instances</string>
-    <string name="latency">ল্যাটেন্সি</string>
+    <string name="latency">Latency</string>
     <string name="error_message_internet">Check your Internet connection</string>
-    <string name="instance_label">সংগঠন:</string>
+    <string name="instance_label">ইনস্ট্যান্স:</string>
     <string name="expand_instance_details">Expand instance details</string>
     <string name="cloudflare">This instance uses Cloudflare</string>
     <string name="instance_info">Information about listed instances</string>
     <string name="about_instances">The list of instances comes from\n\n <a href="%1$s">%2$s</a>\n\nYou can contribute to this list by adding or removing instances.</string>
     <string name="about_instances_title">About instances</string>
     <string name="use_built_in_player">Use the built-in player</string>
-    <string name="share">শেয়ার</string>
+    <string name="share">বিভাজিত</string>
     <string name="download">ডাউনলোড</string>
-    <string name="share_with">শেয়ার করো</string>
+    <string name="share_with">সাথে শেয়ার</string>
     <string name="check_apps">Check apps</string>
     <string name="select_instances">Select instances</string>
     <string name="continue_with">Continue with…</string>
     <string name="just_once">Just once</string>
-    <string name="always">সর্বদা</string>
+    <string name="always">Always</string>
     <string name="default_app_indication">%1$s has been set as a default app.\nYou can remove this behavior from the app settings.</string>
     <string name="indication_error_title">There is something wrong with the configuration of the app. Please, follow these indications to fix that issue.</string>
     <string name="open_configure">1 - Tap on the \"CONFIGURE\" button above.</string>
@@ -75,14 +75,14 @@
     <string name="display_indications_3_description">Screenshot showing app settings to define the behavior for opening URLs</string>
     <string name="default_apps">Default apps</string>
     <string name="remove_from_default_app">Remove from default apps</string>
-    <string name="delete">মুছো</string>
+    <string name="delete">Delete</string>
     <string name="cancel">বাতিল</string>
     <string name="delete_app_from_default">Delete %1$s from default apps?</string>
-    <string name="copy_done">অনুলিপিত</string>
+    <string name="copy_done">Copied</string>
     <string name="no_apps_set_as_default">No apps set as default!</string>
     <string name="custom_settings_for_invidious">Custom settings for Invidious</string>
     <string name="invidious_settings">Invidious settings</string>
-    <string name="invidious_dark_mode_title">থিম</string>
+    <string name="invidious_dark_mode_title">Theme</string>
     <string name="invidious_dark_mode_indication">Configure default theme without setting cookies</string>
     <string name="invidious_thin_mode_title">Thin mode</string>
     <string name="invidious_thin_mode_indication">Load HTML, CSS, JS and video elements (disables images)</string>
@@ -93,19 +93,19 @@
     <string name="invidious_annotations_mode_title">Annotations</string>
     <string name="invidious_annotations_mode_indication">Show legacy annotations, provided by the Internet Archive</string>
     <string name="invidious_autoplay_mode_indication">Automatically play video on load</string>
-    <string name="invidious_autoplay_mode_title">স্বয়ং চালু করো</string>
-    <string name="invidious_continue_mode_title">এগিয়ে যাও</string>
+    <string name="invidious_autoplay_mode_title">Autoplay</string>
+    <string name="invidious_continue_mode_title">Continue</string>
     <string name="invidious_continue_mode_indication">When video is done, automatically go to the next related video (similar to YouTube’s Autoplay feature)</string>
-    <string name="invidious_listen_mode_title">শুনো</string>
+    <string name="invidious_listen_mode_title">Listen</string>
     <string name="invidious_listen_mode_indication">Play only audio portion of video</string>
-    <string name="invidious_local_mode_title">স্থানীয়</string>
+    <string name="invidious_local_mode_title">Local</string>
     <string name="invidious_local_mode_indication">Proxy video streams</string>
     <string name="invidious_subtitles_mode_title">Subtitles</string>
     <string name="invidious_subtitles_mode_indication">List of ISO 639–1 language codes</string>
-    <string name="invidious_quality_mode_title">গুণমান</string>
+    <string name="invidious_quality_mode_title">Quality</string>
     <string name="invidious_quality_mode_indication">Default player quality</string>
-    <string name="invidious_loop_mode_title">চক্রাকার</string>
-    <string name="invidious_volume_mode_title">আওয়াজ মাত্রা</string>
+    <string name="invidious_loop_mode_title">Loop</string>
+    <string name="invidious_volume_mode_title">Volume</string>
     <string name="invidious_volume_mode_indication">Default player volume, can be any whole number between 0 and 100</string>
     <string name="invidious_loop_mode_indication">Loop player by default</string>
     <string name="invidious_volume_mode_value">Volume value</string>
@@ -113,66 +113,66 @@
     <string name="pref_invidious_head3">Player Style</string>
     <string name="invidious_player_style_mode_title">Appearance</string>
     <string name="invidious_player_style_mode_indication">Invidious, the default one. YouTube, using a centered play button and always visible video control bar</string>
-    <string name="help">সাহায্য</string>
+    <string name="help">Help</string>
     <string name="invidious_help_title">Setting options</string>
     <string name="invidious_help_ignore"><b>Ignore:</b> This is the default action for all¹ parameters. This means UntrackMe will not do anything about the parameter</string>
     <string name="invidious_help_remove"><b>Remove:</b> UntrackMe will remove the parameter from URL, if it exists</string>
     <string name="invidious_help_other">If you select other values for a parameter, they will be added to the URL. If the parameter already exists, its value will be changed to your choice</string>
     <string name="invidious_help_explanations">[1] \'local\' parameter is set to \'true\' by default for better privacy</string>
     <string-array name="invidious_theme">
-        <item>উপেক্ষা করো</item>
-        <item>সরাও</item>
+        <item>Ignore</item>
+        <item>সরান</item>
         <item>Dark theme</item>
         <item>Light theme</item>
     </string-array>
     <string-array name="invidious_enable">
-        <item>উপেক্ষা করো</item>
-        <item>সরাও</item>
-        <item>সক্রিয়</item>
-        <item>নিষ্ক্রিয়</item>
+        <item>Ignore</item>
+        <item>সরান</item>
+        <item>Enabled</item>
+        <item>Disabled</item>
     </string-array>
     <string-array name="invidious_language">
-        <item>উপেক্ষা করো</item>
-        <item>সরাও</item>
-        <item>আরবি</item>
-        <item>জার্মান</item>
-        <item>গ্রিক</item>
-        <item>ইংরেজি</item>
+        <item>Ignore</item>
+        <item>সরান</item>
+        <item>Arabic</item>
+        <item>German</item>
+        <item>Greek</item>
+        <item>English</item>
         <item>Esperanto</item>
-        <item>স্প্যানিশ</item>
-        <item>বাস্ক</item>
-        <item>ফরাসি</item>
+        <item>Spanish</item>
+        <item>Basque</item>
+        <item>French</item>
         <item>Icelandic</item>
-        <item>ইতালিয়</item>
+        <item>Italian</item>
         <item>Norwegian Bokmål</item>
-        <item>ওলন্দাজ</item>
-        <item>পোলিশ</item>
-        <item>রুশ</item>
+        <item>Dutch</item>
+        <item>Polish</item>
+        <item>Russian</item>
         <item>Ukrainian</item>
-        <item>চীনা</item>
+        <item>Chinese</item>
     </string-array>
     <string-array name="invidious_annotations">
-        <item>উপেক্ষা করো</item>
-        <item>সরাও</item>
+        <item>Ignore</item>
+        <item>সরান</item>
         <item>Show annotations</item>
         <item>Hide annotations</item>
     </string-array>
     <string-array name="invidious_quality">
-        <item>উপেক্ষা করো</item>
-        <item>সরাও</item>
-        <item>দ্রুত</item>
-        <item>৭২০পি</item>
-        <item>৪৮০পি</item>
+        <item>Ignore</item>
+        <item>সরান</item>
+        <item>DASH</item>
+        <item>720p</item>
+        <item>480p</item>
     </string-array>
     <string-array name="invidious_volume">
-        <item>উপেক্ষা করো</item>
-        <item>সরাও</item>
-        <item>পছন্দসই</item>
+        <item>Ignore</item>
+        <item>সরান</item>
+        <item>Custom</item>
     </string-array>
     <string-array name="invidious_player_style">
-        <item>উপেক্ষা করো</item>
-        <item>সরাও</item>
+        <item>Ignore</item>
+        <item>সরান</item>
         <item>Invidious</item>
-        <item>ইউটিউব</item>
+        <item>Youtube</item>
     </string-array>
 </resources>
