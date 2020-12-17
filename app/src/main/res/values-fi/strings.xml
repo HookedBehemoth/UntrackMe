@@ -33,7 +33,7 @@
     <string name="redirect_gm_to_geo_uri">Uudelleenohjaa Google Maps Geo URI:ihin</string>
     <string name="configure">Konfiguroi</string>
     <string name="display_supported_links">Näytä tuetut linkit</string>
-    <string name="use_geo_uri">Käytä geo URI:itä</string>
+    <string name="use_geo_uri">Käytä geo URI</string>
     <string name="how_to">Miten</string>
     <string name="shortened_detected">Lyhennetty URL</string>
     <string name="shortener_services">URL-lyhentäjät</string>
