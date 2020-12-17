@@ -1,0 +1,31 @@
+UntrackMe一旦被设置为打开Twitter，YouTube和Instagram链接的默认应用，就会将它们转换为Nitter，Invidious和Bibliogram链接，并将操作委托给另一个应用程序。
+
+它还支持转换Google Maps链接为OpenStreetMap链接或Geo URI。
+
+该应用程序将检测缩短的URL，并在访问该站点之前显示完整的URL。
+
+**精简版本：
+
+-共享Twitter，YouTube或Google Maps链接前，只需选择UntrackMe即可对其进行转换，然后再与其他应用共享。
+
+**完整版本：
+
+-包含精简版本的所有功能，并且还处理所有链接以删除跟踪参数。 它使用自己的应用程序选择器，在访问它们前先显示 URL
+
+
+Nitter是什么:
+
+Niter是自由和开放源码的替代 Twitter 的前端，注重保护隐私。
+Github 项目：https://github.com/zedeus/nitter
+
+
+Invidious是什么:
+
+YouTube的一个自由和开源的替代前端
+Github 项目: https://github.com/omarroth/invidious
+
+
+Bibliography 是什么:
+
+Instagram的自由开源替代前端
+Github 项目：https://github.com/cloudrac3r/bibliogram
