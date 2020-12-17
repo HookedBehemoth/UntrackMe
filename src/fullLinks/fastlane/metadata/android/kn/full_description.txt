@@ -1,0 +1,31 @@
+UntrackMe once set by default to open Twitter, YouTube and Instagram links will transform them into Nitter, Invidious and Bibliogram links and delegate the action to another app.
+
+ಗೂಗಲ್ ನಕ್ಷೆ ಲಿಂಕ್‌ಗಳನ್ನು ಓಪನ್‌ಸ್ಟ್ರೀಟ್‌ಮ್ಯಾಪ್ ಲಿಂಕ್‌ಗಳನ್ನಾಗಿ ಅಥವಾ ಭೂ ಸಂಪನ್ಮೂಲ (Geo URI) ಗುರಿತಿಗೆ ಪರಿವರ್ತಿಸುವುದನ್ನೂ ಬೆಂಬಲಿಸುತ್ತದೆ.
+
+ಅನ್ವಯವು ಸಂಕ್ಷಿಪ್ತ ಲಿಂಕ್ (URL) ಗಳನ್ನು ಪತ್ತೆ ಮಾಡುತ್ತದೆ ಮತ್ತು ಜಾಲತಾಣಕ್ಕೆ ಭೇಟಿ ನೀಡುವ ಮೊದಲು ಪೂರ್ಣ URL ಅನ್ನು ಪ್ರದರ್ಶಿಸುತ್ತದೆ.
+
+**Lite version:
+
+- When sharing a Twitter, YouTube or Google Maps link just pick up UntrackMe to transform it before sharing it with another app.
+
+**Full version:
+
+- Contains all features of the lite version and it also handle all links to remove tracking parameters. It uses its own app picker that display URLs before visiting them.
+
+
+ನಿಟ್ಟರ್ ಅಂದರೆ ಏನು:
+
+ಗೌಪ್ಯತೆಯ ಮೇಲೆ ದೃಷ್ಟಿ ಹೊಂದಿರುವ ಸ್ವತಂತ್ರವಾದ ಮತ್ತು ತೆರೆದ ಮೂಲ ಹೊಂದಿರುವ ಪರ್ಯಾಯ ಟ್ವಿಟರ್ ಮುಖ.
+ಗಿಟ್‌ಹಬ್ ಯೋಜನೆ: https://github.com/zedeus/nitter
+
+
+ಇನ್ವಿಡಿಯೋಸ್ ಅಂದರೆ ಏನು:
+
+ಒಂದು ಸ್ವತಂತ್ರವಾದ ಮತ್ತು ತೆರೆದ ಮೂಲ ಹೊಂದಿರುವ ಪರ್ಯಾಯ ಯೂಟ್ಯೂಬ್ ಮುಖ
+ಗಿಟ್‌ಹಬ್ ಯೋಜನೆ: https://github.com/omarroth/invidious
+
+
+What is Bibliogram:
+
+A free and open source alternative front-end to Instagram
+ಗಿಟ್‌ಹಬ್ ಯೋಜನೆ: https://github.com/cloudrac3r/bibliogram
