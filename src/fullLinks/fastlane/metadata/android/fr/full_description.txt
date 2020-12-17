@@ -1,0 +1,31 @@
+UntrackMe une fois défini par défaut pour ouvrir les liens Twitter, YouTube et Instagram les transformera en liens Nitter, Invidious et Bibliogram et délèguera l'action à une autre application.
+
+Il prend également en charge les liens Google Maps pour les transformer en liens OpenStreetMap ou en URI Geo.
+
+L'application détectera les URL raccourcies et affichera l'URL complète avant de visiter le site.
+
+**Version allégée :
+
+- Quand vous partagez un lien Twitter, YouTube ou Google Maps, utilisez simplement UntrackMe pour le transformer avant de le partager avec une autre application.
+
+**Version complète :
+
+- Contient toutes les fonctionnalités de la version allégée et gère également tous les liens pour supprimer les paramètres de traçage. Il utilise son propre sélecteur d'application qui affiche les URL avant de les visiter.
+
+
+Qu’est-ce que Nitter :
+
+Une alternative libre et à code source ouvert pour Twitter axée sur la confidentialité.
+Projet Github : https://github.com/zedeus/nitter
+
+
+Qu'est-ce qu’Invidious :
+
+Une alternative libre et à code source ouvert pour YouTube
+Projet Github : https://github.com/omarroth/invidious
+
+
+Qu’est-ce que Bibliogram :
+
+Une alternative libre et à code source ouvert pour Instagram
+Projet Github : https://github.com/cloudrac3r/bibliogram
