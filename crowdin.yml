@@ -1,30 +1,7 @@
 files:
-  - source: /app/src/main/res/values/strings.xml
-    translation: /app/src/main/res/values-%two_letters_code%/%original_file_name%
-    update_option: update_without_changes
-    languages_mapping:
-      two_letters_code:
-        zh-TW: zh-rTW
-        zh-CN: zh-rCN
-        pt-PT: pt-rPT
-        pt-BR: pt-rBR
-  - source: /src/fullLinks/fastlane/metadata/android/en-US/full_description.txt
-    translation: >-
-      /src/fullLinks/fastlane/metadata/android/%two_letters_code%/%original_file_name%
-    languages_mapping:
-      two_letters_code:
-        zh-TW: zh-rTW
-        zh-CN: zh-rCN
   - source: /src/fullLinks/fastlane/metadata/android/en-US/full_description.txt
     translation: >-
       /src/lite/fastlane/metadata/android/%two_letters_code%/%original_file_name%
-    languages_mapping:
-      two_letters_code:
-        zh-TW: zh-rTW
-        zh-CN: zh-rCN
-  - source: /src/fullLinks/fastlane/metadata/android/en-US/short_description.txt
-    translation: >-
-      /src/fullLinks/fastlane/metadata/android/%two_letters_code%/%original_file_name%
     languages_mapping:
       two_letters_code:
         zh-TW: zh-rTW
