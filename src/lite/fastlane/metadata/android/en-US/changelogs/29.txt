@@ -1,0 +1,2 @@
+- Fix an issue with instance picker
+- More translations
