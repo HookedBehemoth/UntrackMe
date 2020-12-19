@@ -1,1 +1,0 @@
-Przekształć linki Youtube, Twittera i Instagrama do ich darmowej i otwartej wersji front-end skupiającej się na prywatności.
