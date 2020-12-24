@@ -1,31 +1,31 @@
-UntrackMe once set by default to open Twitter, YouTube and Instagram links will transform them into Nitter, Invidious and Bibliogram links and delegate the action to another app.
+UntrackMe jest ustawione domyślnie aby otwierać linki Twitter, YouTube i Instagram w Niter, Invidious i Bibliogram oraz przekazuje działania innym aplikacjom.
 
-It also supports Google Maps links to transform them into OpenStreetMap links or Geo URI.
+Obsługuje również linki do Google Maps i przekształca je w linki OpenStreetMap lub Geo URI.
 
-The app will detect shortened URLs and will display the full URL before visiting the site.
+Aplikacja wykryje skrócone adresy URL i wyświetli pełny adres przed odwiedzeniem witryny.
 
-**Lite version:
+**Wersja Lite:
 
-- When sharing a Twitter, YouTube or Google Maps link just pick up UntrackMe to transform it before sharing it with another app.
+- Udostępniając link Twitter, YouTube lub Google Maps po prostu uruchom UntrackMe, aby przekształcić go przed udostępnieniem do innej aplikacji.
 
-**Full version:
+**Pełna wersja:
 
-- Contains all features of the lite version and it also handle all links to remove tracking parameters. It uses its own app picker that display URLs before visiting them.
-
-
-What is Nitter:
-
-A free and open source alternative Twitter front-end focused on privacy.
-Github project: https://github.com/zedeus/nitter
+- Zawiera wszystkie funkcje wersji lite i obsługuje usuwanie parametrów śledzących z linków. Używa własnego selektora aplikacji, który wyświetla adresy URL przed ich odwiedzeniem.
 
 
-What is Invidious:
+Co to jest Nitter:
 
-A free and open source alternative front-end to YouTube
-Github project: https://github.com/omarroth/invidious
+Darmowa i otwartoźródłowa alternatywna wersja front-end dla Twittera, skupiająca się na prywatności.
+Projekt Github: https://github.com/zedeus/nitter
 
 
-What is Bibliogram:
+Co to jest Invidious:
 
-A free and open source alternative front-end to Instagram
-Github project: https://github.com/cloudrac3r/bibliogram
+Darmowa i otwarto źródłowa alternatywa dla front-endu YouTube'a
+Projekt Github: https://github.com/omarroth/invidious
+
+
+Co to jest Bibliogram:
+
+Darmowy i otwartoźródłowy alternatywny front-end dla Instagrama
+Projekt Github: https://github.com/cloudrac3r/bibliogram
