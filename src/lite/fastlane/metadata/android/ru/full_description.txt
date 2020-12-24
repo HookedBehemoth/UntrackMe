@@ -1,8 +1,8 @@
-UntrackMe once set by default to open Twitter, YouTube and Instagram links will transform them into Nitter, Invidious and Bibliogram links and delegate the action to another app.
+Будучи установленным по умолчанию для открытия ссылок Twitter и YouTube, UntrackMe будет трансформировать их в ссылки Nitter и Invidious соответственно и делегировать действие другому приложению.
 
-It also supports Google Maps links to transform them into OpenStreetMap links or Geo URI.
+Также поддерживается преобразование ссылок на Google Maps в ссылки на OpenStreetMap либо унифицированный идентификатор ресурса - Geo URI.
 
-The app will detect shortened URLs and will display the full URL before visiting the site.
+Приложение будет определять укороченные ссылки и отображать полный путь перед посещением сайта.
 
 **Lite version:
 

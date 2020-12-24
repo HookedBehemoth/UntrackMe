@@ -1,31 +1,31 @@
-UntrackMe once set by default to open Twitter, YouTube and Instagram links will transform them into Nitter, Invidious and Bibliogram links and delegate the action to another app.
+Το UntrackMe μόλις ρυθμιστεί να ανοίγει, από προεπιλογή, τους συνδέσμους Twitter, YouTube και Instagram θα τους μετατρέψει σε συνδέσμους Nitter, Invidious και Bibliogram και θα αναθέσει τη δράση σε μια άλλη εφαρμογή.
 
-It also supports Google Maps links to transform them into OpenStreetMap links or Geo URI.
+Υποστηρίζει επίσης συνδέσμους Google Maps και τους μετατρέπει σε συνδέσμους OpenStreetMap ή Geo URI.
 
-The app will detect shortened URLs and will display the full URL before visiting the site.
+Η εφαρμογή θα ανιχνεύσει συντομευμένες URL και θα εμφανίσει τις πλήρης URL πριν την επίσκεψη στον ιστότοπο.
 
-**Lite version:
+**Lite έκδοση:
 
-- When sharing a Twitter, YouTube or Google Maps link just pick up UntrackMe to transform it before sharing it with another app.
+- Όταν μοιράζεστε ένα σύνδεσμο Twitter, YouTube ή Google Maps απλά επιλέξτε το UntrackMe για να τον μετατρέψετε πρίν τον μοιραστείτε με μια άλλη εφαρμογή.
 
-**Full version:
+**Πλήρης έκδοση:
 
-- Contains all features of the lite version and it also handle all links to remove tracking parameters. It uses its own app picker that display URLs before visiting them.
-
-
-What is Nitter:
-
-A free and open source alternative Twitter front-end focused on privacy.
-Github project: https://github.com/zedeus/nitter
+Περιέχει όλες τις λειτουργίες της έκδοσης lite και μπορεί επίσης να διαχειριστεί όλους τους συνδέσμους ώστε να αφαιρέσει τις παραμέτρους παρακολούθησης. Χρησιμοποιεί τον δικό του επιλογέα εφαρμογών για την εμφάνιση URL πρίν την εμφάνιση.
 
 
-What is Invidious:
+Τι είναι το Nitter:
 
-A free and open source alternative front-end to YouTube
-Github project: https://github.com/omarroth/invidious
+Μία εναλλακτική, ανοιχτού κώδικα, διεπαφή για το Twitter με έμφαση στην ιδιωτικότητα.
+Έργο Github: https://github.com/zedeus/nitter
 
 
-What is Bibliogram:
+Τι είναι το Invidious:
 
-A free and open source alternative front-end to Instagram
-Github project: https://github.com/cloudrac3r/bibliogram
+Μία δωρεάν και ανοιχτού κώδικα εναλλακτική διεπαφή για το YouTube
+Έργο Github: https://github.com/omarroth/invidious
+
+
+Τι είναι το Bibliogram:
+
+Μία δωρεάν και ανοιχτού κώδικα εναλλακτική διεπαφή για το Instagram
+Έργο Github: https://github.com/cloudrac3r/bibliogram
