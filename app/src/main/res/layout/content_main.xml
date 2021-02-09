@@ -243,7 +243,6 @@
                     android:layout_marginLeft="@dimen/label_instance_margin_start"
                     android:gravity="center_vertical"
                     android:text="@string/instance_label"
-
                     app:layout_constraintStart_toEndOf="@id/button_expand_instance_invidious"
                     app:layout_constraintTop_toTopOf="@id/guide_invidious" />
 
@@ -254,7 +253,7 @@
                     android:layout_height="40dp"
                     android:contentDescription="@string/custom_settings_for_invidious"
                     android:src="@drawable/ic_settings_applications"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/enable_invidious"
                     app:layout_constraintTop_toTopOf="@id/guide_invidious" />
 
                 <TextView
@@ -265,7 +264,7 @@
                     android:layout_marginLeft="5dp"
                     android:gravity="center_vertical"
                     android:textColor="#fff"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/invidious_settings"
                     app:layout_constraintStart_toEndOf="@id/label_instance_invidious"
                     app:layout_constraintTop_toTopOf="@id/guide_invidious" />
 
@@ -799,7 +798,7 @@
                 android:id="@+id/configure"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:drawableStart="@drawable/ic_settings"
                 android:drawableLeft="@drawable/ic_settings"
