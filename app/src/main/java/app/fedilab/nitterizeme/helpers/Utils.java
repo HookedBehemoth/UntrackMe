@@ -732,6 +732,7 @@ public class Utils {
                             Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL);
                     Matcher matcher = rulesRegex.matcher(url);
                     if (matcher.find()) {
+                        //noinspection StatementWithEmptyBody
                         if (!completeProvider) {
                             for (int i = 0; i < rules.length(); i++) {
                                 boolean exception = false;
@@ -749,14 +750,7 @@ public class Utils {
                                 }
                             }
                         } else {
-                            String service = matcher.group(3);
-                            String data = matcher.group(4);
-                            if (service != null) {
-                                url = url.replaceAll(Pattern.quote(service), "");
-                            }
-                            if (data != null) {
-                                url = url.replaceAll(Pattern.quote(data), "");
-                            }
+                            //TODO see what can be done with that URL
                         }
                     }
                 }
