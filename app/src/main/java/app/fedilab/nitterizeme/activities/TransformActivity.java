@@ -59,7 +59,7 @@ public class TransformActivity extends Activity {
         //Dealing with URLs
         if (Objects.requireNonNull(intent.getAction()).equals(Intent.ACTION_VIEW)) {
             String url = Objects.requireNonNull(intent.getData()).toString();
-            url = remove_tracking_param(url);
+            url = remove_tracking_param(TransformActivity.this, url);
             URL url_;
             String host = null;
             try {
@@ -94,7 +94,7 @@ public class TransformActivity extends Activity {
                     forwardToBrowser(TransformActivity.this, intent);
                 }
             } else {
-                String newUrl = remove_tracking_param(url);
+                String newUrl = remove_tracking_param(TransformActivity.this, url);
                 try {
                     url_ = new URL(newUrl);
                     host = url_.getHost();
@@ -154,7 +154,7 @@ public class TransformActivity extends Activity {
             forwardToBrowser(TransformActivity.this, sendIntent);
             return;
         }
-        url = Utils.remove_tracking_param(url);
+        url = Utils.remove_tracking_param(TransformActivity.this, url);
         URL url_;
         String host = null;
         try {

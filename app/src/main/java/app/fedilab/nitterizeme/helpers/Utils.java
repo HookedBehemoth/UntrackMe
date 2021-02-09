@@ -41,7 +41,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.InetAddress;
@@ -54,6 +61,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -172,7 +180,7 @@ public class Utils {
                         if (entry.toString().toLowerCase().startsWith("location")) {
                             Matcher matcher = urlPattern.matcher(entry.toString());
                             if (matcher.find()) {
-                                newURL = remove_tracking_param(matcher.group(1));
+                                newURL = remove_tracking_param(context, matcher.group(1));
                                 urls.add(transformUrl(context, newURL));
                             }
                         }
@@ -190,7 +198,7 @@ public class Utils {
                         if (entry.toString().toLowerCase().startsWith("location")) {
                             Matcher matcher = urlPattern.matcher(entry.toString());
                             if (matcher.find()) {
-                                newURL = remove_tracking_param(matcher.group(1));
+                                newURL = remove_tracking_param(context, matcher.group(1));
                                 urls.add(transformUrl(context, newURL));
                             }
                         }
@@ -225,7 +233,7 @@ public class Utils {
         String newUrl = null;
         URL url_;
         String host = null;
-        url = Utils.remove_tracking_param(url);
+        url = Utils.remove_tracking_param(context, url);
         try {
             url_ = new URL(url);
             host = url_.getHost();
@@ -677,13 +685,14 @@ public class Utils {
     /**
      * Remove unwanted redirects from Google - recursive removal
      *
-     * @param url String initial url
+     * @param context Context
+     * @param url     String initial url
      * @return String url without Google redirects
      */
-    private static String removeGoogleRedirects(String url) {
+    private static String removeGoogleRedirects(Context context, String url) {
         Matcher matcher = googleRedirect.matcher(url);
         if (matcher.find()) {
-            return remove_tracking_param(matcher.group(5));
+            return remove_tracking_param(context, matcher.group(5));
         }
         return url;
     }
@@ -694,8 +703,67 @@ public class Utils {
      * @param url String URL
      * @return cleaned URL String
      */
-    public static String remove_tracking_param(String url) {
+    public static String remove_tracking_param(Context context, String url) {
+
         if (url != null) {
+            try {
+
+                InputStream inputStream = context.getAssets().open("rules.json");
+                BufferedReader bR = new BufferedReader(new InputStreamReader(inputStream));
+                String line;
+                StringBuilder responseStrBuilder = new StringBuilder();
+                while ((line = bR.readLine()) != null) {
+
+                    responseStrBuilder.append(line);
+                }
+                inputStream.close();
+                JSONObject result = new JSONObject(responseStrBuilder.toString());
+                JSONObject providers = result.getJSONObject("providers");
+                Iterator<String> iter = providers.keys();
+                while (iter.hasNext()) {
+                    String key = iter.next();
+                    JSONObject domainValues = providers.getJSONObject(key);
+                    String urlPattern = domainValues.getString("urlPattern");
+                    JSONArray rules = domainValues.getJSONArray("rules");
+                    JSONArray exceptions = domainValues.getJSONArray("exceptions");
+                    boolean completeProvider = domainValues.getBoolean("completeProvider");
+                    Pattern rulesRegex = Pattern.compile(
+                            urlPattern,
+                            Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL);
+                    Matcher matcher = rulesRegex.matcher(url);
+                    if (matcher.find()) {
+                        if (!completeProvider) {
+                            for (int i = 0; i < rules.length(); i++) {
+                                boolean exception = false;
+                                for (int j = 0; j < exceptions.length(); j++) {
+                                    Pattern exceptionRegex = Pattern.compile(
+                                            exceptions.getString(j),
+                                            Pattern.CASE_INSENSITIVE | Pattern.MULTILINE | Pattern.DOTALL);
+                                    Matcher matcherException = exceptionRegex.matcher(url);
+                                    if (matcherException.find()) {
+                                        exception = true;
+                                    }
+                                }
+                                if (!exception) {
+                                    url = url.replaceAll(rules.getString(i), "");
+                                }
+                            }
+                        } else {
+                            String service = matcher.group(3);
+                            String data = matcher.group(4);
+                            if (service != null) {
+                                url = url.replaceAll(Pattern.quote(service), "");
+                            }
+                            if (data != null) {
+                                url = url.replaceAll(Pattern.quote(data), "");
+                            }
+                        }
+                    }
+                }
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+            }
+
             for (String utm : UTM_PARAMS) {
                 url = url.replaceAll("&amp;" + utm + "=[0-9a-zA-Z._-]*", "");
                 url = url.replaceAll("&" + utm + "=[0-9a-zA-Z._-]*", "");
@@ -704,7 +772,7 @@ public class Utils {
                 url = url.replaceAll("#" + utm + "=" + urlRegex, "");
             }
             try {
-                url = removeGoogleRedirects(url);
+                url = removeGoogleRedirects(context, url);
                 URL redirectURL = new URL(url);
                 String host = redirectURL.getHost();
                 if (host != null) {
