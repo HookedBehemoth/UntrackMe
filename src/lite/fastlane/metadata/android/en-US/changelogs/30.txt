@@ -1,0 +1,2 @@
+- Add more patterns to remove utm/tracking parameters
+- Fix a display issue when font size and display size are the largest

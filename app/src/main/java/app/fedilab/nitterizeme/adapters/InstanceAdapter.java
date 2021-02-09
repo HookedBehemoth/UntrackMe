@@ -38,6 +38,7 @@ import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
 
 public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -130,6 +131,14 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         editor.putString(SET_BIBLIOGRAM_HOST, instance.getDomain().trim());
                     } else {
                         editor.putString(SET_BIBLIOGRAM_HOST, null);
+                    }
+                    editor.apply();
+                    break;
+                case TEDDIT:
+                    if (isChecked) {
+                        editor.putString(SET_TEDDIT_HOST, instance.getDomain().trim());
+                    } else {
+                        editor.putString(SET_TEDDIT_HOST, null);
                     }
                     editor.apply();
                     break;
