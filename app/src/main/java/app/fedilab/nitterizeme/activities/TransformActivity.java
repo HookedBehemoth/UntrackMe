@@ -82,7 +82,7 @@ public class TransformActivity extends Activity {
                         if (BuildConfig.fullLinks) {
                             forwardToBrowser(TransformActivity.this, delegate);
                         } else {
-                            if (delegate.resolveActivity(getPackageManager()) != null) {
+                            if (delegate.resolveActivity(getPackageManager()) != null || !BuildConfig.fullLinks) {
                                 startActivity(delegate);
                                 finish();
                             }
