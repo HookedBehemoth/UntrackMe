@@ -1,5 +1,10 @@
 image: java:8-jdk
 
+variables:
+  ANDROID_COMPILE_SDK: "30"
+  ANDROID_BUILD_TOOLS: "30.0.3"
+  ANDROID_SDK_TOOLS: "4333796"
+
 before_script:
   - wget --quiet --output-document=android-sdk.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip
   - unzip -d android-sdk-linux android-sdk.zip
