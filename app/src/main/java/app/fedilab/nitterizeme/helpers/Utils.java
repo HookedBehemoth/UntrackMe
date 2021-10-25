@@ -108,6 +108,7 @@ public class Utils {
     public static final Pattern nitterPattern = Pattern.compile("(mobile\\.|www\\.)?twitter.com([\\w-/]+)");
     public static final Pattern bibliogramPostPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(/p/[\\w-/]+)");
     public static final Pattern scriberipPattern = Pattern.compile("(www\\.)?medium.com/([\\w-/@]+)");
+    public static final Pattern scriberipSubdomainPattern = Pattern.compile("([\\w_-]+)\\.medium.com/([\\w-/@]+)");
 
     public static final Pattern bibliogramAccountPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(((?!/p/).)+)");
     public static final Pattern maps = Pattern.compile("/maps/place/([^@]+@)?([\\d.,z]+).*");
@@ -310,7 +311,7 @@ public class Utils {
             } else {
                 return url;
             }
-        } else if (Arrays.asList(medium_domains).contains(host)) {
+        } else if (host != null && host.endsWith(medium_domains[0])) {
             boolean scriberip_enabled = sharedpreferences.getBoolean(MainActivity.SET_SCRIBERIP_ENABLED, true);
             if (scriberip_enabled) {
                 String scriberipHost = sharedpreferences.getString(MainActivity.SET_SCRIBERIP_HOST, MainActivity.DEFAULT_SCRIBERIP_HOST);
@@ -319,7 +320,15 @@ public class Utils {
                 if (scriberipHost.startsWith("http")) {
                     scheme = "";
                 }
-                Matcher matcher = scriberipPattern.matcher(url);
+                Matcher matcher = scriberipSubdomainPattern.matcher(url);
+                while (matcher.find()) {
+                    final String subdomain = matcher.group(1);
+                    final String path = matcher.group(2);
+                    if (subdomain != null && subdomain.toLowerCase().compareTo("www") != 0) {
+                        url = scheme + "medium.com" + "/@" + subdomain + "/" + path;
+                    }
+                }
+                matcher = scriberipPattern.matcher(url);
                 while (matcher.find()) {
                     final String scriberip_directory = matcher.group(2);
                     newUrl = scheme + scriberipHost + "/" + scriberip_directory;
@@ -1218,7 +1227,7 @@ public class Utils {
         return Arrays.asList(twitter_domains).contains(host) || Arrays.asList(nitter_instances).contains(host) || Arrays.asList(reddit_domains).contains(host)
                 || Arrays.asList(instagram_domains).contains(host) || Arrays.asList(bibliogram_instances).contains(host)
                 || url.contains("/maps/place") || url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain))
-                || Arrays.asList(youtube_domains).contains(host) || Arrays.asList(invidious_instances).contains(host) || Arrays.asList(medium_domains).contains(host);
+                || Arrays.asList(youtube_domains).contains(host) || Arrays.asList(invidious_instances).contains(host) || (host != null && host.endsWith(medium_domains[0]));
     }
 
     public static boolean routerEnabledForHost(Context context, String url) {
@@ -1242,7 +1251,7 @@ public class Utils {
             return sharedpreferences.getBoolean(SET_INVIDIOUS_ENABLED, true);
         } else if (Arrays.asList(reddit_domains).contains(host)) {
             return sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
-        } else if (Arrays.asList(medium_domains).contains(host)) {
+        } else if (host != null && host.endsWith(medium_domains[0])) {
             return sharedpreferences.getBoolean(SET_SCRIBERIP_ENABLED, true);
         } else
             return url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain));

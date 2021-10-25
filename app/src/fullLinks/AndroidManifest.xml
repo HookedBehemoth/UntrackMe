@@ -118,6 +118,12 @@
                 <data android:host="bibliogram.dsrev.ru" />
                 <data android:host="bibliogram.pussthecat.org" />
 
+
+                <!-- MEDIUM URLs  -->
+                <data android:host="www.medium.com" />
+                <data android:host="medium.com" />
+                <data android:host="*.medium.com" />
+
                 <data android:host="*" />
                 <data android:pathPattern=".*" />
                 <data android:scheme="https" />
@@ -175,31 +181,16 @@
                 <data android:host="i.redd.it" />
                 <data android:host="preview.redd.it" />
 
+                <!-- MEDIUM URLs  -->
+                <data android:host="www.medium.com" />
+                <data android:host="medium.com" />
+                <data android:host="*.medium.com" />
+
                 <data android:host="*" />
 
                 <data android:mimeType="text/plain" />
             </intent-filter>
-            <!-- MEDIUM URLs  -->
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:host="medium.com" />
-                <data android:pathPattern="/@.*" />
-                <data android:scheme="https" />
-                <data android:scheme="http" />
-            </intent-filter>
-            <!-- MEDIUM SHARING HANDLE -->
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:host="medium.com" />
-                <data android:pathPattern="/@.*" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
             <!-- MAPS URLs  -->
             <!-- /maps/ -->
             <intent-filter>
