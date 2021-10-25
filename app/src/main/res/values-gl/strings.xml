@@ -28,7 +28,9 @@
     <string name="redirect_twitter_to_nitter">Redireccionar Twitter a Nitter</string>
     <string name="redirect_instagram_to_bibliogram">Redireccionar Instagram a Bibliogram</string>
     <string name="redirect_reddit_to_teddit">Redirixir Reddit a Teddit</string>
+    <string name="redirect_medium_to_scriberip">Redirect Medium to Scribe.rip</string>
     <string name="custom_bibliogram">Instancia Bibliogram personalizada</string>
+    <string name="custom_scriberip">Custom Scribe.rip instance</string>
     <string name="custom_teddit">Instancia Teddit personalizada</string>
     <string name="redirect_gm_to_geo_uri">Redireccionar Google Map a Geo URI</string>
     <string name="configure">Configurar</string>
