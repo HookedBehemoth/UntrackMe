@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Some local values -->
-    <string name="action_settings">ترتیبات</string>
-    <string name="action_about">متعلق</string>
-    <string name="developer">ڈیوولپر</string>
-    <string name="donations">عطیات</string>
-    <string name="about_the_app">ایپ سے متعلق</string>
-    <string name="source_code">سورس کوڈ</string>
-    <string name="issue_tracker">مشکلات کا نگراں</string>
-    <string name="license">لائسنس</string>
-    <string name="about_vesrion">ورژن %1$s</string>
-    <string name="custom_nitter">کسٹم نائٹر مثال</string>
-    <string name="save">محفوظ</string>
-    <string name="close">بند</string>
-    <string name="instances_saved">کسٹم مثال محفوظ کیا گیا ہے!</string>
-    <string name="custom_invidious">کسٹم پوشیدہ مثال</string>
-    <string name="no_apps">طے شدہ ایپلی کیشنز نہیں ہے</string>
-    <string name="Donate">عطیہ کریں</string>
-    <string name="warning">انتباہ</string>
-    <string name="error">خرابی</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_about">About</string>
+    <string name="developer">Developer</string>
+    <string name="donations">Donations</string>
+    <string name="about_the_app">About the app</string>
+    <string name="source_code">Source code</string>
+    <string name="issue_tracker">Issue tracker</string>
+    <string name="license">License</string>
+    <string name="about_vesrion">Release %1$s</string>
+    <string name="custom_nitter">Custom Nitter instance</string>
+    <string name="save">Save</string>
+    <string name="close">Close</string>
+    <string name="instances_saved">Custom instances have been saved!</string>
+    <string name="custom_invidious">Custom Invidious instance</string>
+    <string name="no_apps">No applications by default</string>
+    <string name="Donate">Donate</string>
+    <string name="warning">Warning</string>
+    <string name="error">Error</string>
     <string name="valid">Valid</string>
     <string name="icon_of_the_app">Icon of the app</string>
     <string name="open_with">Open with</string>
@@ -28,7 +28,9 @@
     <string name="redirect_twitter_to_nitter">Redirect Twitter to Nitter</string>
     <string name="redirect_instagram_to_bibliogram">Redirect Instagram to Bibliogram</string>
     <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
+    <string name="redirect_medium_to_scriberip">Redirect Medium to Scribe.rip</string>
     <string name="custom_bibliogram">Custom Bibliogram instance</string>
+    <string name="custom_scriberip">Custom Scribe.rip instance</string>
     <string name="custom_teddit">Custom Teddit instance</string>
     <string name="redirect_gm_to_geo_uri">Redirect Google Map to Geo URI</string>
     <string name="configure">Configure</string>
