@@ -89,11 +89,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        app.fedilab.nitterizeme.databinding.ActivityMainBinding bindingTop = ActivityMainBinding.inflate(getLayoutInflater());
-        binding = ContentMainBinding.inflate(getLayoutInflater());
-        View viewRoot = binding.getRoot();
+        ActivityMainBinding activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
+        View viewRoot = activityMainBinding.getRoot();
         setContentView(viewRoot);
-        setSupportActionBar(bindingTop.toolbar);
+        binding = activityMainBinding.contentMain;
+        setSupportActionBar(activityMainBinding.toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
