@@ -60,7 +60,7 @@ public class AboutActivity extends AppCompatActivity {
         content.setSpan(new ForegroundColorSpan(ContextCompat.getColor(AboutActivity.this, R.color.colorAccent)), 0, content.length(), 0);
         binding.developerMastodon.setText(content);
         binding.developerMastodon.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://toot.fedilab.app/@UntrackMe"));
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://toot.fedilab.app/@apps"));
             startActivity(browserIntent);
         });
 

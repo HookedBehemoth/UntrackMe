@@ -9,3 +9,5 @@
 .cxx
 /app/release/
 *.properties
+/app/lite/release/
+/app/fullLinks/release/
