@@ -74,6 +74,12 @@ public class CheckAppActivity extends AppCompatActivity {
             "medium.com",
             "www.medium.com"
     };
+
+    public static String[] wikipedi_domains = {
+            "wikipedia.org",
+            "www.wikipedia.org"
+    };
+
     public static String[] shortener_domains = {
             "t.co",
             "nyti.ms",

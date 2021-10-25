@@ -88,6 +88,7 @@ import static app.fedilab.nitterizeme.activities.CheckAppActivity.outlook_safe_d
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.reddit_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.shortener_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.twitter_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.wikipedi_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.youtube_domains;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_EMBEDDED_PLAYER;
@@ -107,8 +108,12 @@ public class Utils {
     public static final Pattern redditPattern = Pattern.compile("(www\\.|m\\.)?(reddit\\.com|preview\\.redd\\.it|i\\.redd\\.it)/(((?!([\"'<])).)*)");
     public static final Pattern nitterPattern = Pattern.compile("(mobile\\.|www\\.)?twitter.com([\\w-/]+)");
     public static final Pattern bibliogramPostPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(/p/[\\w-/]+)");
-    public static final Pattern scriberipPattern = Pattern.compile("(www\\.)?medium.com/([\\w-/@]+)");
-    public static final Pattern scriberipSubdomainPattern = Pattern.compile("([\\w_-]+)\\.medium.com/([\\w-/@]+)");
+    public static final Pattern scriberipPattern = Pattern.compile("(www\\.)?medium.com/(((?!([\"'<])).)*)");
+    public static final Pattern scriberipSubdomainPattern = Pattern.compile("([\\w_-]+)\\.medium.com/(((?!([\"'<])).)*)");
+
+
+    public static final Pattern wikilessPattern = Pattern.compile("(www\\.)?wikipedia.org/(((?!([\"'<])).)*)");
+    public static final Pattern wikilessSubdomainPattern = Pattern.compile("([\\w_-]+)\\.wikipedia.org/(((?!([\"'<])).)*)");
 
     public static final Pattern bibliogramAccountPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(((?!/p/).)+)");
     public static final Pattern maps = Pattern.compile("/maps/place/([^@]+@)?([\\d.,z]+).*");
@@ -333,6 +338,30 @@ public class Utils {
                     final String scriberip_directory = matcher.group(2);
                     newUrl = scheme + scriberipHost + "/" + scriberip_directory;
                 }
+                return newUrl;
+            } else {
+                return url;
+            }
+        } else if (host != null && host.endsWith(wikipedi_domains[0])) {
+            boolean wikiless_enabled = sharedpreferences.getBoolean(MainActivity.SET_WIKILESS_ENABLED, true);
+            if (wikiless_enabled) {
+                String wikilessHost = sharedpreferences.getString(MainActivity.SET_WIKILESS_HOST, MainActivity.DEFAULT_WIKILESS_HOST);
+                assert wikilessHost != null;
+                wikilessHost = wikilessHost.toLowerCase();
+                if (wikilessHost.startsWith("http")) {
+                    scheme = "";
+                }
+                Matcher matcher = wikilessPattern.matcher(url);
+                String subdomain = "";
+                String path = "";
+                while (matcher.find()) {
+                    String tmpSub = matcher.group(1);
+                    if (tmpSub != null && tmpSub.toLowerCase().compareTo("www") != 0) {
+                        subdomain = matcher.group(1);
+                    }
+                    path = matcher.group(2);
+                }
+                newUrl = scheme + wikilessHost + "/" + path + (subdomain != null ? "&lang=" + subdomain : "");
                 return newUrl;
             } else {
                 return url;

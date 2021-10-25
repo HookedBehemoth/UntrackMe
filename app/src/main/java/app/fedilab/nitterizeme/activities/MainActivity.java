@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String SET_OSM_HOST = "set_osm_host";
     public static final String SET_BIBLIOGRAM_HOST = "set_bibliogram_host";
     public static final String SET_SCRIBERIP_HOST = "set_scriberip_host";
+    public static final String SET_WIKILESS_HOST = "set_wikiless_host";
     @SuppressWarnings({"unused", "RedundantSuppression"})
     public static String TAG = "UntrackMe";
     public static String DEFAULT_NITTER_HOST = "nitter.net";
@@ -59,11 +60,13 @@ public class MainActivity extends AppCompatActivity {
     public static String SET_TEDDIT_ENABLED = "set_teddit_enabled";
     public static String SET_NITTER_ENABLED = "set_nitter_enabled";
     public static String SET_SCRIBERIP_ENABLED = "set_scriberip_enabled";
+    public static String SET_WIKILESS_ENABLED = "set_wikiless_enabled";
     public static String SET_OSM_ENABLED = "set_osm_enabled";
     public static String DEFAULT_OSM_HOST = "www.openstreetmap.org";
     public static String SET_BIBLIOGRAM_ENABLED = "set_bibliogram_enabled";
     public static String DEFAULT_BIBLIOGRAM_HOST = "bibliogram.art";
     public static String DEFAULT_SCRIBERIP_HOST = "scribe.rip";
+    public static String DEFAULT_WIKILESS_HOST = "wikiless.org";
     public static String DEFAULT_TEDDIT_HOST = "teddit.net";
     public static String SET_GEO_URIS = "set_geo_uris";
     public static String SET_EMBEDDED_PLAYER = "set_embedded_player";

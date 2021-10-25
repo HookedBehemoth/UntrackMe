@@ -93,6 +93,11 @@
                 <data android:host="medium.com" />
                 <data android:host="*.medium.com" />
 
+                <!-- WIKIPEDIA URLs  -->
+                <data android:host="wikipedia.org" />
+                <data android:host="www.wikipedia.org" />
+                <data android:host="*.wikipedia.org" />
+
                 <data android:pathPattern=".*" />
                 <data android:scheme="https" />
                 <data android:scheme="http" />
@@ -153,6 +158,11 @@
                 <data android:host="www.medium.com" />
                 <data android:host="medium.com" />
                 <data android:host="*.medium.com" />
+
+                <!-- WIKIPEDIA URLs  -->
+                <data android:host="wikipedia.org" />
+                <data android:host="www.wikipedia.org" />
+                <data android:host="*.wikipedia.org" />
 
                 <data android:mimeType="text/plain" />
             </intent-filter>
