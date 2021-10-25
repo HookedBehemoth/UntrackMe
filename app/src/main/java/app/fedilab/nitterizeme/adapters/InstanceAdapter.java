@@ -14,6 +14,7 @@ package app.fedilab.nitterizeme.adapters;
  * You should have received a copy of the GNU General Public License along with UntrackMe; if not,
  * see <http://www.gnu.org/licenses>. */
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
@@ -72,7 +73,6 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         Context context = viewHolder.itemView.getContext();
         SharedPreferences sharedpreferences = context.getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
         //Reset checked instances by type when tipping
-
 
         holder.binding.checkboxInstance.setText(instance.getDomain());
         if (instance.getLatency() == -1) {
@@ -150,6 +150,7 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void evalLatency() {
         for (Instance instance : instances) {
             instance.setLatency(0);
@@ -158,7 +159,7 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                 public void run() {
                     long ping = Utils.ping(instance.getDomain());
                     Handler mainHandler = new Handler(Looper.getMainLooper());
-                    Runnable myRunnable = () -> {
+                    @SuppressLint("NotifyDataSetChanged") Runnable myRunnable = () -> {
                         instance.setLatency(ping);
                         notifyDataSetChanged();
                     };

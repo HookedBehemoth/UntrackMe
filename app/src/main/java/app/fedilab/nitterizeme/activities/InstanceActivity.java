@@ -159,6 +159,7 @@ public class InstanceActivity extends AppCompatActivity {
                         invidiousAdapter.evalLatency();
                         nitterAdapter.evalLatency();
                         bibliogramAdapter.evalLatency();
+                tedditAdapter.evalLatency();
                     }
             );
 

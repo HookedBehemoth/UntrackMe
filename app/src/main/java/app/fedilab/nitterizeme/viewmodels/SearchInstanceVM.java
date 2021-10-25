@@ -69,8 +69,6 @@ public class SearchInstanceVM extends AndroidViewModel {
             @Override
             public void run() {
                 List<Instance> instances = getInstancesFromFedilabApp();
-                List<Instance> bibliogramInstances = getInstancesFromBibliogramArt();
-                instances.addAll(bibliogramInstances);
                 Handler mainHandler = new Handler(Looper.getMainLooper());
                 Runnable myRunnable = () -> instancesMLD.setValue(instances);
                 mainHandler.post(myRunnable);
@@ -103,6 +101,7 @@ public class SearchInstanceVM extends AndroidViewModel {
             String defaultInvidious = sharedpreferences.getString(SET_INVIDIOUS_HOST, DEFAULT_INVIDIOUS_HOST);
             String defaultNitter = sharedpreferences.getString(SET_NITTER_HOST, DEFAULT_NITTER_HOST);
             String defaultTeddit = sharedpreferences.getString(SET_TEDDIT_HOST, DEFAULT_TEDDIT_HOST);
+            String defaultBibliogram = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, DEFAULT_BIBLIOGRAM_HOST);
 
             if (response != null) {
                 try {
@@ -110,6 +109,7 @@ public class SearchInstanceVM extends AndroidViewModel {
                     JSONArray jsonArrayInvidious = jsonObject.getJSONArray("invidious");
                     JSONArray jsonArrayNitter = jsonObject.getJSONArray("nitter");
                     JSONArray jsonArrayTeddit = jsonObject.getJSONArray("teddit");
+                    JSONArray jsonArrayBibliogram = jsonObject.getJSONArray("bibliogram");
                     for (int i = 0; i < jsonArrayInvidious.length(); i++) {
                         Instance instance = new Instance();
                         String domain = jsonArrayInvidious.getJSONObject(i).getString("domain");
@@ -134,6 +134,20 @@ public class SearchInstanceVM extends AndroidViewModel {
                         instance.setLocale(locale);
                         instance.setType(Instance.instanceType.NITTER);
                         if (defaultNitter != null && domain.compareTo(defaultNitter) == 0) {
+                            instance.setChecked(true);
+                        }
+                        instances.add(instance);
+                    }
+                    for (int i = 0; i < jsonArrayBibliogram.length(); i++) {
+                        Instance instance = new Instance();
+                        String domain = jsonArrayBibliogram.getJSONObject(i).getString("domain");
+                        boolean cloudFlare = jsonArrayBibliogram.getJSONObject(i).getBoolean("cloudflare");
+                        String locale = jsonArrayBibliogram.getJSONObject(i).getString("locale");
+                        instance.setDomain(domain);
+                        instance.setCloudflare(cloudFlare);
+                        instance.setLocale(locale);
+                        instance.setType(Instance.instanceType.BIBLIOGRAM);
+                        if (defaultBibliogram != null && domain.compareTo(defaultBibliogram) == 0) {
                             instance.setChecked(true);
                         }
                         instances.add(instance);
@@ -163,56 +177,4 @@ public class SearchInstanceVM extends AndroidViewModel {
     }
 
 
-    private List<Instance> getInstancesFromBibliogramArt() {
-        HttpsURLConnection httpsURLConnection;
-        ArrayList<Instance> instances = new ArrayList<>();
-        try {
-            String instances_url = "https://bibliogram.art/api/instances";
-            URL url = new URL(instances_url);
-            httpsURLConnection = (HttpsURLConnection) url.openConnection();
-            httpsURLConnection.setConnectTimeout(10 * 1000);
-            httpsURLConnection.setRequestProperty("http.keepAlive", "false");
-            httpsURLConnection.setRequestProperty("Content-Type", "application/json");
-            httpsURLConnection.setRequestProperty("Accept", "application/json");
-            httpsURLConnection.setRequestMethod("GET");
-            httpsURLConnection.setDefaultUseCaches(true);
-            httpsURLConnection.setUseCaches(true);
-            String response = null;
-            if (httpsURLConnection.getResponseCode() >= 200 && httpsURLConnection.getResponseCode() < 400) {
-                java.util.Scanner s = new java.util.Scanner(httpsURLConnection.getInputStream()).useDelimiter("\\A");
-                response = s.hasNext() ? s.next() : "";
-            }
-            httpsURLConnection.getInputStream().close();
-            SharedPreferences sharedpreferences = getApplication().getApplicationContext().getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
-            String defaultBibliogram = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, DEFAULT_BIBLIOGRAM_HOST);
-
-            if (response != null) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    JSONArray jsonArrayBibliogram = jsonObject.getJSONArray("data");
-                    for (int i = 0; i < jsonArrayBibliogram.length(); i++) {
-                        Instance instance = new Instance();
-                        String url_bibliogram = jsonArrayBibliogram.getJSONObject(i).getString("address");
-                        URL urlBibliogram = new URL(url_bibliogram);
-                        String domain = urlBibliogram.getHost();
-                        boolean cloudFlare = jsonArrayBibliogram.getJSONObject(i).getBoolean("using_cloudflare");
-                        String locale = jsonArrayBibliogram.getJSONObject(i).getString("country");
-                        instance.setDomain(domain);
-                        instance.setCloudflare(cloudFlare);
-                        instance.setLocale(locale);
-                        instance.setType(Instance.instanceType.BIBLIOGRAM);
-                        if (defaultBibliogram != null && domain.compareTo(defaultBibliogram) == 0) {
-                            instance.setChecked(true);
-                        }
-                        instances.add(instance);
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return instances;
-    }
 }
