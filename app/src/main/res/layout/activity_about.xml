@@ -109,7 +109,7 @@
                         android:id="@+id/developer_mastodon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="\@UntrackMe@toot.fedilab.org"
+                        android:text="\@apps@toot.fedilab.org"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         tools:ignore="HardcodedText" />

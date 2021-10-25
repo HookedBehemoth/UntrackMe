@@ -933,7 +933,6 @@
             style="@style/containerCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/display_indications"
             app:layout_constraintTop_toBottomOf="@id/osm_container">
 
             <Button
