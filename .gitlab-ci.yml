@@ -1,4 +1,4 @@
-image: hatsoftwares/mastalab-ci:latest
+image: java:8-jdk
 
 before_script:
   - export ANDROID_HOME=/opt/android-sdk-linux
