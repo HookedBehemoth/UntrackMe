@@ -82,6 +82,7 @@ import static android.content.Context.DOWNLOAD_SERVICE;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.bibliogram_instances;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.instagram_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.invidious_instances;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.medium_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.nitter_instances;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.outlook_safe_domain;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.reddit_domains;
@@ -92,6 +93,7 @@ import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_ENA
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_EMBEDDED_PLAYER;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
 
@@ -105,6 +107,7 @@ public class Utils {
     public static final Pattern redditPattern = Pattern.compile("(www\\.|m\\.)?(reddit\\.com|preview\\.redd\\.it|i\\.redd\\.it)/(((?!([\"'<])).)*)");
     public static final Pattern nitterPattern = Pattern.compile("(mobile\\.|www\\.)?twitter.com([\\w-/]+)");
     public static final Pattern bibliogramPostPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(/p/[\\w-/]+)");
+    public static final Pattern scriberipPattern = Pattern.compile("(www\\.)?medium.com/([\\w-/@]+)");
 
     public static final Pattern bibliogramAccountPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(((?!/p/).)+)");
     public static final Pattern maps = Pattern.compile("/maps/place/([^@]+@)?([\\d.,z]+).*");
@@ -302,6 +305,24 @@ public class Utils {
                     } else {
                         newUrl = scheme + bibliogramHost + bibliogram_directory;
                     }
+                }
+                return newUrl;
+            } else {
+                return url;
+            }
+        } else if (Arrays.asList(medium_domains).contains(host)) {
+            boolean scriberip_enabled = sharedpreferences.getBoolean(MainActivity.SET_SCRIBERIP_ENABLED, true);
+            if (scriberip_enabled) {
+                String scriberipHost = sharedpreferences.getString(MainActivity.SET_SCRIBERIP_HOST, MainActivity.DEFAULT_SCRIBERIP_HOST);
+                assert scriberipHost != null;
+                scriberipHost = scriberipHost.toLowerCase();
+                if (scriberipHost.startsWith("http")) {
+                    scheme = "";
+                }
+                Matcher matcher = scriberipPattern.matcher(url);
+                while (matcher.find()) {
+                    final String scriberip_directory = matcher.group(2);
+                    newUrl = scheme + scriberipHost + "/" + scriberip_directory;
                 }
                 return newUrl;
             } else {
@@ -1197,7 +1218,7 @@ public class Utils {
         return Arrays.asList(twitter_domains).contains(host) || Arrays.asList(nitter_instances).contains(host) || Arrays.asList(reddit_domains).contains(host)
                 || Arrays.asList(instagram_domains).contains(host) || Arrays.asList(bibliogram_instances).contains(host)
                 || url.contains("/maps/place") || url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain))
-                || Arrays.asList(youtube_domains).contains(host) || Arrays.asList(invidious_instances).contains(host);
+                || Arrays.asList(youtube_domains).contains(host) || Arrays.asList(invidious_instances).contains(host) || Arrays.asList(medium_domains).contains(host);
     }
 
     public static boolean routerEnabledForHost(Context context, String url) {
@@ -1221,6 +1242,8 @@ public class Utils {
             return sharedpreferences.getBoolean(SET_INVIDIOUS_ENABLED, true);
         } else if (Arrays.asList(reddit_domains).contains(host)) {
             return sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
+        } else if (Arrays.asList(medium_domains).contains(host)) {
+            return sharedpreferences.getBoolean(SET_SCRIBERIP_ENABLED, true);
         } else
             return url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain));
     }

@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String SET_TEDDIT_HOST = "set_teddit_host";
     public static final String SET_OSM_HOST = "set_osm_host";
     public static final String SET_BIBLIOGRAM_HOST = "set_bibliogram_host";
+    public static final String SET_SCRIBERIP_HOST = "set_scriberip_host";
     @SuppressWarnings({"unused", "RedundantSuppression"})
     public static String TAG = "UntrackMe";
     public static String DEFAULT_NITTER_HOST = "nitter.net";
@@ -57,10 +58,12 @@ public class MainActivity extends AppCompatActivity {
     public static String SET_INVIDIOUS_ENABLED = "set_invidious_enabled";
     public static String SET_TEDDIT_ENABLED = "set_teddit_enabled";
     public static String SET_NITTER_ENABLED = "set_nitter_enabled";
+    public static String SET_SCRIBERIP_ENABLED = "set_scriberip_enabled";
     public static String SET_OSM_ENABLED = "set_osm_enabled";
     public static String DEFAULT_OSM_HOST = "www.openstreetmap.org";
     public static String SET_BIBLIOGRAM_ENABLED = "set_bibliogram_enabled";
     public static String DEFAULT_BIBLIOGRAM_HOST = "bibliogram.art";
+    public static String DEFAULT_SCRIBERIP_HOST = "scribe.rip";
     public static String DEFAULT_TEDDIT_HOST = "teddit.net";
     public static String SET_GEO_URIS = "set_geo_uris";
     public static String SET_EMBEDDED_PLAYER = "set_embedded_player";
@@ -79,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
     private String invidiousHost;
     private String bibliogramHost;
     private String tedditHost;
+    private String scriberipHost;
     private String osmHost;
     private ContentMainBinding binding;
 
@@ -101,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         boolean osm_enabled = sharedpreferences.getBoolean(SET_OSM_ENABLED, true);
         boolean bibliogram_enabled = sharedpreferences.getBoolean(SET_BIBLIOGRAM_ENABLED, true);
         boolean teddit_enabled = sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
+        boolean scriberip_enabled = sharedpreferences.getBoolean(SET_SCRIBERIP_ENABLED, true);
         boolean geouri_enabled = sharedpreferences.getBoolean(SET_GEO_URIS, false);
         boolean embedded_player = sharedpreferences.getBoolean(SET_EMBEDDED_PLAYER, false);
 
@@ -108,19 +113,23 @@ public class MainActivity extends AppCompatActivity {
         binding.enableInvidious.setChecked(invidious_enabled);
         binding.enableBibliogram.setChecked(bibliogram_enabled);
         binding.enableTeddit.setChecked(teddit_enabled);
+        binding.enableScriberip.setChecked(scriberip_enabled);
         binding.enableOsm.setChecked(osm_enabled);
+
 
 
         nitterHost = sharedpreferences.getString(SET_NITTER_HOST, null);
         invidiousHost = sharedpreferences.getString(SET_INVIDIOUS_HOST, null);
         bibliogramHost = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, null);
         tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
+        scriberipHost = sharedpreferences.getString(SET_SCRIBERIP_HOST, null);
         osmHost = sharedpreferences.getString(SET_OSM_HOST, null);
 
         binding.groupCurrentInvidious.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentNitter.setVisibility(nitter_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentBibliogram.setVisibility(bibliogram_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentTeddit.setVisibility(bibliogram_enabled ? View.VISIBLE : View.GONE);
+        binding.groupCurrentScriberip.setVisibility(scriberip_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentOsm.setVisibility((osm_enabled && geouri_enabled) ? View.VISIBLE : View.GONE);
         binding.enableGeoUris.setVisibility(osm_enabled ? View.VISIBLE : View.GONE);
         binding.enableEmbedPlayer.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
@@ -157,6 +166,14 @@ public class MainActivity extends AppCompatActivity {
             binding.groupCurrentTeddit.setVisibility(isChecked ? View.VISIBLE : View.GONE);
             binding.groupCustomTeddit.setVisibility(View.GONE);
             binding.buttonExpandInstanceTeddit.setRotation(0);
+        });
+        binding.enableScriberip.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean(SET_SCRIBERIP_ENABLED, isChecked);
+            editor.apply();
+            binding.groupCurrentScriberip.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            binding.groupCustomScriberip.setVisibility(View.GONE);
+            binding.buttonExpandInstanceScriberip.setRotation(0);
         });
         binding.enableOsm.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -243,6 +260,22 @@ public class MainActivity extends AppCompatActivity {
                 binding.tedditInstance.setText("");
             }
         });
+        binding.buttonExpandInstanceScriberip.setOnClickListener(v -> {
+            boolean custom_instance_visibility = binding.groupCustomScriberip.getVisibility() == View.VISIBLE;
+            if (custom_instance_visibility) {
+                binding.buttonExpandInstanceScriberip.setRotation(0f);
+                binding.groupCustomScriberip.setVisibility(View.GONE);
+            } else {
+                binding.buttonExpandInstanceScriberip.setRotation(180f);
+                binding.groupCustomScriberip.setVisibility(View.VISIBLE);
+            }
+
+            if (scriberipHost != null) {
+                binding.scriberipInstance.setText(scriberipHost);
+            } else {
+                binding.scriberipInstance.setText("");
+            }
+        });
         binding.buttonExpandInstanceOsm.setOnClickListener(v -> {
             boolean custom_instance_visibility = binding.groupCustomOsm.getVisibility() == View.VISIBLE;
             if (custom_instance_visibility) {
@@ -284,6 +317,12 @@ public class MainActivity extends AppCompatActivity {
             binding.currentInstanceTeddit.setText(tedditHost);
         } else {
             binding.currentInstanceTeddit.setText(DEFAULT_TEDDIT_HOST);
+        }
+        if (scriberipHost != null) {
+            binding.scriberipInstance.setText(scriberipHost);
+            binding.currentInstanceScriberip.setText(scriberipHost);
+        } else {
+            binding.currentInstanceScriberip.setText(DEFAULT_SCRIBERIP_HOST);
         }
         if (osmHost != null) {
             binding.osmInstance.setText(osmHost);
@@ -347,6 +386,18 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 editor.putString(SET_TEDDIT_HOST, null);
                 binding.currentInstanceTeddit.setText(DEFAULT_TEDDIT_HOST);
+            }
+            editor.apply();
+        });
+        binding.buttonSaveInstanceScriberip.setOnClickListener(v -> {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            if (binding.scriberipInstance.getText() != null && binding.scriberipInstance.getText().toString().trim().length() > 0) {
+                String custom_instance = binding.scriberipInstance.getText().toString().toLowerCase().trim();
+                editor.putString(SET_SCRIBERIP_HOST, custom_instance);
+                binding.currentInstanceScriberip.setText(custom_instance);
+            } else {
+                editor.putString(SET_SCRIBERIP_HOST, null);
+                binding.currentInstanceScriberip.setText(DEFAULT_SCRIBERIP_HOST);
             }
             editor.apply();
         });
@@ -439,6 +490,15 @@ public class MainActivity extends AppCompatActivity {
                                 binding.currentInstanceTeddit.setText(DEFAULT_TEDDIT_HOST);
                             binding.buttonExpandInstanceTeddit.setRotation(0f);
                             break;
+                        case SET_SCRIBERIP_HOST:
+                            scriberipHost = sharedpreferences.getString(SET_SCRIBERIP_HOST, null);
+                            binding.groupCustomScriberip.setVisibility(View.GONE);
+                            if (scriberipHost != null && scriberipHost.trim().length() > 0)
+                                binding.currentInstanceScriberip.setText(scriberipHost);
+                            else
+                                binding.currentInstanceScriberip.setText(DEFAULT_SCRIBERIP_HOST);
+                            binding.buttonExpandInstanceScriberip.setRotation(0f);
+                            break;
                         case SET_OSM_HOST:
                             osmHost = sharedpreferences.getString(SET_OSM_HOST, null);
                             binding.groupCustomOsm.setVisibility(View.GONE);
@@ -512,6 +572,7 @@ public class MainActivity extends AppCompatActivity {
         String invidiousHost = sharedpreferences.getString(SET_INVIDIOUS_HOST, null);
         String bibliogramHost = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, null);
         String tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
+        String scriberipHost = sharedpreferences.getString(SET_SCRIBERIP_HOST, null);
         if (nitterHost != null) {
             binding.nitterInstance.setText(nitterHost);
             binding.currentInstanceNitter.setText(nitterHost);
@@ -527,6 +588,10 @@ public class MainActivity extends AppCompatActivity {
         if (tedditHost != null) {
             binding.tedditInstance.setText(tedditHost);
             binding.currentInstanceTeddit.setText(tedditHost);
+        }
+        if (scriberipHost != null) {
+            binding.scriberipInstance.setText(scriberipHost);
+            binding.currentInstanceScriberip.setText(scriberipHost);
         }
         if (BuildConfig.fullLinks) {
             List<ResolveInfo> resolveInfos = getPackageManager().queryIntentActivities(new Intent(Intent.ACTION_VIEW, Uri.parse("https://fedilab.app")), PackageManager.MATCH_DEFAULT_ONLY);

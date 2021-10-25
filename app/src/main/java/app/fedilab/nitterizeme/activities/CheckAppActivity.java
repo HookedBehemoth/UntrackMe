@@ -70,7 +70,10 @@ public class CheckAppActivity extends AppCompatActivity {
             "i.redd.it",
             "preview.redd.it"
     };
-
+    public static String[] medium_domains = {
+            "medium.com",
+            "www.medium.com"
+    };
     public static String[] shortener_domains = {
             "t.co",
             "nyti.ms",
