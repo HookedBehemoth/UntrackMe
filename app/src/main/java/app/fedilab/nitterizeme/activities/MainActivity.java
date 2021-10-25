@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
     private String bibliogramHost;
     private String tedditHost;
     private String scriberipHost;
+    private String wikilessHost;
     private String osmHost;
     private ContentMainBinding binding;
 
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         boolean bibliogram_enabled = sharedpreferences.getBoolean(SET_BIBLIOGRAM_ENABLED, true);
         boolean teddit_enabled = sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
         boolean scriberip_enabled = sharedpreferences.getBoolean(SET_SCRIBERIP_ENABLED, true);
+        boolean wikiless_enabled = sharedpreferences.getBoolean(SET_WIKILESS_ENABLED, true);
         boolean geouri_enabled = sharedpreferences.getBoolean(SET_GEO_URIS, false);
         boolean embedded_player = sharedpreferences.getBoolean(SET_EMBEDDED_PLAYER, false);
 
@@ -117,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         binding.enableBibliogram.setChecked(bibliogram_enabled);
         binding.enableTeddit.setChecked(teddit_enabled);
         binding.enableScriberip.setChecked(scriberip_enabled);
+        binding.enableWikiless.setChecked(wikiless_enabled);
         binding.enableOsm.setChecked(osm_enabled);
 
 
@@ -126,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         bibliogramHost = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, null);
         tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
         scriberipHost = sharedpreferences.getString(SET_SCRIBERIP_HOST, null);
+        wikilessHost = sharedpreferences.getString(SET_WIKILESS_HOST, null);
         osmHost = sharedpreferences.getString(SET_OSM_HOST, null);
 
         binding.groupCurrentInvidious.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
@@ -133,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         binding.groupCurrentBibliogram.setVisibility(bibliogram_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentTeddit.setVisibility(bibliogram_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentScriberip.setVisibility(scriberip_enabled ? View.VISIBLE : View.GONE);
+        binding.groupCurrentWikiless.setVisibility(wikiless_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentOsm.setVisibility((osm_enabled && geouri_enabled) ? View.VISIBLE : View.GONE);
         binding.enableGeoUris.setVisibility(osm_enabled ? View.VISIBLE : View.GONE);
         binding.enableEmbedPlayer.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
@@ -177,6 +182,14 @@ public class MainActivity extends AppCompatActivity {
             binding.groupCurrentScriberip.setVisibility(isChecked ? View.VISIBLE : View.GONE);
             binding.groupCustomScriberip.setVisibility(View.GONE);
             binding.buttonExpandInstanceScriberip.setRotation(0);
+        });
+        binding.enableWikiless.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean(SET_WIKILESS_ENABLED, isChecked);
+            editor.apply();
+            binding.groupCurrentWikiless.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            binding.groupCustomWikiless.setVisibility(View.GONE);
+            binding.buttonExpandInstanceWikiless.setRotation(0);
         });
         binding.enableOsm.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -279,6 +292,21 @@ public class MainActivity extends AppCompatActivity {
                 binding.scriberipInstance.setText("");
             }
         });
+        binding.buttonExpandInstanceWikiless.setOnClickListener(v -> {
+            boolean custom_instance_visibility = binding.groupCustomWikiless.getVisibility() == View.VISIBLE;
+            if (custom_instance_visibility) {
+                binding.buttonExpandInstanceWikiless.setRotation(0f);
+                binding.groupCustomWikiless.setVisibility(View.GONE);
+            } else {
+                binding.buttonExpandInstanceWikiless.setRotation(180f);
+                binding.groupCustomWikiless.setVisibility(View.VISIBLE);
+            }
+            if (wikilessHost != null) {
+                binding.wikilessInstance.setText(wikilessHost);
+            } else {
+                binding.wikilessInstance.setText("");
+            }
+        });
         binding.buttonExpandInstanceOsm.setOnClickListener(v -> {
             boolean custom_instance_visibility = binding.groupCustomOsm.getVisibility() == View.VISIBLE;
             if (custom_instance_visibility) {
@@ -326,6 +354,12 @@ public class MainActivity extends AppCompatActivity {
             binding.currentInstanceScriberip.setText(scriberipHost);
         } else {
             binding.currentInstanceScriberip.setText(DEFAULT_SCRIBERIP_HOST);
+        }
+        if (wikilessHost != null) {
+            binding.wikilessInstance.setText(wikilessHost);
+            binding.currentInstanceWikiless.setText(wikilessHost);
+        } else {
+            binding.currentInstanceWikiless.setText(DEFAULT_WIKILESS_HOST);
         }
         if (osmHost != null) {
             binding.osmInstance.setText(osmHost);
@@ -401,6 +435,18 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 editor.putString(SET_SCRIBERIP_HOST, null);
                 binding.currentInstanceScriberip.setText(DEFAULT_SCRIBERIP_HOST);
+            }
+            editor.apply();
+        });
+        binding.buttonSaveInstanceWikiless.setOnClickListener(v -> {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            if (binding.wikilessInstance.getText() != null && binding.wikilessInstance.getText().toString().trim().length() > 0) {
+                String custom_instance = binding.wikilessInstance.getText().toString().toLowerCase().trim();
+                editor.putString(SET_WIKILESS_HOST, custom_instance);
+                binding.currentInstanceWikiless.setText(custom_instance);
+            } else {
+                editor.putString(SET_WIKILESS_HOST, null);
+                binding.currentInstanceWikiless.setText(DEFAULT_WIKILESS_HOST);
             }
             editor.apply();
         });
@@ -502,6 +548,15 @@ public class MainActivity extends AppCompatActivity {
                                 binding.currentInstanceScriberip.setText(DEFAULT_SCRIBERIP_HOST);
                             binding.buttonExpandInstanceScriberip.setRotation(0f);
                             break;
+                        case SET_WIKILESS_HOST:
+                            wikilessHost = sharedpreferences.getString(SET_WIKILESS_HOST, null);
+                            binding.groupCustomWikiless.setVisibility(View.GONE);
+                            if (wikilessHost != null && wikilessHost.trim().length() > 0)
+                                binding.currentInstanceWikiless.setText(wikilessHost);
+                            else
+                                binding.currentInstanceWikiless.setText(DEFAULT_WIKILESS_HOST);
+                            binding.buttonExpandInstanceWikiless.setRotation(0f);
+                            break;
                         case SET_OSM_HOST:
                             osmHost = sharedpreferences.getString(SET_OSM_HOST, null);
                             binding.groupCustomOsm.setVisibility(View.GONE);
@@ -576,6 +631,7 @@ public class MainActivity extends AppCompatActivity {
         String bibliogramHost = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, null);
         String tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
         String scriberipHost = sharedpreferences.getString(SET_SCRIBERIP_HOST, null);
+        String wikilessHost = sharedpreferences.getString(SET_WIKILESS_HOST, null);
         if (nitterHost != null) {
             binding.nitterInstance.setText(nitterHost);
             binding.currentInstanceNitter.setText(nitterHost);
@@ -595,6 +651,10 @@ public class MainActivity extends AppCompatActivity {
         if (scriberipHost != null) {
             binding.scriberipInstance.setText(scriberipHost);
             binding.currentInstanceScriberip.setText(scriberipHost);
+        }
+        if (wikilessHost != null) {
+            binding.wikilessInstance.setText(wikilessHost);
+            binding.currentInstanceWikiless.setText(wikilessHost);
         }
         if (BuildConfig.fullLinks) {
             List<ResolveInfo> resolveInfos = getPackageManager().queryIntentActivities(new Intent(Intent.ACTION_VIEW, Uri.parse("https://fedilab.app")), PackageManager.MATCH_DEFAULT_ONLY);

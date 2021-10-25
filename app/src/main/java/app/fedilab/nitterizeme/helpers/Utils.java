@@ -97,6 +97,7 @@ import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_ENABLED
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_ENABLED;
 
 public class Utils {
 
@@ -112,8 +113,7 @@ public class Utils {
     public static final Pattern scriberipSubdomainPattern = Pattern.compile("([\\w_-]+)\\.medium.com/(((?!([\"'<])).)*)");
 
 
-    public static final Pattern wikilessPattern = Pattern.compile("(www\\.)?wikipedia.org/(((?!([\"'<])).)*)");
-    public static final Pattern wikilessSubdomainPattern = Pattern.compile("([\\w_-]+)\\.wikipedia.org/(((?!([\"'<])).)*)");
+    public static final Pattern wikilessPattern = Pattern.compile("([\\w_-]+)\\.wikipedia.org/(((?!([\"'<])).)*)");
 
     public static final Pattern bibliogramAccountPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(((?!/p/).)+)");
     public static final Pattern maps = Pattern.compile("/maps/place/([^@]+@)?([\\d.,z]+).*");
@@ -1256,7 +1256,8 @@ public class Utils {
         return Arrays.asList(twitter_domains).contains(host) || Arrays.asList(nitter_instances).contains(host) || Arrays.asList(reddit_domains).contains(host)
                 || Arrays.asList(instagram_domains).contains(host) || Arrays.asList(bibliogram_instances).contains(host)
                 || url.contains("/maps/place") || url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain))
-                || Arrays.asList(youtube_domains).contains(host) || Arrays.asList(invidious_instances).contains(host) || (host != null && host.endsWith(medium_domains[0]));
+                || Arrays.asList(youtube_domains).contains(host) || Arrays.asList(invidious_instances).contains(host)
+                || (host != null && host.endsWith(medium_domains[0]) || (host != null && host.endsWith(wikipedi_domains[0])));
     }
 
     public static boolean routerEnabledForHost(Context context, String url) {
@@ -1282,6 +1283,8 @@ public class Utils {
             return sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
         } else if (host != null && host.endsWith(medium_domains[0])) {
             return sharedpreferences.getBoolean(SET_SCRIBERIP_ENABLED, true);
+        } else if (host != null && host.endsWith(wikipedi_domains[0])) {
+            return sharedpreferences.getBoolean(SET_WIKILESS_ENABLED, true);
         } else
             return url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain));
     }
