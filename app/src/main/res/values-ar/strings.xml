@@ -51,6 +51,8 @@
     <string name="nitter_instances">مثيلات خوادم Nitter</string>
     <string name="bibliogram_instances">مثيلات خوادم Bibliogram</string>
     <string name="teddit_instances">مثيلات Teddit</string>
+    <string name="scribe_instances">Scribe instances</string>
+    <string name="wikiless_instances">Wikiless instances</string>
     <string name="latency">وقت الإستجابة</string>
     <string name="error_message_internet">تحقق من اتصالك بالإنترنت</string>
     <string name="instance_label">مثيل الخادم:</string>
@@ -123,6 +125,7 @@
     <string name="invidious_help_remove"><b>حذف:</b> إلغاء تعقبني سوف يزيل المعلمة من الرابط، إذا كان موجودا</string>
     <string name="invidious_help_other">إذا قمت بتحديد قيم أخرى لمعلمة، سيتم إضافتها إلى عنوان URL. إذا كان المعامل موجود مسبقا، سيتم تغيير قيمته إلى اختيارك</string>
     <string name="invidious_help_explanations">[1] معلمة \'محلية\' تم تعيينها إلى \'صحيح\' افتراضيا للحصول على خصوصية أفضل</string>
+    <string name="copy_url">Copy URL To Clipboard</string>
     <string-array name="invidious_theme">
         <item>تجاهل</item>
         <item>إزالة</item>

@@ -51,6 +51,8 @@
     <string name="nitter_instances">Nitter instanssit</string>
     <string name="bibliogram_instances">Bibliogram instanssit</string>
     <string name="teddit_instances">Teddit instanssit</string>
+    <string name="scribe_instances">Scribe instances</string>
+    <string name="wikiless_instances">Wikiless instances</string>
     <string name="latency">Latenssi</string>
     <string name="error_message_internet">Tarkista internetyhteytesi</string>
     <string name="instance_label">Instanssi:</string>
@@ -123,6 +125,7 @@
     <string name="invidious_help_remove"><b>Poista:</b> UntrackMe poistaa parametrin URL-osoitteesta, jos se on olemassa</string>
     <string name="invidious_help_other">Jos valitset parametrille muita arvoja, ne lisätään URL-osoitteeseen. Jos parametri on jo olemassa, sen arvo muutetaan valintasi mukaan</string>
     <string name="invidious_help_explanations">[1] \'local\' parameter is set to \'true\' by default for better privacy</string>
+    <string name="copy_url">Copy URL To Clipboard</string>
     <string-array name="invidious_theme">
         <item>Ohita</item>
         <item>Poista</item>

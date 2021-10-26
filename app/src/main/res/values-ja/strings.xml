@@ -51,6 +51,8 @@
     <string name="nitter_instances">Nitterインスタンス</string>
     <string name="bibliogram_instances">Bibliogramインスタンス</string>
     <string name="teddit_instances">Tedditインスタンス</string>
+    <string name="scribe_instances">Scribe instances</string>
+    <string name="wikiless_instances">Wikiless instances</string>
     <string name="latency">レイテンシ</string>
     <string name="error_message_internet">インターネット接続を確認してください</string>
     <string name="instance_label">インスタンス:</string>
@@ -123,6 +125,7 @@
     <string name="invidious_help_remove"><b>削除:</b> UntrackMeはURLからパラメータを削除します。</string>
     <string name="invidious_help_other">パラメータに他の値を選択すると、それらはURLに追加されます。 パラメータがすでに存在する場合、その値は選択したものに変更されます。</string>
     <string name="invidious_help_explanations">[1] プライバシー保護のため、デフォルトでは \'local\' パラメータは \'true\' に設定されています</string>
+    <string name="copy_url">Copy URL To Clipboard</string>
     <string-array name="invidious_theme">
         <item>無視</item>
         <item>削除</item>

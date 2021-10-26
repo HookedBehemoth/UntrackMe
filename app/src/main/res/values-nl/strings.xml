@@ -51,6 +51,8 @@
     <string name="nitter_instances">Nitter instanties</string>
     <string name="bibliogram_instances">Bibliografische voorbeelden</string>
     <string name="teddit_instances">Teddit instances</string>
+    <string name="scribe_instances">Scribe instances</string>
+    <string name="wikiless_instances">Wikiless instances</string>
     <string name="latency">Latentie</string>
     <string name="error_message_internet">Controleer uw internetverbinding</string>
     <string name="instance_label">Instantie:</string>
@@ -123,6 +125,7 @@
     <string name="invidious_help_remove"><b>Verwijderen:</b> UntrackMe verwijdert de parameter van de URL, als deze bestaat</string>
     <string name="invidious_help_other">Als u andere waarden voor een parameter selecteert, worden deze toegevoegd aan de URL. Als de parameter al bestaat, zal de waarde worden aangepast worden aan uw keuze</string>
     <string name="invidious_help_explanations">[1] \'lokale\' parameter is standaard op \'waar\' ingesteld voor betere privacy</string>
+    <string name="copy_url">Copy URL To Clipboard</string>
     <string-array name="invidious_theme">
         <item>Negeren</item>
         <item>Verwijderen</item>
