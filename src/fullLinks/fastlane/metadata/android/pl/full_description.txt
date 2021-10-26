@@ -29,3 +29,21 @@ Co to jest Bibliogram:
 
 Darmowy i otwartoźródłowy alternatywny front-end dla Instagrama
 Projekt Github: https://github.com/cloudrac3r/bibliogram
+
+
+Co to jest Teddit:
+
+Darmowa i otwartoźródłowa alternatywna wersja front-end dla Reddita, skupiająca się na prywatności.
+Projekt Github: https://github.com/teddit-net/teddit
+
+
+Co to jest Scribe:
+
+Alternatywny front-end dla Medium
+Kod źródłowy: https://git.sr.ht/~edwardloveall/scribe
+
+
+Co to jest Wikiless:
+
+Darmowa i otwartoźródłowa alternatywna wersja front-end dla Wikipedii, skupiająca się na prywatności.
+Projekt: https://codeberg.org/orenom/Wikiless
