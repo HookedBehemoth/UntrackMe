@@ -29,3 +29,21 @@
 
 واجهة أمامية بديلة مجانية ومفتوحة المصدر إلى إنستغرام
 مشروع Github https://github.com/cloudrac3r/bibliogram
+
+
+ما هو Teddit:
+
+واجهة ريديت الأمامية بديلة و حرة و مفتوحة المصدر تركز على الخصوصية.
+مشروع Github https://github.com/teddit-net/teddit
+
+
+ما هو سكريبي:
+
+طرف أمامي بديل لـMedium
+المصادر: https://git.sr.ht/~edwardloveall/scribe
+
+
+ما هو الويكيليس:
+
+واجهة أمامية بديلة لويكيبيديا مفتوحة المصدر تركز على الخصوصية.
+مشروع: https://codeberg.org/orenom/Wikiless
