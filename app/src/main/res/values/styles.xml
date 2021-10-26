@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat">
@@ -10,6 +10,9 @@
         <item name="android:colorBackground">@color/colorPrimaryDark</item>
         <item name="android:textColor">@color/textColor</item>
         <item name="alertDialogTheme">@style/AppThemeDialog</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/colorPrimary
+        </item>
+
     </style>
 
     <!-- Base application theme. -->

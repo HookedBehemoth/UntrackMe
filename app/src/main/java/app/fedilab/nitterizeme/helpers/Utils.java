@@ -88,7 +88,7 @@ import static app.fedilab.nitterizeme.activities.CheckAppActivity.outlook_safe_d
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.reddit_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.shortener_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.twitter_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.wikipedi_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.wikipedia_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.youtube_domains;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_EMBEDDED_PLAYER;
@@ -342,7 +342,7 @@ public class Utils {
             } else {
                 return url;
             }
-        } else if (host != null && host.endsWith(wikipedi_domains[0])) {
+        } else if (host != null && host.endsWith(wikipedia_domains[0])) {
             boolean wikiless_enabled = sharedpreferences.getBoolean(MainActivity.SET_WIKILESS_ENABLED, true);
             if (wikiless_enabled) {
                 String wikilessHost = sharedpreferences.getString(MainActivity.SET_WIKILESS_HOST, MainActivity.DEFAULT_WIKILESS_HOST);
@@ -1257,7 +1257,7 @@ public class Utils {
                 || Arrays.asList(instagram_domains).contains(host) || Arrays.asList(bibliogram_instances).contains(host)
                 || url.contains("/maps/place") || url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain))
                 || Arrays.asList(youtube_domains).contains(host) || Arrays.asList(invidious_instances).contains(host)
-                || (host != null && host.endsWith(medium_domains[0]) || (host != null && host.endsWith(wikipedi_domains[0])));
+                || (host != null && host.endsWith(medium_domains[0]) || (host != null && host.endsWith(wikipedia_domains[0])));
     }
 
     public static boolean routerEnabledForHost(Context context, String url) {
@@ -1283,7 +1283,7 @@ public class Utils {
             return sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
         } else if (host != null && host.endsWith(medium_domains[0])) {
             return sharedpreferences.getBoolean(SET_SCRIBERIP_ENABLED, true);
-        } else if (host != null && host.endsWith(wikipedi_domains[0])) {
+        } else if (host != null && host.endsWith(wikipedia_domains[0])) {
             return sharedpreferences.getBoolean(SET_WIKILESS_ENABLED, true);
         } else
             return url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain));

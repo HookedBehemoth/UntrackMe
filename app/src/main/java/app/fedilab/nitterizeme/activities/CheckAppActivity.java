@@ -75,7 +75,7 @@ public class CheckAppActivity extends AppCompatActivity {
             "www.medium.com"
     };
 
-    public static String[] wikipedi_domains = {
+    public static String[] wikipedia_domains = {
             "wikipedia.org",
             "www.wikipedia.org"
     };
@@ -147,10 +147,29 @@ public class CheckAppActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
         if (BuildConfig.fullLinks) {
-            domains = new String[twitter_domains.length + youtube_domains.length + reddit_domains.length + shortener_domains.length + instagram_domains.length + invidious_instances.length + nitter_instances.length + bibliogram_instances.length];
+            domains = new String[
+                    twitter_domains.length
+                            + youtube_domains.length
+                            + reddit_domains.length
+                            + shortener_domains.length
+                            + instagram_domains.length
+                            + invidious_instances.length
+                            + nitter_instances.length
+                            + bibliogram_instances.length
+                            + wikipedia_domains.length
+                            + medium_domains.length
+                    ];
         } else {
-            domains = new String[twitter_domains.length + youtube_domains.length + reddit_domains.length + shortener_domains.length + instagram_domains.length];
+            domains = new String[
+                    twitter_domains.length
+                            + youtube_domains.length
+                            + reddit_domains.length
+                            + shortener_domains.length
+                            + instagram_domains.length
+                            + wikipedia_domains.length
+                            + medium_domains.length];
         }
         int i = 0;
         for (String host : twitter_domains) {
@@ -166,6 +185,14 @@ public class CheckAppActivity extends AppCompatActivity {
             i++;
         }
         for (String host : instagram_domains) {
+            domains[i] = host;
+            i++;
+        }
+        for (String host : medium_domains) {
+            domains[i] = host;
+            i++;
+        }
+        for (String host : wikipedia_domains) {
             domains[i] = host;
             i++;
         }
@@ -255,6 +282,14 @@ public class CheckAppActivity extends AppCompatActivity {
             } else if (Arrays.asList(reddit_domains).contains(domain)) {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle("Reddit");
+                appInfos.add(appInfo);
+            } else if (Arrays.asList(medium_domains).contains(domain)) {
+                AppInfo appInfo = new AppInfo();
+                appInfo.setTitle("Medium");
+                appInfos.add(appInfo);
+            } else if (Arrays.asList(wikipedia_domains).contains(domain)) {
+                AppInfo appInfo = new AppInfo();
+                appInfo.setTitle("Wikipedia");
                 appInfos.add(appInfo);
             } else if (Arrays.asList(shortener_domains).contains(domain)) {
                 AppInfo appInfo = new AppInfo();

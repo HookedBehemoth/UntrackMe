@@ -68,6 +68,7 @@
             android:padding="2dp"
             android:src="@drawable/ic_copy"
             app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/copy_url"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -76,14 +77,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:drawableStart="@drawable/ic_app_logo"
-            android:drawableLeft="@drawable/ic_app_logo"
             android:drawablePadding="5dp"
             android:gravity="center_vertical"
             android:paddingTop="5dp"
             android:text="@string/continue_with"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
+            app:drawableStartCompat="@drawable/ic_app_logo"
             app:layout_constraintTop_toBottomOf="@+id/scroll_url" />
 
         <GridView
