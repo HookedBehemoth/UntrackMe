@@ -29,3 +29,21 @@ Que é Bibliogram:
 
 Unha interface alternativa para Instagram libre e de código aberto
 Github do proxecto: https://github.com/cloudrac3r/bibliogram
+
+
+Que é Teddit:
+
+Unha interface libre e de código aberto a Reddit centrada na privacidade.
+Proxecto en Github: https://github.com/teddit-net/teddit
+
+
+Que é Scribe:
+
+Unha interface alternativa para Medium
+Fontes: https://git.sr.ht/~edwardloveall/scribe
+
+
+Que é Wikiless:
+
+Unha interface de código aberto alternativa para Wikipedia centrada na privacidade.
+Proxecto: https://codeberg.org/orenom/Wikiless

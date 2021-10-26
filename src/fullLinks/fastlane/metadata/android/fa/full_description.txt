@@ -29,3 +29,21 @@
 
 پیشانهٔ نرم‌افزار آزاد جایگزین برای اینستاگرم
 گیت‌هاب پروژه: https://github.com/cloudrac3r/bibliogram
+
+
+What is Teddit:
+
+A free and open source alternative Reddit front-end focused on privacy.
+Github project: https://github.com/teddit-net/teddit
+
+
+What is Scribe:
+
+An alternative Medium front-end
+Sources: https://git.sr.ht/~edwardloveall/scribe
+
+
+What is Wikiless:
+
+A free open source alternative Wikipedia front-end focused on privacy.
+Project: https://codeberg.org/orenom/Wikiless

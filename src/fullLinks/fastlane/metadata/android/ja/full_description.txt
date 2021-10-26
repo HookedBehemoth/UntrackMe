@@ -6,26 +6,44 @@ UntrackMeをデフォルトでTwitter、YouTube、Instagramのリンクを開く
 
 **Liteバージョン:
 
-- When sharing a Twitter, YouTube or Google Maps link just pick up UntrackMe to transform it before sharing it with another app.
+- Twitter、YouTube、Googleマップのリンクを共有するときに、UntrackMeを使ってリンクを変換してから別のアプリに共有します。
 
-**Full version:
+**フルバージョン:
 
-- Contains all features of the lite version and it also handle all links to remove tracking parameters. It uses its own app picker that display URLs before visiting them.
-
-
-What is Nitter:
-
-A free and open source alternative Twitter front-end focused on privacy.
-Github project: https://github.com/zedeus/nitter
+- Lite バージョンのすべての機能に加えて、すべてのリンクのトラッキングパラメータを削除する処理もできます。 訪問前にURLを表示する独自のアプリピッカーを使用します。
 
 
-What is Invidious:
+Nitterとは:
 
-A free and open source alternative front-end to YouTube
-Github project: https://github.com/omarroth/invidious
+プライバシーに重点を置いた無料でオープンソースのTwitter代替フロントエンドです。
+Github プロジェクト: https://github.com/zedeus/nitter
 
 
-What is Bibliogram:
+Invidiousとは:
 
-A free and open source alternative front-end to Instagram
-Github project: https://github.com/cloudrac3r/bibliogram
+YouTubeの無料でオープンソースの代替フロントエンドです。
+Github プロジェクト: https://github.com/omarroth/invidious
+
+
+Bibliogramとは:
+
+Instagramの無料でオープンソースの代替フロントエンドです
+Github プロジェクト: https://github.com/cloudrac3r/bibliogram
+
+
+Tedditとは
+
+プライバシーに重点を置いた無料でオープンソースのRedditの代替フロントエンドです。
+Github プロジェクト: https://github.com/teddit-net/teddit
+
+
+Scribeとは:
+
+Mediumの代替フロントエンドです。
+ソース: https://git.sr.ht/~edwardloveall/scribe
+
+
+ウィキレスとは:
+
+プライバシーに重点を置いた無料でオープンソースのWikipediaの代替フロントエンドです。
+プロジェクト: https://codeberg.org/org/orenom/Wikiless
