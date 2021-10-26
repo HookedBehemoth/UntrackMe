@@ -29,3 +29,21 @@ Was ist Bibliogram:
 
 Eine freie und Open-Source-Alternative zu Instagram
 Projekt auf Github: https://github.com/cloudrac3r/bibliogram
+
+
+Was ist Teddit:
+
+Ein freies und quell-offenes alternatives Reddit-Frontend, das sich auf die Privatsphäre konzentriert.
+Projekt auf Github: https://github.com/teddit-net/teddit
+
+
+Was ist Scribe:
+
+Ein alternatives Medium Frontend
+Quelltext: https://git.sr.ht/~edwardloveall/scribe
+
+
+Was ist Wikiless:
+
+Ein freies und quell-offenes alternatives Wikipedia-Frontend, das sich auf Privatsphäre konzentriert.
+Projektseite: https://codeberg.org/orenom/Wikiless
