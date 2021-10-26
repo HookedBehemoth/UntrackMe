@@ -30,6 +30,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import app.fedilab.nitterizeme.R;
 import app.fedilab.nitterizeme.adapters.InstanceAdapter;
@@ -40,7 +41,7 @@ import app.fedilab.nitterizeme.viewmodels.SearchInstanceVM;
 
 public class InstanceActivity extends AppCompatActivity {
 
-    private static final String list_for_instances = "https://framagit.org/tom79/fedilab_app/-/blob/master/content/untrackme_instances/payload_2.json";
+    private static final String list_for_instances = "https://framagit.org/tom79/fedilab_app/-/blob/master/content/untrackme_instances/payload_3.json";
     private ActivityPopupInstanceBinding binding;
 
     @Override
@@ -64,66 +65,100 @@ public class InstanceActivity extends AppCompatActivity {
             String nitterHost = sharedpreferences.getString(MainActivity.SET_NITTER_HOST, MainActivity.DEFAULT_NITTER_HOST);
             String bibliogramHost = sharedpreferences.getString(MainActivity.SET_BIBLIOGRAM_HOST, MainActivity.DEFAULT_BIBLIOGRAM_HOST);
             String tedditHost = sharedpreferences.getString(MainActivity.SET_TEDDIT_HOST, MainActivity.DEFAULT_TEDDIT_HOST);
+            String scribeHost = sharedpreferences.getString(MainActivity.SET_SCRIBERIP_HOST, MainActivity.DEFAULT_SCRIBERIP_HOST);
+            String wikilessHost = sharedpreferences.getString(MainActivity.SET_WIKILESS_HOST, MainActivity.DEFAULT_WIKILESS_HOST);
 
             ArrayList<Instance> invidiousInstances = new ArrayList<>();
             ArrayList<Instance> nitterInstances = new ArrayList<>();
             ArrayList<Instance> bibliogramInstances = new ArrayList<>();
             ArrayList<Instance> tedditInstances = new ArrayList<>();
+            ArrayList<Instance> scribeInstances = new ArrayList<>();
+            ArrayList<Instance> wikilessInstances = new ArrayList<>();
+
             boolean customInvidiousInstance = true;
             boolean customNitterInstance = true;
             boolean customBibliogramInstance = true;
             boolean customTedditInstance = true;
+            boolean customScribeInstance = true;
+            boolean customWikilessInstance = true;
+
             for (Instance instance : result) {
-                if (instance.getType() == Instance.instanceType.INVIDIOUS) {
+                if (instance.getInstanceType() == Instance.instanceType.YOUTUBE) {
                     invidiousInstances.add(instance);
                     if (invidiousHost != null && invidiousHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
                         customInvidiousInstance = false;
                     }
-                } else if (instance.getType() == Instance.instanceType.NITTER) {
+                } else if (instance.getInstanceType() == Instance.instanceType.TWITTER) {
                     nitterInstances.add(instance);
                     if (nitterHost != null && nitterHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
                         customNitterInstance = false;
                     }
-                } else if (instance.getType() == Instance.instanceType.BIBLIOGRAM) {
+                } else if (instance.getInstanceType() == Instance.instanceType.INSTAGRAM) {
                     bibliogramInstances.add(instance);
                     if (bibliogramHost != null && bibliogramHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
                         customBibliogramInstance = false;
                     }
-                } else if (instance.getType() == Instance.instanceType.TEDDIT) {
+                } else if (instance.getInstanceType() == Instance.instanceType.REDDIT) {
                     tedditInstances.add(instance);
                     if (tedditHost != null && tedditHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
                         customTedditInstance = false;
                     }
+                } else if (instance.getInstanceType() == Instance.instanceType.MEDIUM) {
+                    scribeInstances.add(instance);
+                    if (scribeHost != null && scribeHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
+                        customScribeInstance = false;
+                    }
+                } else if (instance.getInstanceType() == Instance.instanceType.WIKIPEDIA) {
+                    wikilessInstances.add(instance);
+                    if (wikilessHost != null && wikilessHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
+                        customWikilessInstance = false;
+                    }
                 }
             }
+            List<String> defaultLocales = new ArrayList<>();
+            defaultLocales.add("--");
             //Check if custom instances are also added
             if (customInvidiousInstance) {
                 Instance instance = new Instance();
                 instance.setChecked(true);
                 instance.setDomain(invidiousHost);
-                instance.setLocale("--");
+                instance.setLocales(defaultLocales);
                 invidiousInstances.add(0, instance);
             }
             if (customNitterInstance) {
                 Instance instance = new Instance();
                 instance.setChecked(true);
                 instance.setDomain(nitterHost);
-                instance.setLocale("--");
+                instance.setLocales(defaultLocales);
                 nitterInstances.add(0, instance);
             }
             if (customBibliogramInstance) {
                 Instance instance = new Instance();
                 instance.setChecked(true);
                 instance.setDomain(bibliogramHost);
-                instance.setLocale("--");
+                instance.setLocales(defaultLocales);
                 bibliogramInstances.add(0, instance);
             }
             if (customTedditInstance) {
                 Instance instance = new Instance();
                 instance.setChecked(true);
                 instance.setDomain(tedditHost);
-                instance.setLocale("--");
+                instance.setLocales(defaultLocales);
                 tedditInstances.add(0, instance);
+            }
+            if (customScribeInstance) {
+                Instance instance = new Instance();
+                instance.setChecked(true);
+                instance.setDomain(scribeHost);
+                instance.setLocales(defaultLocales);
+                scribeInstances.add(0, instance);
+            }
+            if (customWikilessInstance) {
+                Instance instance = new Instance();
+                instance.setChecked(true);
+                instance.setDomain(wikilessHost);
+                instance.setLocales(defaultLocales);
+                wikilessInstances.add(0, instance);
             }
             binding.instanceContainer.setVisibility(View.VISIBLE);
             binding.loader.setVisibility(View.GONE);
@@ -155,11 +190,23 @@ public class InstanceActivity extends AppCompatActivity {
             binding.tedditInstances.setNestedScrollingEnabled(false);
 
 
+            final LinearLayoutManager sLayoutManager = new LinearLayoutManager(this);
+            InstanceAdapter scribeAdapter = new InstanceAdapter(scribeInstances);
+            binding.scribeInstances.setAdapter(scribeAdapter);
+            binding.scribeInstances.setLayoutManager(sLayoutManager);
+            binding.scribeInstances.setNestedScrollingEnabled(false);
+
+            final LinearLayoutManager wLayoutManager = new LinearLayoutManager(this);
+            InstanceAdapter wikilessAdapter = new InstanceAdapter(wikilessInstances);
+            binding.wikilessInstances.setAdapter(wikilessAdapter);
+            binding.wikilessInstances.setLayoutManager(wLayoutManager);
+            binding.wikilessInstances.setNestedScrollingEnabled(false);
+
             binding.latencyTest.setOnClickListener(v -> {
                         invidiousAdapter.evalLatency();
                         nitterAdapter.evalLatency();
                         bibliogramAdapter.evalLatency();
-                tedditAdapter.evalLatency();
+                        tedditAdapter.evalLatency();
                     }
             );
 

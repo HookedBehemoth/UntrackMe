@@ -69,6 +69,8 @@
     <string name="nitter_instances">Nitter instances</string>
     <string name="bibliogram_instances">Bibliogram instances</string>
     <string name="teddit_instances">Teddit instances</string>
+    <string name="scribe_instances">Scribe instances</string>
+    <string name="wikiless_instances">Wikiless instances</string>
     <string name="latency">Latency</string>
     <string name="error_message_internet">Check your Internet connection</string>
     <string name="instance_label">Instance:</string>

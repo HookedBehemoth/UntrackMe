@@ -42,11 +42,15 @@ import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
 import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_BIBLIOGRAM_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_INVIDIOUS_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_NITTER_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_SCRIBERIP_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_TEDDIT_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_WIKILESS_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_HOST;
 
 public class SearchInstanceVM extends AndroidViewModel {
     private MutableLiveData<List<Instance>> instancesMLD;
@@ -81,7 +85,7 @@ public class SearchInstanceVM extends AndroidViewModel {
         HttpsURLConnection httpsURLConnection;
         ArrayList<Instance> instances = new ArrayList<>();
         try {
-            String instances_url = "https://fedilab.app/untrackme_instances/payload_2.json";
+            String instances_url = "https://fedilab.app/untrackme_instances/payload_3.json";
             URL url = new URL(instances_url);
             httpsURLConnection = (HttpsURLConnection) url.openConnection();
             httpsURLConnection.setConnectTimeout(10 * 1000);
@@ -98,70 +102,173 @@ public class SearchInstanceVM extends AndroidViewModel {
             }
             httpsURLConnection.getInputStream().close();
             SharedPreferences sharedpreferences = getApplication().getApplicationContext().getSharedPreferences(APP_PREFS, Context.MODE_PRIVATE);
-            String defaultInvidious = sharedpreferences.getString(SET_INVIDIOUS_HOST, DEFAULT_INVIDIOUS_HOST);
-            String defaultNitter = sharedpreferences.getString(SET_NITTER_HOST, DEFAULT_NITTER_HOST);
-            String defaultTeddit = sharedpreferences.getString(SET_TEDDIT_HOST, DEFAULT_TEDDIT_HOST);
-            String defaultBibliogram = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, DEFAULT_BIBLIOGRAM_HOST);
+            String defaultYoutube = sharedpreferences.getString(SET_INVIDIOUS_HOST, DEFAULT_INVIDIOUS_HOST);
+            String defaultTwitter = sharedpreferences.getString(SET_NITTER_HOST, DEFAULT_NITTER_HOST);
+            String defaultReddit = sharedpreferences.getString(SET_TEDDIT_HOST, DEFAULT_TEDDIT_HOST);
+            String defaultInstagram = sharedpreferences.getString(SET_BIBLIOGRAM_HOST, DEFAULT_BIBLIOGRAM_HOST);
+            String defaultMedium = sharedpreferences.getString(SET_SCRIBERIP_HOST, DEFAULT_SCRIBERIP_HOST);
+            String defaultWikipedia = sharedpreferences.getString(SET_WIKILESS_HOST, DEFAULT_WIKILESS_HOST);
 
             if (response != null) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
-                    JSONArray jsonArrayInvidious = jsonObject.getJSONArray("invidious");
-                    JSONArray jsonArrayNitter = jsonObject.getJSONArray("nitter");
-                    JSONArray jsonArrayTeddit = jsonObject.getJSONArray("teddit");
-                    JSONArray jsonArrayBibliogram = jsonObject.getJSONArray("bibliogram");
-                    for (int i = 0; i < jsonArrayInvidious.length(); i++) {
+                    JSONArray jsonArrayYoutube = jsonObject.getJSONArray("Youtube");
+                    JSONArray jsonArrayTwitter = jsonObject.getJSONArray("Twitter");
+                    JSONArray jsonArrayInstagram = jsonObject.getJSONArray("Instagram");
+                    JSONArray jsonArrayReddit = jsonObject.getJSONArray("Reddit");
+                    JSONArray jsonArrayMedium = jsonObject.getJSONArray("Medium");
+                    JSONArray jsonArrayWikipedia = jsonObject.getJSONArray("Wikipedia");
+                    for (int i = 0; i < jsonArrayYoutube.length(); i++) {
                         Instance instance = new Instance();
-                        String domain = jsonArrayInvidious.getJSONObject(i).getString("domain");
-                        boolean cloudFlare = jsonArrayInvidious.getJSONObject(i).getBoolean("cloudflare");
-                        String locale = jsonArrayInvidious.getJSONObject(i).getString("locale");
+                        String domain = jsonArrayYoutube.getJSONObject(i).getString("domain");
+                        String type = jsonArrayYoutube.getJSONObject(i).getString("type");
+                        boolean cloudFlare = jsonArrayYoutube.getJSONObject(i).getBoolean("cloudflare");
+                        List<String> localesList = new ArrayList<>();
+                        if (jsonArrayYoutube.getJSONObject(i).has("country")) {
+                            JSONArray locales = jsonArrayYoutube.getJSONObject(i).getJSONArray("country");
+
+                            for (int j = 0; j < locales.length(); j++) {
+                                localesList.add(locales.getString(j));
+                            }
+                        } else {
+                            localesList.add("--");
+                        }
+                        instance.setLocales(localesList);
                         instance.setDomain(domain);
+                        instance.setType(type);
                         instance.setCloudflare(cloudFlare);
-                        instance.setLocale(locale);
-                        instance.setType(Instance.instanceType.INVIDIOUS);
-                        if (defaultInvidious != null && domain.compareTo(defaultInvidious) == 0) {
+                        instance.setInstanceType(Instance.instanceType.YOUTUBE);
+                        if (defaultYoutube != null && domain.compareTo(defaultYoutube) == 0) {
                             instance.setChecked(true);
                         }
                         instances.add(instance);
                     }
-                    for (int i = 0; i < jsonArrayNitter.length(); i++) {
+                    for (int i = 0; i < jsonArrayTwitter.length(); i++) {
                         Instance instance = new Instance();
-                        String domain = jsonArrayNitter.getJSONObject(i).getString("domain");
-                        boolean cloudFlare = jsonArrayNitter.getJSONObject(i).getBoolean("cloudflare");
-                        String locale = jsonArrayNitter.getJSONObject(i).getString("locale");
+                        String domain = jsonArrayTwitter.getJSONObject(i).getString("domain");
+                        String type = jsonArrayTwitter.getJSONObject(i).getString("type");
+                        boolean cloudFlare = jsonArrayTwitter.getJSONObject(i).getBoolean("cloudflare");
+
+                        List<String> localesList = new ArrayList<>();
+                        if (jsonArrayTwitter.getJSONObject(i).has("country")) {
+                            JSONArray locales = jsonArrayTwitter.getJSONObject(i).getJSONArray("country");
+                            for (int j = 0; j < locales.length(); j++) {
+                                localesList.add(locales.getString(j));
+                            }
+                        } else {
+                            localesList.add("--");
+                        }
+                        instance.setLocales(localesList);
+
                         instance.setDomain(domain);
+                        instance.setType(type);
                         instance.setCloudflare(cloudFlare);
-                        instance.setLocale(locale);
-                        instance.setType(Instance.instanceType.NITTER);
-                        if (defaultNitter != null && domain.compareTo(defaultNitter) == 0) {
+                        instance.setInstanceType(Instance.instanceType.TWITTER);
+                        if (defaultTwitter != null && domain.compareTo(defaultTwitter) == 0) {
                             instance.setChecked(true);
                         }
                         instances.add(instance);
                     }
-                    for (int i = 0; i < jsonArrayBibliogram.length(); i++) {
+                    for (int i = 0; i < jsonArrayInstagram.length(); i++) {
                         Instance instance = new Instance();
-                        String domain = jsonArrayBibliogram.getJSONObject(i).getString("domain");
-                        boolean cloudFlare = jsonArrayBibliogram.getJSONObject(i).getBoolean("cloudflare");
-                        String locale = jsonArrayBibliogram.getJSONObject(i).getString("locale");
+                        String domain = jsonArrayInstagram.getJSONObject(i).getString("domain");
+                        String type = jsonArrayInstagram.getJSONObject(i).getString("type");
+                        boolean cloudFlare = jsonArrayInstagram.getJSONObject(i).getBoolean("cloudflare");
+
+                        List<String> localesList = new ArrayList<>();
+                        if (jsonArrayInstagram.getJSONObject(i).has("country")) {
+                            JSONArray locales = jsonArrayInstagram.getJSONObject(i).getJSONArray("country");
+                            for (int j = 0; j < locales.length(); j++) {
+                                localesList.add(locales.getString(j));
+                            }
+                        } else {
+                            localesList.add("--");
+                        }
+                        instance.setLocales(localesList);
+
                         instance.setDomain(domain);
+                        instance.setType(type);
                         instance.setCloudflare(cloudFlare);
-                        instance.setLocale(locale);
-                        instance.setType(Instance.instanceType.BIBLIOGRAM);
-                        if (defaultBibliogram != null && domain.compareTo(defaultBibliogram) == 0) {
+                        instance.setInstanceType(Instance.instanceType.INSTAGRAM);
+                        if (defaultInstagram != null && domain.compareTo(defaultInstagram) == 0) {
                             instance.setChecked(true);
                         }
                         instances.add(instance);
                     }
-                    for (int i = 0; i < jsonArrayTeddit.length(); i++) {
+                    for (int i = 0; i < jsonArrayReddit.length(); i++) {
                         Instance instance = new Instance();
-                        String domain = jsonArrayTeddit.getJSONObject(i).getString("domain");
-                        boolean cloudFlare = jsonArrayTeddit.getJSONObject(i).getBoolean("cloudflare");
-                        String locale = jsonArrayTeddit.getJSONObject(i).getString("locale");
+                        String domain = jsonArrayReddit.getJSONObject(i).getString("domain");
+                        String type = jsonArrayReddit.getJSONObject(i).getString("type");
+                        boolean cloudFlare = jsonArrayReddit.getJSONObject(i).getBoolean("cloudflare");
+
+                        List<String> localesList = new ArrayList<>();
+                        if (jsonArrayReddit.getJSONObject(i).has("country")) {
+                            JSONArray locales = jsonArrayReddit.getJSONObject(i).getJSONArray("country");
+                            for (int j = 0; j < locales.length(); j++) {
+                                localesList.add(locales.getString(j));
+                            }
+                        } else {
+                            localesList.add("--");
+                        }
+                        instance.setLocales(localesList);
+
                         instance.setDomain(domain);
+                        instance.setType(type);
                         instance.setCloudflare(cloudFlare);
-                        instance.setLocale(locale);
-                        instance.setType(Instance.instanceType.TEDDIT);
-                        if (defaultTeddit != null && domain.compareTo(defaultTeddit) == 0) {
+                        instance.setInstanceType(Instance.instanceType.REDDIT);
+                        if (defaultReddit != null && domain.compareTo(defaultReddit) == 0) {
+                            instance.setChecked(true);
+                        }
+                        instances.add(instance);
+                    }
+                    for (int i = 0; i < jsonArrayMedium.length(); i++) {
+                        Instance instance = new Instance();
+                        String domain = jsonArrayMedium.getJSONObject(i).getString("domain");
+                        String type = jsonArrayMedium.getJSONObject(i).getString("type");
+                        boolean cloudFlare = jsonArrayMedium.getJSONObject(i).getBoolean("cloudflare");
+
+                        List<String> localesList = new ArrayList<>();
+                        if (jsonArrayMedium.getJSONObject(i).has("country")) {
+                            JSONArray locales = jsonArrayMedium.getJSONObject(i).getJSONArray("country");
+                            for (int j = 0; j < locales.length(); j++) {
+                                localesList.add(locales.getString(j));
+                            }
+                        } else {
+                            localesList.add("--");
+                        }
+                        instance.setLocales(localesList);
+
+                        instance.setDomain(domain);
+                        instance.setType(type);
+                        instance.setCloudflare(cloudFlare);
+                        instance.setInstanceType(Instance.instanceType.MEDIUM);
+                        if (defaultMedium != null && domain.compareTo(defaultMedium) == 0) {
+                            instance.setChecked(true);
+                        }
+                        instances.add(instance);
+                    }
+                    for (int i = 0; i < jsonArrayWikipedia.length(); i++) {
+                        Instance instance = new Instance();
+                        String domain = jsonArrayWikipedia.getJSONObject(i).getString("domain");
+                        String type = jsonArrayWikipedia.getJSONObject(i).getString("type");
+                        boolean cloudFlare = jsonArrayWikipedia.getJSONObject(i).getBoolean("cloudflare");
+
+                        List<String> localesList = new ArrayList<>();
+                        if (jsonArrayWikipedia.getJSONObject(i).has("country")) {
+                            JSONArray locales = jsonArrayWikipedia.getJSONObject(i).getJSONArray("country");
+                            for (int j = 0; j < locales.length(); j++) {
+                                localesList.add(locales.getString(j));
+                            }
+                        } else {
+                            localesList.add("--");
+                        }
+                        instance.setLocales(localesList);
+
+                        instance.setDomain(domain);
+                        instance.setType(type);
+                        instance.setCloudflare(cloudFlare);
+                        instance.setInstanceType(Instance.instanceType.WIKIPEDIA);
+                        if (defaultWikipedia != null && domain.compareTo(defaultWikipedia) == 0) {
                             instance.setChecked(true);
                         }
                         instances.add(instance);
@@ -169,6 +276,7 @@ public class SearchInstanceVM extends AndroidViewModel {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
             }
         } catch (IOException e) {
             e.printStackTrace();

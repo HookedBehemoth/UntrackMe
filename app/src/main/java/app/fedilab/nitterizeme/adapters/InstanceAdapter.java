@@ -39,7 +39,10 @@ import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_HOST;
+
 
 public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -90,8 +93,12 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             holder.binding.latency.setVisibility(View.VISIBLE);
             holder.binding.progress.setVisibility(View.GONE);
         }
-
-        holder.binding.locale.setText(instance.getLocale());
+        List<String> locales = instance.getLocales();
+        StringBuilder locale = new StringBuilder();
+        for (String _l : locales) {
+            locale.append(_l).append(" ");
+        }
+        holder.binding.locale.setText(locale.toString());
         if (instance.isCloudflare()) {
             holder.binding.useCloudflare.setVisibility(View.VISIBLE);
             holder.binding.useCloudflare.setOnClickListener(v -> Toast.makeText(context, R.string.cloudflare, Toast.LENGTH_SHORT).show());
@@ -109,8 +116,8 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             }
             instance.setChecked(true);
             SharedPreferences.Editor editor = sharedpreferences.edit();
-            switch (instance.getType()) {
-                case INVIDIOUS:
+            switch (instance.getInstanceType()) {
+                case YOUTUBE:
                     if (isChecked) {
                         editor.putString(SET_INVIDIOUS_HOST, instance.getDomain().trim());
                     } else {
@@ -118,7 +125,7 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                     editor.apply();
                     break;
-                case NITTER:
+                case TWITTER:
                     if (isChecked) {
                         editor.putString(SET_NITTER_HOST, instance.getDomain().trim());
                     } else {
@@ -126,7 +133,7 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                     editor.apply();
                     break;
-                case BIBLIOGRAM:
+                case INSTAGRAM:
                     if (isChecked) {
                         editor.putString(SET_BIBLIOGRAM_HOST, instance.getDomain().trim());
                     } else {
@@ -134,11 +141,27 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                     }
                     editor.apply();
                     break;
-                case TEDDIT:
+                case REDDIT:
                     if (isChecked) {
                         editor.putString(SET_TEDDIT_HOST, instance.getDomain().trim());
                     } else {
                         editor.putString(SET_TEDDIT_HOST, null);
+                    }
+                    editor.apply();
+                    break;
+                case MEDIUM:
+                    if (isChecked) {
+                        editor.putString(SET_SCRIBERIP_HOST, instance.getDomain().trim());
+                    } else {
+                        editor.putString(SET_SCRIBERIP_HOST, null);
+                    }
+                    editor.apply();
+                    break;
+                case WIKIPEDIA:
+                    if (isChecked) {
+                        editor.putString(SET_WIKILESS_HOST, instance.getDomain().trim());
+                    } else {
+                        editor.putString(SET_WIKILESS_HOST, null);
                     }
                     editor.apply();
                     break;

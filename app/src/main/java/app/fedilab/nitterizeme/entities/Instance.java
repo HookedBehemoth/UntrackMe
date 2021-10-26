@@ -1,5 +1,7 @@
 package app.fedilab.nitterizeme.entities;
 
+import java.util.List;
+
 /* Copyright 2020 Thomas Schneider
  *
  * This file is a part of UntrackMe
@@ -16,12 +18,14 @@ package app.fedilab.nitterizeme.entities;
  * see <http://www.gnu.org/licenses>. */
 public class Instance {
 
+
     private String domain;
     private long latency = -1;
     private boolean checked = false;
-    private instanceType type;
+    private instanceType instanceType;
     private boolean cloudflare = false;
-    private String locale;
+    private List<String> locales;
+    private String type;
 
     public String getDomain() {
         return domain;
@@ -47,14 +51,6 @@ public class Instance {
         this.checked = checked;
     }
 
-    public instanceType getType() {
-        return type;
-    }
-
-    public void setType(instanceType type) {
-        this.type = type;
-    }
-
     public boolean isCloudflare() {
         return cloudflare;
     }
@@ -63,18 +59,37 @@ public class Instance {
         this.cloudflare = cloudflare;
     }
 
-    public String getLocale() {
-        return locale;
+    public List<String> getLocales() {
+        return locales;
     }
 
-    public void setLocale(String locale) {
-        this.locale = locale;
+    public void setLocales(List<String> locales) {
+        this.locales = locales;
     }
+
+    public Instance.instanceType getInstanceType() {
+        return instanceType;
+    }
+
+    public void setInstanceType(Instance.instanceType instanceType) {
+        this.instanceType = instanceType;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 
     public enum instanceType {
-        INVIDIOUS,
-        NITTER,
-        BIBLIOGRAM,
-        TEDDIT
+        YOUTUBE,
+        TWITTER,
+        INSTAGRAM,
+        REDDIT,
+        MEDIUM,
+        WIKIPEDIA
     }
 }
