@@ -51,6 +51,8 @@
     <string name="nitter_instances">Nitter instantziak</string>
     <string name="bibliogram_instances">Bibliogram instantziak</string>
     <string name="teddit_instances">Teddit instances</string>
+    <string name="scribe_instances">Scribe instances</string>
+    <string name="wikiless_instances">Wikiless instances</string>
     <string name="latency">Latentzia</string>
     <string name="error_message_internet">Egiaztatu zure internet konexioa</string>
     <string name="instance_label">Instantzia:</string>
@@ -123,6 +125,7 @@
     <string name="invidious_help_remove"><b>Kendu:</b> UntrackMe aplikazioak parametroa kenduko du URLtik, aurkituz gero</string>
     <string name="invidious_help_other">Parametroarentzat beste balio batzuk hautatzen badituzu, URLra gehituko dira. Parametroa aurretik badago, balioa aldatuko zaio zure aukera jartzeko</string>
     <string name="invidious_help_explanations">[1] Parametro \'lokala\' egiazkora jartzen da pribatutasun hobe baterako</string>
+    <string name="copy_url">Copy URL To Clipboard</string>
     <string-array name="invidious_theme">
         <item>Ezikusi</item>
         <item>Kendu</item>
