@@ -29,3 +29,21 @@ Qu’est-ce que Bibliogram :
 
 Une alternative libre et à code source ouvert pour Instagram
 Projet Github : https://github.com/cloudrac3r/bibliogram
+
+
+Qu'est-ce que Teddit :
+
+Une alternative libre et à code source ouvert pour Reddit axée sur la confidentialité.
+Projet Github : https://github.com/teddit-net/teddit
+
+
+Qu'est-ce que Scribe:
+
+Une interface alternative à Medium
+Sources : https://git.sr.ht/~edwardloveall/scribe
+
+
+Qu'est-ce que Wikiless:
+
+Une alternative libre et open source à Wikipedia axée sur la protection de la vie privée.
+Projet: https://codeberg.org/orenom/Wikiless
