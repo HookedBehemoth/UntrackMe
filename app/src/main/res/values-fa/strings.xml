@@ -29,8 +29,10 @@
     <string name="redirect_instagram_to_bibliogram">هدایت اینستاگرم به بیبلیوگرم</string>
     <string name="redirect_reddit_to_teddit">هدایت ردیت به تدیت</string>
     <string name="redirect_medium_to_scriberip">Redirect Medium to Scribe.rip</string>
+    <string name="redirect_wikipedia_to_wikiless">Redirect Wikipedia to Wikiless</string>
     <string name="custom_bibliogram">نمونهٔ سفارشی بیبلیوگرم</string>
     <string name="custom_scriberip">Custom Scribe.rip instance</string>
+    <string name="custom_wikiless">Custom Wikiless instance</string>
     <string name="custom_teddit">نمونهٔ سفارشی تدیت</string>
     <string name="redirect_gm_to_geo_uri">هدایت نقشهٔ گوگل به نشانی جغرافیایی</string>
     <string name="configure">پیکربندی</string>
