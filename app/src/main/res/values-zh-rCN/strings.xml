@@ -51,8 +51,8 @@
     <string name="nitter_instances">Nitter实例</string>
     <string name="bibliogram_instances">Bibliogram实例</string>
     <string name="teddit_instances">Teddit 实例</string>
-    <string name="scribe_instances">Scribe instances</string>
-    <string name="wikiless_instances">Wikiless instances</string>
+    <string name="scribe_instances">Scribe 实例</string>
+    <string name="wikiless_instances">Wikiless 实例</string>
     <string name="latency">网络延迟</string>
     <string name="error_message_internet">检查您的互联网连接</string>
     <string name="instance_label">实例:</string>
@@ -125,7 +125,7 @@
     <string name="invidious_help_remove"><b>删除：</b>UntrackMe将从URL中删除该参数（如果存在）</string>
     <string name="invidious_help_other">如果您为一个参数选择其他值，它们将被添加到URL。如果这个参数已经存在，其值将更改为您选择的值</string>
     <string name="invidious_help_explanations">[1] 默认情况下，“ local”参数设置为“ true”，以获得更好的隐私</string>
-    <string name="copy_url">Copy URL To Clipboard</string>
+    <string name="copy_url">复制 URL 到剪贴板</string>
     <string-array name="invidious_theme">
         <item>忽略</item>
         <item>移除</item>
