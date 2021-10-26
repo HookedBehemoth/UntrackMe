@@ -51,6 +51,8 @@
     <string name="nitter_instances">نمونه‌های نیتر</string>
     <string name="bibliogram_instances">نمونه‌های بیبلیوگرم</string>
     <string name="teddit_instances">نمونه‌های تدیت</string>
+    <string name="scribe_instances">Scribe instances</string>
+    <string name="wikiless_instances">Wikiless instances</string>
     <string name="latency">تأخیر</string>
     <string name="error_message_internet">اتصال اینترنتیتان را بررسی کنید</string>
     <string name="instance_label">نمونه:</string>
@@ -123,6 +125,7 @@
     <string name="invidious_help_remove"><b>حذف:</b> آن‌ترک‌می آن پارامتر را، اگر وجود داشته باشد، از نشانی حذف می‌کند</string>
     <string name="invidious_help_other">اگر شما مقداری برای یک پارامتر تعیین کنید، آن پارامتر به نشانی افزوده می‌شود. اگر آن پارامتر از قبل وجود داشته باشد، مقدارش به آنچه شما انتخاب کرده‌اید، تغییر می‌کند</string>
     <string name="invidious_help_explanations">[1] پارامتر «محلی» برای حفظ بهتر حریم خصوصی به صورت پیش‌فرض روی «صحیح» تنظیم شده است</string>
+    <string name="copy_url">Copy URL To Clipboard</string>
     <string-array name="invidious_theme">
         <item>نادیده بگیر</item>
         <item>حذف کن</item>
