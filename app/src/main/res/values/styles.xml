@@ -12,7 +12,6 @@
         <item name="alertDialogTheme">@style/AppThemeDialog</item>
         <item name="android:navigationBarColor" tools:targetApi="lollipop">@color/colorPrimary
         </item>
-
     </style>
 
     <!-- Base application theme. -->
