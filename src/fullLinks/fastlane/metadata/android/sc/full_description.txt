@@ -1,49 +1,49 @@
-UntrackMe once set by default to open Twitter, YouTube and Instagram links will transform them into Nitter, Invidious and Bibliogram links and delegate the action to another app.
+UntrackMe, a pustis de l'àere impostadu comente aplicatzione predefinida pro abèrrere sos ligàmenes de Twitter, YouTube e Instagram, los at a trasformare in ligàmenes de Nitter, Invidious e Bibliogram e at a delegare s'atzione a un'àtera aplicatzione.
 
-It also supports Google Maps links to transform them into OpenStreetMap links or Geo URI.
+Suportat fintzas sos ligàmenes de Google Maps pro los trasformare in ligàmenes de OpenStreetMap o Geo URI.
 
-The app will detect shortened URLs and will display the full URL before visiting the site.
+S'aplicatzione at a rilevare sos URL incurtzados e at a ammustrare s'URL intreu in antis de bisitare su situ.
 
-**Lite version:
+**Versione lèbia:
 
-- When sharing a Twitter, YouTube or Google Maps link just pick up UntrackMe to transform it before sharing it with another app.
+- Cando cumpartzis unu ligàmene de Twitter, YouTube o Google Maps issèbera UntrackMe pro lu trasformare in antis de lu cumpartzire cun un'àtera aplicatzione.
 
-**Full version:
+**Versione intrea:
 
-- Contains all features of the lite version and it also handle all links to remove tracking parameters. It uses its own app picker that display URLs before visiting them.
-
-
-What is Nitter:
-
-A free and open source alternative Twitter front-end focused on privacy.
-Github project: https://github.com/zedeus/nitter
+- Cuntenet totu sas funtzionalidades de sa versione lèbia e gestit fintzas totu sos ligàmenes pro bogare sos paràmetros de arrastamentu. Impreat su seletzionadore de aplicatziones suo pro ammustrare sos URL in antis de los bisitare.
 
 
-What is Invidious:
+Ite est Nitter:
 
-A free and open source alternative front-end to YouTube
-Github project: https://github.com/omarroth/invidious
-
-
-What is Bibliogram:
-
-A free and open source alternative front-end to Instagram
-Github project: https://github.com/cloudrac3r/bibliogram
+Un'interfache alternativa pro Twitter lìbera e a mitza aberta progetada pro sa riservadesa.
+Progetu de Github: https://github.com/zedeus/nitter
 
 
-What is Teddit:
+Ite est Invidious:
 
-A free and open source alternative Reddit front-end focused on privacy.
-Github project: https://github.com/teddit-net/teddit
-
-
-What is Scribe:
-
-An alternative Medium front-end
-Sources: https://git.sr.ht/~edwardloveall/scribe
+Un'interfache alternativa pro Youtube lìbera e a mitza aberta
+Progetu de Github: https://github.com/omarroth/invidious
 
 
-What is Wikiless:
+Ite est Bibliogram:
 
-A free open source alternative Wikipedia front-end focused on privacy.
-Project: https://codeberg.org/orenom/Wikiless
+Un'interfache alternativa pro Instagram lìbera e a mitza aberta
+Progetu de Github: https://github.com/cloudrac3r/bibliogram
+
+
+Ite est Teddit:
+
+Un'interfache alternativa pro Reddit lìbera e a mitza aberta progetada pro sa riservadesa.
+Progetu de Github: https://github.com/teddit-net/teddit
+
+
+Ite est Scribe:
+
+Un'interfache alternativa pro Medium
+Fontes: https://git.sr.ht/~edwardloveall/scribe
+
+
+Ite est Wikiless:
+
+Un'interfache alternativa pro Wikipedia lìbera e a mitza aberta progetada pro sa riservadesa.
+Progetu: https://codeberg.org/orenom/Wikiless

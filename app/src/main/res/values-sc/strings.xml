@@ -1,184 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Some local values -->
-    <string name="action_settings">Settings</string>
-    <string name="action_about">About</string>
-    <string name="developer">Developer</string>
-    <string name="donations">Donations</string>
-    <string name="about_the_app">About the app</string>
-    <string name="source_code">Source code</string>
-    <string name="issue_tracker">Issue tracker</string>
-    <string name="license">License</string>
-    <string name="about_vesrion">Release %1$s</string>
-    <string name="custom_nitter">Custom Nitter instance</string>
-    <string name="save">Save</string>
-    <string name="close">Close</string>
-    <string name="instances_saved">Custom instances have been saved!</string>
-    <string name="custom_invidious">Custom Invidious instance</string>
-    <string name="no_apps">No applications by default</string>
-    <string name="Donate">Donate</string>
-    <string name="warning">Warning</string>
-    <string name="error">Error</string>
-    <string name="valid">Valid</string>
-    <string name="icon_of_the_app">Icon of the app</string>
-    <string name="open_with">Open with</string>
-    <string name="redirect_gm_to_osm">Redirect Google Map to OpenStreetMap</string>
-    <string name="custom_osm">Custom OSM hostname</string>
-    <string name="redirect_youtube_to_invidious">Redirect YouTube to Invidious</string>
-    <string name="redirect_twitter_to_nitter">Redirect Twitter to Nitter</string>
-    <string name="redirect_instagram_to_bibliogram">Redirect Instagram to Bibliogram</string>
-    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
-    <string name="redirect_medium_to_scriberip">Redirect Medium to Scribe.rip</string>
-    <string name="redirect_wikipedia_to_wikiless">Redirect Wikipedia to Wikiless</string>
-    <string name="custom_bibliogram">Custom Bibliogram instance</string>
-    <string name="custom_scriberip">Custom Scribe.rip instance</string>
-    <string name="custom_wikiless">Custom Wikiless instance</string>
-    <string name="custom_teddit">Custom Teddit instance</string>
-    <string name="redirect_gm_to_geo_uri">Redirect Google Map to Geo URI</string>
-    <string name="configure">Configure</string>
-    <string name="display_supported_links">Display supported links</string>
-    <string name="use_geo_uri">Use geo URI</string>
-    <string name="how_to">How-to</string>
-    <string name="shortened_detected">Shortened URL</string>
-    <string name="shortener_services">Shortener services</string>
-    <string name="open">Open</string>
-    <string name="dismiss">Dismiss</string>
-    <string name="resolving_shortened">Resolving shortened URL, please wait…</string>
-    <string name="try_to_redirect">%1$s \n\nwill redirect you to\n\n<b>%2$s</b></string>
-    <string name="try_to_redirect_again">Then it will redirect you to\n\n<b>%1$s</b></string>
-    <string name="the_app_failed_shortened">The app didn\'t manage to retrieve the full URL</string>
-    <string name="invidious_instances">Invidious instances</string>
-    <string name="nitter_instances">Nitter instances</string>
-    <string name="bibliogram_instances">Bibliogram instances</string>
-    <string name="teddit_instances">Teddit instances</string>
-    <string name="scribe_instances">Scribe instances</string>
-    <string name="wikiless_instances">Wikiless instances</string>
-    <string name="latency">Latency</string>
-    <string name="error_message_internet">Check your Internet connection</string>
-    <string name="instance_label">Instance:</string>
-    <string name="expand_instance_details">Expand instance details</string>
-    <string name="cloudflare">This instance uses Cloudflare</string>
-    <string name="instance_info">Information about listed instances</string>
-    <string name="about_instances">The list of instances comes from\n\n <a href="%1$s">%2$s</a>\n\nYou can contribute to this list by adding or removing instances.</string>
-    <string name="about_instances_title">About instances</string>
-    <string name="use_built_in_player">Use the built-in player</string>
-    <string name="share">Share</string>
-    <string name="download">Download</string>
-    <string name="share_with">Share with</string>
-    <string name="check_apps">Check apps</string>
-    <string name="select_instances">Select instances</string>
-    <string name="continue_with">Continue with…</string>
-    <string name="just_once">Just once</string>
-    <string name="always">Always</string>
-    <string name="default_app_indication">%1$s has been set as a default app.\nYou can remove this behavior from the app settings.</string>
-    <string name="indication_error_title">There is something wrong with the configuration of the app. Please, follow these indications to fix that issue.</string>
-    <string name="open_configure">1 - Tap on the \"CONFIGURE\" button above.</string>
-    <string name="supported_url_indication_1">2 - You are now in app settings from your device. Tap on \"Set as default\".</string>
-    <string name="display_indications_1_description">Screenshot showing app settings for the app. You have to Tap on \"Set as default\"</string>
-    <string name="supported_url_indication_2">2 - Then tap on \"Go to supported URLs\".</string>
-    <string name="display_indications_2_description">Screenshot showing app settings for the app. You have to Tap on \"Go to supported URLs\"</string>
-    <string name="supported_url_indication_3">3 - In suggestions make sure to pickup \"Always ask\"</string>
-    <string name="display_indications_3_description">Screenshot showing app settings to define the behavior for opening URLs</string>
-    <string name="default_apps">Default apps</string>
-    <string name="remove_from_default_app">Remove from default apps</string>
-    <string name="delete">Delete</string>
-    <string name="cancel">Cancel</string>
-    <string name="delete_app_from_default">Delete %1$s from default apps?</string>
-    <string name="copy_done">Copied</string>
-    <string name="no_apps_set_as_default">No apps set as default!</string>
-    <string name="custom_settings_for_invidious">Custom settings for Invidious</string>
-    <string name="invidious_settings">Invidious settings</string>
-    <string name="invidious_dark_mode_title">Theme</string>
-    <string name="invidious_dark_mode_indication">Configure default theme without setting cookies</string>
-    <string name="invidious_thin_mode_title">Thin mode</string>
-    <string name="invidious_thin_mode_indication">Load HTML, CSS, JS and video elements (disables images)</string>
-    <string name="invidious_language_mode_indication">Available locales</string>
-    <string name="invidious_language_mode_title">UI Language</string>
-    <string name="pref_invidious_head1">Site-wide parameters</string>
-    <string name="pref_invidious_head2">Player parameters</string>
-    <string name="invidious_annotations_mode_title">Annotations</string>
-    <string name="invidious_annotations_mode_indication">Show legacy annotations, provided by the Internet Archive</string>
-    <string name="invidious_autoplay_mode_indication">Automatically play video on load</string>
-    <string name="invidious_autoplay_mode_title">Autoplay</string>
-    <string name="invidious_continue_mode_title">Continue</string>
-    <string name="invidious_continue_mode_indication">When video is done, automatically go to the next related video (similar to YouTube’s Autoplay feature)</string>
-    <string name="invidious_listen_mode_title">Listen</string>
-    <string name="invidious_listen_mode_indication">Play only audio portion of video</string>
-    <string name="invidious_local_mode_title">Local</string>
-    <string name="invidious_local_mode_indication">Proxy video streams</string>
-    <string name="invidious_subtitles_mode_title">Subtitles</string>
-    <string name="invidious_subtitles_mode_indication">List of ISO 639–1 language codes</string>
-    <string name="invidious_quality_mode_title">Quality</string>
-    <string name="invidious_quality_mode_indication">Default player quality</string>
-    <string name="invidious_loop_mode_title">Loop</string>
+    <string name="action_settings">Impostatziones</string>
+    <string name="action_about">Informatziones</string>
+    <string name="developer">Isvilupadore</string>
+    <string name="donations">Donatziones</string>
+    <string name="about_the_app">Informatziones in subra de s\'aplicatzione</string>
+    <string name="source_code">Còdighe de orìgine</string>
+    <string name="issue_tracker">Sinnaladore de problemas</string>
+    <string name="license">Litzèntzia</string>
+    <string name="about_vesrion">Versione %1$s</string>
+    <string name="custom_nitter">Istàntzia personalizada de Nitter</string>
+    <string name="save">Sarva</string>
+    <string name="close">Serra</string>
+    <string name="instances_saved">Sas istàntzias personalizadas sunt istadas sarvadas!</string>
+    <string name="custom_invidious">Istàntzia personalizada de Invidious</string>
+    <string name="no_apps">Peruna aplicatzione predefinida</string>
+    <string name="Donate">Dona</string>
+    <string name="warning">Avisu</string>
+    <string name="error">Faddina</string>
+    <string name="valid">Vàlidu</string>
+    <string name="icon_of_the_app">Icona de s\'aplicatzione</string>
+    <string name="open_with">Aberi cun</string>
+    <string name="redirect_gm_to_osm">Torra a indiritzare Google Maps cara a OpenStreetMap</string>
+    <string name="custom_osm">Nùmene de istrangiadore (host) de OSM personalizadu</string>
+    <string name="redirect_youtube_to_invidious">Torra a indiritzare YouTube cara a Invidious</string>
+    <string name="redirect_twitter_to_nitter">Torra a indiritzare Twitter cara a Nitter</string>
+    <string name="redirect_instagram_to_bibliogram">Torra a indiritzare Instagram cara a Bibliogram</string>
+    <string name="redirect_reddit_to_teddit">Torra a indiritzare Reddit cara a Teddit</string>
+    <string name="redirect_medium_to_scriberip">Torra a indiritzare Medium cara a Scribe.rip</string>
+    <string name="redirect_wikipedia_to_wikiless">Torra a indiritzare Wikipedia cara a Wikiless</string>
+    <string name="custom_bibliogram">Istàntzia personalizada de Bibliogram</string>
+    <string name="custom_scriberip">Istàntzia personalizada de Scribe.rip</string>
+    <string name="custom_wikiless">Istàntzia personalizada de Wikiless</string>
+    <string name="custom_teddit">Istàntzia personalizada de Teddit</string>
+    <string name="redirect_gm_to_geo_uri">Torra a indiritzare Google Map cara a Geo URI</string>
+    <string name="configure">Cunfigura</string>
+    <string name="display_supported_links">Ammustra sos ligàmenes suportados</string>
+    <string name="use_geo_uri">Imprea geo URI</string>
+    <string name="how_to">Comente fàghere</string>
+    <string name="shortened_detected">URL incurtzadu</string>
+    <string name="shortener_services">Servìtzios de incurtzadura</string>
+    <string name="open">Aberi</string>
+    <string name="dismiss">Iscarta</string>
+    <string name="resolving_shortened">Risolvende s\'URL incurtzadu. Iseta…</string>
+    <string name="try_to_redirect">%1$s \n\nt\'at a torrare a indiritzare cara a\n\n<b>%2$s</b></string>
+    <string name="try_to_redirect_again">E a pustis t\'at a torrare a indiritzare cara a\n\n<b>%1$s</b></string>
+    <string name="the_app_failed_shortened">Custa aplicatzione no est resèssida a recuperare s\'URL intreu</string>
+    <string name="invidious_instances">Istàntzias de Invidious</string>
+    <string name="nitter_instances">Istàntzias de Nitter</string>
+    <string name="bibliogram_instances">Istàntzias de Bibliogram</string>
+    <string name="teddit_instances">Istàntzias de Teddit</string>
+    <string name="scribe_instances">Istàntzias de Scribe</string>
+    <string name="wikiless_instances">Istàntzias de Wikiless</string>
+    <string name="latency">Latèntzia</string>
+    <string name="error_message_internet">Verìfica sa connessione a ìnternet tua</string>
+    <string name="instance_label">Istàntzia:</string>
+    <string name="expand_instance_details">Ismànnia sos detàllios de s\'istàntzia</string>
+    <string name="cloudflare">Custa istàntzia impreat Cloudflare</string>
+    <string name="instance_info">Informatziones in subra de sas istàntzias allistadas</string>
+    <string name="about_instances">Sa lista de sas istàntzias benit dae\n\n <a href="%1$s">%2$s</a>\n\nPodes contribuire a custa lista annanghende o boghende istàntzias.</string>
+    <string name="about_instances_title">Informatziones in subra de sas istàntzias</string>
+    <string name="use_built_in_player">Imprea su riproduidore integradu</string>
+    <string name="share">Cumpartzi</string>
+    <string name="download">Iscàrriga</string>
+    <string name="share_with">Cumpartzi cun</string>
+    <string name="check_apps">Verìfica sas aplicatziones</string>
+    <string name="select_instances">Ischerta sas istàntzias</string>
+    <string name="continue_with">Sighi cun…</string>
+    <string name="just_once">Una borta ebbia</string>
+    <string name="always">Semper</string>
+    <string name="default_app_indication">%1$s est istada impostada comente aplicatzione predefinida.\n Podes bogare custu cumportamentu dae sas impostatziones de s\'aplicatzione.</string>
+    <string name="indication_error_title">B\'at carchi cosa de isballiadu cun sa cunfiguratzione de s\'aplicatzione. Sighi custas indicatziones pro risòlvere su problema.</string>
+    <string name="open_configure">1 - Incarca in su butone \"CUNFIGURA\" in subra.</string>
+    <string name="supported_url_indication_1">2 - Como ses in sas impostatziones de s\'aplicatzione dae su dispositivu tuo. Incarca in \"Imposta comente predefinida\".</string>
+    <string name="display_indications_1_description">Ischermada chi ammustrat sas impostatziones pro s\'aplicatzione. Depes incarcare in \"Imposta comente predefinida\"</string>
+    <string name="supported_url_indication_2">2 - A pustis incarca in \"Bae a sos URL suportados\".</string>
+    <string name="display_indications_2_description">Ischermada chi ammustrat sas impostatziones pro s\'aplicatzione. Depes incarcare in \"Bae a sos URL suportados\"</string>
+    <string name="supported_url_indication_3">3 - In sos impòsitos assegura·ti de isseberare \"Pedi semper\"</string>
+    <string name="display_indications_3_description">Ischermada chi ammustrat sas impostatziones de s\'aplicatzione pro definire su cumportamentu pro s\'abertura de sos URL</string>
+    <string name="default_apps">Aplicatziones predefinidas</string>
+    <string name="remove_from_default_app">Boga dae sas aplicatziones predefinidas</string>
+    <string name="delete">Iscantzella</string>
+    <string name="cancel">Annulla</string>
+    <string name="delete_app_from_default">Iscantzellare %1$s dae sas aplicatziones predefinidas?</string>
+    <string name="copy_done">Copiadu</string>
+    <string name="no_apps_set_as_default">Peruna aplicatzione impostada comente predefinida!</string>
+    <string name="custom_settings_for_invidious">Impostatziones personalizadas pro Invidious</string>
+    <string name="invidious_settings">Impostatziones de Invidious</string>
+    <string name="invidious_dark_mode_title">Tema</string>
+    <string name="invidious_dark_mode_indication">Cunfigura su tema predefinidu chene impostare sos testimòngios</string>
+    <string name="invidious_thin_mode_title">Modalidade sùtile</string>
+    <string name="invidious_thin_mode_indication">Càrriga elementos HTML, CSS, JS e vìdeos (disabìlitat sas immàgines)</string>
+    <string name="invidious_language_mode_indication">Limbas a disponimentu</string>
+    <string name="invidious_language_mode_title">Limba de interfache de s\'utente</string>
+    <string name="pref_invidious_head1">Paràmetros pro totu su situ</string>
+    <string name="pref_invidious_head2">Paràmetros de su riproduidore</string>
+    <string name="invidious_annotations_mode_title">Annotatziones</string>
+    <string name="invidious_annotations_mode_indication">Ammustra sas annotatziones betzas, frunidas dae s\'Internet Archive</string>
+    <string name="invidious_autoplay_mode_indication">Riprodui automaticamente su vìdeu a su carrigamentu</string>
+    <string name="invidious_autoplay_mode_title">Riprodutzione automàtica</string>
+    <string name="invidious_continue_mode_title">Sighi</string>
+    <string name="invidious_continue_mode_indication">Cando su vìdeu est agabbadu bae automaticamente a su vìdeu ligadu chi benit (in manera simigiante a sa funtzionalidade de riprodutzione automàtica de YouTube)</string>
+    <string name="invidious_listen_mode_title">Ascurta</string>
+    <string name="invidious_listen_mode_indication">Riprodui petzi sa parte sonora de su vìdeu</string>
+    <string name="invidious_local_mode_title">Locale</string>
+    <string name="invidious_local_mode_indication">Faghe colare sos flussos de sos vìdeos in su serbidore intermediàriu (proxy)</string>
+    <string name="invidious_subtitles_mode_title">Sutatìtulos</string>
+    <string name="invidious_subtitles_mode_indication">Lista de còdighes linguìsticos ISO 639-1</string>
+    <string name="invidious_quality_mode_title">Calidade</string>
+    <string name="invidious_quality_mode_indication">Calidade predefinida de su riproduidore</string>
+    <string name="invidious_loop_mode_title">Ripetitzione</string>
     <string name="invidious_volume_mode_title">Volume</string>
-    <string name="invidious_volume_mode_indication">Default player volume, can be any whole number between 0 and 100</string>
-    <string name="invidious_loop_mode_indication">Loop player by default</string>
-    <string name="invidious_volume_mode_value">Volume value</string>
-    <string name="invidious_volume_mode_value_indication">Override the volume with this value</string>
-    <string name="pref_invidious_head3">Player Style</string>
-    <string name="invidious_player_style_mode_title">Appearance</string>
-    <string name="invidious_player_style_mode_indication">Invidious, the default one. YouTube, using a centered play button and always visible video control bar</string>
-    <string name="help">Help</string>
-    <string name="invidious_help_title">Setting options</string>
-    <string name="invidious_help_ignore"><b>Ignore:</b> This is the default action for all¹ parameters. This means UntrackMe will not do anything about the parameter</string>
-    <string name="invidious_help_remove"><b>Remove:</b> UntrackMe will remove the parameter from URL, if it exists</string>
-    <string name="invidious_help_other">If you select other values for a parameter, they will be added to the URL. If the parameter already exists, its value will be changed to your choice</string>
-    <string name="invidious_help_explanations">[1] \'local\' parameter is set to \'true\' by default for better privacy</string>
-    <string name="copy_url">Copy URL To Clipboard</string>
+    <string name="invidious_volume_mode_indication">Su volume predefinidu de su riproduidore. Podet èssere cale si siat nùmeru intre 0 e 100</string>
+    <string name="invidious_loop_mode_indication">Repite comente impostatzione predefinida</string>
+    <string name="invidious_volume_mode_value">Valore de su volume</string>
+    <string name="invidious_volume_mode_value_indication">Subraiscrie su volume cun custu valore</string>
+    <string name="pref_invidious_head3">Istile de su riproduidore</string>
+    <string name="invidious_player_style_mode_title">Aparèntzia</string>
+    <string name="invidious_player_style_mode_indication">Invidious, su predefinidu. YouTube, impreende unu butone de riprodutzione tzentradu e una barra de controllu de su vìdeu semper visìbile</string>
+    <string name="help">Agiudu</string>
+    <string name="invidious_help_title">Optziones de impostatzione</string>
+    <string name="invidious_help_ignore"><b>Ignora:</b> Custa est s\'atzione predefinida pro totu¹ sos paràmetros. Custu cheret nàrrere chi UntrackMe no at a fàghere nudda pro su chi pertocat a su paràmetru</string>
+    <string name="invidious_help_remove"><b>Boga:</b> UntrackMe at a bogare su paràmetru dae s\'URL, si esistit</string>
+    <string name="invidious_help_other">Si ischertas àteros valores pro unu paràmetru s\'ant a annànghere a s\'URL. Si su paràmetru esistit giai su valore suo s\'at a cambiare cun s\'issèberu tuo</string>
+    <string name="invidious_help_explanations">[1] su paràmetru \'local\' est impostadu comente \'true\' in sas impostatziones predefinidas pro una riservadesa prus manna</string>
+    <string name="copy_url">Còpia s\'URL in punta de billete</string>
     <string-array name="invidious_theme">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Dark theme</item>
-        <item>Light theme</item>
+        <item>Ignora</item>
+        <item>Boga</item>
+        <item>Tema iscuru</item>
+        <item>Tema craru</item>
     </string-array>
     <string-array name="invidious_enable">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Enabled</item>
-        <item>Disabled</item>
+        <item>Ignora</item>
+        <item>Boga</item>
+        <item>Abilitadu</item>
+        <item>Disabilitadu</item>
     </string-array>
     <string-array name="invidious_language">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Arabic</item>
-        <item>German</item>
-        <item>Greek</item>
-        <item>English</item>
+        <item>Ignora</item>
+        <item>Boga</item>
+        <item>Àrabu</item>
+        <item>Tedescu</item>
+        <item>Grecu</item>
+        <item>Inglesu</item>
         <item>Esperanto</item>
-        <item>Spanish</item>
-        <item>Basque</item>
-        <item>French</item>
-        <item>Icelandic</item>
-        <item>Italian</item>
-        <item>Norwegian Bokmål</item>
-        <item>Dutch</item>
-        <item>Polish</item>
-        <item>Russian</item>
-        <item>Ukrainian</item>
-        <item>Chinese</item>
+        <item>Ispagnolu</item>
+        <item>Bascu</item>
+        <item>Frantzesu</item>
+        <item>Islandesu</item>
+        <item>Italianu</item>
+        <item>Norvegesu Bokmål</item>
+        <item>Olandesu</item>
+        <item>Polacu</item>
+        <item>Russu</item>
+        <item>Ucrainu</item>
+        <item>Tzinesu</item>
     </string-array>
     <string-array name="invidious_annotations">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Show annotations</item>
-        <item>Hide annotations</item>
+        <item>Ignora</item>
+        <item>Boga</item>
+        <item>Ammustra sas annotatziones</item>
+        <item>Cua sas annotatziones</item>
     </string-array>
     <string-array name="invidious_quality">
-        <item>Ignore</item>
-        <item>Remove</item>
+        <item>Ignora</item>
+        <item>Boga</item>
         <item>DASH</item>
         <item>720p</item>
         <item>480p</item>
     </string-array>
     <string-array name="invidious_volume">
-        <item>Ignore</item>
-        <item>Remove</item>
-        <item>Custom</item>
+        <item>Ignora</item>
+        <item>Boga</item>
+        <item>Personalizadu</item>
     </string-array>
     <string-array name="invidious_player_style">
-        <item>Ignore</item>
-        <item>Remove</item>
+        <item>Ignora</item>
+        <item>Boga</item>
         <item>Invidious</item>
         <item>Youtube</item>
     </string-array>
