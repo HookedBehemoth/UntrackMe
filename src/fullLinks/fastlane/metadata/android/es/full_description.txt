@@ -31,19 +31,19 @@ Una interfaz alternativa de Instagram, libre y de código abierto
 Proyecto en Github: https://github.com/cloudrac3r/bibliogram
 
 
-What is Teddit:
+Qué es Teddit:
 
-A free and open source alternative Reddit front-end focused on privacy.
-Github project: https://github.com/teddit-net/teddit
-
-
-What is Scribe:
-
-An alternative Medium front-end
-Sources: https://git.sr.ht/~edwardloveall/scribe
+Una interfaz alternativa de Reddit de código abierto y libre centrado en la privacidad.
+Proyecto Github: https://github.com/teddit-net/teddit
 
 
-What is Wikiless:
+Qué es Scribe:
 
-A free open source alternative Wikipedia front-end focused on privacy.
-Project: https://codeberg.org/orenom/Wikiless
+Una interfaz alternativa de Medium
+Fuentes: https://git.sr.ht/~edwardloveall/scribe
+
+
+Qué es Wikiless:
+
+Una interfaz alternativa de Wikipedia de código abierto y libre centrada en la privacidad.
+Proyecto: https://codeberg.org/orenom/Wikiless

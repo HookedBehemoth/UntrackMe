@@ -51,8 +51,8 @@
     <string name="nitter_instances">Instancias Nitter</string>
     <string name="bibliogram_instances">Instancias Bibliogram</string>
     <string name="teddit_instances">Instancias Teddit</string>
-    <string name="scribe_instances">Scribe instances</string>
-    <string name="wikiless_instances">Wikiless instances</string>
+    <string name="scribe_instances">Instancias Scribe</string>
+    <string name="wikiless_instances">Instancias Wikiless</string>
     <string name="latency">Latencia</string>
     <string name="error_message_internet">Comproba a conexión a internet</string>
     <string name="instance_label">Instancia:</string>
@@ -125,7 +125,7 @@
     <string name="invidious_help_remove"><b>Eliminar:</b> UntrackMe eliminará o parámetro do URL, se existe</string>
     <string name="invidious_help_other">Se escolles outros valores para o parámetro, serán engadidos ao URL. Se o parámetro xa existe, o seu valor será cambiado pola túa escolla</string>
     <string name="invidious_help_explanations">[1] parámetro \'local\' establécese a \'true\' por omisión para mellor privacidade</string>
-    <string name="copy_url">Copy URL To Clipboard</string>
+    <string name="copy_url">Copiar URL ao portapapeis</string>
     <string-array name="invidious_theme">
         <item>Ignorar</item>
         <item>Eliminar</item>
