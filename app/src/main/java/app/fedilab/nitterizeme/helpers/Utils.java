@@ -361,7 +361,7 @@ public class Utils {
                     }
                     path = matcher.group(2);
                 }
-                newUrl = scheme + wikilessHost + "/" + path + (subdomain != null ? "&lang=" + subdomain : "");
+                newUrl = scheme + wikilessHost + "/" + path + (subdomain != null ? "?lang=" + subdomain : "");
                 return newUrl;
             } else {
                 return url;
