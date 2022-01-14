@@ -113,7 +113,7 @@ public class Utils {
     public static final Pattern scriberipSubdomainPattern = Pattern.compile("([\\w_-]+)\\.medium.com/(((?!([\"'<])).)*)");
 
 
-    public static final Pattern wikilessPattern = Pattern.compile("([\\w_-]+)\\.wikipedia.org/(((?!([\"'<])).)*)");
+    public static final Pattern wikilessPattern = Pattern.compile("([\\w_-]+)\\.(?:m\\.)?wikipedia.org/(((?!([\"'<])).)*)");
 
     public static final Pattern bibliogramAccountPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(((?!/p/).)+)");
     public static final Pattern maps = Pattern.compile("/maps/place/([^@]+@)?([\\d.,z]+).*");
@@ -361,7 +361,7 @@ public class Utils {
                     }
                     path = matcher.group(2);
                 }
-                newUrl = scheme + wikilessHost + "/" + path + (subdomain != null ? "&lang=" + subdomain : "");
+                newUrl = scheme + wikilessHost + "/" + path + (subdomain != null ? "?lang=" + subdomain : "");
                 return newUrl;
             } else {
                 return url;
