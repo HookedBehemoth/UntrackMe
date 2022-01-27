@@ -4,46 +4,46 @@ It also supports Google Maps links to transform them into OpenStreetMap links or
 
 The app will detect shortened URLs and will display the full URL before visiting the site.
 
-**Lite version:
+Gohertoya Lite:
 
 - When sharing a Twitter, YouTube or Google Maps link just pick up UntrackMe to transform it before sharing it with another app.
 
 **Full version:
 
-- Contains all features of the lite version and it also handle all links to remove tracking parameters. It uses its own app picker that display URLs before visiting them.
+- Hemû taybetiyên guhertoya lite û di heman demê de ew hemû girêdan jî digire da ku parametreyên şopandinê rake. It uses its own app picker that display URLs before visiting them.
 
 
-What is Nitter:
+Nitter çi ye:
 
 A free and open source alternative Twitter front-end focused on privacy.
 Github project: https://github.com/zedeus/nitter
 
 
-What is Invidious:
+Invidious çi ye:
 
 A free and open source alternative front-end to YouTube
 Github project: https://github.com/omarroth/invidious
 
 
-What is Bibliogram:
+Bibliogram çi ye:
 
 A free and open source alternative front-end to Instagram
 Github project: https://github.com/cloudrac3r/bibliogram
 
 
-What is Teddit:
+Teddit çi ye:
 
 A free and open source alternative Reddit front-end focused on privacy.
 Github project: https://github.com/teddit-net/teddit
 
 
-What is Scribe:
+Scribe çi ye:
 
 An alternative Medium front-end
 Sources: https://git.sr.ht/~edwardloveall/scribe
 
 
-What is Wikiless:
+Wikiless çi ye:
 
 A free open source alternative Wikipedia front-end focused on privacy.
 Project: https://codeberg.org/orenom/Wikiless
