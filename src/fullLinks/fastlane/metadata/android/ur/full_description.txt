@@ -13,13 +13,13 @@ The app will detect shortened URLs and will display the full URL before visiting
 - Contains all features of the lite version and it also handle all links to remove tracking parameters. It uses its own app picker that display URLs before visiting them.
 
 
-What is Nitter:
+نیٹّر کیا ہے:
 
 A free and open source alternative Twitter front-end focused on privacy.
 Github project: https://github.com/zedeus/nitter
 
 
-What is Invidious:
+انویڈئیس کیا ہے:
 
 A free and open source alternative front-end to YouTube
 Github project: https://github.com/omarroth/invidious

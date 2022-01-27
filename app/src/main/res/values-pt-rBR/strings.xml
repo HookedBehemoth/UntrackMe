@@ -125,7 +125,7 @@
     <string name="invidious_help_remove"><b>Remover:</b> O UntrackMe irá remover o parâmetro da URL, se ele existir</string>
     <string name="invidious_help_other">Se você selecionar outros valores para um parâmetro, eles serão adicionados à URL. Se o parâmetro já existir, seu valor será alterado para sua escolha</string>
     <string name="invidious_help_explanations">[1] O parâmetro \'local\' está definido como \'true\' por padrão para melhor privacidade</string>
-    <string name="copy_url">Copy URL To Clipboard</string>
+    <string name="copy_url">Copiar URL para a Área de Transferência</string>
     <string-array name="invidious_theme">
         <item>Ignorar</item>
         <item>Excluir</item>
@@ -141,43 +141,43 @@
     <string-array name="invidious_language">
         <item>Ignorar</item>
         <item>Excluir</item>
-        <item>Arabic</item>
-        <item>German</item>
-        <item>Greek</item>
-        <item>English</item>
+        <item>Árabe</item>
+        <item>Alemão</item>
+        <item>Grego</item>
+        <item>Inglês</item>
         <item>Esperanto</item>
-        <item>Spanish</item>
-        <item>Basque</item>
-        <item>French</item>
-        <item>Icelandic</item>
-        <item>Italian</item>
-        <item>Norwegian Bokmål</item>
-        <item>Dutch</item>
-        <item>Polish</item>
-        <item>Russian</item>
-        <item>Ukrainian</item>
-        <item>Chinese</item>
+        <item>Espanhol</item>
+        <item>Basco</item>
+        <item>Francês</item>
+        <item>Islandês</item>
+        <item>Italiano</item>
+        <item>Norueguês Bokmahl</item>
+        <item>Holandês</item>
+        <item>Polonês</item>
+        <item>Russo</item>
+        <item>Ucraniano</item>
+        <item>Chinês</item>
     </string-array>
     <string-array name="invidious_annotations">
-        <item>Ignore</item>
+        <item>Ignorar</item>
         <item>Excluir</item>
-        <item>Show annotations</item>
-        <item>Hide annotations</item>
+        <item>Mostrar anotações</item>
+        <item>Ocultar anotações</item>
     </string-array>
     <string-array name="invidious_quality">
-        <item>Ignore</item>
+        <item>Ignorar</item>
         <item>Excluir</item>
         <item>DASH</item>
         <item>720p</item>
         <item>480p</item>
     </string-array>
     <string-array name="invidious_volume">
-        <item>Ignore</item>
+        <item>Ignorar</item>
         <item>Excluir</item>
-        <item>Custom</item>
+        <item>Personalizado</item>
     </string-array>
     <string-array name="invidious_player_style">
-        <item>Ignore</item>
+        <item>Ignorar</item>
         <item>Excluir</item>
         <item>Invidious</item>
         <item>Youtube</item>
