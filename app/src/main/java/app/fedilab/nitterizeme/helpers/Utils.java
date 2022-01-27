@@ -15,8 +15,26 @@ package app.fedilab.nitterizeme.helpers;
  * see <http://www.gnu.org/licenses>. */
 
 
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.bibliogram_instances;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.instagram_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.invidious_instances;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.medium_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.nitter_instances;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.outlook_safe_domain;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.reddit_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.shortener_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.twitter_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.wikipedia_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.youtube_domains;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_ENABLED;
+
 import android.app.Activity;
-import android.app.DownloadManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -25,9 +43,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Parcelable;
@@ -38,7 +54,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
 
 import org.json.JSONArray;
@@ -56,14 +71,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -76,28 +88,6 @@ import app.fedilab.nitterizeme.BuildConfig;
 import app.fedilab.nitterizeme.R;
 import app.fedilab.nitterizeme.activities.AppsPickerActivity;
 import app.fedilab.nitterizeme.activities.MainActivity;
-import app.fedilab.nitterizeme.activities.WebviewPlayerActivity;
-
-import static android.content.Context.DOWNLOAD_SERVICE;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.bibliogram_instances;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.instagram_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.invidious_instances;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.medium_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.nitter_instances;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.outlook_safe_domain;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.reddit_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.shortener_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.twitter_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.wikipedia_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.youtube_domains;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_EMBEDDED_PLAYER;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_ENABLED;
 
 public class Utils {
 
@@ -118,7 +108,6 @@ public class Utils {
     public static final Pattern bibliogramAccountPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(((?!/p/).)+)");
     public static final Pattern maps = Pattern.compile("/maps/place/([^@]+@)?([\\d.,z]+).*");
     public static final Pattern ampExtract = Pattern.compile("amp/s/(.*)");
-    public static final String RECEIVE_STREAMING_URL = "receive_streaming_url";
     public static final Pattern outlookRedirect = Pattern.compile("(.*)safelinks\\.protection\\.outlook\\.com/?[?]?((?!url).)*url=([^&]+)");
     private static final Pattern extractPlace = Pattern.compile("/maps/place/(((?!/data).)*)");
     private static final Pattern googleRedirect = Pattern.compile("https?://(www\\.)?google(\\.\\w{2,})?(\\.\\w{2,})/url\\?(q=|q%3D)(.*)");
@@ -850,36 +839,6 @@ public class Utils {
 
 
     /**
-     * Manage downloads with URLs
-     *
-     * @param context Context
-     * @param url     String download url
-     */
-    public static void manageDownloadsNoPopup(final Context context, final String url) {
-
-        final DownloadManager.Request request;
-        try {
-            request = new DownloadManager.Request(Uri.parse(url.trim()));
-        } catch (Exception e) {
-            return;
-        }
-        try {
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.ENGLISH);
-            Date now = new Date();
-            final String fileName = "UntrackMe_" + formatter.format(now) + ".mp4";
-            request.allowScanningByMediaScanner();
-            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName);
-            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-            DownloadManager dm = (DownloadManager) context.getSystemService(DOWNLOAD_SERVICE);
-            assert dm != null;
-            dm.enqueue(request);
-        } catch (IllegalStateException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-    /**
      * Check if an app is installed
      *
      * @return boolean
@@ -1202,29 +1161,10 @@ public class Utils {
                 targetIntents.add(targetIntent);
             }
 
-            SharedPreferences sharedpreferences = context.getSharedPreferences(MainActivity.APP_PREFS, Context.MODE_PRIVATE);
-            boolean embedded_player = sharedpreferences.getBoolean(SET_EMBEDDED_PLAYER, false);
 
-            if (Arrays.asList(invidious_instances).contains(Objects.requireNonNull(i.getData()).getHost()) && embedded_player) {
-                if (!i.getData().toString().contains("videoplayback")) {
-                    Intent intentPlayer = new Intent(context, WebviewPlayerActivity.class);
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        intentPlayer.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-                    }
-                    intentPlayer.putExtra("url", i.getData().toString());
-                    context.startActivity(intentPlayer);
-                } else {
-                    Intent intentStreamingUrl = new Intent(Utils.RECEIVE_STREAMING_URL);
-                    Bundle b = new Bundle();
-                    b.putString("streaming_url", i.getData().toString());
-                    intentStreamingUrl.putExtras(b);
-                    LocalBroadcastManager.getInstance(context).sendBroadcast(intentStreamingUrl);
-                }
-            } else if (targetIntents.size() > 0) {
-                Intent chooserIntent = Intent.createChooser(targetIntents.remove(0), context.getString(R.string.open_with));
-                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, targetIntents.toArray(new Parcelable[]{}));
-                context.startActivity(chooserIntent);
-            }
+            Intent chooserIntent = Intent.createChooser(targetIntents.remove(0), context.getString(R.string.open_with));
+            chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, targetIntents.toArray(new Parcelable[]{}));
+            context.startActivity(chooserIntent);
             ((Activity) context).finish();
 
         } else {

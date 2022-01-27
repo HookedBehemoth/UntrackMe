@@ -14,6 +14,8 @@ package app.fedilab.nitterizeme.activities;
  * You should have received a copy of the GNU General Public License along with UntrackMe; if not,
  * see <http://www.gnu.org/licenses>. */
 
+import static app.fedilab.nitterizeme.helpers.Utils.KILL_ACTIVITY;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -39,8 +41,6 @@ import app.fedilab.nitterizeme.BuildConfig;
 import app.fedilab.nitterizeme.R;
 import app.fedilab.nitterizeme.databinding.ActivityMainBinding;
 import app.fedilab.nitterizeme.databinding.ContentMainBinding;
-
-import static app.fedilab.nitterizeme.helpers.Utils.KILL_ACTIVITY;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
     public static String DEFAULT_WIKILESS_HOST = "wikiless.org";
     public static String DEFAULT_TEDDIT_HOST = "teddit.net";
     public static String SET_GEO_URIS = "set_geo_uris";
-    public static String SET_EMBEDDED_PLAYER = "set_embedded_player";
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
 
         @Override
@@ -112,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         boolean scriberip_enabled = sharedpreferences.getBoolean(SET_SCRIBERIP_ENABLED, true);
         boolean wikiless_enabled = sharedpreferences.getBoolean(SET_WIKILESS_ENABLED, true);
         boolean geouri_enabled = sharedpreferences.getBoolean(SET_GEO_URIS, false);
-        boolean embedded_player = sharedpreferences.getBoolean(SET_EMBEDDED_PLAYER, false);
+
 
         binding.enableNitter.setChecked(nitter_enabled);
         binding.enableInvidious.setChecked(invidious_enabled);
@@ -121,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
         binding.enableScriberip.setChecked(scriberip_enabled);
         binding.enableWikiless.setChecked(wikiless_enabled);
         binding.enableOsm.setChecked(osm_enabled);
-
 
 
         nitterHost = sharedpreferences.getString(SET_NITTER_HOST, null);
@@ -140,7 +138,6 @@ public class MainActivity extends AppCompatActivity {
         binding.groupCurrentWikiless.setVisibility(wikiless_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentOsm.setVisibility((osm_enabled && geouri_enabled) ? View.VISIBLE : View.GONE);
         binding.enableGeoUris.setVisibility(osm_enabled ? View.VISIBLE : View.GONE);
-        binding.enableEmbedPlayer.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
 
         binding.enableInvidious.setOnCheckedChangeListener((buttonView, isChecked) -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -148,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
             binding.groupCurrentInvidious.setVisibility(isChecked ? View.VISIBLE : View.GONE);
             binding.groupCustomInvidious.setVisibility(View.GONE);
-            binding.enableEmbedPlayer.setVisibility(isChecked ? View.VISIBLE : View.GONE);
             binding.buttonExpandInstanceInvidious.setRotation(0);
         });
         binding.enableNitter.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -377,7 +373,6 @@ public class MainActivity extends AppCompatActivity {
             binding.groupCustomOsm.setVisibility(View.GONE);
         }
 
-        binding.enableEmbedPlayer.setChecked(embedded_player);
         binding.buttonSaveInstanceNitter.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedpreferences.edit();
             if (binding.nitterInstance.getText() != null && binding.nitterInstance.getText().toString().trim().length() > 0) {
@@ -493,11 +488,6 @@ public class MainActivity extends AppCompatActivity {
                 binding.groupCurrentOsm.setVisibility(View.VISIBLE);
                 binding.osmIndications.setText(R.string.redirect_gm_to_osm);
             }
-        });
-        binding.enableEmbedPlayer.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            SharedPreferences.Editor editor = sharedpreferences.edit();
-            editor.putBoolean(SET_EMBEDDED_PLAYER, isChecked);
-            editor.apply();
         });
 
         sharedpreferences.registerOnSharedPreferenceChangeListener(

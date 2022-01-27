@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="app.fedilab.nitterizeme">
 
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="false"
@@ -21,7 +23,8 @@
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name_lite"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -31,7 +34,8 @@
         <activity
             android:name=".activities.TransformActivity"
             android:noHistory="true"
-            android:theme="@style/Theme.AppCompat.Translucent">
+            android:theme="@style/Theme.AppCompat.Translucent"
+            android:exported="true">
             <!-- The app should handle these domains, more can be added here -->
 
             <intent-filter>
@@ -239,12 +243,6 @@
             android:name=".activities.InvidiousSettingsActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/invidious_settings"
-            android:theme="@style/AppTheme" />
-        <activity
-            android:name=".activities.WebviewPlayerActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/app_name_lite"
-            android:launchMode="singleTask"
             android:theme="@style/AppTheme" />
     </application>
 

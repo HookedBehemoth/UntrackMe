@@ -14,6 +14,16 @@ package app.fedilab.nitterizeme.activities;
  * You should have received a copy of the GNU General Public License along with UntrackMe; if not,
  * see <http://www.gnu.org/licenses>. */
 
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.shortener_domains;
+import static app.fedilab.nitterizeme.helpers.Utils.KILL_ACTIVITY;
+import static app.fedilab.nitterizeme.helpers.Utils.forwardToBrowser;
+import static app.fedilab.nitterizeme.helpers.Utils.isRouted;
+import static app.fedilab.nitterizeme.helpers.Utils.manageShortened;
+import static app.fedilab.nitterizeme.helpers.Utils.manageShortenedShare;
+import static app.fedilab.nitterizeme.helpers.Utils.remove_tracking_param;
+import static app.fedilab.nitterizeme.helpers.Utils.routerEnabledForHost;
+import static app.fedilab.nitterizeme.helpers.Utils.transformUrl;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -30,16 +40,6 @@ import java.util.regex.Pattern;
 
 import app.fedilab.nitterizeme.BuildConfig;
 import app.fedilab.nitterizeme.helpers.Utils;
-
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.shortener_domains;
-import static app.fedilab.nitterizeme.helpers.Utils.KILL_ACTIVITY;
-import static app.fedilab.nitterizeme.helpers.Utils.forwardToBrowser;
-import static app.fedilab.nitterizeme.helpers.Utils.isRouted;
-import static app.fedilab.nitterizeme.helpers.Utils.manageShortened;
-import static app.fedilab.nitterizeme.helpers.Utils.manageShortenedShare;
-import static app.fedilab.nitterizeme.helpers.Utils.remove_tracking_param;
-import static app.fedilab.nitterizeme.helpers.Utils.routerEnabledForHost;
-import static app.fedilab.nitterizeme.helpers.Utils.transformUrl;
 
 
 public class TransformActivity extends Activity {

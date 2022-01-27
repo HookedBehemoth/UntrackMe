@@ -14,6 +14,12 @@ package app.fedilab.nitterizeme.activities;
  * You should have received a copy of the GNU General Public License along with UntrackMe; if not,
  * see <http://www.gnu.org/licenses>. */
 
+import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
+import static app.fedilab.nitterizeme.helpers.Utils.INTENT_ACTION;
+import static app.fedilab.nitterizeme.helpers.Utils.KILL_ACTIVITY;
+import static app.fedilab.nitterizeme.helpers.Utils.LAST_USED_APP_PACKAGE;
+import static app.fedilab.nitterizeme.helpers.Utils.URL_APP_PICKER;
+
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -38,12 +44,6 @@ import app.fedilab.nitterizeme.entities.AppPicker;
 import app.fedilab.nitterizeme.helpers.Utils;
 import app.fedilab.nitterizeme.sqlite.DefaultAppDAO;
 import app.fedilab.nitterizeme.sqlite.Sqlite;
-
-import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
-import static app.fedilab.nitterizeme.helpers.Utils.INTENT_ACTION;
-import static app.fedilab.nitterizeme.helpers.Utils.KILL_ACTIVITY;
-import static app.fedilab.nitterizeme.helpers.Utils.LAST_USED_APP_PACKAGE;
-import static app.fedilab.nitterizeme.helpers.Utils.URL_APP_PICKER;
 
 
 public class AppsPickerActivity extends Activity {

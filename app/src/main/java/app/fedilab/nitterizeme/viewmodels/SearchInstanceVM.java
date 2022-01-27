@@ -14,6 +14,20 @@ package app.fedilab.nitterizeme.viewmodels;
  * You should have received a copy of the GNU General Public License along with UntrackMe; if not,
  * see <http://www.gnu.org/licenses>. */
 
+import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
+import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_BIBLIOGRAM_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_INVIDIOUS_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_NITTER_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_SCRIBERIP_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_TEDDIT_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_WIKILESS_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_HOST;
+
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -37,20 +51,6 @@ import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 
 import app.fedilab.nitterizeme.entities.Instance;
-
-import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
-import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_BIBLIOGRAM_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_INVIDIOUS_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_NITTER_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_SCRIBERIP_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_TEDDIT_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.DEFAULT_WIKILESS_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_HOST;
 
 public class SearchInstanceVM extends AndroidViewModel {
     private MutableLiveData<List<Instance>> instancesMLD;

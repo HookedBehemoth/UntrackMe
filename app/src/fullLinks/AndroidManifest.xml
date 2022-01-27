@@ -7,8 +7,7 @@
         android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="false"
@@ -25,7 +24,8 @@
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
-            tools:replace="android:label">
+            tools:replace="android:label"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -280,13 +280,6 @@
             android:configChanges="orientation|screenSize"
             android:label="@string/invidious_settings"
             android:targetActivity=".activities.InvidiousSettingsActivity"
-            android:theme="@style/AppTheme" />
-        <activity-alias
-            android:name=".activities.WebviewPlayerActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/app_name"
-            android:launchMode="singleTask"
-            android:targetActivity=".activities.WebviewPlayerActivity"
             android:theme="@style/AppTheme" />
     </application>
 
