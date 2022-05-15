@@ -214,7 +214,8 @@
       "urlPattern": "(https:\\/\\/|http:\\/\\/)([a-zA-Z0-9-]*\\.)?(twitter)(\\.[a-zA-Z]{2,})(.*\\?.*)",
       "completeProvider": false,
       "rules": [
-        "(ref_)?src=[^\\/|\\?|&]*(\\/|&(amp;)?)?"
+        "src=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "ref_[a-z_]+=[^\\/|\\?|&]*(\\/|&(amp;)?)?"
       ],
       "exceptions": [],
       "redirections": []
