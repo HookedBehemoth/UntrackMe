@@ -102,7 +102,6 @@ public class CheckAppActivity extends AppCompatActivity {
     };
     //Supported instances to redirect one instance to another faster for the user
     public static String[] invidious_instances = {
-            "invidio.us",
             "invidious.snopyta.org",
             "invidiou.sh",
             "invidious.toot.koeln",
