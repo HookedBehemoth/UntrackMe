@@ -14,6 +14,8 @@ package app.fedilab.nitterizeme.activities;
  * You should have received a copy of the GNU General Public License along with UntrackMe; if not,
  * see <http://www.gnu.org/licenses>. */
 
+import static app.fedilab.nitterizeme.helpers.Utils.KILL_ACTIVITY;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -40,8 +42,6 @@ import app.fedilab.nitterizeme.R;
 import app.fedilab.nitterizeme.databinding.ActivityMainBinding;
 import app.fedilab.nitterizeme.databinding.ContentMainBinding;
 
-import static app.fedilab.nitterizeme.helpers.Utils.KILL_ACTIVITY;
-
 public class MainActivity extends AppCompatActivity {
 
     public static final String APP_PREFS = "app_prefs";
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String SET_BIBLIOGRAM_HOST = "set_bibliogram_host";
     public static final String SET_SCRIBERIP_HOST = "set_scriberip_host";
     public static final String SET_WIKILESS_HOST = "set_wikiless_host";
+    public static final String SET_PROXITOK_HOST = "set_proxitok_host";
     @SuppressWarnings({"unused", "RedundantSuppression"})
     public static String TAG = "UntrackMe";
     public static String DEFAULT_NITTER_HOST = "nitter.net";
@@ -62,12 +63,14 @@ public class MainActivity extends AppCompatActivity {
     public static String SET_SCRIBERIP_ENABLED = "set_scriberip_enabled";
     public static String SET_WIKILESS_ENABLED = "set_wikiless_enabled";
     public static String SET_OSM_ENABLED = "set_osm_enabled";
+    public static String SET_PROXITOK_ENABLED = "set_osm_enabled";
     public static String DEFAULT_OSM_HOST = "www.openstreetmap.org";
     public static String SET_BIBLIOGRAM_ENABLED = "set_bibliogram_enabled";
     public static String DEFAULT_BIBLIOGRAM_HOST = "bibliogram.art";
     public static String DEFAULT_SCRIBERIP_HOST = "scribe.rip";
     public static String DEFAULT_WIKILESS_HOST = "wikiless.org";
     public static String DEFAULT_TEDDIT_HOST = "teddit.net";
+    public static String DEFAULT_PROXITOK_HOST = "proxitok.herokuapp.com";
     public static String SET_GEO_URIS = "set_geo_uris";
     public static String SET_EMBEDDED_PLAYER = "set_embedded_player";
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
@@ -88,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
     private String scriberipHost;
     private String wikilessHost;
     private String osmHost;
+    private String proxitokHost;
     private ContentMainBinding binding;
 
     @Override
@@ -111,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
         boolean teddit_enabled = sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
         boolean scriberip_enabled = sharedpreferences.getBoolean(SET_SCRIBERIP_ENABLED, true);
         boolean wikiless_enabled = sharedpreferences.getBoolean(SET_WIKILESS_ENABLED, true);
+        boolean proxitok_enabled = sharedpreferences.getBoolean(SET_PROXITOK_ENABLED, true);
         boolean geouri_enabled = sharedpreferences.getBoolean(SET_GEO_URIS, false);
         boolean embedded_player = sharedpreferences.getBoolean(SET_EMBEDDED_PLAYER, false);
 
@@ -121,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         binding.enableScriberip.setChecked(scriberip_enabled);
         binding.enableWikiless.setChecked(wikiless_enabled);
         binding.enableOsm.setChecked(osm_enabled);
+        binding.enableProxitok.setChecked(proxitok_enabled);
 
 
 
@@ -131,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         scriberipHost = sharedpreferences.getString(SET_SCRIBERIP_HOST, null);
         wikilessHost = sharedpreferences.getString(SET_WIKILESS_HOST, null);
         osmHost = sharedpreferences.getString(SET_OSM_HOST, null);
+        proxitokHost = sharedpreferences.getString(SET_PROXITOK_HOST, null);
 
         binding.groupCurrentInvidious.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentNitter.setVisibility(nitter_enabled ? View.VISIBLE : View.GONE);
@@ -139,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
         binding.groupCurrentScriberip.setVisibility(scriberip_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentWikiless.setVisibility(wikiless_enabled ? View.VISIBLE : View.GONE);
         binding.groupCurrentOsm.setVisibility((osm_enabled && geouri_enabled) ? View.VISIBLE : View.GONE);
+        binding.groupCurrentProxitok.setVisibility(proxitok_enabled ? View.VISIBLE : View.GONE);
         binding.enableGeoUris.setVisibility(osm_enabled ? View.VISIBLE : View.GONE);
         binding.enableEmbedPlayer.setVisibility(invidious_enabled ? View.VISIBLE : View.GONE);
 
@@ -209,6 +217,14 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 binding.groupCurrentOsm.setVisibility(View.GONE);
             }
+        });
+        binding.enableProxitok.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean(SET_PROXITOK_ENABLED, isChecked);
+            editor.apply();
+            binding.groupCurrentProxitok.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            binding.groupCustomProxitok.setVisibility(View.GONE);
+            binding.buttonExpandInstanceProxitok.setRotation(0);
         });
 
 
@@ -323,6 +339,22 @@ public class MainActivity extends AppCompatActivity {
                 binding.osmInstance.setText("");
             }
         });
+        binding.buttonExpandInstanceProxitok.setOnClickListener(v -> {
+            boolean custom_instance_visibility = binding.groupCustomProxitok.getVisibility() == View.VISIBLE;
+            if (custom_instance_visibility) {
+                binding.buttonExpandInstanceProxitok.setRotation(0f);
+                binding.groupCustomProxitok.setVisibility(View.GONE);
+            } else {
+                binding.buttonExpandInstanceProxitok.setRotation(180f);
+                binding.groupCustomProxitok.setVisibility(View.VISIBLE);
+            }
+
+            if (proxitokHost != null) {
+                binding.proxitokInstance.setText(proxitokHost);
+            } else {
+                binding.proxitokInstance.setText("");
+            }
+        });
 
 
         if (nitterHost != null) {
@@ -375,6 +407,12 @@ public class MainActivity extends AppCompatActivity {
             binding.groupCurrentOsm.setVisibility(View.VISIBLE);
         } else {
             binding.groupCustomOsm.setVisibility(View.GONE);
+        }
+        if (proxitokHost != null) {
+            binding.proxitokInstance.setText(proxitokHost);
+            binding.currentInstanceProxitok.setText(proxitokHost);
+        } else {
+            binding.currentInstanceProxitok.setText(DEFAULT_PROXITOK_HOST);
         }
 
         binding.enableEmbedPlayer.setChecked(embedded_player);
@@ -458,6 +496,18 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 editor.putString(SET_OSM_HOST, null);
                 binding.currentInstanceOsm.setText(DEFAULT_OSM_HOST);
+            }
+            editor.apply();
+        });
+        binding.buttonSaveInstanceProxitok.setOnClickListener(v -> {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            if (binding.proxitokInstance.getText() != null && binding.proxitokInstance.getText().toString().trim().length() > 0) {
+                String custom_instance = binding.proxitokInstance.getText().toString().toLowerCase().trim();
+                editor.putString(SET_PROXITOK_HOST, custom_instance);
+                binding.currentInstanceProxitok.setText(custom_instance);
+            } else {
+                editor.putString(SET_PROXITOK_HOST, null);
+                binding.currentInstanceProxitok.setText(DEFAULT_PROXITOK_HOST);
             }
             editor.apply();
         });
@@ -566,9 +616,18 @@ public class MainActivity extends AppCompatActivity {
                                 binding.currentInstanceOsm.setText(DEFAULT_OSM_HOST);
                             binding.buttonExpandInstanceOsm.setRotation(0f);
                             break;
+                        case SET_PROXITOK_HOST:
+                            proxitokHost = sharedpreferences.getString(SET_PROXITOK_HOST, null);
+                            binding.groupCustomProxitok.setVisibility(View.GONE);
+                            if (proxitokHost != null && proxitokHost.trim().length() > 0)
+                                binding.currentInstanceProxitok.setText(proxitokHost);
+                            else
+                                binding.currentInstanceProxitok.setText(DEFAULT_PROXITOK_HOST);
+                            binding.buttonExpandInstanceProxitok.setRotation(0f);
+                            break;
                     }
 
-                    if (key.equals(SET_NITTER_HOST) || key.equals(SET_INVIDIOUS_HOST) || key.equals(SET_BIBLIOGRAM_HOST) || key.equals(SET_TEDDIT_HOST) || key.equals(SET_OSM_HOST)) {
+                    if (key.equals(SET_NITTER_HOST) || key.equals(SET_INVIDIOUS_HOST) || key.equals(SET_BIBLIOGRAM_HOST) || key.equals(SET_TEDDIT_HOST) || key.equals(SET_OSM_HOST) || key.equals(SET_PROXITOK_HOST)) {
                         View parentLayout = findViewById(android.R.id.content);
                         Snackbar.make(parentLayout, R.string.instances_saved, Snackbar.LENGTH_LONG).show();
                     }
@@ -632,6 +691,7 @@ public class MainActivity extends AppCompatActivity {
         String tedditHost = sharedpreferences.getString(SET_TEDDIT_HOST, null);
         String scriberipHost = sharedpreferences.getString(SET_SCRIBERIP_HOST, null);
         String wikilessHost = sharedpreferences.getString(SET_WIKILESS_HOST, null);
+        String proxitokHost = sharedpreferences.getString(SET_PROXITOK_HOST, null);
         if (nitterHost != null) {
             binding.nitterInstance.setText(nitterHost);
             binding.currentInstanceNitter.setText(nitterHost);
@@ -655,6 +715,10 @@ public class MainActivity extends AppCompatActivity {
         if (wikilessHost != null) {
             binding.wikilessInstance.setText(wikilessHost);
             binding.currentInstanceWikiless.setText(wikilessHost);
+        }
+        if (proxitokHost != null) {
+            binding.proxitokInstance.setText(proxitokHost);
+            binding.currentInstanceProxitok.setText(proxitokHost);
         }
         if (BuildConfig.fullLinks) {
             List<ResolveInfo> resolveInfos = getPackageManager().queryIntentActivities(new Intent(Intent.ACTION_VIEW, Uri.parse("https://fedilab.app")), PackageManager.MATCH_DEFAULT_ONLY);

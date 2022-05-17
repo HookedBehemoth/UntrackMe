@@ -14,6 +14,15 @@ package app.fedilab.nitterizeme.adapters;
  * You should have received a copy of the GNU General Public License along with UntrackMe; if not,
  * see <http://www.gnu.org/licenses>. */
 
+import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_PROXITOK_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_HOST;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -34,14 +43,6 @@ import app.fedilab.nitterizeme.R;
 import app.fedilab.nitterizeme.databinding.DrawerInstanceBinding;
 import app.fedilab.nitterizeme.entities.Instance;
 import app.fedilab.nitterizeme.helpers.Utils;
-
-import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_HOST;
 
 
 public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -162,6 +163,14 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         editor.putString(SET_WIKILESS_HOST, instance.getDomain().trim());
                     } else {
                         editor.putString(SET_WIKILESS_HOST, null);
+                    }
+                    editor.apply();
+                    break;
+                case PROXITOK:
+                    if (isChecked) {
+                        editor.putString(SET_PROXITOK_HOST, instance.getDomain().trim());
+                    } else {
+                        editor.putString(SET_PROXITOK_HOST, null);
                     }
                     editor.apply();
                     break;

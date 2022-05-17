@@ -63,12 +63,12 @@
                 <data android:host="bl.ink" />
                 <data android:host="buff.ly" />
                 <data android:host="maps.app.goo.gl" />
+                <data android:host="vm.tiktok.com" />
 
                 <!-- INSTAGRAM URLs  -->
                 <data android:host="instagram.com" />
                 <data android:host="www.instagram.com" />
                 <data android:host="m.instagram.com" />
-
 
                 <!-- TWITTER URLs  -->
                 <data android:host="mobile.twitter.com" />
@@ -84,13 +84,17 @@
                 <data android:host="youtu.be" />
                 <data android:host="youtube-nocookie.com" />
 
-
                 <!-- REDDIT URLs  -->
                 <data android:host="www.reddit.com" />
                 <data android:host="reddit.com" />
                 <data android:host="i.reddit.com" />
                 <data android:host="i.redd.it" />
                 <data android:host="preview.redd.it" />
+
+                <!-- TIKTOK URLs  -->
+                <data android:host="tiktok.com" />
+                <data android:host="www.tiktok.com" />
+                <data android:host="us.tiktok.com" />
 
                 <!-- INVIDIOUS INSTANCES -->
                 <data android:host="invidious.snopyta.org" />
@@ -118,6 +122,9 @@
                 <data android:host="bibliogram.dsrev.ru" />
                 <data android:host="bibliogram.pussthecat.org" />
 
+                <!-- PROXITOK INSTANCES -->
+                <data android:host="proxitok.herokuapp.com" />
+                <data android:host="proxitok.pussthecat.org" />
 
                 <!-- MEDIUM URLs  -->
                 <data android:host="www.medium.com" />
@@ -160,6 +167,7 @@
                 <data android:host="bl.ink" />
                 <data android:host="buff.ly" />
                 <data android:host="maps.app.goo.gl" />
+                <data android:host="vm.tiktok.com" />
 
                 <!-- INSTAGRAM URLs  -->
                 <data android:host="instagram.com" />
@@ -196,6 +204,11 @@
                 <data android:host="wikipedia.org" />
                 <data android:host="www.wikipedia.org" />
                 <data android:host="*.wikipedia.org" />
+
+                <!-- TIKTOK URLs  -->
+                <data android:host="tiktok.com" />
+                <data android:host="www.tiktok.com" />
+                <data android:host="us.tiktok.com" />
 
                 <data android:host="*" />
 
