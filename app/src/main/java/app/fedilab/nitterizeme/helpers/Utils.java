@@ -15,6 +15,29 @@ package app.fedilab.nitterizeme.helpers;
  * see <http://www.gnu.org/licenses>. */
 
 
+import static android.content.Context.DOWNLOAD_SERVICE;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.bibliogram_instances;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.instagram_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.invidious_instances;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.medium_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.nitter_instances;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.outlook_safe_domain;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.reddit_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.shortener_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.tiktok_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.twitter_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.wikipedia_domains;
+import static app.fedilab.nitterizeme.activities.CheckAppActivity.youtube_domains;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_EMBEDDED_PLAYER;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_PROXITOK_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_ENABLED;
+
 import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.ComponentName;
@@ -78,27 +101,6 @@ import app.fedilab.nitterizeme.activities.AppsPickerActivity;
 import app.fedilab.nitterizeme.activities.MainActivity;
 import app.fedilab.nitterizeme.activities.WebviewPlayerActivity;
 
-import static android.content.Context.DOWNLOAD_SERVICE;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.bibliogram_instances;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.instagram_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.invidious_instances;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.medium_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.nitter_instances;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.outlook_safe_domain;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.reddit_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.shortener_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.twitter_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.wikipedia_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.youtube_domains;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_EMBEDDED_PLAYER;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_ENABLED;
-
 public class Utils {
 
     public static final String KILL_ACTIVITY = "kill_activity";
@@ -112,7 +114,7 @@ public class Utils {
     public static final Pattern scriberipPattern = Pattern.compile("(www\\.)?medium.com/(((?!([\"'<])).)*)");
     public static final Pattern scriberipSubdomainPattern = Pattern.compile("([\\w_-]+)\\.medium.com/(((?!([\"'<])).)*)");
 
-
+    public static final Pattern tiktokPattern = Pattern.compile("(www\\.|us\\.)?tiktok.com/(((?!([\"'<])).)*)");
     public static final Pattern wikilessPattern = Pattern.compile("([\\w_-]+)\\.(?:m\\.)?wikipedia.org/(((?!([\"'<])).)*)");
 
     public static final Pattern bibliogramAccountPattern = Pattern.compile("(m\\.|www\\.)?instagram.com(((?!/p/).)+)");
@@ -461,6 +463,26 @@ public class Utils {
                     } else {
                         newUrl = scheme + tedditHost + "/" + redditPath;
                     }
+                }
+                return newUrl;
+            } else {
+                return url;
+            }
+        } else if (host != null && Arrays.asList(tiktok_domains).contains(host)) {
+            boolean proxitok_enabled = sharedpreferences.getBoolean(SET_PROXITOK_ENABLED, true);
+            if (proxitok_enabled) {
+                String proxitokHost = sharedpreferences.getString(MainActivity.SET_PROXITOK_HOST, MainActivity.DEFAULT_PROXITOK_HOST);
+                assert proxitokHost != null;
+                proxitokHost = proxitokHost.toLowerCase();
+                Matcher matcher = tiktokPattern.matcher(url);
+                while (matcher.find()) {
+                    String path = matcher.group(2);
+                    if (path == null || path.trim().equals("") || path.startsWith("@") || path.startsWith("music") || path.startsWith("tag")) {
+                        newUrl = url.replace(host, proxitokHost);
+                    }
+                }
+                if (newUrl == null) {
+                    newUrl = url;
                 }
                 return newUrl;
             } else {
@@ -1257,7 +1279,8 @@ public class Utils {
                 || Arrays.asList(instagram_domains).contains(host) || Arrays.asList(bibliogram_instances).contains(host)
                 || url.contains("/maps/place") || url.contains("/amp/s/") || (host != null && host.contains(outlook_safe_domain))
                 || Arrays.asList(youtube_domains).contains(host) || Arrays.asList(invidious_instances).contains(host)
-                || (host != null && host.endsWith(medium_domains[0]) || (host != null && host.endsWith(wikipedia_domains[0])));
+                || Arrays.asList(tiktok_domains).contains(host) || (host != null && host.endsWith(medium_domains[0])
+                || (host != null && host.endsWith(wikipedia_domains[0])));
     }
 
     public static boolean routerEnabledForHost(Context context, String url) {
@@ -1281,6 +1304,8 @@ public class Utils {
             return sharedpreferences.getBoolean(SET_INVIDIOUS_ENABLED, true);
         } else if (Arrays.asList(reddit_domains).contains(host)) {
             return sharedpreferences.getBoolean(SET_TEDDIT_ENABLED, true);
+        } else if (Arrays.asList(tiktok_domains).contains(host)) {
+            return sharedpreferences.getBoolean(SET_PROXITOK_ENABLED, true);
         } else if (host != null && host.endsWith(medium_domains[0])) {
             return sharedpreferences.getBoolean(SET_SCRIBERIP_ENABLED, true);
         } else if (host != null && host.endsWith(wikipedia_domains[0])) {

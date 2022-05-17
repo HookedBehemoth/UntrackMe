@@ -239,6 +239,22 @@
       "exceptions": [],
       "redirections": []
     },
+    "tiktok": {
+      "urlPattern": "(https:\\/\\/|http:\\/\\/)([a-zA-Z0-9-]*\\.)?(tiktok)(\\.[a-zA-Z]{2,})(.*\\?.*)",
+      "completeProvider": false,
+      "rules": [
+        "_[a-z]=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "(sec_)?(u|user_)id=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "share_[a-z_]+=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "source=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "timestamp=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "u_code=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "ugbiz_name=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "utm_[a-z_]+=[^\\/|\\?|&]*(\\/|&(amp;)?)?"
+      ],
+      "exceptions": [],
+      "redirections": []
+    },
     "techcrunch": {
       "urlPattern": "(https:\\/\\/|http:\\/\\/)([a-zA-Z0-9-]*\\.)?([\\.]?techcrunch\\.com)(.*\\?.*)",
       "completeProvider": false,
