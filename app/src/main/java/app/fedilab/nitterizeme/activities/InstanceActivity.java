@@ -67,6 +67,7 @@ public class InstanceActivity extends AppCompatActivity {
             String tedditHost = sharedpreferences.getString(MainActivity.SET_TEDDIT_HOST, MainActivity.DEFAULT_TEDDIT_HOST);
             String scribeHost = sharedpreferences.getString(MainActivity.SET_SCRIBERIP_HOST, MainActivity.DEFAULT_SCRIBERIP_HOST);
             String wikilessHost = sharedpreferences.getString(MainActivity.SET_WIKILESS_HOST, MainActivity.DEFAULT_WIKILESS_HOST);
+            String proxitokHost = sharedpreferences.getString(MainActivity.SET_PROXITOK_HOST, MainActivity.DEFAULT_PROXITOK_HOST);
 
             ArrayList<Instance> invidiousInstances = new ArrayList<>();
             ArrayList<Instance> nitterInstances = new ArrayList<>();
@@ -74,6 +75,7 @@ public class InstanceActivity extends AppCompatActivity {
             ArrayList<Instance> tedditInstances = new ArrayList<>();
             ArrayList<Instance> scribeInstances = new ArrayList<>();
             ArrayList<Instance> wikilessInstances = new ArrayList<>();
+            ArrayList<Instance> proxitokInstances = new ArrayList<>();
 
             boolean customInvidiousInstance = true;
             boolean customNitterInstance = true;
@@ -81,6 +83,7 @@ public class InstanceActivity extends AppCompatActivity {
             boolean customTedditInstance = true;
             boolean customScribeInstance = true;
             boolean customWikilessInstance = true;
+            boolean customProxitokInstance = true;
 
             for (Instance instance : result) {
                 if (instance.getInstanceType() == Instance.instanceType.YOUTUBE) {
@@ -112,6 +115,11 @@ public class InstanceActivity extends AppCompatActivity {
                     wikilessInstances.add(instance);
                     if (wikilessHost != null && wikilessHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
                         customWikilessInstance = false;
+                    }
+                } else if (instance.getInstanceType() == Instance.instanceType.PROXITOK) {
+                    proxitokInstances.add(instance);
+                    if (proxitokHost != null && proxitokHost.trim().toLowerCase().compareTo(instance.getDomain()) == 0) {
+                        customProxitokInstance = false;
                     }
                 }
             }
@@ -160,6 +168,13 @@ public class InstanceActivity extends AppCompatActivity {
                 instance.setLocales(defaultLocales);
                 wikilessInstances.add(0, instance);
             }
+            if (customProxitokInstance) {
+                Instance instance = new Instance();
+                instance.setChecked(true);
+                instance.setDomain(proxitokHost);
+                instance.setLocales(defaultLocales);
+                proxitokInstances.add(0, instance);
+            }
             binding.instanceContainer.setVisibility(View.VISIBLE);
             binding.loader.setVisibility(View.GONE);
 
@@ -202,11 +217,20 @@ public class InstanceActivity extends AppCompatActivity {
             binding.wikilessInstances.setLayoutManager(wLayoutManager);
             binding.wikilessInstances.setNestedScrollingEnabled(false);
 
+            final LinearLayoutManager pLayoutManager = new LinearLayoutManager(this);
+            InstanceAdapter proxitokAdapter = new InstanceAdapter(proxitokInstances);
+            binding.proxitokInstances.setAdapter(proxitokAdapter);
+            binding.proxitokInstances.setLayoutManager(pLayoutManager);
+            binding.proxitokInstances.setNestedScrollingEnabled(false);
+
             binding.latencyTest.setOnClickListener(v -> {
                         invidiousAdapter.evalLatency();
                         nitterAdapter.evalLatency();
                         bibliogramAdapter.evalLatency();
                         tedditAdapter.evalLatency();
+                        scribeAdapter.evalLatency();
+                        wikilessAdapter.evalLatency();
+                        proxitokAdapter.evalLatency();
                     }
             );
 

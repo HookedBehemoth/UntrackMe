@@ -179,7 +179,7 @@ public class AppsPickerActivity extends Activity {
                 long val = -1;
                 if (isPresent) {
                     ArrayList<String> oldConcurrent = new DefaultAppDAO(AppsPickerActivity.this, db).getConcurrent(appToUse);
-                    ArrayList<String> newConcurrent = Utils.union(oldConcurrent, packages);
+                    ArrayList<String> newConcurrent = oldConcurrent != null ? Utils.union(oldConcurrent, packages) : packages;
                     newConcurrent.remove(appToUse);
                     new DefaultAppDAO(AppsPickerActivity.this, db).update(appToUse, newConcurrent);
                 } else {

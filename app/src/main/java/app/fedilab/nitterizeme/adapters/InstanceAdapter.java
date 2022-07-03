@@ -18,6 +18,7 @@ import static app.fedilab.nitterizeme.activities.MainActivity.APP_PREFS;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_HOST;
+import static app.fedilab.nitterizeme.activities.MainActivity.SET_PROXITOK_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_HOST;
@@ -162,6 +163,14 @@ public class InstanceAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         editor.putString(SET_WIKILESS_HOST, instance.getDomain().trim());
                     } else {
                         editor.putString(SET_WIKILESS_HOST, null);
+                    }
+                    editor.apply();
+                    break;
+                case PROXITOK:
+                    if (isChecked) {
+                        editor.putString(SET_PROXITOK_HOST, instance.getDomain().trim());
+                    } else {
+                        editor.putString(SET_PROXITOK_HOST, null);
                     }
                     editor.apply();
                     break;

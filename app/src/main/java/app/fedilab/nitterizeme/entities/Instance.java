@@ -90,6 +90,7 @@ public class Instance {
         INSTAGRAM,
         REDDIT,
         MEDIUM,
-        WIKIPEDIA
+        WIKIPEDIA,
+        PROXITOK
     }
 }

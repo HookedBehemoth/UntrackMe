@@ -80,6 +80,12 @@ public class CheckAppActivity extends AppCompatActivity {
             "www.wikipedia.org"
     };
 
+    public static String[] tiktok_domains = {
+            "tiktok.com",
+            "www.tiktok.com",
+            "us.tiktok.com"
+    };
+
     public static String[] shortener_domains = {
             "t.co",
             "nyti.ms",
@@ -98,11 +104,11 @@ public class CheckAppActivity extends AppCompatActivity {
             "ow.ly",
             "bl.ink",
             "buff.ly",
-            "maps.app.goo.gl"
+            "maps.app.goo.gl",
+            "vm.tiktok.com"
     };
     //Supported instances to redirect one instance to another faster for the user
     public static String[] invidious_instances = {
-            "invidio.us",
             "invidious.snopyta.org",
             "invidiou.sh",
             "invidious.toot.koeln",
@@ -126,6 +132,10 @@ public class CheckAppActivity extends AppCompatActivity {
             "bibliogram.snopyta.org",
             "bibliogram.dsrev.ru",
             "bibliogram.pussthecat.org"
+    };
+    public static String[] proxitok_instances = {
+            "proxitok.herokuapp.com",
+            "proxitok.pussthecat.org"
     };
 
     public static String outlook_safe_domain = "safelinks.protection.outlook.com";
@@ -153,23 +163,26 @@ public class CheckAppActivity extends AppCompatActivity {
                     twitter_domains.length
                             + youtube_domains.length
                             + reddit_domains.length
-                            + shortener_domains.length
                             + instagram_domains.length
+                            + wikipedia_domains.length
+                            + medium_domains.length
+                            + tiktok_domains.length
+                            + shortener_domains.length
                             + invidious_instances.length
                             + nitter_instances.length
                             + bibliogram_instances.length
-                            + wikipedia_domains.length
-                            + medium_domains.length
+                            + proxitok_instances.length
                     ];
         } else {
             domains = new String[
                     twitter_domains.length
                             + youtube_domains.length
                             + reddit_domains.length
-                            + shortener_domains.length
                             + instagram_domains.length
                             + wikipedia_domains.length
-                            + medium_domains.length];
+                            + medium_domains.length
+                            + tiktok_domains.length
+                            + shortener_domains.length];
         }
         int i = 0;
         for (String host : twitter_domains) {
@@ -196,6 +209,10 @@ public class CheckAppActivity extends AppCompatActivity {
             domains[i] = host;
             i++;
         }
+        for (String host : tiktok_domains) {
+            domains[i] = host;
+            i++;
+        }
         for (String host : shortener_domains) {
             domains[i] = host;
             i++;
@@ -210,6 +227,10 @@ public class CheckAppActivity extends AppCompatActivity {
                 i++;
             }
             for (String host : bibliogram_instances) {
+                domains[i] = host;
+                i++;
+            }
+            for (String host : proxitok_instances) {
                 domains[i] = host;
                 i++;
             }
@@ -291,6 +312,10 @@ public class CheckAppActivity extends AppCompatActivity {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle("Wikipedia");
                 appInfos.add(appInfo);
+            } else if (Arrays.asList(tiktok_domains).contains(domain)) {
+                AppInfo appInfo = new AppInfo();
+                appInfo.setTitle("TikTok");
+                appInfos.add(appInfo);
             } else if (Arrays.asList(shortener_domains).contains(domain)) {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle(getString(R.string.shortener_services));
@@ -306,6 +331,10 @@ public class CheckAppActivity extends AppCompatActivity {
             } else if (Arrays.asList(bibliogram_instances).contains(domain)) {
                 AppInfo appInfo = new AppInfo();
                 appInfo.setTitle(getString(R.string.bibliogram_instances));
+                appInfos.add(appInfo);
+            } else if (Arrays.asList(proxitok_instances).contains(domain)) {
+                AppInfo appInfo = new AppInfo();
+                appInfo.setTitle(getString(R.string.proxitok_instances));
                 appInfos.add(appInfo);
             }
             AppInfo appInfo = new AppInfo();

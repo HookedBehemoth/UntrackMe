@@ -102,6 +102,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/proxitok_instances"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/proxitok_instances"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

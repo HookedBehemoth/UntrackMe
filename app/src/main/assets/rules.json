@@ -214,7 +214,8 @@
       "urlPattern": "(https:\\/\\/|http:\\/\\/)([a-zA-Z0-9-]*\\.)?(twitter)(\\.[a-zA-Z]{2,})(.*\\?.*)",
       "completeProvider": false,
       "rules": [
-        "(ref_)?src=[^\\/|\\?|&]*(\\/|&(amp;)?)?"
+        "src=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "ref_[a-z_]+=[^\\/|\\?|&]*(\\/|&(amp;)?)?"
       ],
       "exceptions": [],
       "redirections": []
@@ -235,6 +236,22 @@
         "trackId=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
         "tctx=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
         "jb[a-zA-Z]*=[^\\/|\\?|&]*(\\/|&(amp;)?)?"
+      ],
+      "exceptions": [],
+      "redirections": []
+    },
+    "tiktok": {
+      "urlPattern": "(https:\\/\\/|http:\\/\\/)([a-zA-Z0-9-]*\\.)?(tiktok)(\\.[a-zA-Z]{2,})(.*\\?.*)",
+      "completeProvider": false,
+      "rules": [
+        "_[a-z]=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "(sec_)?(u|user_)id=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "share_[a-z_]+=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "source=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "timestamp=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "u_code=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "ugbiz_name=[^\\/|\\?|&]*(\\/|&(amp;)?)?",
+        "utm_[a-z_]+=[^\\/|\\?|&]*(\\/|&(amp;)?)?"
       ],
       "exceptions": [],
       "redirections": []
