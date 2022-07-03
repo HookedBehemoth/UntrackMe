@@ -1,0 +1,4 @@
+- Fix Twitter ref_url parameter
+- Add Proxitok
+- Fix wikipedia URL transformation
+- Fix some crashes

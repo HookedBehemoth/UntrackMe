@@ -36,7 +36,6 @@ import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_ENABLED;
 
-
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
