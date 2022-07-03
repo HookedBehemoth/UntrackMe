@@ -15,7 +15,6 @@ package app.fedilab.nitterizeme.helpers;
  * see <http://www.gnu.org/licenses>. */
 
 
-import static android.content.Context.DOWNLOAD_SERVICE;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.bibliogram_instances;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.instagram_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.invidious_instances;
@@ -29,7 +28,6 @@ import static app.fedilab.nitterizeme.activities.CheckAppActivity.twitter_domain
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.wikipedia_domains;
 import static app.fedilab.nitterizeme.activities.CheckAppActivity.youtube_domains;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_EMBEDDED_PLAYER;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_ENABLED;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_PROXITOK_ENABLED;
@@ -38,24 +36,6 @@ import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
 import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_ENABLED;
 
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.bibliogram_instances;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.instagram_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.invidious_instances;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.medium_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.nitter_instances;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.outlook_safe_domain;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.reddit_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.shortener_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.twitter_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.wikipedia_domains;
-import static app.fedilab.nitterizeme.activities.CheckAppActivity.youtube_domains;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_BIBLIOGRAM_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_INVIDIOUS_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_NITTER_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_SCRIBERIP_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_ENABLED;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_TEDDIT_HOST;
-import static app.fedilab.nitterizeme.activities.MainActivity.SET_WIKILESS_ENABLED;
 
 import android.app.Activity;
 import android.content.ComponentName;
