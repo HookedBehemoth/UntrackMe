@@ -105,7 +105,8 @@ public class CheckAppActivity extends AppCompatActivity {
             "bl.ink",
             "buff.ly",
             "maps.app.goo.gl",
-            "vm.tiktok.com"
+            "vm.tiktok.com",
+            "vt.tiktok.com"
     };
     //Supported instances to redirect one instance to another faster for the user
     public static String[] invidious_instances = {

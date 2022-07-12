@@ -64,6 +64,7 @@
                 <data android:host="buff.ly" />
                 <data android:host="maps.app.goo.gl" />
                 <data android:host="vm.tiktok.com" />
+                <data android:host="vt.tiktok.com" />
 
                 <!-- INSTAGRAM URLs  -->
                 <data android:host="instagram.com" />
@@ -137,6 +138,7 @@
                 <data android:host="buff.ly" />
                 <data android:host="maps.app.goo.gl" />
                 <data android:host="vm.tiktok.com" />
+                <data android:host="vt.tiktok.com" />
 
                 <!-- INSTAGRAM URLs  -->
                 <data android:host="instagram.com" />
