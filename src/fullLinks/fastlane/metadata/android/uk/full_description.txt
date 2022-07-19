@@ -1,31 +1,49 @@
-UntrackMe once set by default to open Twitter, YouTube and Instagram links will transform them into Nitter, Invidious and Bibliogram links and delegate the action to another app.
+Коли ви налаштуєте UntrackMe як усталений застосунок для відкриття посилань на Twitter, YouTube та Instagram, він замінюватиме їх посиланнями на Nitter, Invidious та Bibliogram і пропонуватиме відкрити результат в іншому застосунку.
 
-It also supports Google Maps links to transform them into OpenStreetMap links or Geo URI.
+Посилання на Google Maps замінюються посиланнями на OpenStreetMap чи Geo URI.
 
-The app will detect shortened URLs and will display the full URL before visiting the site.
+Застосунок перехоплює сховані («вкорочені») URL-адреси й показує повну адресу, перш ніж її відкрити.
 
-**Lite version:
+**Lite-версія:
 
-- When sharing a Twitter, YouTube or Google Maps link just pick up UntrackMe to transform it before sharing it with another app.
+- Ділячись посиланням на Twitter, YouTube чи Google Maps, перед поширенням пропускайте його через UntrackMe, щоб перетворити його на більш вільне.
 
-**Full version:
+**Повна версія:
 
-- Contains all features of the lite version and it also handle all links to remove tracking parameters. It uses its own app picker that display URLs before visiting them.
-
-
-What is Nitter:
-
-A free and open source alternative Twitter front-end focused on privacy.
-Github project: https://github.com/zedeus/nitter
+- Містить увесь функціонал Lite-версії, а також уміє вилучати з посилань параметри стеження. Надає власний засіб вибору застосунків, який показує URL-адресу, перш ніж її відкрити.
 
 
-What is Invidious:
+Що таке Nitter:
 
-A free and open source alternative front-end to YouTube
-Github project: https://github.com/omarroth/invidious
+Вільна заміна фронтенду Twitter із повагою до приватності.
+Джерело: https://github.com/zedeus/nitter
 
 
-What is Bibliogram:
+Що таке Invidious:
 
-A free and open source alternative front-end to Instagram
-Github project: https://github.com/cloudrac3r/bibliogram
+Вільна заміна фронтенду YouTube із повагою до приватності.
+Джерело: https://github.com/omarroth/invidious
+
+
+Що таке Bibliogram:
+
+Вільна заміна фронтенду Instagram із повагою до приватності.
+Джерело: https://github.com/cloudrac3r/bibliogram
+
+
+Що таке Teddit:
+
+Вільна заміна фронтенду Reddit із повагою до приватності.
+Джерело: https://github.com/teddit-net/teddit
+
+
+Що таке Scribe:
+
+Вільна заміна фронтенду Medium із повагою до приватності.
+Джерело: https://git.sr.ht/~edwardloveall/scribe
+
+
+Що таке Wikiless:
+
+Вільна заміна фронтенду Wikipedia з повагою до приватності.
+Джерело: https://codeberg.org/orenom/Wikiless

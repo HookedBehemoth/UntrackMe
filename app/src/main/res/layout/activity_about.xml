@@ -122,27 +122,27 @@
 
                         <TextView
                             android:id="@+id/framagit"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_marginRight="15dp"
                             android:text="Framagit"
                             android:textSize="16sp"
                             tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/github"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_marginRight="15dp"
                             android:text="Github"
                             android:textSize="16sp"
                             tools:ignore="HardcodedText" />
 
                         <TextView
                             android:id="@+id/codeberg"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_marginRight="15dp"
                             android:text="Codeberg"
                             android:textSize="16sp"
                             tools:ignore="HardcodedText" />
@@ -202,8 +202,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wiki"
-            tools:ignore="HardcodedText" />
+            android:text="@string/wiki" />
 
         <Button
             android:id="@+id/how_to"

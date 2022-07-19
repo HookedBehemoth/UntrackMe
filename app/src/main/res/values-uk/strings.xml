@@ -1,178 +1,197 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Some local values -->
-    <string name="action_settings">Налаштування</string>
-    <string name="action_about">Про додаток</string>
+    <!-- Ukrainian -->
+    <string name="action_settings">Параметри</string>
+    <string name="action_about">Про застосунок</string>
     <string name="developer">Розробник</string>
-    <string name="donations">Donations</string>
-    <string name="about_the_app">About the app</string>
-    <string name="source_code">Source code</string>
-    <string name="issue_tracker">Issue tracker</string>
-    <string name="license">License</string>
-    <string name="about_vesrion">Реліз %1$s</string>
-    <string name="custom_nitter">Custom Nitter instance</string>
+    <string name="donations">Пожертви</string>
+    <string name="about_the_app">Про застосунок</string>
+    <string name="source_code">Джерело</string>
+    <string name="issue_tracker">Підтримка</string>
+    <string name="license">Ліцензія</string>
+    <string name="about_vesrion">Випуск %1$s</string>
+    <string name="custom_nitter">Ваша адреса Nitter</string>
     <string name="save">Зберегти</string>
     <string name="close">Закрити</string>
-    <string name="instances_saved">Custom instances have been saved!</string>
-    <string name="custom_invidious">Custom Invidious instance</string>
-    <string name="no_apps">No applications by default</string>
-    <string name="Donate">Donate</string>
-    <string name="warning">Попередження</string>
-    <string name="error">Error</string>
-    <string name="valid">Valid</string>
-    <string name="icon_of_the_app">Icon of the app</string>
-    <string name="open_with">Відкрити за допомогою</string>
-    <string name="redirect_gm_to_osm">Redirect Google Map to OpenStreetMap</string>
-    <string name="custom_osm">Custom OSM hostname</string>
-    <string name="redirect_youtube_to_invidious">Redirect YouTube to Invidious</string>
-    <string name="redirect_twitter_to_nitter">Redirect Twitter to Nitter</string>
-    <string name="redirect_instagram_to_bibliogram">Redirect Instagram to Bibliogram</string>
-    <string name="redirect_reddit_to_teddit">Redirect Reddit to Teddit</string>
-    <string name="custom_bibliogram">Custom Bibliogram instance</string>
-    <string name="custom_teddit">Custom Teddit instance</string>
-    <string name="redirect_gm_to_geo_uri">Redirect Google Map to Geo URI</string>
-    <string name="configure">Configure</string>
-    <string name="display_supported_links">Display supported links</string>
-    <string name="use_geo_uri">Use geo URI</string>
-    <string name="how_to">How-to</string>
-    <string name="shortened_detected">Shortened URL</string>
-    <string name="shortener_services">Shortener services</string>
-    <string name="open">Open</string>
-    <string name="dismiss">Dismiss</string>
-    <string name="resolving_shortened">Resolving shortened URL, please wait…</string>
-    <string name="try_to_redirect">%1$s \n\nwill redirect you to\n\n<b>%2$s</b></string>
-    <string name="try_to_redirect_again">Then it will redirect you to\n\n<b>%1$s</b></string>
-    <string name="the_app_failed_shortened">The app didn\'t manage to retrieve the full URL</string>
-    <string name="invidious_instances">Invidious instances</string>
-    <string name="nitter_instances">Nitter instances</string>
-    <string name="bibliogram_instances">Bibliogram instances</string>
-    <string name="teddit_instances">Teddit instances</string>
-    <string name="latency">Latency</string>
-    <string name="error_message_internet">Check your Internet connection</string>
-    <string name="instance_label">Екземпляр:</string>
-    <string name="expand_instance_details">Expand instance details</string>
-    <string name="cloudflare">This instance uses Cloudflare</string>
-    <string name="instance_info">Information about listed instances</string>
-    <string name="about_instances">The list of instances comes from\n\n <a href="%1$s">%2$s</a>\n\nYou can contribute to this list by adding or removing instances.</string>
-    <string name="about_instances_title">About instances</string>
-    <string name="use_built_in_player">Use the built-in player</string>
-    <string name="share">Поділитися</string>
+    <string name="instances_saved">Користувацькі сервери збережено</string>
+    <string name="custom_invidious">Ваша адреса Invidious</string>
+    <string name="no_apps">Нема усталеного застосунку</string>
+    <string name="Donate">Кава</string>
+    <string name="wiki">Вікі</string>
+    <string name="warning">Застереження</string>
+    <string name="error">Помилка</string>
+    <string name="valid">Чинно</string>
+    <string name="icon_of_the_app">Піктограма застосунку</string>
+    <string name="open_with">Відкрити в </string>
+    <string name="redirect_gm_to_osm">OpenStreetMap замість Google Maps</string>
+    <string name="custom_osm">Ваша адреса OSM</string>
+    <string name="redirect_youtube_to_invidious">Invidious замість YouTube</string>
+    <string name="redirect_twitter_to_nitter">Nitter замість Twitter</string>
+    <string name="redirect_tiktok_to_proxitok">ProxiTok замість TikTok</string>
+    <string name="redirect_instagram_to_bibliogram">Bibliogram замість Instagram</string>
+    <string name="redirect_reddit_to_teddit">Teddit замість Reddit</string>
+    <string name="redirect_medium_to_scriberip">Scribe.rip замість Medium</string>
+    <string name="redirect_wikipedia_to_wikiless">Wikiless замість Wikipedia</string>
+    <string name="custom_bibliogram">Ваша адреса Bibliogram</string>
+    <string name="custom_scriberip">Ваша адреса Scribe.rip</string>
+    <string name="custom_wikiless">Ваша адреса Wikiless</string>
+    <string name="custom_teddit">Ваша адреса Teddit</string>
+    <string name="custom_proxitok">Ваша адреса ProxiTok</string>
+    <string name="redirect_gm_to_geo_uri">Geo URI замість Google Maps</string>
+    <string name="configure">Параметри</string>
+    <string name="display_supported_links">Показати підтримувані посилання</string>
+    <string name="use_geo_uri">Використовувати Geo URI</string>
+    <string name="how_to">Інструкція</string>
+    <string name="shortened_detected">Адресу сховано</string>
+    <string name="shortener_services">Ховання адрес</string>
+    <string name="open">Відкрити</string>
+    <string name="dismiss">Скасувати</string>
+    <string name="resolving_shortened">Отримання повної URL-адреси…</string>
+    <string name="try_to_redirect">%1$s \n\nспрямує вас до\n\n<b>%2$s</b></string>
+    <string name="try_to_redirect_again">Й тоді переспрямує до\n\n<b>%1$s</b></string>
+    <string name="the_app_failed_shortened">Не вдалось отримати повну URL-адресу</string>
+    <string name="invidious_instances">Сервери Invidious</string>
+    <string name="nitter_instances">Сервери Nitter</string>
+    <string name="bibliogram_instances">Сервери Bibliogram</string>
+    <string name="teddit_instances">Сервери Teddit</string>
+    <string name="scribe_instances">Сервери Scribe</string>
+    <string name="wikiless_instances">Сервери Wikiless</string>
+    <string name="proxitok_instances">Сервери ProxiTok</string>
+    <string name="latency">Швидкість</string>
+    <string name="error_message_internet">Перевірте інтернет-з\'єднання</string>
+    <string name="instance_label">Сервер:</string>
+    <string name="expand_instance_details">Докладніше про сервер</string>
+    <string name="cloudflare">Цей сервер використовує Cloudflare</string>
+    <string name="instance_info">Дані про перелічені сервери</string>
+    <string name="about_instances">Перелік серверів узято з\n\n <a href="%1$s">%2$s</a>\n\nВдоскональте його, додавши чи вилучивши сервери.</string>
+    <string name="about_instances_title">Про сервери</string>
+    <string name="use_built_in_player">Вбудоване відтворення</string>
+    <string name="share">Поширити</string>
     <string name="download">Завантажити</string>
-    <string name="share_with">Поділитися через</string>
-    <string name="check_apps">Check apps</string>
-    <string name="select_instances">Select instances</string>
-    <string name="continue_with">Continue with…</string>
-    <string name="just_once">Just once</string>
-    <string name="always">Завжди</string>
-    <string name="default_app_indication">%1$s has been set as a default app.\nYou can remove this behavior from the app settings.</string>
-    <string name="indication_error_title">There is something wrong with the configuration of the app. Please, follow these indications to fix that issue.</string>
-    <string name="open_configure">1 - Tap on the \"CONFIGURE\" button above.</string>
-    <string name="supported_url_indication_1">2 - You are now in app settings from your device. Tap on \"Set as default\".</string>
-    <string name="display_indications_1_description">Screenshot showing app settings for the app. You have to Tap on \"Set as default\"</string>
-    <string name="supported_url_indication_2">2 - Then tap on \"Go to supported URLs\".</string>
-    <string name="display_indications_2_description">Screenshot showing app settings for the app. You have to Tap on \"Go to supported URLs\"</string>
-    <string name="supported_url_indication_3">3 - In suggestions make sure to pickup \"Always ask\"</string>
-    <string name="display_indications_3_description">Screenshot showing app settings to define the behavior for opening URLs</string>
-    <string name="default_apps">Default apps</string>
-    <string name="remove_from_default_app">Remove from default apps</string>
-    <string name="delete">Видалити</string>
+    <string name="share_with">Поширити через</string>
+    <string name="check_apps">Перевірка застосунків</string>
+    <string name="select_instances">Про сервери</string>
+    <string name="continue_with">Оберіть застосунок</string>
+    <string name="just_once">Лише зараз</string>
+    <string name="always">Усталено</string>
+    <string name="default_app_indication">%1$s обрано як усталений застосунок.\nЦю властивість можна вилучити в параметрах UntrackMe.</string>
+    <string name="indication_error_title">Щось не так із конфігурацією застосунку. Будь ласка, виконайте наступні кроки, щоб це виправити.</string>
+    <string name="open_configure">1. Торкніть кнопку «Параметри» вгорі.</string>
+    <string name="supported_url_indication_1">2. Ви потрапите в системні параметри застосунку. Торкніть «Відкривати за умовчанням».</string>
+    <string name="display_indications_1_description">Знімок системних параметрів застосунку. Тут слід торкнути «Відкривати за умовчанням»</string>
+    <string name="supported_url_indication_2">2. Торкніть «Відкривати підтримувані посилання».</string>
+    <string name="display_indications_2_description">Знімок системних параметрів застосунку. Тут слід торкнути «Відкривати підтримувані посилання»</string>
+    <string name="supported_url_indication_3">3. У пропозиціях завжди обирайте «Щоразу запитувати»</string>
+    <string name="display_indications_3_description">Знімок системних параметрів застосунку, де слід налаштувати поведінку відкриття посилань</string>
+    <string name="default_apps">Усталені застосунки</string>
+    <string name="remove_from_default_app">Вилучити з усталених застосунків</string>
+    <string name="delete">Вилучити</string>
     <string name="cancel">Скасувати</string>
-    <string name="delete_app_from_default">Delete %1$s from default apps?</string>
-    <string name="copy_done">Copied</string>
-    <string name="no_apps_set_as_default">No apps set as default!</string>
-    <string name="custom_settings_for_invidious">Custom settings for Invidious</string>
-    <string name="invidious_settings">Invidious settings</string>
+    <string name="delete_app_from_default">Вилучити %1$s з усталених застосунків?</string>
+    <string name="copy_done">Скопійовано</string>
+    <string name="no_apps_set_as_default">Усталеного поки нема</string>
+    <string name="custom_settings_for_invidious">Власні параметри Invidious</string>
+    <string name="invidious_settings">Параметри Invidious</string>
     <string name="invidious_dark_mode_title">Тема</string>
-    <string name="invidious_dark_mode_indication">Configure default theme without setting cookies</string>
-    <string name="invidious_thin_mode_title">Thin mode</string>
-    <string name="invidious_thin_mode_indication">Load HTML, CSS, JS and video elements (disables images)</string>
-    <string name="invidious_language_mode_indication">Available locales</string>
-    <string name="invidious_language_mode_title">UI Language</string>
-    <string name="pref_invidious_head1">Site-wide parameters</string>
-    <string name="pref_invidious_head2">Player parameters</string>
-    <string name="invidious_annotations_mode_title">Annotations</string>
-    <string name="invidious_annotations_mode_indication">Show legacy annotations, provided by the Internet Archive</string>
-    <string name="invidious_autoplay_mode_indication">Automatically play video on load</string>
-    <string name="invidious_autoplay_mode_title">Autoplay</string>
-    <string name="invidious_continue_mode_title">Continue</string>
-    <string name="invidious_continue_mode_indication">When video is done, automatically go to the next related video (similar to YouTube’s Autoplay feature)</string>
-    <string name="invidious_listen_mode_title">Listen</string>
-    <string name="invidious_listen_mode_indication">Play only audio portion of video</string>
-    <string name="invidious_local_mode_title">Local</string>
-    <string name="invidious_local_mode_indication">Proxy video streams</string>
-    <string name="invidious_subtitles_mode_title">Subtitles</string>
-    <string name="invidious_subtitles_mode_indication">List of ISO 639–1 language codes</string>
-    <string name="invidious_quality_mode_title">Quality</string>
-    <string name="invidious_quality_mode_indication">Default player quality</string>
-    <string name="invidious_loop_mode_title">Loop</string>
-    <string name="invidious_volume_mode_title">Volume</string>
-    <string name="invidious_volume_mode_indication">Default player volume, can be any whole number between 0 and 100</string>
-    <string name="invidious_loop_mode_indication">Loop player by default</string>
-    <string name="invidious_volume_mode_value">Volume value</string>
-    <string name="invidious_volume_mode_value_indication">Override the volume with this value</string>
-    <string name="pref_invidious_head3">Player Style</string>
-    <string name="invidious_player_style_mode_title">Appearance</string>
-    <string name="invidious_player_style_mode_indication">Invidious, the default one. YouTube, using a centered play button and always visible video control bar</string>
-    <string name="help">Help</string>
-    <string name="invidious_help_title">Setting options</string>
-    <string name="invidious_help_ignore"><b>Ignore:</b> This is the default action for all¹ parameters. This means UntrackMe will not do anything about the parameter</string>
-    <string name="invidious_help_remove"><b>Remove:</b> UntrackMe will remove the parameter from URL, if it exists</string>
-    <string name="invidious_help_other">If you select other values for a parameter, they will be added to the URL. If the parameter already exists, its value will be changed to your choice</string>
-    <string name="invidious_help_explanations">[1] \'local\' parameter is set to \'true\' by default for better privacy</string>
+    <string name="invidious_dark_mode_indication">Налаштувати тему без кук</string>
+    <string name="invidious_thin_mode_title">Легкий режим</string>
+    <string name="invidious_thin_mode_indication">HTML, CSS, JS та відео, але не зображення</string>
+    <string name="invidious_language_mode_indication">Доступні мови</string>
+    <string name="invidious_language_mode_title">Мова інтерфейсу</string>
+    <string name="pref_invidious_head1">Сайт</string>
+    <string name="pref_invidious_head2">Відтворення</string>
+    <string name="invidious_annotations_mode_title">Анотації</string>
+    <string name="invidious_annotations_mode_indication">Показувати застарілі анотації, завантажуючи їх із Internet Archive</string>
+    <string name="invidious_autoplay_mode_indication">Одразу відтворювати відео</string>
+    <string name="invidious_autoplay_mode_title">Самовідтворення</string>
+    <string name="invidious_continue_mode_title">Безперервність</string>
+    <string name="invidious_continue_mode_indication">По завершенню відео, автоматично переходити до наступного</string>
+    <string name="invidious_listen_mode_title">Музичний режим</string>
+    <string name="invidious_listen_mode_indication">Відтворювати лише звукову доріжку відео</string>
+    <string name="invidious_local_mode_title">Опосередкованість</string>
+    <string name="invidious_local_mode_indication">Спрямовувати відеопотоки через проксі</string>
+    <string name="invidious_subtitles_mode_title">Субтитри</string>
+    <string name="invidious_subtitles_mode_indication">Перелік мов ISO 639–1</string>
+    <string name="invidious_quality_mode_title">Якість</string>
+    <string name="invidious_quality_mode_indication">Формат відео</string>
+    <string name="invidious_loop_mode_title">Цикл</string>
+    <string name="invidious_volume_mode_title">Гучність</string>
+    <string name="invidious_volume_mode_indication">Довільне ціле число від 0 до 100</string>
+    <string name="invidious_loop_mode_indication">Повторювати відтворення</string>
+    <string name="invidious_volume_mode_value">Значення гучності</string>
+    <string name="invidious_volume_mode_value_indication">Гучність буде замінено цим значенням</string>
+    <string name="pref_invidious_head3">Стиль</string>
+    <string name="invidious_player_style_mode_title">Оформлення</string>
+    <string name="invidious_player_style_mode_indication">Invidious — усталена тема. YouTube — кнопку відтворення центровано, а панель керування завжди видно</string>
+    <string name="help">Довідка</string>
+
+    <string name="invidious_help_title">Значення параметрів</string>
+    <string name="invidious_help_ignore"><b>Пропустити:</b> UntrackMe залишатиме параметр у посиланнях як є. Усталене значення всіх¹ параметрів</string>
+    <string name="invidious_help_remove"><b>Вилучити:</b> UntrackMe вилучатиме параметр із посилання за наявності</string>
+    <string name="invidious_help_other">Якщо ви оберете інше значення параметру, його буде додано до посилання. Якщо параметр уже є, ваше значення його замінить</string>
+    <string name="invidious_help_explanations">[1] Крім параметру «Опосередкованість», усталено ввімкненого задля захисту приватності</string>
+    <string name="copy_url">Скопіювати URL-адресу в буфер</string>
     <string-array name="invidious_theme">
-        <item>Ignore</item>
-        <item>Видалити</item>
-        <item>Dark theme</item>
-        <item>Light theme</item>
+        <item>Пропустити</item>
+        <item>Вилучити</item>
+        <item>Тьмяна тема</item>
+        <item>Світла тема</item>
     </string-array>
+
     <string-array name="invidious_enable">
-        <item>Ignore</item>
-        <item>Видалити</item>
-        <item>Enabled</item>
-        <item>Disabled</item>
+        <item>Пропустити</item>
+        <item>Вилучити</item>
+        <item>Увімкнути</item>
+        <item>Вимкнути</item>
     </string-array>
+
     <string-array name="invidious_language">
-        <item>Ignore</item>
-        <item>Видалити</item>
-        <item>Arabic</item>
-        <item>German</item>
-        <item>Greek</item>
-        <item>English</item>
-        <item>Esperanto</item>
-        <item>Spanish</item>
-        <item>Basque</item>
-        <item>French</item>
-        <item>Icelandic</item>
-        <item>Italian</item>
-        <item>Norwegian Bokmål</item>
-        <item>Dutch</item>
-        <item>Polish</item>
-        <item>Russian</item>
-        <item>Ukrainian</item>
-        <item>Chinese</item>
+        <item>Пропустити</item>
+        <item>Вилучити</item>
+        <item>Арабська</item>
+        <item>Німецька</item>
+        <item>Грецька</item>
+        <item>Англійська</item>
+        <item>Есперанто</item>
+        <item>Іспанська</item>
+        <item>Баскська</item>
+        <item>Французька</item>
+        <item>Ісландська</item>
+        <item>Італійська</item>
+        <item>Букмол (норвезька)</item>
+        <item>Нідерландська</item>
+        <item>Польська</item>
+        <item>Мертва</item>
+        <item>Українська</item>
+        <item>Китайська</item>
     </string-array>
+
+
     <string-array name="invidious_annotations">
-        <item>Ignore</item>
-        <item>Видалити</item>
-        <item>Show annotations</item>
-        <item>Hide annotations</item>
+        <item>Пропустити</item>
+        <item>Вилучити</item>
+        <item>Показати анотації</item>
+        <item>Сховати анотації</item>
     </string-array>
+
+
     <string-array name="invidious_quality">
-        <item>Ignore</item>
-        <item>Видалити</item>
+        <item>Пропустити</item>
+        <item>Вилучити</item>
         <item>DASH</item>
         <item>720p</item>
         <item>480p</item>
     </string-array>
+
     <string-array name="invidious_volume">
-        <item>Ignore</item>
-        <item>Видалити</item>
-        <item>Custom</item>
+        <item>Пропустити</item>
+        <item>Вилучити</item>
+        <item>Налаштувати</item>
     </string-array>
+
     <string-array name="invidious_player_style">
-        <item>Ignore</item>
-        <item>Видалити</item>
+        <item>Пропустити</item>
+        <item>Вилучити</item>
         <item>Invidious</item>
-        <item>Youtube</item>
+        <item>YouTube</item>
     </string-array>
 </resources>

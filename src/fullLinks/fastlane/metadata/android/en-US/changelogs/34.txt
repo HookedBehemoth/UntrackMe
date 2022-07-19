@@ -1,0 +1,2 @@
+- Fixed Framagit link
+- Ukrainian translation by K0tyk
