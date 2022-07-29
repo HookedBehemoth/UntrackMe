@@ -86,7 +86,7 @@ public class AboutActivity extends AppCompatActivity {
         content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
         binding.framagit.setText(content);
         binding.framagit.setOnClickListener(v -> {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://frafinmagit.org/tom79"));
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://framagit.org/tom79"));
             startActivity(browserIntent);
         });
 
