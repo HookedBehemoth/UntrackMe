@@ -67,6 +67,7 @@ public class CheckAppActivity extends AppCompatActivity {
             "www.reddit.com",
             "reddit.com",
             "i.reddit.com",
+            "old.reddit.com",
             "i.redd.it",
             "preview.redd.it"
     };
