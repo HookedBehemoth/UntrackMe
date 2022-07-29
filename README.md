@@ -69,13 +69,15 @@ _Source Code: [codeberg.org/orenom/wikiless](https://codeberg.org/orenom/wikiles
 
 ### Going further
 
-#### Invidition
-For a full coverage with URLs, you can use FireFox with the [Invidition](https://addons.mozilla.org/fr/firefox/addon/invidition/) plugin from [@booteille](https://framapiaf.org/@booteille).
-
-Source code of [Invidition on Codeberg](https://codeberg.org/Booteille/invidition)
-
 #### Privacy Redirect
 
 A web extension from [@SimonBrazell](https://github.com/SimonBrazell) that redirects Twitter, YouTube, Instagram & Google Maps requests to privacy friendly alternatives - Nitter, Invidious, FreeTube, Bibliogram & OpenStreetMap.
 
 Source code of [Privacy Redirect](https://github.com/SimonBrazell/privacy-redirect)
+
+
+#### Deprecated / Archived
+
+For a full coverage with URLs, you can use FireFox with the [Invidition](https://addons.mozilla.org/fr/firefox/addon/invidition/) plugin from [@booteille](https://framapiaf.org/@booteille).
+
+Source code of [Invidition on Codeberg](https://codeberg.org/Booteille/invidition)
