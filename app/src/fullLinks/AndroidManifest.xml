@@ -47,6 +47,7 @@
 
                 <!-- SHORTENED URLs  -->
                 <data android:host="t.co" />
+                <data android:host="vxtwitter.com" />
                 <data android:host="nyti.ms" />
                 <data android:host="bit.ly" />
                 <data android:host="aspedrom.com" />
@@ -152,6 +153,7 @@
 
                 <!-- SHORTENED URLs  -->
                 <data android:host="t.co" />
+                <data android:host="vxtwitter.com" />
                 <data android:host="nyti.ms" />
                 <data android:host="bit.ly" />
                 <data android:host="aspedrom.com" />

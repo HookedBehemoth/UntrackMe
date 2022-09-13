@@ -89,6 +89,7 @@ public class CheckAppActivity extends AppCompatActivity {
 
     public static String[] shortener_domains = {
             "t.co",
+            "vxtwitter.com",
             "nyti.ms",
             "bit.ly",
             "is.gd",
