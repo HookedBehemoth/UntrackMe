@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     public static String DEFAULT_SCRIBERIP_HOST = "scribe.rip";
     public static String DEFAULT_WIKILESS_HOST = "wikiless.org";
     public static String DEFAULT_TEDDIT_HOST = "teddit.net";
-    public static String DEFAULT_PROXITOK_HOST = "proxitok.herokuapp.com";
+    public static String DEFAULT_PROXITOK_HOST = "proxitok.pabloferreiro.es";
     public static String SET_GEO_URIS = "set_geo_uris";
     BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
 

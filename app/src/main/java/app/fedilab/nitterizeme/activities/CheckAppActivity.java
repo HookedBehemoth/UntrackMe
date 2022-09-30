@@ -136,7 +136,8 @@ public class CheckAppActivity extends AppCompatActivity {
             "bibliogram.pussthecat.org"
     };
     public static String[] proxitok_instances = {
-            "proxitok.herokuapp.com",
+            "proxitok.pabloferreiro.es",
+            "proxitok.privacydev.net",
             "proxitok.pussthecat.org"
     };
 

@@ -54,6 +54,10 @@ _Source Code: [sr.ht/~edwardloveall/scribe](https://sr.ht/~edwardloveall/scribe)
 Wikiless is a free and open source front-end for Wikipedia<br>
 _Source Code: [codeberg.org/orenom/wikiless](https://codeberg.org/orenom/wikiless)_
 
+- **ProxiTok**<br>
+  ProxiTok is an open source alternative frontend for TikTok<br>
+  _Source Code: [github.com/pablouser1/ProxiTok](https://github.com/pablouser1/ProxiTok)_
+
 
 ### Screenshots:
 <img alt="A simple interface to cusomize instances" src="src/fullLinks/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" width=250/>

@@ -125,7 +125,8 @@
                 <data android:host="bibliogram.pussthecat.org" />
 
                 <!-- PROXITOK INSTANCES -->
-                <data android:host="proxitok.herokuapp.com" />
+                <data android:host="proxitok.pabloferreiro.es" />
+                <data android:host="proxitok.privacydev.net" />
                 <data android:host="proxitok.pussthecat.org" />
 
                 <!-- MEDIUM URLs  -->
