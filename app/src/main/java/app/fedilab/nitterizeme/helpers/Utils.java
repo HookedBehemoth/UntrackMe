@@ -475,7 +475,7 @@ public class Utils {
                 Matcher matcher = tiktokPattern.matcher(url);
                 while (matcher.find()) {
                     String path = matcher.group(2);
-                    if (path == null || path.trim().equals("") || path.startsWith("@") || path.startsWith("music") || path.startsWith("tag")) {
+                    if (path == null || path.trim().equals("") || path.startsWith("@") || path.startsWith("music") || path.startsWith("tag") || path.startsWith("t")) {
                         newUrl = url.replace(host, proxitokHost);
                     }
                 }
