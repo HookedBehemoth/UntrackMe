@@ -92,6 +92,7 @@
                 <data android:host="i.redd.it" />
                 <data android:host="old.reddit.com" />
                 <data android:host="preview.redd.it" />
+                <data android:host="*.reddit.com" />
 
                 <!-- TIKTOK URLs  -->
                 <data android:host="tiktok.com" />
@@ -198,6 +199,7 @@
                 <data android:host="i.redd.it" />
                 <data android:host="old.reddit.com" />
                 <data android:host="preview.redd.it" />
+                <data android:host="*.reddit.com" />
 
                 <!-- MEDIUM URLs  -->
                 <data android:host="www.medium.com" />
