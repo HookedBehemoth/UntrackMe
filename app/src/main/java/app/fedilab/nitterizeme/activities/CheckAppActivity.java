@@ -48,7 +48,10 @@ public class CheckAppActivity extends AppCompatActivity {
             "mobile.twitter.com",
             "www.twitter.com",
             "pbs.twimg.com",
-            "pic.twitter.com"
+            "pic.twitter.com",
+            "x.com",
+            "fxtwitter.com",
+            "vxtwitter.com"
     };
     public static String[] instagram_domains = {
             "instagram.com",
@@ -89,7 +92,6 @@ public class CheckAppActivity extends AppCompatActivity {
 
     public static String[] shortener_domains = {
             "t.co",
-            "vxtwitter.com",
             "nyti.ms",
             "bit.ly",
             "is.gd",

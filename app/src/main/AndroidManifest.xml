@@ -46,7 +46,6 @@
 
                 <!-- SHORTENED URLs  -->
                 <data android:host="t.co" />
-                <data android:host="vxtwitter.com" />
                 <data android:host="nyti.ms" />
                 <data android:host="bit.ly" />
                 <data android:host="aspedrom.com" />
@@ -79,6 +78,9 @@
                 <data android:host="twitter.com" />
                 <data android:host="pbs.twimg.com" />
                 <data android:host="pic.twitter.com" />
+                <data android:host="x.com" />
+                <data android:host="fxtwitter.com" />
+                <data android:host="vxtwitter.com" />
 
                 <!-- YOUTUBE URLs  -->
                 <data android:host="www.youtube.com" />
@@ -123,7 +125,6 @@
 
                 <!-- SHORTENED URLs  -->
                 <data android:host="t.co" />
-                <data android:host="vxtwitter.com" />
                 <data android:host="nyti.ms" />
                 <data android:host="bit.ly" />
                 <data android:host="is.gd" />
@@ -154,6 +155,9 @@
                 <data android:host="www.twitter.com" />
                 <data android:host="twitter.com" />
                 <data android:host="pbs.twimg.com" />
+                <data android:host="x.com" />
+                <data android:host="fxtwitter.com" />
+                <data android:host="vxtwitter.com" />
 
                 <!-- YOUTUBE URLs  -->
                 <data android:host="www.youtube.com" />

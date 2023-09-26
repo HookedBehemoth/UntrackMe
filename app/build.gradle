@@ -1,8 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace "app.fedilab.nitterizeme"
+
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    buildToolsVersion "33.0.1"
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 30
@@ -17,6 +19,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 
     productFlavors {

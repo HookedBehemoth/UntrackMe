@@ -258,7 +258,9 @@ public class Utils {
                     scheme = "";
                 }
                 assert host != null;
-                if (host.compareTo("pbs.twimg.com") == 0 || host.compareTo("pic.twitter.com") == 0) {
+                if (host.compareTo("vxtwitter.com") == 0 || host.compareTo("fxtwitter.com") == 0 || host.compareTo("x.com") == 0) {
+                    newUrl = url.replace(host, nitterHost);
+                } else if (host.compareTo("pbs.twimg.com") == 0 || host.compareTo("pic.twitter.com") == 0) {
                     try {
                         newUrl = scheme + nitterHost + "/pic/" + URLEncoder.encode(url, "utf-8");
                     } catch (UnsupportedEncodingException e) {
